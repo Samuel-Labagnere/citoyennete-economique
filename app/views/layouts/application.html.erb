@@ -3,6 +3,7 @@
   <head>
     <title>CitoyenneteEconomique</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,6 +12,16 @@
   </head>
 
   <body>
+    <header>
+      <%# Header here %>
+    </header>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
+
+    <footer>
+      <%# Footer here %>
+    </footer>
   </body>
 </html>

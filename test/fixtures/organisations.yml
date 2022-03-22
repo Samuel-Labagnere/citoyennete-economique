@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nom: MyString
+  statut_juridique: 1
+  date_crea: 1
+  secteur_activite: MyString
+  ape: MyString
+  siren: MyString
+  nombre_salaries: 1
+  nombre_salaries_etp: 1.5
+  chiffre_affaires: 1.5
+  agrement_specifique: MyString
+  objectifs_extra_fianciers: false
+  distinctions: MyText
+  valeurs_entreprise: MyString
+  validation_admin: false
+
+two:
+  nom: MyString
+  statut_juridique: 1
+  date_crea: 1
+  secteur_activite: MyString
+  ape: MyString
+  siren: MyString
+  nombre_salaries: 1
+  nombre_salaries_etp: 1.5
+  chiffre_affaires: 1.5
+  agrement_specifique: MyString
+  objectifs_extra_fianciers: false
+  distinctions: MyText
+  valeurs_entreprise: MyString
+  validation_admin: false
