@@ -3,7 +3,7 @@
 one:
   nom: MyString
   statut_juridique: 1
-  date_crea: 1
+  date_creation: 1
   secteur_activite: MyString
   ape: MyString
   siren: MyString
@@ -19,7 +19,7 @@ one:
 two:
   nom: MyString
   statut_juridique: 1
-  date_crea: 1
+  date_creation: 1
   secteur_activite: MyString
   ape: MyString
   siren: MyString

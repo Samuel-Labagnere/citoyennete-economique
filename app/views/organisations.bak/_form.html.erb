@@ -1,0 +1,87 @@
+<%= form_with(model: organisation) do |form| %>
+  <% if organisation.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(organisation.errors.count, "error") %> prohibited this organisation from being saved:</h2>
+
+      <ul>
+        <% organisation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nom, style: "display: block" %>
+    <%= form.text_field :nom %>
+  </div>
+
+  <div>
+    <%= form.label :statut_juridique, style: "display: block" %>
+    <%= form.number_field :statut_juridique %>
+  </div>
+
+  <div>
+    <%= form.label :date_creation, style: "display: block" %>
+    <%= form.number_field :date_creation %>
+  </div>
+
+  <div>
+    <%= form.label :secteur_activite, style: "display: block" %>
+    <%= form.text_field :secteur_activite %>
+  </div>
+
+  <div>
+    <%= form.label :ape, style: "display: block" %>
+    <%= form.text_field :ape %>
+  </div>
+
+  <div>
+    <%= form.label :siren, style: "display: block" %>
+    <%= form.text_field :siren %>
+  </div>
+
+  <div>
+    <%= form.label :nombre_salaries, style: "display: block" %>
+    <%= form.number_field :nombre_salaries %>
+  </div>
+
+  <div>
+    <%= form.label :nombre_salaries_etp, style: "display: block" %>
+    <%= form.text_field :nombre_salaries_etp %>
+  </div>
+
+  <div>
+    <%= form.label :chiffre_affaires, style: "display: block" %>
+    <%= form.text_field :chiffre_affaires %>
+  </div>
+
+  <div>
+    <%= form.label :agrement_specifique, style: "display: block" %>
+    <%= form.text_field :agrement_specifique %>
+  </div>
+
+  <div>
+    <%= form.label :objectifs_extra_fianciers, style: "display: block" %>
+    <%= form.check_box :objectifs_extra_fianciers %>
+  </div>
+
+  <div>
+    <%= form.label :distinctions, style: "display: block" %>
+    <%= form.text_area :distinctions %>
+  </div>
+
+  <div>
+    <%= form.label :valeurs_entreprise, style: "display: block" %>
+    <%= form.text_field :valeurs_entreprise %>
+  </div>
+
+  <div>
+    <%= form.label :validation_admin, style: "display: block" %>
+    <%= form.check_box :validation_admin %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

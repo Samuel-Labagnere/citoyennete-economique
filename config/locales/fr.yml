@@ -1,0 +1,8 @@
+fr:
+  simple_form:
+    labels:
+      organisation:
+        objectifs_extra_financiers: 'Avez-vous fixé des objectifs ou indicateurs extra-financiers quantitatifs à atteindre ?'
+    hints:
+      organisation:
+        objectifs_extra_financiers: 'Plan de 3 à 5 ans'

@@ -17,12 +17,12 @@ class OrganisationsTest < ApplicationSystemTestCase
     fill_in "Agrement specifique", with: @organisation.agrement_specifique
     fill_in "Ape", with: @organisation.ape
     fill_in "Chiffre affaires", with: @organisation.chiffre_affaires
-    fill_in "Date crea", with: @organisation.date_crea
+    fill_in "Date creation", with: @organisation.date_creation
     fill_in "Distinctions", with: @organisation.distinctions
     fill_in "Nom", with: @organisation.nom
     fill_in "Nombre salaries", with: @organisation.nombre_salaries
     fill_in "Nombre salaries etp", with: @organisation.nombre_salaries_etp
-    check "Objectifs extra fianciers" if @organisation.objectifs_extra_fianciers
+    check "Objectifs extra financiers" if @organisation.objectifs_extra_fianciers
     fill_in "Secteur activite", with: @organisation.secteur_activite
     fill_in "Siren", with: @organisation.siren
     fill_in "Statut juridique", with: @organisation.statut_juridique
@@ -41,7 +41,7 @@ class OrganisationsTest < ApplicationSystemTestCase
     fill_in "Agrement specifique", with: @organisation.agrement_specifique
     fill_in "Ape", with: @organisation.ape
     fill_in "Chiffre affaires", with: @organisation.chiffre_affaires
-    fill_in "Date crea", with: @organisation.date_crea
+    fill_in "Date crea", with: @organisation.date_creation
     fill_in "Distinctions", with: @organisation.distinctions
     fill_in "Nom", with: @organisation.nom
     fill_in "Nombre salaries", with: @organisation.nombre_salaries
