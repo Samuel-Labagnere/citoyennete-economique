@@ -1,18 +1,23 @@
 // SB Admin 2 dependencies
 @import "https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i";
-@import "startbootstrap-sb-admin-2/css/sb-admin-2.min";
 @import url('https://fonts.googleapis.com/css2?family=Alata&family=Open+Sans:wght@300;400&display=swap');
 
-/*-------- VARIABLES --------*/
+$theme-colors: (
+  "primary": #EB225A,
+  "secondary": #2E3092, 
+  "white": #EEF0F2,
+  "black": #231F20,
+  "grey": #C7C2C3, 
+  "blue": #007CAA,
+  "bg-info": #007CAA,
+  "text-light": #EEF0F2,
+  "text-primary":#EB225A,
+  "text-secondary": #2E3092,
+  "text-dark": #231F20,
+);
 
-/*Couleurs*/
-
-$blue : #2E3092;
-$rose: #EB225A;
-$greyCG: #C7C2C3;
-$blackCG: #231F20;
-$white: #EEF0F2;
-$lightBlue: #007CAA;
+@import "bootstrap/scss/bootstrap";
+@import "startbootstrap-sb-admin-2/scss/sb-admin-2";
 
 
 /*Font*/
@@ -25,20 +30,16 @@ $fontText : 20px 'Open Sans';
 $fontMenu : 16px 'Open Sans';
 
 .navbar-nav {
-    color: $blackCG;
-
-    .nav-item-home {
-        width: max-content;
-        background-color: $lightBlue;
-        border-radius: 8px;
-
-        a {
-            color: $white;
-        }
-    }
+    align-items:center;
+    font-family: 'Alata';
+    
     .nav-item {
-        
-        a {
+        &.principal {
+            width: max-content;
+            border-radius: 8px;
+            padding: 5px 10px;
+        }
+        a.nav-link {
             position:relative;
             display:flex !important;
             align-items:center;
@@ -48,14 +49,17 @@ $fontMenu : 16px 'Open Sans';
                 right: 0;
             }
             b {
-                color: $rose;
-                font-family: $fontTitre;
                 font-size: 40px;
             }
             span {
-                font-family: 'Alata';
                 font-size: 18px;
-                color: $blackCG;
+            }
+        }
+        a.collapse-item {
+            font-size: 16px !important;
+            white-space: normal !important;
+            b {
+                font-size: 16px;
             }
         }
     }
