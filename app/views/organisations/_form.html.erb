@@ -1,3 +1,13 @@
 <%= simple_form_for @organisation do |f| %>
-  <%= f.input :objectifs_extra_financiers %>
+  <%= f.input :nom %>
+  <%= f.input :statut_juridique %>
+  <%= f.input :date_creation %>
+  <%= f.input :secteur_activite %>
+  <%= f.input :ape %>
+  <%= f.input :siren %>
+  <%= f.input :agrement_specifique %>
+  <%= f.input :objectifs_extra_financiers, as: :radio_buttons %>
+  <%= f.input :distinctions %>
+  <%= f.input :valeurs_entreprise %>
+  <%= f.button :submit, "Confirmer" %>
 <% end %>

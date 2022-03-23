@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_23_033336) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_23_145346) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -76,19 +76,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_23_033336) do
     t.datetime "updated_at", null: false
     t.float "pouvoir_strategique_implication_partage"
     t.float "pouvoir_gouvernance_taux_droits_vote_salaries"
+    t.float "chiffre_affaires"
+    t.float "resultat_net"
+    t.integer "nombre_salaries"
+    t.integer "nombre_salaries_etp"
     t.index ["organisation_id"], name: "index_evaluations_on_organisation_id"
   end
 
   create_table "organisations", force: :cascade do |t|
-    t.string "nom"
-    t.integer "statut_juridique"
-    t.integer "date_creation"
-    t.string "secteur_activite"
-    t.string "ape"
-    t.string "siren"
-    t.integer "nombre_salaries"
-    t.float "nombre_salaries_etp"
-    t.float "chiffre_affaires"
+    t.string "nom", null: false
+    t.integer "statut_juridique", null: false
+    t.integer "date_creation", null: false
+    t.string "secteur_activite", null: false
+    t.string "ape", null: false
+    t.string "siren", null: false
     t.string "agrement_specifique"
     t.boolean "objectifs_extra_financiers"
     t.text "distinctions"
