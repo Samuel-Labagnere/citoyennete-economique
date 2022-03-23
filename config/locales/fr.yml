@@ -16,8 +16,7 @@ fr:
       evaluations:
         pouvoir_gouvernance_part_salaries_associes: 'Part de salariés associés'
         pouvoir_gouvernance_taux_societariat_femmes: 'Taux de sociétariat parmi les femmes salariées'
-        
-        pouvoir_gouvernance_: 'Taux des droits de vote détenus par les salariés'
+        pouvoir_gouvernance_taux_droits_vote_salaries: 'Taux des droits de vote détenus par les salariés'
         pouvoir_gouvernance_part_salaries_conseil: 'Part de salariés participant au conseil d'administration ou de surveillance'
         pouvoir_gouvernance_part_femmes_conseil:  'Part de femmes au conseil d'administration'
         pouvoir_gouvernance_diversite_categories: 'Diversité des catégories d'associés'
@@ -26,8 +25,7 @@ fr:
         pouvoir_democratie_nombre_accords_signes: 'Nombre d'accords signés entre les représentants du personnel et la direction'
         pouvoir_democratie_accords_signes: 'Si oui, lesquels ?'
         pouvoir_strategique_taux_presence_assemblee: 'Taux de présence des salariés associés en assemblée générale'
-        
-        pouvoir_strategique_: 'Part des salariés impliqué'
+        pouvoir_strategique_implication_partage: 'Part des salariés impliqués dans une instance contribuant au partage du pouvoir et des décisions (CSE, CA, commission...)'
         pouvoir_strategique_actifs_total: 'Nombre de salariés actifs / nombre total de salariés'
         pouvoir_estimation_realite: 'Sur une échelle de 1 à 10, comment les salariés estiment-ils la réalité du pilier « Partage du pouvoir et des décisions » au sein de l'entreprise ?'
 
