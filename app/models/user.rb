@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  belongs_to :organisation
+  belongs_to :organisation, optional: true
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
