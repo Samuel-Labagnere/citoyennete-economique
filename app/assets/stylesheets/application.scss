@@ -29,7 +29,7 @@ $fontText: 'Open Sans';
 
 $fontH1 : 80px 'Alata';
 $fontH2 : 50px 'Alata';
-$fontText : 20px 'Open Sans';
+$fontNavbar : 16px 'Alata';
 $fontMenu : 16px 'Open Sans';
 
 .navbar-nav {
@@ -100,4 +100,15 @@ header {
 h2 {
     font: $fontH2
     ;
+}
+
+.navigationBar{
+
+    a{
+        font: $fontNavbar;
+    }
+
+    button{
+        font: $fontNavbar;
+    }
 }
