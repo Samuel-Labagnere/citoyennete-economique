@@ -1,27 +1,32 @@
 // SB Admin 2 dependencies
 @import "https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i";
 @import url('https://fonts.googleapis.com/css2?family=Alata&family=Open+Sans:wght@300;400&display=swap');
-@import "index";
+
 
 $theme-colors: (
   "primary": #EB225A,
-  "secondary": #2E3092, 
+  "secondary": #007CAA, 
   "white": #EEF0F2,
   "black": #231F20,
   "grey": #C7C2C3, 
   "blue": #007CAA,
   "bg-primary": #EB225A,
-  "bg-secondary": #2E3092,
+  "bg-secondary": #007CAA, 
+  "bg-light": #C7C2C3,
+  "bg-white": #EEF0F2,
   "bg-info": #007CAA,
   "text-light": #EEF0F2,
   "text-primary":#EB225A,
-  "text-secondary": #2E3092,
+  "text-secondary": #007CAA,
   "text-dark": #231F20,
 );
+
 
 @import "bootstrap/scss/bootstrap";
 @import "startbootstrap-sb-admin-2/scss/sb-admin-2";
 
+/*Margin*/
+$marginDesktop: 100px;
 
 /*Font*/
 $fontTitre: 'Alata';
@@ -32,65 +37,135 @@ $fontH2 : 50px 'Alata';
 $fontNavbar : 16px 'Alata';
 $fontMenu : 16px 'Open Sans';
 
-.navbar-nav {
-    align-items:center;
-    font-family: 'Alata';
+body {
 
-    .nav-item {
-        &.principal {
-            width: max-content;
-            border-radius: 8px;
-            padding: 5px 10px;
-            a {
-                text-decoration: none;
-            }
-            i {
-                display:none;
-            }
-            span {
-                display:flex;
-            }
-        }
-        a.nav-link {
-            position:relative;
-            display:flex !important;
+    font-family: $fontText;
+
+    #wrapper {
+
+        margin-top: calc($marginDesktop / 2);
+
+        .navbar-nav {
             align-items:center;
-
-            &::after {
-                position:absolute;
-                right: 0;
+            font-family: $fontTitre;
+    
+            .nav-item {
+                &.principal {
+                    width: max-content;
+                    border-radius: 8px;
+                    padding: 5px 10px;
+                    a {
+                        text-decoration: none;
+                    }
+                    i {
+                        display:none;
+                    }
+                    span {
+                        display:flex;
+                    }
+                }
+                a.nav-link {
+                    position:relative;
+                    display:flex !important;
+                    align-items:center;
+    
+                    &::after {
+                        position:absolute;
+                        right: 0;
+                    }
+                    b {
+                        font-size: 40px;
+                    }
+                    span {
+                        font-size: 18px;
+                    }
+                }
+                a.collapse-item {
+                    font-size: 16px !important;
+                    white-space: normal !important;
+                    b {
+                        font-size: 16px;
+                    }
+                }
             }
-            b {
-                font-size: 40px;
-            }
-            span {
-                font-size: 18px;
+    
+        }
+        .sidebar-toggled {
+            .nav-item {
+                &.principal {
+                    i {
+                        display:block;
+                    }
+                    span {
+                        display:none;
+                    }
+                }
             }
         }
-        a.collapse-item {
-            font-size: 16px !important;
-            white-space: normal !important;
-            b {
-                font-size: 16px;
+        #content-wrapper {
+    
+            overflow: unset !important;
+    
+            #wrap {
+                margin: 0 $marginDesktop;
+                    
+                header {
+                    
+                    width: 80%;
+        
+                    h1 {
+                        margin: 0 0 calc($marginDesktop / 2);
+                        font: $fontH1;
+                    }
+                    p {
+                    }
+        
+                }
+                h2 {
+                    font: $fontH2;
+                    margin: $marginDesktop 0;
+                }
+                section {
+                    .row {
+                        justify-content: space-between;
+            
+                        .card {
+                            position:relative;
+                            height: 225px;
+                            width: 225px;
+                            display:flex;
+                            text-decoration: none !important;
+    
+                            .card-back {
+                                position:absolute;
+                                z-index: 1;
+                                height: 100%;
+                                width: 100%;
+                            }
+                            .card-body {
+                                z-index: 2;
+                                display:flex;
+                                align-items: flex-end;
+                                font-size: 20px;
+    
+                                span {
+                                    font-family: $fontTitre;
+                                    position:absolute;
+                                    font-size: 90px;
+                                    line-height: 70px;
+                                    right: 0;
+                                    top: -17px;
+                                }
+                            }
+                        }
+                    }
+                    p {
+                        margin: calc($marginDesktop / 2) 30% calc($marginDesktop / 2) 0;
+                    }
+                }
             }
         }
     }
-
-}
-.sidebar-toggled {
-    .nav-item {
-        &.principal {
-            i {
-                display:block;
-            }
-            span {
-                display:none;
-            }
-        }
-    }
-}
-
-header {
     
     h1 {
         font: $fontH1;
@@ -103,6 +178,10 @@ h2 {
 }
 
 .navigationBar{
+
+    span{
+        font:$fontNavbar;
+    }
 
     a{
         font: $fontNavbar;
