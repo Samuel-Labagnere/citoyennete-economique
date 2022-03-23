@@ -1,6 +1,7 @@
 // SB Admin 2 dependencies
 @import "https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i";
 @import url('https://fonts.googleapis.com/css2?family=Alata&family=Open+Sans:wght@300;400&display=swap');
+@import "index";
 
 $theme-colors: (
   "primary": #EB225A,
@@ -9,6 +10,8 @@ $theme-colors: (
   "black": #231F20,
   "grey": #C7C2C3, 
   "blue": #007CAA,
+  "bg-primary": #EB225A,
+  "bg-secondary": #2E3092,
   "bg-info": #007CAA,
   "text-light": #EEF0F2,
   "text-primary":#EB225A,
@@ -32,12 +35,21 @@ $fontMenu : 16px 'Open Sans';
 .navbar-nav {
     align-items:center;
     font-family: 'Alata';
-    
+
     .nav-item {
         &.principal {
             width: max-content;
             border-radius: 8px;
             padding: 5px 10px;
+            a {
+                text-decoration: none;
+            }
+            i {
+                display:none;
+            }
+            span {
+                display:flex;
+            }
         }
         a.nav-link {
             position:relative;
@@ -64,4 +76,28 @@ $fontMenu : 16px 'Open Sans';
         }
     }
 
+}
+.sidebar-toggled {
+    .nav-item {
+        &.principal {
+            i {
+                display:block;
+            }
+            span {
+                display:none;
+            }
+        }
+    }
+}
+
+header {
+    
+    h1 {
+        font: $fontH1;
+    }
+
+}
+h2 {
+    font: $fontH2
+    ;
 }
