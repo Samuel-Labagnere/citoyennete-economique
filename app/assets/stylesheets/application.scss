@@ -157,10 +157,37 @@ body {
                                     top: -17px;
                                 }
                             }
+                            &.flex-grow-1 {
+                                height: unset;
+                            }
                         }
                     }
                     p {
                         margin: calc($marginDesktop / 2) 30% calc($marginDesktop / 2) 0;
+                    }
+                    &.d-flex {
+                        div {
+                            flex:1;
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+                        ul {
+                            flex:1;
+                            li {
+                                span {
+                                    width: 17px;
+                                    height: 17px;
+                                    border-radius: 4px;
+                                    transform: rotate(45deg);
+                                    box-shadow: 3px 3px 0px rgba(0,124,170,.3);                                    ;
+                                }
+                                p {
+                                    flex:1;
+                                }
+                            }
+                        }
                     }
                 }
             }
