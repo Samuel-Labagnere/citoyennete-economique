@@ -1,18 +1,29 @@
 fr:
   simple_form:
+    "yes": "Oui"
+    "no": "Non"
+
+    required:
+      text: 'Ce champs est requis.'
+
+    error_notification:
+      default_message: "Veuillez corriger les problèmes suivants :"
+
     labels:
       organisation:
         statut_juridique: "Statut juridique"
         secteur_activite: "Secteur d'activité"
         ape: "Code APE"
-        nombre_salaries: "Nombre total de salariés"
-        nombre_salaries_etp: "Nombre de salariés en ETP"
-        chiffre_affaires: "Chiffre d'affaires"
         agrement_specifique: "Agrément spécifique"
         objectifs_extra_financiers: "Avez-vous fixé des objectifs ou indicateurs extra-financiers quantitatifs à atteindre ?"
         distinctions: "Votre entreprise a-t-elle obtenu des labels/agréments/certifications/scores/engagements ?"
         valeurs_entreprise: "Valeurs affichées/affirmées par l'entreprise"
       evaluation:
+        annee: "Année"
+        chiffre_affaires: "Chiffre d'affaires"
+        resultat_net: "Résultat net"
+        nombre_salaries: "Nombre total de salariés"
+        nombre_salaries_etp: "Nombre de salariés en ETP"
         pouvoir_gouvernance_part_salaries_associes: "Part de salariés associés"
         pouvoir_gouvernance_taux_societariat_femmes: "Taux de sociétariat parmi les femmes salariées"
         pouvoir_gouvernance_taux_droits_vote_salaries: "Taux des droits de vote détenus par les salariés"

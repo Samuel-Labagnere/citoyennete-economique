@@ -34,6 +34,7 @@ $fontText: 'Open Sans';
 
 $fontH1 : 80px 'Alata';
 $fontH2 : 50px 'Alata';
+$fontNavbar : 16px 'Alata';
 $fontMenu : 16px 'Open Sans';
 
 body {
@@ -166,4 +167,31 @@ body {
         }
     }
     
+    h1 {
+        font: $fontH1;
+    }
+
+}
+h2 {
+    font: $fontH2
+    ;
+}
+
+.navigationBar{
+
+    a{
+        font: $fontNavbar;
+        transition: all 0.2s;
+    }
+
+    a:hover{
+        text-decoration: none;
+        color: #EB225A !important;
+        transition: all 0.2s;
+    }
+
+    button{
+        font: $fontNavbar;
+        box-shadow: 1.5px 1.5px 6px #C7C2C3;
+    }
 }
