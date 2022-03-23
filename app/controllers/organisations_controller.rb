@@ -1,4 +1,5 @@
 class OrganisationsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_organisation, only: %i[ show edit update destroy ]
 
   # GET /organisations or /organisations.json
@@ -25,6 +26,8 @@ class OrganisationsController < ApplicationController
 
     respond_to do |format|
       if @organisation.save
+        current_user.organisation = @organisation
+        current_user.save
         format.html { redirect_to organisation_url(@organisation), notice: "Organisation was successfully created." }
         format.json { render :show, status: :created, location: @organisation }
       else

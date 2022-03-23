@@ -1,6 +1,6 @@
 <%= simple_form_for @organisation do |f| %>
   <%= f.input :nom %>
-  <%= f.input :statut_juridique %>
+  <%= f.input :statut_juridique, collection: Organisation.statut_juridiques.keys %>
   <%= f.input :date_creation %>
   <%= f.input :secteur_activite %>
   <%= f.input :ape %>
