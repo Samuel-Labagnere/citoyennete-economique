@@ -47,8 +47,15 @@
                 </div>
                 <%else %>
                 <div class="d-flex align-items-center justify-content-end col-md-3">
-                    <button class="btn btn-white pb-2 mr-2 ">connexion</button>
-                    <button class="btn btn-primary pb-2 ml-2">inscription</button>
+                    <% if not user_signed_in? %>
+                        <%= button_to "Connexion", new_user_session_path, class: "btn btn-white pb-2 mr-2", method: :get %>
+                        <%= button_to "Inscription", new_user_registration_path, class: "btn btn-primary pb-2 ml-2", method: :get %>
+                    <% else %>
+                        <div class="d-flex align-items-baseline">
+                            <p class="mr-3">Bienvenue, <%= current_user %> !</p>
+                            <%= button_to "Déconnexion", destroy_user_session_path, class: "btn btn-primary pb-2 mr-2", method: :delete, form: {data: {turbo: false}} %>
+                        </div>
+                    <% end %>
                 </div>
                 <%end%>
             </div>
