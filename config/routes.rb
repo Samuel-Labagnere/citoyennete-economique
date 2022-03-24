@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'view_organisation/index'
-  get 'mentions_legales/index'
-  get 'contact/index'
+  get 'view_organisation', to: "view_organisation#index"
+  get 'mentions_legales', to: "mentions_legales#index"
+  get 'contact', to: "contact#index"
   resources :evaluations
   devise_for :users, path: '', path_names: { sign_in: "connexion", sign_out: "déconnexion", sign_up: "inscription" }
   resources :organisations

@@ -19,8 +19,10 @@
   <% if !current_user.organisation.validation_admin %>
     <p>En attente de vérification par un administrateur.<p>
   <% else %>
-    <p>Tout est OK !</p>
-
+    <p>
+      <strong><%= current_user.organisation.statut_juridique %></strong><br />
+      <strong><%= current_user.organisation.secteur_activite %></strong>
+    </p>
     <% current_user.organisation.evaluations.each do |evaluation| %>
       <ul>
         <li>

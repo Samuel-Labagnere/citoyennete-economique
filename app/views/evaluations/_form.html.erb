@@ -1,4 +1,4 @@
-<% disable = "disabled" unless !defined?(disabled) || disabled == false %>
+<% disable = "disabled" unless !defined?(disabled) || disabled != true %>
 
 <%= simple_form_for @evaluation do |f| %>
   <fieldset <%= disable %>>
