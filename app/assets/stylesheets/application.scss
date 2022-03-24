@@ -11,15 +11,23 @@ $theme-colors: (
   "black": #231F20,
   "grey": #E2E2E2, 
   "blue": #007CAA,
+  "orange": #F15921,
+  "green": #007A78,
   "bg-primary": #EB225A,
   "bg-secondary": #007CAA, 
   "bg-light": #E2E2E2,
   "bg-white": #EEF0F2,
   "bg-info": #007CAA,
+  "bg-success": #007A78,
+  "bg-danger": #F15921,
+  "border-success": #007A78,
+  "border-danger": #F15921,
   "text-light": #EEF0F2,
   "text-primary":#EB225A,
   "text-secondary": #007CAA,
-  "text-dark": #231F20,
+  "text-success": #007A78,
+  "text-danger": #F15921,
+  "text-dark": #231F20, 
 );
 
 @import "bootstrap/scss/bootstrap";
@@ -150,34 +158,16 @@ body {
             font-family: $fontTitre;
     
             .nav-item {
-                &.principal {
-                    width: max-content;
-                    border-radius: 8px;
-                    padding: 5px 10px;
-                    a {
-                        text-decoration: none;
-                    }
-                    i {
-                        display:none;
-                    }
-                    span {
-                        display:flex;
-                    }
-                }
                 a.nav-link {
-                    position:relative;
-                    display:flex !important;
-                    align-items:center;
-    
                     &::after {
                         position:absolute;
                         right: 0;
                     }
                     b {
-                        font-size: 40px;
+                        font-size: 2.2rem;
                     }
                     span {
-                        font-size: 18px;
+                        font-size: 1rem;
                     }
                 }
                 a.collapse-item {
@@ -189,18 +179,6 @@ body {
                 }
             }
     
-        }
-        .sidebar-toggled {
-            .nav-item {
-                &.principal {
-                    i {
-                        display:block;
-                    }
-                    span {
-                        display:none;
-                    }
-                }
-            }
         }
         #content-wrapper {
     
@@ -328,6 +306,19 @@ body {
                         p {
                             width: 100%;
                         }
+                    }
+                }
+            }
+            .public-stats {
+                .position-sticky {
+                    top: 100px;
+                }
+                .puclic-stats-body {
+                    .col-12.border-left {
+                        border-left-width: 6px !important;                                        
+                    }
+                    h5 {
+                        font-size:1rem;
                     }
                 }
             }
