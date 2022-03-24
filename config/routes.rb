@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'view_organisation/index'
+  get 'mentions_legales/index'
+  get 'contact/index'
   resources :evaluations
   devise_for :users
   resources :organisations
