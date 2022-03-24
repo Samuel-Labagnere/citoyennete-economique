@@ -1,6 +1,6 @@
 class OrganisationsController < ApplicationController
-  before_action :authenticate_user!
   before_action :check_super_admin, only: %i[ index show destroy ]
+  before_action :authenticate_user!
   before_action :set_organisation, only: %i[ show edit update destroy ]
 
   # GET /organisations or /organisations.json
@@ -15,7 +15,7 @@ class OrganisationsController < ApplicationController
   # GET /organisations/new
   def new
     @organisation = Organisation.new
-    if !current_user.organisation.nil?
+    if !current_user.organisation.nil? && !current_user.is_super_admin
       redirect_to root_path
     end
   end
@@ -30,8 +30,11 @@ class OrganisationsController < ApplicationController
 
     respond_to do |format|
       if @organisation.save
-        current_user.organisation = @organisation
-        current_user.save
+        if !current_user.is_super_admin
+          current_user.organisation = @organisation
+          current_user.save
+        end
+
         format.html { redirect_to organisation_url(@organisation), notice: "Organisation was successfully created." }
         format.json { render :show, status: :created, location: @organisation }
       else
@@ -76,8 +79,8 @@ class OrganisationsController < ApplicationController
     end
 
     def check_super_admin
-      if not current_user.is_super_admin
-        raise ActionController::RoutingError, 'Not Found'
+      if !current_user || !current_user.is_super_admin
+        render(file: File.join(Rails.root, 'public/403.html'), status: 403, layout: false)
       end
     end
 end
