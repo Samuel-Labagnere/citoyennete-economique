@@ -1,6 +1,7 @@
 // SB Admin 2 dependencies
 @import "https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i";
 @import url('https://fonts.googleapis.com/css2?family=Alata&family=Open+Sans:wght@300;400&display=swap');
+@import 'sam.scss';
 
 
 $theme-colors: (
@@ -425,6 +426,9 @@ body {
   }
 @media (max-width: 800px) {
     body {
+        h1 {
+            font-size: 3rem !important;
+        }
         h1.display-4{
             font-size: 2rem;
         }
@@ -445,6 +449,16 @@ body {
                     }
                 }
             }
+        }
+    }
+}
+@media (max-width: 400px) {
+    body {
+        h1 {
+            font-size: 2rem !important;
+        }
+        label, select, option, li, li b {
+            font-size: 1rem !important;
         }
     }
 }
