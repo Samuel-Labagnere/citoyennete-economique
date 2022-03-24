@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>CitoyenneteEconomique</title>
+        <title>Citoyenneté Économique</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <%= csrf_meta_tags %>
         <%= csp_meta_tag %>
@@ -15,10 +15,6 @@
         <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
         <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     </head>
-
-    <%
-        sidebar_shown = true
-    %>
 
     <body class="bg-white">
     <!-- NavBar -->
@@ -34,7 +30,7 @@
         <div class="navbar__links d-flex align-items-center justify-content-around col-md-4  ">
             <a class="text-black" href="#">Statistiques citoyennes</a>
             <span class="navbar_separator"></span>
-            <a class="text-black" href="#">Les entreprises</a>
+            <%= link_to 'Entreprises', entreprises_path, class: 'text-black' %>
         </div>
 
          <%if user_signed_in? %>
@@ -126,7 +122,7 @@
         </div>
         <div class="m-3 m-md-5 d-flex flex-column align-items-md-end align-items-center text-center text-md-right">
             <a href="#" class="text-dark">Statistiques</a>
-            <a href="entreprises" class="mb-3 mt-3 text-dark">Les entreprises</a>
+            <%= link_to 'Entreprises', entreprises_path, class: 'text-dark' %>
             <a href="#" class="text-dark">Contact</a>
         </div>
     </footer>
