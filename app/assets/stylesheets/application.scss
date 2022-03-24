@@ -35,6 +35,11 @@ $fontH3: 2.1rem 'Open Sans';
 $fontNavbar : 16px 'Alata';
 $fontMenu : 16px 'Open Sans';
 
+.copyleft {
+    display:inline-block;
+    transform: rotate(180deg);
+}
+
 html {
     scroll-behavior: smooth;
 }
