@@ -346,7 +346,14 @@ body {
         background-color: #231F20;
     }
 
+    .navbar__{
+        display: flex;
+        align-items: space-between;
+    }
+
 }
+
+
 h2 {
     font: $fontH2;
 }
