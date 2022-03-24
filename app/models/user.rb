@@ -7,6 +7,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   def to_s
-    "#{ first_name } #{ last_name }"
+    "#{ last_name.upcase } #{ first_name.capitalize }"
   end
 end
