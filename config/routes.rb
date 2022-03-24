@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'statistiques', to: "statistiques#index"
   get 'entreprises/index'
   get 'view_organisation', to: "view_organisation#index"
   get 'mentions_legales', to: "mentions_legales#index"
