@@ -14,6 +14,9 @@ class OrganisationsController < ApplicationController
   # GET /organisations/new
   def new
     @organisation = Organisation.new
+    if !current_user.organisation.nil?
+      redirect_to root_path
+    end
   end
 
   # GET /organisations/1/edit
