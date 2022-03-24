@@ -1,4 +1,3 @@
-<div class="d-flex justify-content-center">
 <% disable = "disabled" unless !defined?(disabled) || disabled != true %> 
 <%= simple_form_for @evaluation do |f| %>
   <fieldset class="col-6"<%= disable %>>
@@ -9,8 +8,15 @@
     <%= f.input :nombre_salaries_etp %>
   </fieldset>
 
+  <div class="d-flex justify-content-center flex-direction-center bg-blue pt-4 pb-4">
+    <span class="pt-4 pb-4 col-1 "><%= image_tag '1.svg', alt: 'numéro 1' %></span>
+    <h2 class="pt-4 pb-4">Partage du pouvoir et des décisions</h2>
+  </div>
+
+  <div class="d-flex col-12">
+
   <fieldset class="border p-2 mb-4 col-6" <%= disable %>>
-    <legend class="w-auto">Pilier 1 : Partage du pouvoir et des décisions</legend>
+    <%# <legend class="w-auto">Pilier 1 : Partage du pouvoir et des décisions</legend> %>
     <%= f.input :pouvoir_gouvernance_part_salaries_associes %>
     <%= f.input :pouvoir_gouvernance_taux_societariat_femmes %>
     <%= f.input :pouvoir_gouvernance_taux_droits_vote_salaries %>
@@ -26,6 +32,8 @@
     <%= f.input :pouvoir_strategique_actifs_total %>
     <%= f.input :pouvoir_estimation_realite %>
   </fieldset>
+
+  </div>
 
   <fieldset class="border p-2 mb-4 col-6" <%= disable %>>
     <legend class="w-auto">Pilier 2 : Pérénnité économique et partage de la valeur créée</legend>
@@ -87,4 +95,3 @@
     <%= f.button :submit, "Enregistrer", class: 'btn btn-primary' %>
   <% end %>
 <% end %>
-</div>
