@@ -425,6 +425,9 @@ body {
   }
 @media (max-width: 800px) {
     body {
+        h1 {
+            font-size: 3rem !important;
+        }
         h1.display-4{
             font-size: 2rem;
         }
@@ -445,6 +448,16 @@ body {
                     }
                 }
             }
+        }
+    }
+}
+@media (max-width: 400px) {
+    body {
+        h1 {
+            font-size: 2rem !important;
+        }
+        label, select, option, li, li b {
+            font-size: 1rem !important;
         }
     }
 }

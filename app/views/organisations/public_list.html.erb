@@ -1,7 +1,42 @@
-<h1>Ces entreprises nous font confiance</h1>
+<div class="page-list">
 
-<ul>
-<% @organisations.each do |organisation| %>
-    <li><%= organisation %></li>
-<% end %>
-</ul>
+    <header>
+        <h1>Ces entreprises nous font confiance</h1>
+    </header>
+    
+    <div class="d-flex d-sm-none mt-5 mb-2">Trier par :</div>
+    <div class="d-flex flex-sm-row align-items-center mt-0 mt-sm-5">
+        <span class="lead text-nowrap font-weight-bold mr-0 mr-sm-5 d-none d-sm-flex">Trier par :</span>
+
+        <div class="w-50 d-flex flex-column flex-sm-row align-items-start align-items-sm-center mr-2 mr-sm-5">
+            <label for="alpha" class="mr-3 lead text-nowrap mb-0">Nom</label>
+            <select class="custom-select custom-select-s mr-3 mb-0">
+                <option value="alpha-croissant" selected>Croissant</option>
+                <option value="alpha-decroissant">Décroissant</option>
+            </select>
+        </div>
+
+        <div class="w-50 d-flex flex-column flex-sm-row align-items-start align-items-sm-center ml-2">
+            <label for="date" class="mr-3 lead text-nowrap mb-0">Date d'ajout</label>
+            <select class="custom-select custom-select-s mb-0">
+                <option value="date-croissant" selected>Croissant</option>
+                <option value="date-decroissant">Décroissant</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div id="viewall">
+    
+        <ul class="list-group mt-5">
+            <% @organisations.each do |organisation| %>
+                <li class="list-group-item rounded-sm border mb-5">
+                    <b class="lead font-weight-bold"><%= organisation %></b><br/>
+                    <span>XXX XXX XXX</span>
+                </li>
+            <% end %>
+        </ul>
+
+    </div>
+
+</div>
