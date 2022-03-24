@@ -339,8 +339,14 @@ body {
         }
     }
 
+    .navbar_separator{
+        height: 1.5vh;
+        width:1.5px;
+        border-radius: 5px;
+        background-color: #231F20;
+    }
+
 }
 h2 {
-    font: $fontH2
-    ;
+    font: $fontH2;
 }
