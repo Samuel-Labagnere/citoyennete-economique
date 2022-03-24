@@ -73,6 +73,27 @@ body {
                 width: 100%;
                 text-align:right;
             }
+            .justify-content-aroung, .justify-content-end {
+                span{
+                    font:$fontNavbar;
+                }
+            
+                a{
+                    font: $fontNavbar;
+                    transition: all 0.2s;
+                }
+            
+                a:hover{
+                    text-decoration: none;
+                    color: #EB225A !important;
+                    transition: all 0.2s;
+                }
+            
+                button{
+                    font: $fontNavbar;
+                    box-shadow: 1.5px 1.5px 6px #C7C2C3;
+                }
+            }
         }
 
         &.sticky {
@@ -322,27 +343,4 @@ body {
 h2 {
     font: $fontH2
     ;
-}
-
-.navigationBar{
-
-    span{
-        font:$fontNavbar;
-    }
-
-    a{
-        font: $fontNavbar;
-        transition: all 0.2s;
-    }
-
-    a:hover{
-        text-decoration: none;
-        color: #EB225A !important;
-        transition: all 0.2s;
-    }
-
-    button{
-        font: $fontNavbar;
-        box-shadow: 1.5px 1.5px 6px #C7C2C3;
-    }
 }
