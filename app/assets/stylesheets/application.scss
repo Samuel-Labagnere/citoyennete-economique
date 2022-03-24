@@ -37,6 +37,11 @@ $fontH2 : 50px 'Alata';
 $fontNavbar : 16px 'Alata';
 $fontMenu : 16px 'Open Sans';
 
+.copyleft {
+    display:inline-block;
+    transform: rotate(180deg);
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -215,8 +220,6 @@ body {
                     h1 {
                         margin: 0 0 calc($marginDesktop / 2);
                         font: $fontH1;
-                    }
-                    p {
                     }
         
                 }

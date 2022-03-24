@@ -1,5 +1,6 @@
 class OrganisationsController < ApplicationController
   before_action :authenticate_user!
+  before_action :check_super_admin, only: %i[ index show destroy ]
   before_action :set_organisation, only: %i[ show edit update destroy ]
 
   # GET /organisations or /organisations.json
@@ -72,5 +73,11 @@ class OrganisationsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def organisation_params
       params.require(:organisation).permit(:nom, :statut_juridique, :date_creation, :secteur_activite, :ape, :siren, :nombre_salaries, :nombre_salaries_etp, :chiffre_affaires, :agrement_specifique, :objectifs_extra_fianciers, :distinctions, :valeurs_entreprise, :validation_admin)
+    end
+
+    def check_super_admin
+      if not current_user.is_super_admin
+        raise ActionController::RoutingError, 'Not Found'
+      end
     end
 end
