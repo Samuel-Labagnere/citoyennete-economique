@@ -314,6 +314,22 @@ body {
                     }
                 }
             }
+            .page-ml {
+                ul {
+                    li {
+                        span {
+                            flex:none;
+                            width: 17px;
+                            height: 17px;
+                            transform: rotate(45deg);
+                            box-shadow: 3px 3px 0px rgba(0,124,170,.3);                                    ;
+                        }
+                        p {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
         }
     }
     
