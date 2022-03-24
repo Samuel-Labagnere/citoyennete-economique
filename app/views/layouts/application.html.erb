@@ -1,136 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>CitoyenneteEconomique</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <head>
+        <title>CitoyenneteEconomique</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
 
-    <!-- SG Admin 2 dependencies -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/js/fontawesome.min.js" integrity="sha256-1lGQuZh8a4EiccMxEc18J0h4nhr5oCmXEXPzca+Lbrk=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha256-sCElQ8xaSgoxwbWp0eiXMmGZIRa0z94+ffzzO06BqXs=" crossorigin="anonymous"></script>
+        <!-- SG Admin 2 dependencies -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/js/fontawesome.min.js" integrity="sha256-1lGQuZh8a4EiccMxEc18J0h4nhr5oCmXEXPzca+Lbrk=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha256-sCElQ8xaSgoxwbWp0eiXMmGZIRa0z94+ffzzO06BqXs=" crossorigin="anonymous"></script>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-  </head>
+        <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+        <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    </head>
 
-  <%
-    sidebar_shown = true
-  %>
+    <%
+        sidebar_shown = true
+    %>
 
-  <body class="bg-light">
-         <!-- NavBar -->
-        <div class="navigationBar container-fluid p-3">
-                    <div class="row">
-                        <div class="d-flex align-items-center col-md-3">
-                            <a href="#">
-                                <%= image_tag 'titre.svg', alt: 'logo de la citoyenneté économique' %>
-                            </a>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-around col-md-6 ">
-                            <a class="text-black" href="#">Statistiques</a>
-                            <a class="text-black" href="#">Entreprises</a>
-                            <a class="text-black" href="#">Contact</a>
-                        </div>
-                        <div class="d-flex align-items-center justify-content-end col-md-3">
-                            <button class="btn btn-white pb-2 mr-2 ">connexion</button>
-                            <button class="btn btn-primary pb-2 ml-2">inscription</button>
-                        </div>
-                    </div>
+    <body class="bg-white">
+    <!-- NavBar -->
+        <div id="navigationBar" class="navigationBar bg-white container-fluid pr-3 pl-3 pb-3 pt-1">
+            <div class="row">
+                <div class="d-flex align-items-center col-md-3">
+                    <a href="#" class="logoSite">
+                        <span>c</span>
+                        <%= image_tag 'titre.svg', alt: 'logo de la citoyenneté économique' %>
+                        <b class="text-primary">.</b>
+                    </a>
+                </div>
+                <div class="d-flex align-items-center justify-content-around col-md-6 ">
+                    <a class="text-black" href="#">Statistiques</a>
+                    <a class="text-black" href="#">Entreprises</a>
+                    <a class="text-black" href="#">Contact</a>
+                </div>
+                <div class="d-flex align-items-center justify-content-end col-md-3">
+                    <button class="btn btn-white pb-2 mr-2 ">connexion</button>
+                    <button class="btn btn-primary pb-2 ml-2">inscription</button>
+                </div>
             </div>
+        </div>
+
       <!-- Page Wrapper -->
-    <div id="wrapper">
-
-        <% if sidebar_shown %>
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-light sidebar sidebar-light accordion" id="accordionSidebar">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item bg-info principal shadow">
-                <a href="index.html" class="text-light">
-                    <i class="fas fa-home"></i>
-                    <span>Mon entreprise</span></a>
-            </li>
-
-            <!-- Nav Item - Impact 1 -->
-            <li class="nav-item">
-                <a class="nav-link collapsed text-dark" href="#" data-toggle="collapse" data-target="#collapseImpact1"
-                    aria-expanded="true" aria-controls="collapseImpact1">
-                    <span><b class="text-primary">1.</b> Partage du pouvoir et des  décisions </span>
-                </a>
-                <div id="collapseImpact1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="buttons.html"><b class="text-primary">I.</b> Composition de la gouvernance</a>
-                        <a class="collapse-item" href="cards.html"><b class="text-primary">II.</b> Mise en place du bon exercice de la démocratie</a>
-                        <a class="collapse-item" href="cards.html"><b class="text-primary">III.</b> Participation à la prise de décision stratégique</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Impact 2 -->
-            <li class="nav-item">
-                <a class="nav-link collapsed text-dark" href="#" data-toggle="collapse" data-target="#collapseImpact2"
-                    aria-expanded="true" aria-controls="collapseImpact2">
-                    <span><b class="text-primary">2.</b> Pérennité économique et partage de la valeur créer</span>
-                </a>
-                <div id="collapseImpact2" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Impact 3 -->
-            <li class="nav-item">
-                <a class="nav-link collapsed text-dark" href="#" data-toggle="collapse" data-target="#collapseImpact3"
-                    aria-expanded="true" aria-controls="collapseImpact3">
-                    <span><b class="text-primary">3.</b> Capital humain et qualité de vie au travail</span>
-                </a>
-                <div id="collapseImpact3" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Impact 4 -->
-            <li class="nav-item">
-                <a class="nav-link collapsed text-dark" href="#" data-toggle="collapse" data-target="#collapseImpact4"
-                    aria-expanded="true" aria-controls="collapseImpact4">
-                    <span><b class="text-primary">4.</b> Impact environnemental, social et territorial</span>
-                </a>
-                <div id="collapseImpact4" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="bg-primary rounded-circle border-0 text-light" id="sidebarToggle"></button>
-            </div>
-
-        </ul>
-        <!-- End of Sidebar -->
-        <% end %>
-                <!-- Content Wrapper -->
+    <div id="wrapper" class="bg-light pb-5">
+    
+    
+    <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
@@ -150,16 +67,6 @@
 
             </div>
             <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
 
         </div>
         <!-- End of Content Wrapper -->
@@ -191,5 +98,39 @@
             </div>
         </div>
     </div>
+
+     <!-- Footer -->
+    <footer class="sticky-footer bg-white d-flex justify-content-between">
+        <div class="m-5 d-flex flex-column align-items-start">
+            <a href="#" class="text-dark">Mentions légales</a>
+            <a href="#" class="mb-3 mt-3 text-dark">Conditions générales d'utilisation</a>
+            <a href="#" class="text-dark">Politique de confidentialité</a>
+        </div>
+        <div class="copyright text-center m-5 d-flex flex-column align-items-center">
+            <a href="/">
+                <%= image_tag 'titre.svg', alt: 'logo de la citoyenneté économique' %>
+            </a>
+            <span class="mt-4">Copyright &copy; 2022-2023</span>
+        </div>
+        <div class="m-5 d-flex flex-column align-items-end text-right">
+            <a href="#" class="text-dark">Statistiques</a>
+            <a href="#" class="mb-3 mt-3 text-dark">Les entreprises</a>
+            <a href="#" class="text-dark">Contact</a>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+
+    <script>
+    window.onscroll = function() {myFunction()};
+    var navbar = document.getElementById("navigationBar");
+    var sticky = navbar.offsetTop;
+    function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+        }
+    }
+    </script>
   </body>
 </html>
