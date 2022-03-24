@@ -25,7 +25,7 @@
         <div id="navigationBar" class="navigationBar bg-white container-fluid pr-3 pl-3 pb-3 pt-1">
     <div class="row">
         <div class="d-flex align-items-center col-md-4">
-            <a href="#" class="logoSite">
+            <a href="/" class="logoSite">
                 <span>c</span>
                 <%= image_tag 'titre.svg', alt: 'logo de la citoyenneté économique' %>
                 <b class="text-primary">.</b>
@@ -37,24 +37,18 @@
             <a class="text-black" href="#">Les entreprises</a>
         </div>
 
-         <%if current_user%>
+         <%if user_signed_in? %>
         <div class="d-flex align-items-center justify-content-center justify-content-md-end justify-content-sm-center col-md-4 mt-2 mt-md-0 mt-sm-2 ">
-            <span><%=current_user%></span>
+            <span><%= link_to "#{ current_user }", user_root_path, class: 'mr-3' %></span>
             <button class="btn btn-primary pb-2 ml-4">
                 <%= image_tag 'account_icon.svg', alt: 'icone du compte' %>
             </button>
+            <%= button_to "Déconnexion", destroy_user_session_path, class: "btn btn-primary pb-2 ml-2", method: :delete, form: {data: {turbo: false}} %>
         </div>
         <%else %>
-        <div class="d-flex align-items-center justify-content-end col-md-3">
-            <% if not user_signed_in? %>
-                <%= button_to "Connexion", new_user_session_path, class: "btn btn-white pb-2 mr-2", method: :get %>
-                <%= button_to "Inscription", new_user_registration_path, class: "btn btn-primary pb-2 ml-2", method: :get %>
-            <% else %>
-                <div class="d-flex align-items-baseline">
-                    <p class="mr-3">Bienvenue, <%= current_user %> !</p>
-                    <%= button_to "Déconnexion", destroy_user_session_path, class: "btn btn-primary pb-2 mr-2", method: :delete, form: {data: {turbo: false}} %>
-                </div>
-            <% end %>
+        <div class="d-flex align-items-center justify-content-center justify-content-md-end justify-content-sm-center col-md-4 mt-2 mt-md-0 mt-sm-2 ">
+            <%= button_to "Connexion", new_user_session_path, class: "btn btn-white pb-2 mr-2", method: :get %>
+            <%= button_to "Inscription", new_user_registration_path, class: "btn btn-primary pb-2 ml-2", method: :get %>
         </div>
         <%end%>
     </div>
