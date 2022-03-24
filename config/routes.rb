@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'admin/index'
-  get 'dashboard/index'
   resources :evaluations
   devise_for :users, path: '', path_names: { sign_in: "connexion", sign_out: "déconnexion", sign_up: "inscription" }
   resources :organisations
@@ -10,4 +8,5 @@ Rails.application.routes.draw do
   root "home#index"
   get "dashboard", to: "dashboard#index", as: "user_root"
   get "admin", to: "admin#index"
+  get "entreprises", to: "organisations#public_list"
 end

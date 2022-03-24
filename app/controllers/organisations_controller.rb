@@ -8,6 +8,10 @@ class OrganisationsController < ApplicationController
     @organisations = Organisation.all
   end
 
+  def public_list
+    @organisations = Organisation.all
+  end
+
   # GET /organisations/1 or /organisations/1.json
   def show
   end
@@ -27,6 +31,7 @@ class OrganisationsController < ApplicationController
   # POST /organisations or /organisations.json
   def create
     @organisation = Organisation.new(organisation_params)
+    @organisation.validation_admin = true;
 
     respond_to do |format|
       if @organisation.save
@@ -35,7 +40,7 @@ class OrganisationsController < ApplicationController
           current_user.save
         end
 
-        format.html { redirect_to organisation_url(@organisation), notice: "Organisation was successfully created." }
+        format.html { redirect_to user_root_path, notice: "L'organisation a bien été créée." }
         format.json { render :show, status: :created, location: @organisation }
       else
         format.html { render :new, status: :unprocessable_entity }

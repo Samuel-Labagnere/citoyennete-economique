@@ -15,5 +15,12 @@
     </div>
   </div>
 <% else %>
-  <h1><%= current_user.organisation %></h1>
+  <h2><%= current_user.organisation %></h2>
+  <% if !current_user.organisation.validation_admin %>
+    <p>En attente de vérification par un administrateur.<p>
+  <% else %>
+    <p>Tout est OK !</p>
+
+    <%= button_to "Ajouter une évaluation", new_evaluation_path, method: :get, class: "btn btn-primary" %>
+  <% end %>
 <% end %>
