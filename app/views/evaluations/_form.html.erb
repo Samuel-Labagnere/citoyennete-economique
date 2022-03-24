@@ -1,7 +1,12 @@
-<% disable = "disabled" unless !defined?(disabled) || disabled != true %>
+<div class="container-fluid primary">
 
+</div>
+
+
+<div class="d-flex justify-content-center">
+<% disable = "disabled" unless !defined?(disabled) || disabled != true %> 
 <%= simple_form_for @evaluation do |f| %>
-  <fieldset <%= disable %>>
+  <fieldset class="col-6"<%= disable %>>
     <%= f.input :annee %>
     <%= f.input :chiffre_affaires %>
     <%= f.input :resultat_net %>
@@ -9,7 +14,7 @@
     <%= f.input :nombre_salaries_etp %>
   </fieldset>
 
-  <fieldset class="border p-2 mb-4" <%= disable %>>
+  <fieldset class="border p-2 mb-4 col-6" <%= disable %>>
     <legend class="w-auto">Pilier 1 : Partage du pouvoir et des décisions</legend>
     <%= f.input :pouvoir_gouvernance_part_salaries_associes %>
     <%= f.input :pouvoir_gouvernance_taux_societariat_femmes %>
@@ -27,7 +32,7 @@
     <%= f.input :pouvoir_estimation_realite %>
   </fieldset>
 
-  <fieldset class="border p-2 mb-4" <%= disable %>>
+  <fieldset class="border p-2 mb-4 col-6" <%= disable %>>
     <legend class="w-auto">Pilier 2 : Pérénnité économique et partage de la valeur créée</legend>
     <%= f.input :valeur_perennite_part_capital_salaries %>
     <%= f.input :valeur_perennite_existence_reserve, as: :radio_buttons %>
@@ -47,7 +52,7 @@
     <%= f.input :valeur_estimation_realite %>
   </fieldset>
 
-  <fieldset class="border p-2 mb-4" <%= disable %>>
+  <fieldset class="border p-2 mb-4 col-6" <%= disable %>>
     <legend class="w-auto">Pilier 3 : Capital humain et qualité de vie au travail</legend>
     <%= f.input :qualite_qvt_enquete_qvt, as: :radio_buttons %>
     <%= f.input :qualite_qvt_taux_qvt %>
@@ -61,7 +66,7 @@
     <%= f.input :qualite_estimation_realite %>
   </fieldset>
 
-  <fieldset class="border p-2 mb-4" <%= disable %>>
+  <fieldset class="border p-2 mb-4 col-6" <%= disable %>>
     <legend class="w-auto">Pilier 4 : Impact environnemental, social et territorial</legend>
     <%= f.input :impact_environnement_audit_impact, as: :radio_buttons %>
     <%= f.input :impact_environnement_demarche_ecologique, as: :radio_buttons %>
@@ -87,3 +92,4 @@
     <%= f.button :submit, "Enregistrer", class: 'btn btn-primary' %>
   <% end %>
 <% end %>
+</div>

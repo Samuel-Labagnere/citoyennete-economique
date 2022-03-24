@@ -10,6 +10,13 @@ fr:
       default_message: "Veuillez corriger les problèmes suivants :"
 
     labels:
+      user:
+        first_name: "Prénom"
+        last_name: "Nom de famille"
+        password: "Mot de passe"
+        password_confirmation: "Confirmation du mot de passe"
+        current_password: "Mot de passe actuel"
+        remember_me: "Se souvenir de moi"
       organisation:
         statut_juridique: "Statut juridique"
         secteur_activite: "Secteur d'activité"
