@@ -1,6 +1,4 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @evaluation %>
+<%= render "form", evaluation: @evaluation, disabled: true %>
 
 <div>
   <%= link_to "Edit this evaluation", edit_evaluation_path(@evaluation) %> |
