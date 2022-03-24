@@ -1,0 +1,19 @@
+<% if current_user.organisation.nil? %>
+  <div class="row">
+    <div class="col">
+      <%= button_to "Inscrire une organisation", new_organisation_path, method: :get, class: "btn btn-primary" %>
+    </div>
+
+    <div class="col">
+      <form>
+        <div class="form-group">
+          <label for="code">Code d'invitation</label>
+          <input type="text" id="code" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Rejoindre une organisation</button>
+      </form>
+    </div>
+  </div>
+<% else %>
+  <h1><%= current_user.organisation %></h1>
+<% end %>

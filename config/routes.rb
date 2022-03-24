@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'dashboard/index'
   resources :evaluations
   devise_for :users
   resources :organisations
@@ -6,4 +7,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "home#index"
+  get "dashboard", to: "dashboard#index", as: "user_root"
 end
