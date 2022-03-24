@@ -1,13 +1,24 @@
 <%= simple_form_for @organisation do |f| %>
-  <%= f.input :nom %>
-  <%= f.input :statut_juridique, collection: Organisation.statut_juridiques.keys %>
-  <%= f.input :date_creation %>
-  <%= f.input :secteur_activite %>
-  <%= f.input :ape %>
-  <%= f.input :siren %>
-  <%= f.input :agrement_specifique %>
-  <%= f.input :objectifs_extra_financiers, as: :radio_buttons %>
-  <%= f.input :distinctions %>
-  <%= f.input :valeurs_entreprise %>
-  <%= f.button :submit, "Confirmer" %>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.input :nom %>
+      <%= f.input :statut_juridique, collection: Organisation.statut_juridiques.keys %>
+      <%= f.input :date_creation %>
+      <div class="row justify-content-md-around">
+        <%= f.input :secteur_activite %>
+        <%= f.input :ape %>
+      </div>
+      <%= f.input :siren %>
+    </div>
+    <div class="col-md-6">
+      <%= f.input :agrement_specifique %>
+      <%= f.input :objectifs_extra_financiers, as: :radio_buttons %>
+      <%= f.input :distinctions %>
+      <%= f.input :valeurs_entreprise %>
+    </div>
+  </div>
+  <hr />
+  <div class="row justify-content-md-center">
+    <%= f.button :submit, "Enregistrer", class: 'btn btn-primary' %>
+  </div>
 <% end %>
