@@ -21,6 +21,14 @@
   <% else %>
     <p>Tout est OK !</p>
 
+    <% current_user.organisation.evaluations.each do |evaluation| %>
+      <ul>
+        <li>
+          <%= link_to "#{ evaluation.annee }", evaluation %>
+        </li>
+      </ul>
+    <% end %>
+
     <%= button_to "Ajouter une évaluation", new_evaluation_path, method: :get, class: "btn btn-primary" %>
   <% end %>
 <% end %>

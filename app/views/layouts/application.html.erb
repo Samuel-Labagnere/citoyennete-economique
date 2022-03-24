@@ -42,7 +42,7 @@
                         <%= button_to "Inscription", new_user_registration_path, class: "btn btn-primary pb-2 ml-2", method: :get %>
                     <% else %>
                         <div class="d-flex align-items-baseline">
-                            <%= link_to "Bienvenue, #{ current_user } !", user_root_path, class: "mr-3" %>
+                            <%= link_to "#{ current_user }", user_root_path, class: "mr-3" %>
                             <%= button_to "Déconnexion", destroy_user_session_path, class: "btn btn-primary pb-2 mr-2", method: :delete, form: {data: {turbo: false}} %>
                         </div>
                     <% end %>
