@@ -21,21 +21,22 @@ $theme-colors: (
   "text-dark": #231F20,
 );
 
-
 @import "bootstrap/scss/bootstrap";
-@import "startbootstrap-sb-admin-2/scss/sb-admin-2";
-
-/*Margin*/
-$marginDesktop: 100px;
 
 /*Font*/
 $fontTitre: 'Alata';
 $fontText: 'Open Sans';
 
-$fontH1 : 80px 'Alata';
-$fontH2 : 50px 'Alata';
+$fontH1 : 5rem 'Alata';
+$fontH2 : 2rem'Alata';
+$fontH3: 2.1rem 'Open Sans';
 $fontNavbar : 16px 'Alata';
 $fontMenu : 16px 'Open Sans';
+
+.copyleft {
+    display:inline-block;
+    transform: rotate(180deg);
+}
 
 html {
     scroll-behavior: smooth;
@@ -142,7 +143,6 @@ body {
     }
 
     #wrapper {
-        padding-top: calc($marginDesktop / 2);
 
         .navbar-nav {
             align-items:center;
@@ -205,24 +205,14 @@ body {
     
             overflow: unset !important;
     
-            #wrap {
-                margin: 0 $marginDesktop;
-                    
+            #wrap {                    
                 header {
-                    
-                    width: 80%;
-        
                     h1 {
-                        margin: 0 0 calc($marginDesktop / 2);
                         font: $fontH1;
                     }
-                    p {
-                    }
-        
                 }
                 h2 {
                     font: $fontH2;
-                    margin: $marginDesktop 0;
                 }
                 section {
                     
@@ -270,7 +260,7 @@ body {
                                 span {
                                     font-family: $fontTitre;
                                     position:absolute;
-                                    font-size: 90px;
+                                    font-size: 5rem;
                                     line-height: 70px;
                                     right: 0;
                                     top: -17px;
@@ -279,29 +269,26 @@ body {
                                     font-size: 1em;
                                 }
                             }
-                            &.flex-grow-0 {
-                                height: unset;
-                                max-width: unset !important;
-                                width: 60% !important;
-                            }
+                        }
+                        .flex-grow-1 {
+                            height: unset;
+                            max-width: 60% !important;
                         }
                     }
                     .row-cols-md-4 > * {
                         flex: unset !important;
                     }
                     p {
-                        margin: calc($marginDesktop / 2) 30% calc($marginDesktop / 2) 0;
+                        margin: $spacer 30% $spacer 0;
                     }
                     &.d-flex {
                         div {
-                            flex:1;
 
                             img {
                                 width: 100%;
                             }
                         }
                         ul {
-                            width: 40%;
                             li {
                                 span {
                                     flex:none;
@@ -332,6 +319,13 @@ body {
     
     h1 {
         font: $fontH1;
+    }
+    h2 {
+        font: $fontH2
+        ;
+    }
+    h3 {
+        font: $fontH3;
     }
     footer {
         div {

@@ -1,0 +1,34 @@
+<% if current_user.organisation.nil? %>
+  <div class="row">
+    <div class="col">
+      <%= button_to "Inscrire une organisation", new_organisation_path, method: :get, class: "btn btn-primary" %>
+    </div>
+
+    <div class="col">
+      <form>
+        <div class="form-group">
+          <label for="code">Code d'invitation</label>
+          <input type="text" id="code" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Rejoindre une organisation</button>
+      </form>
+    </div>
+  </div>
+<% else %>
+  <h2><%= current_user.organisation %></h2>
+  <% if !current_user.organisation.validation_admin %>
+    <p>En attente de vérification par un administrateur.<p>
+  <% else %>
+    <p>Tout est OK !</p>
+
+    <% current_user.organisation.evaluations.each do |evaluation| %>
+      <ul>
+        <li>
+          <%= link_to "#{ evaluation.annee }", evaluation %>
+        </li>
+      </ul>
+    <% end %>
+
+    <%= button_to "Ajouter une évaluation", new_evaluation_path, method: :get, class: "btn btn-primary" %>
+  <% end %>
+<% end %>

@@ -1,9 +1,14 @@
 class OrganisationsController < ApplicationController
+  before_action :check_super_admin, only: %i[ index show destroy ]
   before_action :authenticate_user!
   before_action :set_organisation, only: %i[ show edit update destroy ]
 
   # GET /organisations or /organisations.json
   def index
+    @organisations = Organisation.all
+  end
+
+  def public_list
     @organisations = Organisation.all
   end
 
@@ -14,6 +19,9 @@ class OrganisationsController < ApplicationController
   # GET /organisations/new
   def new
     @organisation = Organisation.new
+    if !current_user.organisation.nil? && !current_user.is_super_admin
+      redirect_to root_path
+    end
   end
 
   # GET /organisations/1/edit
@@ -23,12 +31,16 @@ class OrganisationsController < ApplicationController
   # POST /organisations or /organisations.json
   def create
     @organisation = Organisation.new(organisation_params)
+    @organisation.validation_admin = true;
 
     respond_to do |format|
       if @organisation.save
-        current_user.organisation = @organisation
-        current_user.save
-        format.html { redirect_to organisation_url(@organisation), notice: "Organisation was successfully created." }
+        if !current_user.is_super_admin
+          current_user.organisation = @organisation
+          current_user.save
+        end
+
+        format.html { redirect_to user_root_path, notice: "L'organisation a bien été créée." }
         format.json { render :show, status: :created, location: @organisation }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -69,5 +81,11 @@ class OrganisationsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def organisation_params
       params.require(:organisation).permit(:nom, :statut_juridique, :date_creation, :secteur_activite, :ape, :siren, :nombre_salaries, :nombre_salaries_etp, :chiffre_affaires, :agrement_specifique, :objectifs_extra_fianciers, :distinctions, :valeurs_entreprise, :validation_admin)
+    end
+
+    def check_super_admin
+      if !current_user || !current_user.is_super_admin
+        render(file: File.join(Rails.root, 'public/403.html'), status: 403, layout: false)
+      end
     end
 end

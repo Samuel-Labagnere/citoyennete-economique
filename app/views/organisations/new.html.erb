@@ -1,7 +1,9 @@
 <h1>Inscrire une organisation</h1>
 
-<%= render "form", organisation: @organisation %>
 
+<% if current_user.organisation.nil? || current_user.is_super_admin %>
+  <%= render "form", organisation: @organisation %>
+<% end %>
 <br>
 
 <div>
