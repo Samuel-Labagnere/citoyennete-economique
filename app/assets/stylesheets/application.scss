@@ -333,83 +333,21 @@ body {
         }
     }
 
+    .navbar_separator{
+        height: 1.5vh;
+        width:1.5px;
+        border-radius: 5px;
+        background-color: #231F20;
+    }
+
+    .navbar__{
+        display: flex;
+        align-items: space-between;
+    }
+
 }
 
-@media (max-width: 1000px) {
-    #wrapper {
-        #wrap {
-            section {
-                width: 100%;
-            }
-            header {
-                width: 100% !important;
-            }
-            ul.list-group {
-                width: 50% !important;
-            }
-        }
-    }
-  }
 
-  @media (max-width: 800px) {
-    body {
-        #wrapper {
-            #content-wrapper {
-                #wrap {
-                    header {
-                        h1 {
-                            font-size: 2rem !important;
-                          }
-                    }
-                    h2 {
-                        font-size: 1.5rem;
-                    }
-                    h3 {
-                        font-size: 1.2rem;
-                    }
-                    h4 {
-                        font-size: 1rem !important;
-                    }
-                    .lead {
-                        font-size: 1rem;
-                    }
-                    ul.list-group {
-                        width: 100% !important;
-                    }
-                    section {
-                        p {
-                            margin-right: 0 !important;
-                            width: 100% !important;
-                        }
-                        .row{
-                            &.justify-content-center {
-                                .card {
-                                    max-width: unset !important;
-                                    width: 100%;
-                                    height: 150px;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-  }
-@media (max-width: 800px) {
-    body {
-        #wrapper {
-            #content-wrapper {
-                #wrap {
-                    section {
-                        .row{
-                            .card {
-                                    height: auto !important;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
+h2 {
+    font: $fontH2;
 }
