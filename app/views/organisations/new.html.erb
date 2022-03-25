@@ -1,11 +1,17 @@
-<h1>Inscrire une organisation</h1>
+<div class="page-orga-new mr-0 ml-0 mr-sm-5 ml-sm-5 p-sm-5 mt-5 mt-sm-0 pt-5 pt-sm-0">
+
+  <header class="mt-5 mt-sm-0 mb-5 m-3 m-sm-0">
+    <h1>Inscrire une organisation</h1>
+  </header>
 
 
-<% if current_user.organisation.nil? || current_user.is_super_admin %>
-  <%= render "form", organisation: @organisation %>
-<% end %>
-<br>
+  <% if current_user.organisation.nil? || current_user.is_super_admin %>
+    <%= render "form", organisation: @organisation %>
+  <% end %>
+  <br>
 
-<div>
-  <%= link_to "Back to organisations", organisations_path %>
+  <div>
+    <%= link_to "Back to organisations", organisations_path %>
+  </div>
+
 </div>
