@@ -32,6 +32,12 @@ $theme-colors: (
 
 @import "bootstrap/scss/bootstrap";
 
+$border-success: #007A78;
+$border-danger: #F15921;
+
+$text-success: #007A78;
+$text-danger: #F15921;
+
 /*Font*/
 $fontTitre: 'Alata';
 $fontText: 'Open Sans';
@@ -55,6 +61,11 @@ body {
 
     font-family: $fontText;
     padding-top: 10px;
+
+    .border-danger {border-color: $border-danger !important;}
+    .border-success {border-color: $border-success !important;}
+    .text-success {color: $text-success !important;}
+    .text-danger {color: $text-danger !important}
 
     .navigationBar{
         z-index: 9999;
@@ -370,7 +381,7 @@ body {
     }
   }
 
-  @media (max-width: 800px) {
+@media (max-width: 800px) {
     body {
         #wrapper {
             #content-wrapper {
@@ -408,33 +419,8 @@ body {
                                     height: 150px;
                                 }
                             }
-                        }
-                    }
-                }
-            }
-        }
-    }
-  }
-@media (max-width: 800px) {
-    body {
-        h1 {
-            font-size: 3rem !important;
-        }
-        h1.display-4{
-            font-size: 2rem;
-        }
-        .page-ml {
-            h3 {
-                font-size: 1.5rem;
-            }
-        }
-        #wrapper {
-            #content-wrapper {
-                #wrap {
-                    section {
-                        .row{
                             .card {
-                                    height: auto !important;
+                                height: auto !important;
                             }
                         }
                     }
@@ -450,6 +436,14 @@ body {
         }
         label, select, option, li, li b {
             font-size: 1rem !important;
+        }
+        .public-stats {
+            h4 {
+                font-size: 1rem !important;
+            }
+            h3 {
+                font-size: 1.3rem !important;
+            }
         }
     }
 }
