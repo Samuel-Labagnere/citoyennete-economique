@@ -340,47 +340,51 @@ body {
             .page-orga-new {
                 .col-11 {
 
-                    border-width: 8px !important;
-
-                    &.col-input {
-                        .form-check {
-                            display: inline-flex;
-                            padding: 0;
-                            
-                            input[type="radio"] {
-                                opacity:0;
-                                right: 0;
-                            }
+                    border-width: 8px !important; 
+                }
+                .col-11, .col-input {
+                    .form-check {
+                        display: inline-flex;
+                        padding: 0;
+                        
+                        input[type="radio"] {
+                            opacity:0;
+                            right: 0;
+                        }
+                        label {
+                            display: inline-block;
+                            background-color: #ddd;
+                            padding: 10px 20px;
+                            font-family: sans-serif, Arial;
+                            font-size: 16px;
+                            border-radius: 4px;
+                            border:none;
+                            border-radius: 8px;
+                            cursor: pointer;
+                            transition: ease .2s;
+                        }
+                        &:nth-child(3) {
                             label {
-                                display: inline-block;
-                                background-color: #ddd;
-                                padding: 10px 20px;
-                                font-family: sans-serif, Arial;
-                                font-size: 16px;
-                                border: 2px solid #444;
-                                border-radius: 4px;
-                                border:none;
-                                border-radius: 8px;
-                                cursor: pointer;
+                                border-top-right-radius: 0;
+                                border-bottom-right-radius: 0;
+                                border-right: .5px solid #eee;
                             }
-                            input[type="radio"]:focus + label {
+                            input[type="radio"]:checked + label, input[type="radio"]:hover + label {
                                 background-color:$bg-success;
                                 color: #fff;
                             }
-
-                            &:nth-child(3) {
-                                label {
-                                    border-top-right-radius: 0;
-                                    border-bottom-right-radius: 0;
-                                }
+                        }
+                        &:nth-child(4) {
+                            label {
+                                border-top-left-radius: 0;
+                                border-bottom-left-radius: 0;
                             }
-                            &:nth-child(4) {
-                                label {
-                                    border-top-left-radius: 0;
-                                    border-bottom-left-radius: 0;
-                                }
+                            input[type="radio"]:checked + label, input[type="radio"]:hover + label {
+                                background-color:$bg-danger;
+                                color: #fff;
                             }
                         }
+                        
                     }
                 }
                 .w-50 {
@@ -389,20 +393,22 @@ body {
                 .form-group {
                     margin: calc($spacer * 2) 0;
                 }
-                fieldset.form-group {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-around;
-                    padding: calc($spacer * 4) calc($spacer * 4) 0;
-                    margin: auto;
-                    position:relative;
-                    
-                    legend {
-                        position: absolute;
-                        left: 0; top:0;
-                    }
-                    .form-check {
-                        margin: 0 $spacer $spacer;
+                .list-diversite {
+                    fieldset.form-group {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-around;
+                        padding: calc($spacer * 4) calc($spacer * 4) 0;
+                        margin: auto;
+                        position:relative;
+                        
+                        legend {
+                            position: absolute;
+                            left: 0; top: calc($spacer * 2);;
+                        }
+                        .form-check {
+                            margin: $spacer;
+                        }
                     }
                 }
                 
