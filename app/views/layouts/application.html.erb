@@ -18,20 +18,20 @@
     <body class="bg-white">
 
     <!-- NavBar -->
-    <div id="navigationBar" class="navigationBar bg-white container-fluid pr-3 pl-3 pb-3 pt-1 pb-1 position-fixed">
-        <div class="row">
-            <div class="d-flex align-items-center col-md-4">
-                <a href="/" class="logoSite">
-                    <span>c</span>
-                    <%= image_tag 'titre.svg', alt: 'logo de la citoyenneté économique' %>
-                    <b class="text-primary">.</b>
-                </a>
-            </div>
-            <div class="navbar__links d-flex align-items-center justify-content-around col-md-4">
-                <a class="text-black" href="#">Statistiques citoyennes</a>
-                <span class="navbar_separator"></span>
-                <%= link_to 'Entreprises', entreprises_path, class: 'text-black' %>
-            </div>
+        <div id="navigationBar" class="navigationBar bg-white container-fluid pr-3 pl-3 pb-3 pt-1 pb-1 position-fixed">
+    <div class="row">
+        <div class="d-flex align-items-center col-md-4">
+            <a href="/" class="logoSite">
+                <span>c</span>
+                <%= image_tag 'titre.svg', alt: 'logo de la citoyenneté économique' %>
+                <b class="text-primary">.</b>
+            </a>
+        </div>
+        <div class="navbar__links d-flex align-items-center justify-content-around col-md-4">
+            <%= link_to "Statistiques citoyennes", statistiques_path, class: "text-black" %>
+            <span class="navbar_separator"></span>
+            <%= link_to 'Entreprises', entreprises_path, class: 'text-black' %>
+        </div>
 
             <%if user_signed_in? %>
             <div class="d-flex align-items-center justify-content-center justify-content-md-end justify-content-sm-center col-md-4 mt-2 mt-md-0 mt-sm-2 ">
