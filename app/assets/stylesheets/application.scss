@@ -69,6 +69,7 @@ body {
 
     .navigationBar{
         z-index: 9999;
+        transition: ease .3s;
 
         .logoSite {
             display:flex;
@@ -118,10 +119,8 @@ body {
         }
 
         &.sticky {
-            position: fixed;
-            top: 0;
-            padding-top: $spacer !important; 
             transition: ease .3s;
+            margin-top: -10px;
             
             .logoSite {
             width: 40px;
@@ -163,6 +162,7 @@ body {
     }
 
     #wrapper {
+        margin-top: 64px;
 
         .navbar-nav {
             align-items:center;
