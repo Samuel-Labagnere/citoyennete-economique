@@ -16,38 +16,39 @@
     </head>
 
     <body class="bg-white">
-    <!-- NavBar -->
-        <div id="navigationBar" class="navigationBar bg-white container-fluid pr-3 pl-3 pb-3 pt-1">
-    <div class="row">
-        <div class="d-flex align-items-center col-md-4">
-            <a href="/" class="logoSite">
-                <span>c</span>
-                <%= image_tag 'titre.svg', alt: 'logo de la citoyenneté économique' %>
-                <b class="text-primary">.</b>
-            </a>
-        </div>
-        <div class="navbar__links d-flex align-items-center justify-content-around col-md-4  ">
-            <a class="text-black" href="#">Statistiques citoyennes</a>
-            <span class="navbar_separator"></span>
-            <%= link_to 'Entreprises', entreprises_path, class: 'text-black' %>
-        </div>
 
-         <%if user_signed_in? %>
-        <div class="d-flex align-items-center justify-content-center justify-content-md-end justify-content-sm-center col-md-4 mt-2 mt-md-0 mt-sm-2 ">
-            <span><%= link_to "#{ current_user }", user_root_path, class: 'mr-3' %></span>
-            <button class="btn btn-primary pb-2 ml-4">
-                <%= image_tag 'account_icon.svg', alt: 'icone du compte' %>
-            </button>
-            <%= button_to "Déconnexion", destroy_user_session_path, class: "btn btn-primary pb-2 ml-2", method: :delete, form: {data: {turbo: false}} %>
+    <!-- NavBar -->
+    <div id="navigationBar" class="navigationBar bg-white container-fluid pr-3 pl-3 pb-3 pt-1 pb-1 position-fixed">
+        <div class="row">
+            <div class="d-flex align-items-center col-md-4">
+                <a href="/" class="logoSite">
+                    <span>c</span>
+                    <%= image_tag 'titre.svg', alt: 'logo de la citoyenneté économique' %>
+                    <b class="text-primary">.</b>
+                </a>
+            </div>
+            <div class="navbar__links d-flex align-items-center justify-content-around col-md-4">
+                <a class="text-black" href="#">Statistiques citoyennes</a>
+                <span class="navbar_separator"></span>
+                <%= link_to 'Entreprises', entreprises_path, class: 'text-black' %>
+            </div>
+
+            <%if user_signed_in? %>
+            <div class="d-flex align-items-center justify-content-center justify-content-md-end justify-content-sm-center col-md-4 mt-2 mt-md-0 mt-sm-2 ">
+                <span><%= link_to "#{ current_user }", user_root_path, class: 'mr-3' %></span>
+                <button class="btn btn-primary pb-2 ml-4">
+                    <%= image_tag 'account_icon.svg', alt: 'icone du compte' %>
+                </button>
+                <%= button_to "Déconnexion", destroy_user_session_path, class: "btn btn-primary pb-2 ml-2", method: :delete, form: {data: {turbo: false}} %>
+            </div>
+            <%else %>
+            <div class="d-flex align-items-center justify-content-center justify-content-md-end justify-content-sm-center col-md-4 mt-2 mt-md-0 mt-sm-2 ">
+                <%= button_to "Connexion", new_user_session_path, class: "btn btn-white pb-2 mr-2", method: :get %>
+                <%= button_to "Inscription", new_user_registration_path, class: "btn btn-primary pb-2 ml-2", method: :get %>
+            </div>
+            <%end%>
         </div>
-        <%else %>
-        <div class="d-flex align-items-center justify-content-center justify-content-md-end justify-content-sm-center col-md-4 mt-2 mt-md-0 mt-sm-2 ">
-            <%= button_to "Connexion", new_user_session_path, class: "btn btn-white pb-2 mr-2", method: :get %>
-            <%= button_to "Inscription", new_user_registration_path, class: "btn btn-primary pb-2 ml-2", method: :get %>
-        </div>
-        <%end%>
     </div>
-</div>
 
     <!-- Fin NavBar -->
       <!-- Page Wrapper -->
@@ -113,11 +114,11 @@
             <a href="/CGU" class="mb-3 mt-3 text-dark">Conditions générales d'utilisation</a>
             <a href="/confidentialite" class="text-dark">Politique de confidentialité</a>
         </div>
-        <div class="copyright text-center m-5 d-flex flex-column align-items-center">
+        <div class="copyright text-center m-5 d-flex flex-column align-items-center order-3 order-sm-0">
             <a href="/">
                 <%= image_tag 'titre.svg', alt: 'logo de la citoyenneté économique' %>
             </a>
-            <span class="mt-2 mt-sm-4 small"><b class="text-primary">Copyleft <span class="copyleft">&copy;</span></b> Maxime LASSERRE, Samuel LABAGNÈRE, Samuel ABADIE, Olivia SIMONET, Sarah MARGUERETTAZ, Théo DESCHAMPS, Yani MADEBOS, Mathéo REULIER, Maxime REBIERE, Laurent MALUCELLI, Thomas MARILLEAU</span>
+            <span class="mt-2 mt-sm-4 small"><b class="text-primary">Copyleft <span class="copyleft">&copy;</span></b> Samuel ABADIE, Théo DESCHAMPS, Samuel LABAGNÈRE, Maxime LASSERRE, Yani MADEBOS, Sarah MARGUERETTAZ, Laurent MALUCELLI, Thomas MARILLEAU, Maxime REBIERE, Mathéo REULIER, Olivia SIMONET</span>
         </div>
         <div class="m-3 m-md-5 d-flex flex-column align-items-md-end align-items-center text-center text-md-right">
             <a href="#" class="mb-3 text-dark">Statistiques</a>
@@ -127,10 +128,10 @@
     <!-- End of Footer -->
 
     <script>
-    window.onscroll = function() {myFunction()};
+    window.onscroll = function() {sitckyNav()};
     var navbar = document.getElementById("navigationBar");
     var sticky = navbar.offsetTop;
-    function myFunction() {
+    function sitckyNav() {
         if (window.pageYOffset >= sticky) {
             navbar.classList.add("sticky")
         } else {
