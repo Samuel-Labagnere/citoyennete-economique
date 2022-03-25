@@ -37,6 +37,9 @@ $theme-colors: (
 $border-success: #007A78;
 $border-danger: #F15921;
 
+$bg-success: #007A78;
+$bg-danger: #F15921;
+
 $text-success: #007A78;
 $text-danger: #F15921;
 
@@ -336,8 +339,51 @@ body {
                 }
             }
             .page-orga-new {
-                .col-8 {border-width: 8px !important;}
-                input#organisation_objectifs_extra_financiers_true {display:none;}
+                .col-8 {
+
+                    border-width: 8px !important;
+
+                    &.col-input {
+                        .form-check {
+                            display: inline-flex;
+                            padding: 0;
+                            
+                            input[type="radio"] {
+                                opacity:0;
+                                right: 0;
+                            }
+                            label {
+                                display: inline-block;
+                                background-color: #ddd;
+                                padding: 10px 20px;
+                                font-family: sans-serif, Arial;
+                                font-size: 16px;
+                                border: 2px solid #444;
+                                border-radius: 4px;
+                                border:none;
+                                border-radius: 8px;
+                                cursor: pointer;
+                            }
+                            input[type="radio"]:focus + label {
+                                background-color:$bg-success;
+                                color: #fff;
+                            }
+
+                            &:nth-child(3) {
+                                label {
+                                    border-top-right-radius: 0;
+                                    border-bottom-right-radius: 0;
+                                }
+                            }
+                            &:nth-child(4) {
+                                label {
+                                    border-top-left-radius: 0;
+                                    border-bottom-left-radius: 0;
+                                }
+                            }
+                        }
+                    }
+                }
                 
             }
         }
