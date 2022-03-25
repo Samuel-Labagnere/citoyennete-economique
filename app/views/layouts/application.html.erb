@@ -38,10 +38,11 @@
 
                 <div class="btn-group">
                     <button type="button " class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span><%= link_to "#{ current_user }", user_root_path, class: 'mr-3 text-white' %></span>
+                        <span><%= current_user %></span>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <button class="dropdown-item dropButton" type="button">Mon entreprise</button>
+                        <%= link_to 'Dashboard', user_root_path, class: 'dropdown-item dropButton' %>
+                        <%= link_to 'Mon compte', edit_user_registration_path, class: 'dropdown-item dropButton' %>
                         <%= button_to "Déconnexion", destroy_user_session_path, class: " dropdown-item",type:"button", method: :delete, form: {data: {turbo: false}} %>
                     </div>
                 </div>
