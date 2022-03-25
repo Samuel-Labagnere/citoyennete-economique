@@ -1,14 +1,16 @@
-<p style="color: green"><%= notice %></p>
 
-<h1>Organisations</h1>
+  <p style="color: green"><%= notice %></p>
 
-<div id="organisations">
-  <% @organisations.each do |organisation| %>
-    <%= render organisation %>
-    <p>
-      <%= link_to "Show this organisation", organisation %>
-    </p>
-  <% end %>
-</div>
+  <h1>Organisations</h1>
 
-<%= link_to "New organisation", new_organisation_path %>
+  <div id="organisations">
+    <% @organisations.each do |organisation| %>
+      <%= render organisation %>
+      <p>
+        <%= link_to "Show this organisation", organisation %>
+      </p>
+    <% end %>
+  </div>
+
+  <%= link_to "New organisation", new_organisation_path %>
+

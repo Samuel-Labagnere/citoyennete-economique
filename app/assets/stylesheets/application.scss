@@ -167,7 +167,7 @@ body {
     }
 
     #wrapper {
-        margin-top: 64px;
+        margin-top: 80px;
 
         .navbar-nav {
             align-items:center;
@@ -339,7 +339,7 @@ body {
                 }
             }
             .page-orga-new {
-                .col-8 {
+                .col-11 {
 
                     border-width: 8px !important;
 
@@ -382,6 +382,28 @@ body {
                                 }
                             }
                         }
+                    }
+                }
+                .w-50 {
+                    border-width: 8px !important;
+                }
+                .form-group {
+                    margin: calc($spacer * 2) 0;
+                }
+                fieldset.form-group {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                    padding: calc($spacer * 4) calc($spacer * 4) 0;
+                    margin: auto;
+                    position:relative;
+                    
+                    legend {
+                        position: absolute;
+                        left: 0; top:0;
+                    }
+                    .form-check {
+                        margin: 0 $spacer $spacer;
                     }
                 }
                 
