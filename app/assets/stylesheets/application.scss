@@ -59,7 +59,6 @@ html {
 
 body {
 
-    font-family: $fontText;
     padding-top: 10px;
 
     .border-danger {border-color: $border-danger !important;}
@@ -156,8 +155,8 @@ body {
         }
 
         button{
-            font: $fontNavbar;
-            box-shadow: 1.5px 1.5px 6px #C7C2C3;
+            font: $fontNavbar !important;
+            box-shadow: 1.5px 1.5px 6px #C7C2C3 !important;
         }
     }
 
@@ -346,6 +345,16 @@ body {
     h3 {
         font: $fontH3;
     }
+
+    .btn{
+        font: $fontNavbar !important;
+        box-shadow: 1.5px 1.5px 6px #C7C2C3 !important;
+    }
+
+    .formLabel{
+        font:$fontTitre;
+    }
+
     footer {
         div {
             flex:1;
