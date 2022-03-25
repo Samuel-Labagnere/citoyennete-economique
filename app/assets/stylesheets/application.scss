@@ -117,7 +117,6 @@ body {
             
                 button{
                     font: $fontNavbar;
-                    box-shadow: 1.5px 1.5px 6px #C7C2C3;
                 }
             }
         }
@@ -161,8 +160,9 @@ body {
 
         button{
             font: $fontNavbar !important;
-            box-shadow: 1.5px 1.5px 6px #C7C2C3 !important;
+            box-shadow: none !important;
         }
+
     }
 
     #wrapper {

@@ -35,11 +35,16 @@
 
             <%if user_signed_in? %>
             <div class="d-flex align-items-center justify-content-center justify-content-md-end justify-content-sm-center col-md-4 mt-2 mt-md-0 mt-sm-2 ">
-                <span><%= link_to "#{ current_user }", user_root_path, class: 'mr-3' %></span>
-                <button class="btn btn-primary pb-2 ml-4">
-                    <%= image_tag 'account_icon.svg', alt: 'icone du compte' %>
-                </button>
-                <%= button_to "Déconnexion", destroy_user_session_path, class: "btn btn-primary pb-2 ml-2", method: :delete, form: {data: {turbo: false}} %>
+
+                <div class="btn-group">
+                    <button type="button " class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span><%= link_to "#{ current_user }", user_root_path, class: 'mr-3 text-white' %></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <button class="dropdown-item dropButton" type="button">Mon entreprise</button>
+                        <%= button_to "Déconnexion", destroy_user_session_path, class: " dropdown-item",type:"button", method: :delete, form: {data: {turbo: false}} %>
+                    </div>
+                </div>
             </div>
             <%else %>
             <div class="d-flex align-items-center justify-content-center justify-content-md-end justify-content-sm-center col-md-4 mt-2 mt-md-0 mt-sm-2 ">
