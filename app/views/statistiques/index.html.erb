@@ -57,7 +57,17 @@
 
         <div class="rounded shadow col-5 p-0 overflow-hidden mb-3 mb-sm-5">
             <div class="bg-light font-weight-bold text-center p-2">L’influence des femmes dans la composition de la gouvernance</div>
-            <div class="bg-white m-0 p-2">graphique ici</div>
+            <div class="bg-white m-0 p-2">
+                <% 
+                    median = Evaluation.median(:pouvoir_gouvernance_taux_societariat_femmes) 
+                    other = 100 - median
+                %>
+                <% michel = {"Femmes"=>median, "Autres"=>other} %>
+                <div class="d-flex">
+                    <%= pie_chart michel, donut: true, legend: false, colors: ["#007A78","#C7C2C3"], suffix: '%' %>
+                    <%= pie_chart michel, donut: true, legend: false, colors: ["#007A78","#C7C2C3"], suffix: '%' %>
+                </div>
+            </div>
         </div>
 
         <div class="col-12 rounded shadow p-0 overflow-hidden mr-auto ml-auto d-flex justify-content-between align-items-center p-4 border-left border-success mb-4">
