@@ -1,3 +1,3 @@
-bin/rails db:migrate
 bundle install
+bin/rails db:migrate
 yarn install
