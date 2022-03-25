@@ -21,8 +21,10 @@ $theme-colors: (
   "bg-success": #007A78,
   "bg-danger": #F15921,
   "border-success": #007A78,
+  "border-primary": #EB225A,
+  "border-secondary": #007CAA,
   "border-danger": #F15921,
-  "text-light": #EEF0F2,
+  "text-white": #EEF0F2,
   "text-primary":#EB225A,
   "text-secondary": #007CAA,
   "text-success": #007A78,
@@ -332,6 +334,11 @@ body {
                         font-size:1rem;
                     }
                 }
+            }
+            .page-orga-new {
+                .col-8 {border-width: 8px !important;}
+                input#organisation_objectifs_extra_financiers_true {display:none;}
+                
             }
         }
     }

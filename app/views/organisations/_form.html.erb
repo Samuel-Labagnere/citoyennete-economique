@@ -1,24 +1,28 @@
+
+
 <%= simple_form_for @organisation do |f| %>
-  <div class="row">
-    <div class="col-md-6">
+  <div class="col-8 text-break mr-auto ml-auto rounded bg-white shadow border-left border-primary p-3 p-sm-4 mb-5">
       <%= f.input :nom %>
       <%= f.input :statut_juridique, collection: Organisation.statut_juridiques.keys %>
       <%= f.input :date_creation %>
-      <div class="row justify-content-md-around">
-        <%= f.input :secteur_activite %>
-        <%= f.input :ape %>
-      </div>
+      <%= f.input :secteur_activite %>
+      <%= f.input :ape %>
       <%= f.input :siren %>
-    </div>
-    <div class="col-md-6">
       <%= f.input :agrement_specifique %>
-      <%= f.input :objectifs_extra_financiers, as: :radio_buttons %>
-      <%= f.input :distinctions %>
-      <%= f.input :valeurs_entreprise %>
-    </div>
   </div>
-  <hr />
-  <div class="row justify-content-md-center">
-    <%= f.button :submit, "Enregistrer", class: 'btn btn-primary' %>
+
+  <div class="col-8 text-break mr-auto ml-auto rounded bg-white shadow border-left border-secondary p-3 p-sm-4 mb-5">
+    <%= f.input :objectifs_extra_financiers, as: :radio_buttons %>
+  </div>
+
+  <div class="col-8 text-break mr-auto ml-auto rounded bg-white shadow border-left border-primary p-3 p-sm-4 mb-5">
+    <%= f.input :distinctions %>
+  </div>
+
+  <div class="col-8 text-break mr-auto ml-auto rounded bg-white shadow border-left border-secondary p-3 p-sm-4 mb-5">
+    <%= f.input :valeurs_entreprise %>
+  </div>
+  <div class="d-flex justify-content-center">
+    <%= f.button :submit, "Enregistrer", class: 'btn btn-primary shadow' %>
   </div>
 <% end %>
