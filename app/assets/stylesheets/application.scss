@@ -339,7 +339,6 @@ body {
             }
             .page-orga-new {
                 .col-11 {
-
                     border-width: 8px !important; 
                 }
                 .col-11, .col-input {
@@ -350,18 +349,18 @@ body {
                         input[type="radio"] {
                             opacity:0;
                             right: 0;
+                            cursor: pointer;
                         }
                         label {
                             display: inline-block;
                             background-color: #ddd;
-                            padding: 10px 20px;
-                            font-family: sans-serif, Arial;
-                            font-size: 16px;
+                            padding: .5rem 1rem;
+                            font-family: $fontText;
                             border-radius: 4px;
                             border:none;
                             border-radius: 8px;
-                            cursor: pointer;
                             transition: ease .2s;
+                            cursor: pointer;
                         }
                         &:nth-child(3) {
                             label {
@@ -387,7 +386,7 @@ body {
                         
                     }
                 }
-                .w-50 {
+                .col-sm-6 {
                     border-width: 8px !important;
                 }
                 .form-group {
@@ -425,6 +424,7 @@ body {
     }
     h3 {
         font: $fontH3;
+        margin: 0;
     }
 
     .btn{
@@ -481,21 +481,12 @@ body {
                             font-size: 2rem !important;
                           }
                     }
-                    h2 {
-                        font-size: 1.5rem;
-                    }
-                    h3 {
-                        font-size: 1.2rem;
-                    }
-                    h4 {
-                        font-size: 1rem !important;
-                    }
-                    .lead {
-                        font-size: 1rem;
-                    }
-                    ul.list-group {
-                        width: 100% !important;
-                    }
+                    h2{font-size: 1.5rem;}
+                    h3 {font-size: 1.2rem !important;}
+                    h4 {font-size: 1rem !important;}
+                    .lead {font-size: 1rem;}
+                    ul.list-group {width: 100% !important;}
+                    
                     section {
                         p {
                             margin-right: 0 !important;
@@ -509,11 +500,19 @@ body {
                                     height: 150px;
                                 }
                             }
-                            .card {
-                                height: auto !important;
-                            }
+                            .card {height: auto !important;}
                         }
                     }
+                }
+            }
+        }
+        .page-orga-new{
+            h2 {font-size: 1.5rem !important;}
+            h3 {font-size: 1rem !important;}
+            .form-group {
+                margin-bottom: 0 !important;
+                &.check_boxes {
+                    padding: calc($spacer * 3) 0 0 !important;
                 }
             }
         }
