@@ -1,6 +1,6 @@
 <% disable = "disabled" unless !defined?(disabled) || disabled != true %> 
 <%= simple_form_for @evaluation do |f| %>
-  <fieldset class="col-11 col-sm-8 text-break mr-auto ml-auto rounded bg-white shadow border-left border-primary p-3 p-sm-4 mb-4 col-input mt-4" <%= disable %>>
+  <fieldset class="col-11 col-sm-8 text-break me-auto ms-auto rounded bg-white shadow border-left border-primary p-3 p-sm-4 mb-4 col-input mt-4" <%= disable %>>
     <%= f.input :annee %>
     <%= f.input :chiffre_affaires %>
     <%= f.input :resultat_net %>
@@ -17,7 +17,7 @@
     <h3 class="text-primary">Composition de la gouvernance</h3>
   </div>
 
-  <div class="w-100 pr-5 pl-5">
+  <div class="w-100 pe-5 ps-5">
 
     <fieldset class="mb-4 m-5" <%= disable %>>
       <%# <legend class="w-auto">Pilier 1 : Partage du pouvoir et des décisions</legend> %>
@@ -34,7 +34,7 @@
     <h3 class="text-primary">Mise en place des conditions du bon exercice de la démocratie</h3>
   </div>
 
-  <div class="w-100 pr-5 pl-5">
+  <div class="w-100 pe-5 ps-5">
     <fieldset class="mb-4 m-5" <%= disable %>>
       <%= f.input :pouvoir_democratie_nombre_reunions %>
       <%= f.input :pouvoir_democratie_taux_participation_formations %>
@@ -47,7 +47,7 @@
     <h3 class="text-primary">Participation à la prise de décision stratégique</h3>
   </div>
     
-  <div class="w-100 pr-5 pl-5">
+  <div class="w-100 pe-5 ps-5">
     <fieldset class="mb-4 m-5" <%= disable %>>
       <%= f.input :pouvoir_strategique_taux_presence_assemblee %>
       <%= f.input :pouvoir_strategique_implication_partage %>
@@ -65,7 +65,7 @@
     <h3 class="text-primary">Pérennité : création de valeur, inaliénabilité et robustesse de l'entreprise</h3>
   </div>
 
-  <div class="w-100 pr-5 pl-5">
+  <div class="w-100 pe-5 ps-5">
 
     <fieldset class="mb-4 m-5" <%= disable %>>
       <%= f.input :valeur_perennite_part_capital_salaries %>
@@ -82,7 +82,7 @@
     <h3 class="text-primary">Partage des richesses</h3>
   </div>
 
-  <div class="w-100 pr-5 pl-5">
+  <div class="w-100 pe-5 ps-5">
     <fieldset class="mb-4 m-5" <%= disable %>>
       <%= f.input :valeur_partage_part_resultat_net_actionnaires %>
       <%= f.input :valeur_partage_existence_accord, as: :radio_buttons %>
@@ -105,7 +105,7 @@
     <h3 class="text-primary">Mise en place des conditions du bon exercice de la démocratie</h3>
   </div>
 
-  <div class="w-100 pr-5 pl-5">
+  <div class="w-100 pe-5 ps-5">
     <fieldset class="mb-4 m-5" <%= disable %>>
       <%= f.input :qualite_qvt_enquete_qvt, as: :radio_buttons %>
       <%= f.input :qualite_qvt_taux_qvt %>
@@ -120,7 +120,7 @@
     <h3 class="text-primary">Développement des compétences individuelles et collectives<br/>Émancipation des salariés</h3>
   </div>
 
-  <div class="w-100 pr-5 pl-5">
+  <div class="w-100 pe-5 ps-5">
     <fieldset class="mb-4 m-5" <%= disable %>>
       <%= f.input :qualite_emancipation_moyenne_heures_formation %>
       <%= f.input :qualite_emancipation_taux_budget_formation_masse_salariale %>
@@ -138,7 +138,7 @@
     <h3 class="text-primary">Impact environnemental</h3>
   </div>
 
-  <div class="w-100 pr-5 pl-5">
+  <div class="w-100 pe-5 ps-5">
     <fieldset class="mb-4 m-5" <%= disable %>>
       <%= f.input :impact_environnement_audit_impact, as: :radio_buttons %>
       <%= f.input :impact_environnement_demarche_ecologique, as: :radio_buttons %>
@@ -156,7 +156,7 @@
     <h3 class="text-primary">Impact social</h3>
   </div>
 
-  <div class="w-100 pr-5 pl-5">
+  <div class="w-100 pe-5 ps-5">
     <fieldset class="mb-4 m-5" <%= disable %>>
       <%= f.input :impact_social_part_activite_structures_insertion %>
       <%= f.input :impact_social_alternance_apprentissage %>
@@ -169,7 +169,7 @@
     <h3 class="text-primary">Engagement en faveur de l'écosystème et du territoire </h3>
   </div>
 
-  <div class="w-100 pr-5 pl-5">
+  <div class="w-100 pe-5 ps-5">
     <fieldset class="mb-4 m-5" <%= disable %>>
       <%= f.input :impact_engagement_part_resultat_missions_utiles %>
       <%= f.input :impact_engagement_part_placements_responsables %>
@@ -180,6 +180,6 @@
   </div>
   
   <% unless disable == "disabled" %>
-    <%= f.button :submit, "Enregistrer", class: 'btn btn-primary mr-auto ml-auto d-flex' %>
+    <%= f.button :submit, "Enregistrer", class: 'btn btn-primary me-auto ms-auto d-flex' %>
   <% end %>
 <% end %>
