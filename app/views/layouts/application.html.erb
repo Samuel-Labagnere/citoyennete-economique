@@ -39,7 +39,7 @@
                     <button type="button " class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span><%= current_user %></span>
                     </button>
-                    <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dropdown-menu dropdown-menu-end">
                         <%= link_to 'Dashboard', user_root_path, class: 'dropdown-item dropButton' %>
                         <%= link_to 'Mon compte', edit_user_registration_path, class: 'dropdown-item dropButton' %>
                         <%= button_to "Déconnexion", destroy_user_session_path, class: " dropdown-item",type:"button", method: :delete, form: {data: {turbo: false}} %>
@@ -114,7 +114,7 @@
 
      <!-- Footer -->
     <footer class="sticky-footer bg-white d-flex justify-content-between d-flex flex-md-row flex-sm-column flex-column">
-        <div class="m-3 m-md-5 d-flex flex-column align-items-md-start align-items-center text-center text-md-left">
+        <div class="m-3 m-md-5 d-flex flex-column align-items-md-start align-items-center text-center text-md-start">
             <a href="/mentions_legales" class="text-dark">Mentions légales</a>
             <a href="/CGU" class="mb-3 mt-3 text-dark">Conditions générales d'utilisation</a>
             <a href="/confidentialite" class="text-dark">Politique de confidentialité</a>
@@ -125,7 +125,7 @@
             </a>
             <span class="mt-2 mt-sm-4 small"><b class="text-primary">Copyleft <span class="copyleft">&copy;</span></b> Samuel ABADIE, Théo DESCHAMPS, Samuel LABAGNÈRE, Maxime LASSERRE, Yani MADEBOS, Sarah MARGUERETTAZ, Laurent MALUCELLI, Thomas MARILLEAU, Maxime REBIERE, Mathéo REULIER, Olivia SIMONET</span>
         </div>
-        <div class="m-3 m-md-5 d-flex flex-column align-items-md-end align-items-center text-center text-md-right">
+        <div class="m-3 m-md-5 d-flex flex-column align-items-md-end align-items-center text-center text-md-end">
             <a href="#" class="mb-3 text-dark">Statistiques</a>
             <%= link_to 'Entreprises', entreprises_path, class: 'text-dark' %>
         </div>
