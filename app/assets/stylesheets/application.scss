@@ -32,11 +32,12 @@
 // );
 
 $our_white: #EEF0F2;
+$our_blue: #007CAA;
 
 $colors: (
     "white": $our_white,
     "gray": #E2E2E2, 
-    "blue": #007CAA,
+    "blue": $our_blue,
     "orange": #F15921,
     "green": #007A78,
 );
@@ -47,7 +48,7 @@ $theme-colors: (
     "success": #007A78,
     "info": #007CAA,
     "danger": #F15921,
-    "light": #E2E2E2,
+    "light": #f8f9fa,
     "dark": #231F20
 );
 
@@ -83,6 +84,10 @@ $fontMenu : 16px 'Open Sans';
 .card {
     padding-left: 0px;
     padding-right: 0px;
+}
+
+.bg-blue {
+    background-color: $our_blue;
 }
 
 .copyleft {
@@ -365,9 +370,6 @@ body {
                     top: 100px;
                 }
                 .puclic-stats-body {
-                    .col-12.border-left {
-                        border-left-width: 6px !important;                                        
-                    }
                     h5 {
                         font-size:1rem;
                     }
