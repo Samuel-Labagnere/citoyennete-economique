@@ -1,181 +1,231 @@
 <% disable = "disabled" unless !defined?(disabled) || disabled != true %> 
 <%= simple_form_for @evaluation do |f| %>
-  <fieldset class="col-11 col-sm-8 text-break me-auto ms-auto rounded bg-white shadow border-left border-primary p-3 p-sm-4 mb-4 col-input mt-4" <%= disable %>>
-    <%= f.input :annee %>
-    <%= f.input :chiffre_affaires %>
-    <%= f.input :resultat_net %>
-    <%= f.input :nombre_salaries %>
-    <%= f.input :nombre_salaries_etp %>
+  <fieldset class="d-flex flex-sm-row flex-column col-11 col-sm-8 text-break mr-auto ml-auto rounded bg-white shadow border-left border-primary p-3 p-sm-4 mb-4 col-input mt-4" <%= disable %>>
+    <div class="col-12 col-sm-6">
+      <%= f.input :annee %>
+      <%= f.input :chiffre_affaires %>
+      <%= f.input :resultat_net %>
+    </div>
+    <div class="col-12 col-sm-6">
+      <%= f.input :nombre_salaries %>
+      <%= f.input :nombre_salaries_etp %>
+    </div>
   </fieldset>
+
   <br/>
-  <div class="formul d-flex justify-content-around align-items-center bg-blue pt-4 pb-4 mt-5">
-    <span class="m-4 col-1"><%= image_tag '1.svg', alt: 'numéro 1' %></span>
+
+  <div class="formul d-flex flex-sm-row flex-column justify-content-around align-items-center bg-blue pt-0 pb-0 pt-sm-4 pb-sm-4 mt-0 mt-sm-5">
+    <span class="d-none d-sm-flex m-4 col-1"><%= image_tag '1.svg', alt: 'numéro 1' %></span>
     <h2 class="m-4 white">Partage du pouvoir et des décisions</h2>
   </div>
 
-  <div class="w-50 bg-white rounded-right border-right border-primary p-4 mt-5 shadow">
+  <div class="col-10 col-sm-6 bg-white rounded-right border-right border-primary p-4 mt-5 shadow">
     <h3 class="text-primary">Composition de la gouvernance</h3>
   </div>
 
-  <div class="w-100 pe-5 ps-5">
+  <div class="w-100 pr-2 pl-2 pr-sm-5 pl-sm-5">
 
-    <fieldset class="mb-4 m-5" <%= disable %>>
+    <fieldset class="row flex-sm-row flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between" <%= disable %>>
       <%# <legend class="w-auto">Pilier 1 : Partage du pouvoir et des décisions</legend> %>
-      <%= f.input :pouvoir_gouvernance_part_salaries_associes %>
-      <%= f.input :pouvoir_gouvernance_taux_societariat_femmes %>
-      <%= f.input :pouvoir_gouvernance_taux_droits_vote_salaries %>
-      <%= f.input :pouvoir_gouvernance_part_salaries_conseil %>
-      <%= f.input :pouvoir_gouvernance_part_femmes_conseil %>
-      <%= f.input :pouvoir_gouvernance_diversite_categories, as: :check_boxes, collection: ['Salariés', 'Investisseurs', 'Fournisseurs', 'Sous-traitants', 'Clients', 'Experts', 'Syndicats', 'Pouvoirs publics', 'Associations', 'Grand public', 'Autres'], include_hidden: false %>
+      <div class="col-12 col-sm-5">
+        <%= f.input :pouvoir_gouvernance_part_salaries_associes %>
+        <%= f.input :pouvoir_gouvernance_taux_societariat_femmes %>
+        <%= f.input :pouvoir_gouvernance_taux_droits_vote_salaries %>
+      </div>
+      <div class="col-12 col-sm-5 offset-sm-1">
+        <%= f.input :pouvoir_gouvernance_part_salaries_conseil %>
+        <%= f.input :pouvoir_gouvernance_part_femmes_conseil %>
+      </div>
+      <div class="col-12 col-sm-10 mr-auto ml-auto list-diversite">
+        <%= f.input :pouvoir_gouvernance_diversite_categories, as: :check_boxes, collection: ['Salariés', 'Investisseurs', 'Fournisseurs', 'Sous-traitants', 'Clients', 'Experts', 'Syndicats', 'Pouvoirs publics', 'Associations', 'Grand public', 'Autres'], include_hidden: false %>
+      </div>
     </fieldset>
   </div>
 
-  <div class="w-50 bg-white rounded-right border-right border-primary p-4 mt-5 shadow">
+  <div class="col-10 col-sm-6 bg-white rounded-right border-right border-primary p-4 mt-4 mt-sm-5 shadow">
     <h3 class="text-primary">Mise en place des conditions du bon exercice de la démocratie</h3>
   </div>
 
-  <div class="w-100 pe-5 ps-5">
-    <fieldset class="mb-4 m-5" <%= disable %>>
-      <%= f.input :pouvoir_democratie_nombre_reunions %>
-      <%= f.input :pouvoir_democratie_taux_participation_formations %>
-      <%= f.input :pouvoir_democratie_nombre_accords_signes %>
-      <%= f.input :pouvoir_democratie_accords_signes %>
+  <div class="w-100 pr-2 pl-2 pr-sm-5 pl-sm-5">
+    <fieldset class="row flex-sm-row flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between" <%= disable %>>
+      <div class="col-12 col-sm-5">
+        <%= f.input :pouvoir_democratie_nombre_reunions %>
+        <%= f.input :pouvoir_democratie_taux_participation_formations %>
+      </div>
+      <div class="col-12 col-sm-5 offset-sm-1">
+        <%= f.input :pouvoir_democratie_nombre_accords_signes %>
+        <%= f.input :pouvoir_democratie_accords_signes %>
+      </div>
     </fieldset>
   </div>
 
-  <div class="w-50 bg-white rounded-right border-right border-primary p-4 mt-5 shadow">
+  <div class="col-10 col-sm-6 bg-white rounded-right border-right border-primary p-4 mt-5 shadow">
     <h3 class="text-primary">Participation à la prise de décision stratégique</h3>
   </div>
     
-  <div class="w-100 pe-5 ps-5">
-    <fieldset class="mb-4 m-5" <%= disable %>>
-      <%= f.input :pouvoir_strategique_taux_presence_assemblee %>
-      <%= f.input :pouvoir_strategique_implication_partage %>
-      <%= f.input :pouvoir_strategique_actifs_total %>
-      <%= f.input :pouvoir_estimation_realite %>
+  <div class="w-100 pr-2 pl-2 pr-sm-5 pl-sm-5">
+    <fieldset class="row flex-sm-row flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between" <%= disable %>>
+      <div class="col-12 col-sm-5">
+        <%= f.input :pouvoir_strategique_taux_presence_assemblee %>
+        <%= f.input :pouvoir_strategique_implication_partage %>
+      </div>
+      <div class="col-12 col-sm-5 offset-sm-1">
+        <%= f.input :pouvoir_strategique_actifs_total %>
+        <%= f.input :pouvoir_estimation_realite %>
+      </div>
     </fieldset>
   </div>
 
-  <div class="formul d-flex justify-content-around align-items-center bg-blue pt-4 pb-4">
-    <span class="pt-4 pb-4 col-1 "><%= image_tag '2.svg', alt: 'numéro 2' %></span>
-    <h2 class="pt-4 pb-4 white">Pérénnité économique et partage de la valeur créée</h2>
+  <div class="formul d-flex flex-sm-row flex-column justify-content-around align-items-center bg-blue pt-0 pb-0 pt-sm-4 pb-sm-4 mt-0 mt-sm-5">
+    <span class="d-none d-sm-flex pt-4 pb-4 col-1 "><%= image_tag '2.svg', alt: 'numéro 2' %></span>
+    <h2 class="p-4 white">Pérénnité économique et partage de la valeur créée</h2>
   </div>
 
-  <div class="w-50 bg-white rounded-right border-right border-primary p-4 mt-5 shadow">
+  <div class="col-10 col-sm-6 bg-white rounded-right border-right border-primary p-4 mt-5 shadow">
     <h3 class="text-primary">Pérennité : création de valeur, inaliénabilité et robustesse de l'entreprise</h3>
   </div>
 
-  <div class="w-100 pe-5 ps-5">
+  <div class="w-100 pr-2 pl-2 pr-sm-5 pl-sm-5">
 
-    <fieldset class="mb-4 m-5" <%= disable %>>
-      <%= f.input :valeur_perennite_part_capital_salaries %>
-      <%= f.input :valeur_perennite_existence_reserve, as: :radio_buttons %>
-      <%= f.input :valeur_perennite_reserve_impartageable, as: :radio_buttons %>
-      <%= f.input :valeur_perennite_part_resultat_reserve %>
-      <%= f.input :valeur_perennite_ebe_caht %>
-      <%= f.input :valeur_perennite_part_endettement %>
-      <%= f.input :valeur_perennite_attention_questions_innovation, as: :radio_buttons %>
+    <fieldset class="row flex-sm-row flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between" <%= disable %>>
+      <div class="col-12 col-sm-5">
+        <%= f.input :valeur_perennite_part_capital_salaries %>
+        <%= f.input :valeur_perennite_part_resultat_reserve %>
+        <%= f.input :valeur_perennite_ebe_caht %>
+        <%= f.input :valeur_perennite_part_endettement %>
+      </div>
+      <div class="col-12 col-sm-5 offset-sm-1 col-input">
+        <%= f.input :valeur_perennite_existence_reserve, as: :radio_buttons %>
+        <%= f.input :valeur_perennite_reserve_impartageable, as: :radio_buttons %>
+        <%= f.input :valeur_perennite_attention_questions_innovation, as: :radio_buttons %>
+      </div>
     </fieldset>
   </div>
 
-  <div class="w-50 bg-white rounded-right border-right border-primary p-4 mt-5 shadow">
+  <div class="col-10 col-sm-6 bg-white rounded-right border-right border-primary p-4 mt-5 shadow">
     <h3 class="text-primary">Partage des richesses</h3>
   </div>
 
-  <div class="w-100 pe-5 ps-5">
-    <fieldset class="mb-4 m-5" <%= disable %>>
-      <%= f.input :valeur_partage_part_resultat_net_actionnaires %>
-      <%= f.input :valeur_partage_existence_accord, as: :radio_buttons %>
-      <%= f.input :valeur_partage_existence_epargne_salariale, as: :radio_buttons %>
-      <%= f.input :valeur_partage_part_resultat_salaries %>
-      <%= f.input :valeur_partage_existence_grille_salariale, as: :radio_buttons %>
-      <%= f.input :valeur_partage_publicite_grille, as: :radio_buttons %>
-      <%= f.input :valeur_partage_ecart_revenus_hauts_bas %>
-      <%= f.input :valeur_partage_index_egalite_homme_femme %>
-      <%= f.input :valeur_estimation_realite %>
+  <div class="w-100 pr-2 pl-2 pr-sm-5 pl-sm-5">
+    <fieldset class="row flex-sm-row flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between" <%= disable %>>
+      <div class="col-12 col-sm-5 col-input">
+        <%= f.input :valeur_partage_part_resultat_net_actionnaires %>
+        <%= f.input :valeur_partage_part_resultat_salaries %>
+        <%= f.input :valeur_partage_existence_accord, as: :radio_buttons %>
+        <%= f.input :valeur_partage_ecart_revenus_hauts_bas %>
+        <%= f.input :valeur_partage_index_egalite_homme_femme %>
+      </div>
+      <div class="col-12 col-sm-5 offset-sm-1 col-input">
+        <%= f.input :valeur_partage_existence_epargne_salariale, as: :radio_buttons %>
+        <%= f.input :valeur_partage_existence_grille_salariale, as: :radio_buttons %>
+        <%= f.input :valeur_partage_publicite_grille, as: :radio_buttons %>
+        <%= f.input :valeur_estimation_realite %>
+      </div>
     </fieldset>
   </div>
 
-  <div class="formul d-flex justify-content-around align-items-center bg-blue pt-4 pb-4">
-    <span class="pt-4 pb-4 col-1 "><%= image_tag '3.svg', alt: 'numéro 3' %></span>
-    <h2 class="pt-4 pb-4 white">Capital humain et qualité de vie au travail</h2>
+  <div class="formul d-flex flex-sm-row flex-column justify-content-around align-items-center bg-blue pt-0 pb-0 pt-sm-4 pb-sm-4 mt-0 mt-sm-5">
+    <span class="d-none d-sm-flex pt-4 pb-4 col-1 "><%= image_tag '3.svg', alt: 'numéro 3' %></span>
+    <h2 class="p-4 white">Capital humain et qualité de vie au travail</h2>
   </div>
 
-  <div class="w-50 bg-white rounded-right border-right border-primary p-4 mt-5 shadow">
+  <div class="col-10 col-sm-6 bg-white rounded-right border-right border-primary p-4 mt-5 shadow">
     <h3 class="text-primary">Mise en place des conditions du bon exercice de la démocratie</h3>
   </div>
 
-  <div class="w-100 pe-5 ps-5">
-    <fieldset class="mb-4 m-5" <%= disable %>>
-      <%= f.input :qualite_qvt_enquete_qvt, as: :radio_buttons %>
-      <%= f.input :qualite_qvt_taux_qvt %>
-      <%= f.input :qualite_qvt_part_cdi %>
-      <%= f.input :qualite_qvt_moyenne_anciennete %>
-      <%= f.input :qualite_qvt_taux_turnover %>
-      <%= f.input :qualite_qvt_taux_absenteisme %>
+  <div class="w-100 pr-2 pl-2 pr-sm-5 pl-sm-5">
+    <fieldset class="row flex-sm-row flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between" <%= disable %>>
+      <div class="col-12 col-sm-5 col-input">
+        <%= f.input :qualite_qvt_enquete_qvt, as: :radio_buttons %>
+        <%= f.input :qualite_qvt_taux_qvt %>
+        <%= f.input :qualite_qvt_part_cdi %>
+      </div>
+      <div class="col-12 col-sm-5 offset-sm-1">
+        <%= f.input :qualite_qvt_moyenne_anciennete %>
+        <%= f.input :qualite_qvt_taux_turnover %>
+        <%= f.input :qualite_qvt_taux_absenteisme %>
+      </div>
     </fieldset>
   </div>
 
-  <div class="w-50 bg-white rounded-right border-right border-primary p-4 mt-5 shadow">
+  <div class="col-10 col-sm-6 bg-white rounded-right border-right border-primary p-4 mt-5 shadow">
     <h3 class="text-primary">Développement des compétences individuelles et collectives<br/>Émancipation des salariés</h3>
   </div>
 
-  <div class="w-100 pe-5 ps-5">
-    <fieldset class="mb-4 m-5" <%= disable %>>
-      <%= f.input :qualite_emancipation_moyenne_heures_formation %>
-      <%= f.input :qualite_emancipation_taux_budget_formation_masse_salariale %>
-      <%= f.input :qualite_emancipation_taux_direction_promotion_interne %>
-      <%= f.input :qualite_estimation_realite %>
+  <div class="w-100 pr-2 pl-2 pr-sm-5 pl-sm-5">
+    <fieldset class="row flex-sm-row flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between" <%= disable %>>
+      <div class="col-12 col-sm-5">
+        <%= f.input :qualite_emancipation_moyenne_heures_formation %>
+        <%= f.input :qualite_emancipation_taux_budget_formation_masse_salariale %>
+        <%= f.input :qualite_emancipation_taux_direction_promotion_interne %>
+      </div>
+      <div class="col-12 col-sm-5 offset-sm-1">
+        <%= f.input :qualite_estimation_realite %>
+      </div>
     </fieldset>
   </div>
 
-  <div class="formul d-flex justify-content-around align-items-center bg-blue pt-4 pb-4">
-    <span class="pt-4 pb-4 col-1 "><%= image_tag '4.svg', alt: 'numéro 4' %></span>
-    <h2 class="pt-4 pb-4 white">Impact environnemental, social et territorial</h2>
+  <div class="formul d-flex flex-sm-row flex-column justify-content-around align-items-center bg-blue pt-0 pb-0 pt-sm-4 pb-sm-4 mt-0 mt-sm-5">
+    <span class="d-none d-sm-flex pt-4 pb-4 col-1 "><%= image_tag '4.svg', alt: 'numéro 4' %></span>
+    <h2 class="p-4 white">Impact environnemental, social et territorial</h2>
   </div>
 
-  <div class="w-50 bg-white rounded-right border-right border-primary p-4 mt-5 shadow">
+  <div class="col-10 col-sm-6 bg-white rounded-right border-right border-primary p-4 mt-5 shadow">
     <h3 class="text-primary">Impact environnemental</h3>
   </div>
 
-  <div class="w-100 pe-5 ps-5">
-    <fieldset class="mb-4 m-5" <%= disable %>>
-      <%= f.input :impact_environnement_audit_impact, as: :radio_buttons %>
-      <%= f.input :impact_environnement_demarche_ecologique, as: :radio_buttons %>
-      <%= f.input :impact_environnement_part_energies_renouvelables %>
-      <%= f.input :impact_environnement_part_salaries_mobilite %>
-      <%= f.input :impact_environnement_discussion_impact, as: :radio_buttons %>
-      <p>Calculez-vous le bilan carbone ?<p>
-      <%= f.input :impact_environnement_bilan_carbone_scope_1 %>
-      <%= f.input :impact_environnement_bilan_carbone_scope_2 %>
-      <%= f.input :impact_environnement_bilan_carbone_scope_3 %>
+  <div class="w-100 pr-2 pl-2 pr-sm-5 pl-sm-5">
+    <fieldset class="row flex-sm-row flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between" <%= disable %>>
+      <div class="col-12 col-sm-5 col-input">
+        <%= f.input :impact_environnement_audit_impact, as: :radio_buttons %>
+        <%= f.input :impact_environnement_demarche_ecologique, as: :radio_buttons %>
+        <%= f.input :impact_environnement_discussion_impact, as: :radio_buttons %>
+      </div>
+      <div class="col-12 col-sm-5 offset-sm-1">
+        <%= f.input :impact_environnement_part_energies_renouvelables %>
+        <%= f.input :impact_environnement_part_salaries_mobilite %>
+        <p>Calculez-vous le bilan carbone ?<p>
+        <div class="m-3">
+          <%= f.input :impact_environnement_bilan_carbone_scope_1 %>
+          <%= f.input :impact_environnement_bilan_carbone_scope_2 %>
+          <%= f.input :impact_environnement_bilan_carbone_scope_3 %>
+        </div>
+      </div>
     </fieldset>
   </div>
 
-  <div class="w-50 bg-white rounded-right border-right border-primary p-4 mt-5 shadow">
+  <div class="col-10 col-sm-6 bg-white rounded-right border-right border-primary p-4 mt-5 shadow">
     <h3 class="text-primary">Impact social</h3>
   </div>
 
-  <div class="w-100 pe-5 ps-5">
-    <fieldset class="mb-4 m-5" <%= disable %>>
-      <%= f.input :impact_social_part_activite_structures_insertion %>
-      <%= f.input :impact_social_alternance_apprentissage %>
-      <%= f.input :impact_social_part_seniors %>
-      <%= f.input :impact_social_part_handicap %>
+  <div class="w-100 pr-2 pl-2 pr-sm-5 pl-sm-5">
+    <fieldset class="row flex-sm-row flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between" <%= disable %>>
+      <div class="col-12 col-sm-5">
+        <%= f.input :impact_social_part_activite_structures_insertion %>
+        <%= f.input :impact_social_alternance_apprentissage %>
+      </div>
+      <div class="col-12 col-sm-5 offset-sm-1">
+        <%= f.input :impact_social_part_seniors %>
+        <%= f.input :impact_social_part_handicap %>
+      </div>
     </fieldset>
   </div>
 
-  <div class="w-50 bg-white rounded-right border-right border-primary p-4 mt-5 shadow">
+  <div class="col-10 col-sm-6 bg-white rounded-right border-right border-primary p-4 mt-5 shadow">
     <h3 class="text-primary">Engagement en faveur de l'écosystème et du territoire </h3>
   </div>
 
-  <div class="w-100 pe-5 ps-5">
-    <fieldset class="mb-4 m-5" <%= disable %>>
-      <%= f.input :impact_engagement_part_resultat_missions_utiles %>
-      <%= f.input :impact_engagement_part_placements_responsables %>
-      <%= f.input :impact_engagement_part_impots_france %>
-      <%= f.input :impact_engagement_demarche_ethique_fournisseurs, as: :radio_buttons %>
-      <%= f.input :impact_estimation_realite %>
+  <div class="w-100 pr-2 pl-2 pr-sm-5 pl-sm-5">
+    <fieldset class="row flex-sm-row flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between" <%= disable %>>
+      <div class="col-12 col-sm-5">
+        <%= f.input :impact_engagement_part_resultat_missions_utiles %>
+        <%= f.input :impact_engagement_part_placements_responsables %>
+        <%= f.input :impact_engagement_part_impots_france %>
+      </div>
+      <div class="col-12 col-sm-5 offset-sm-1 col-input">
+        <%= f.input :impact_engagement_demarche_ethique_fournisseurs, as: :radio_buttons %>
+        <%= f.input :impact_estimation_realite %>
+      </div>
     </fieldset>
   </div>
   
