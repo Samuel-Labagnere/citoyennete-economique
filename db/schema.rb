@@ -10,15 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_24_115630) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_04_131612) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "evaluations", force: :cascade do |t|
     t.bigint "organisation_id"
     t.integer "annee"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "chiffre_affaires"
+    t.float "resultat_net"
+    t.integer "nombre_salaries"
+    t.integer "nombre_salaries_etp"
+    t.index ["annee"], name: "index_evaluations_on_annee", unique: true
+    t.index ["organisation_id"], name: "index_evaluations_on_organisation_id"
+  end
+
+  create_table "indicateurs_lists", force: :cascade do |t|
+    t.bigint "evaluation_id"
+    t.bigint "objectifs_list_id"
     t.float "pouvoir_gouvernance_part_salaries_associes"
     t.float "pouvoir_gouvernance_taux_societariat_femmes"
+    t.float "pouvoir_gouvernance_taux_droits_vote_salaries"
     t.float "pouvoir_gouvernance_part_salaries_conseil"
     t.float "pouvoir_gouvernance_part_femmes_conseil"
     t.string "pouvoir_gouvernance_diversite_categories", array: true
@@ -27,6 +41,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_24_115630) do
     t.integer "pouvoir_democratie_nombre_accords_signes"
     t.text "pouvoir_democratie_accords_signes"
     t.float "pouvoir_strategique_taux_presence_assemblee"
+    t.float "pouvoir_strategique_implication_partage"
     t.float "pouvoir_strategique_actifs_total"
     t.integer "pouvoir_estimation_realite"
     t.float "valeur_perennite_part_capital_salaries"
@@ -74,14 +89,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_24_115630) do
     t.integer "impact_estimation_realite"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "pouvoir_strategique_implication_partage"
-    t.float "pouvoir_gouvernance_taux_droits_vote_salaries"
-    t.float "chiffre_affaires"
-    t.float "resultat_net"
-    t.integer "nombre_salaries"
-    t.integer "nombre_salaries_etp"
-    t.index ["annee"], name: "index_evaluations_on_annee", unique: true
-    t.index ["organisation_id"], name: "index_evaluations_on_organisation_id"
+    t.index ["evaluation_id"], name: "index_indicateurs_lists_on_evaluation_id"
+    t.index ["objectifs_list_id"], name: "index_indicateurs_lists_on_objectifs_list_id"
+  end
+
+  create_table "objectifs_lists", force: :cascade do |t|
+    t.bigint "organisation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["organisation_id"], name: "index_objectifs_lists_on_organisation_id"
   end
 
   create_table "organisations", force: :cascade do |t|
