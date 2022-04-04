@@ -72,7 +72,7 @@ class CreateIndicateursListAndObjectifsList < ActiveRecord::Migration[7.0]
     end
 
     Evaluation.find_each do |evaluation|
-      evaluation.create_indicateurs_list({
+      il = IndicateursList.new(
         pouvoir_gouvernance_part_salaries_associes: evaluation.pouvoir_gouvernance_part_salaries_associes,
         pouvoir_gouvernance_taux_societariat_femmes: evaluation.pouvoir_gouvernance_taux_societariat_femmes,
         pouvoir_gouvernance_taux_droits_vote_salaries: evaluation.pouvoir_gouvernance_taux_droits_vote_salaries,
@@ -130,9 +130,9 @@ class CreateIndicateursListAndObjectifsList < ActiveRecord::Migration[7.0]
         impact_engagement_part_impots_france: evaluation.impact_engagement_part_impots_france,
         impact_engagement_demarche_ethique_fournisseurs: evaluation.impact_engagement_demarche_ethique_fournisseurs,
         impact_estimation_realite: evaluation.impact_estimation_realite
-      })
-
-      evaluation.save!
+      )
+      il.evaluation = evaluation
+      il.save!
     end
 
     remove_column :evaluations, :pouvoir_gouvernance_part_salaries_associes
