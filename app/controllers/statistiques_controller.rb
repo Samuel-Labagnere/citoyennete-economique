@@ -1,4 +1,8 @@
 class StatistiquesController < ApplicationController
+  def simple_form_label(symbol)
+    I18n.t("simple_form.labels.indicateurs_list." + symbol.to_s)
+  end
+
   def index
     latest_years = []
     Organisation.all.each do |organisation|
@@ -8,11 +12,11 @@ class StatistiquesController < ApplicationController
     latest_indicateurs_lists = IndicateursList.where(evaluation_id: latest_evaluations)
 
     @pouvoir_gouvernance_taux = {
-      "Part de salariés associés" => latest_indicateurs_lists.median(:pouvoir_gouvernance_part_salaries_associes),
-      "Taux de sociétariat parmi les femmes salariées" => latest_indicateurs_lists.median(:pouvoir_gouvernance_taux_societariat_femmes),
-      "Taux des droits de vote détnus par les salariés" => latest_indicateurs_lists.median(:pouvoir_gouvernance_taux_droits_vote_salaries),
-      "Part de salariés participant au conseil d'administration ou de surveillance" => latest_indicateurs_lists.median(:pouvoir_gouvernance_part_salaries_conseil),
-      "Part de femmes au conseil d'administration" => latest_indicateurs_lists.median(:pouvoir_gouvernance_part_femmes_conseil)
+      simple_form_label(:pouvoir_gouvernance_part_salaries_associes) => latest_indicateurs_lists.median(:pouvoir_gouvernance_part_salaries_associes),
+      simple_form_label(:pouvoir_gouvernance_taux_societariat_femmes) => latest_indicateurs_lists.median(:pouvoir_gouvernance_taux_societariat_femmes),
+      simple_form_label(:pouvoir_gouvernance_taux_droits_vote_salaries) => latest_indicateurs_lists.median(:pouvoir_gouvernance_taux_droits_vote_salaries),
+      simple_form_label(:pouvoir_gouvernance_part_salaries_conseil) => latest_indicateurs_lists.median(:pouvoir_gouvernance_part_salaries_conseil),
+      simple_form_label(:pouvoir_gouvernance_part_femmes_conseil) => latest_indicateurs_lists.median(:pouvoir_gouvernance_part_femmes_conseil)
     }
 
     @pouvoir_gouvernance_diversite_categories = {
@@ -30,16 +34,16 @@ class StatistiquesController < ApplicationController
     }
 
     @pouvoir_democratie_nombres = {
-      "Nombre annuel de réunion des salariés et des associés par la gourvernance" => latest_indicateurs_lists.median(:pouvoir_democratie_nombre_reunions),
-      "Nombre d'accords signés entre les représentants du personnel et la direction" => latest_indicateurs_lists.median(:pouvoir_democratie_nombre_accords_signes)
+      simple_form_label(:pouvoir_democratie_nombre_reunions) => latest_indicateurs_lists.median(:pouvoir_democratie_nombre_reunions),
+      simple_form_label(:pouvoir_democratie_nombre_accords_signes) => latest_indicateurs_lists.median(:pouvoir_democratie_nombre_accords_signes)
     }
 
     @pouvoir_democratie_taux_participation_formations = latest_indicateurs_lists.median(:pouvoir_democratie_taux_participation_formations)
 
     @pouvoir_strategique_taux = {
-      "Taux de présence des salariés associés en assemblée générale" => latest_indicateurs_lists.median(:pouvoir_strategique_taux_presence_assemblee),
-      "Part de salariés impliqués dans une intance contribuant au partage du pouvoir et des décisions" => latest_indicateurs_lists.median(:pouvoir_strategique_implication_partage),
-      "Taux de salariés actifs" => latest_indicateurs_lists.median(:pouvoir_strategique_actifs_total)
+      simple_form_label(:pouvoir_strategique_taux_presence_assemblee) => latest_indicateurs_lists.median(:pouvoir_strategique_taux_presence_assemblee),
+      simple_form_label(:pouvoir_strategique_implication_partage) => latest_indicateurs_lists.median(:pouvoir_strategique_implication_partage),
+      simple_form_label(:pouvoir_strategique_actifs_total) => latest_indicateurs_lists.median(:pouvoir_strategique_actifs_total)
     }
   end
 end

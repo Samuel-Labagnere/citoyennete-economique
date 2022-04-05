@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :evaluations
-  devise_for :users, path: '', path_names: { sign_in: "connexion", sign_out: "déconnexion", sign_up: "inscription" }
+  devise_for :users, path: '', path_names: { sign_in: "connexion", sign_out: "deconnexion", sign_up: "inscription", edit: "compte" }
   resources :organisations
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

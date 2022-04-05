@@ -15,3 +15,58 @@ h2{
 .alataFont{
     font-family: 'Alata';
 }
+
+
+@media ( max-width: 990px){
+
+    body {
+        .navigationBar{
+            a.nav__link{
+                font-size: 11px;
+            }
+        }
+    }
+
+    .navbar_separator{
+        display: none;
+    }
+
+
+
+}
+
+@media (max-width:769px){
+    body{
+
+        .page-user{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+
+            h1{
+                font-size: 50px;
+            }
+        } 
+
+        .navigationBar{
+
+            .align-items-center{
+                justify-content: center;
+            }
+            a.nav__link{
+                display: none;
+                margin: 20px 0;
+                font-size: 15px;
+            }
+
+            .nav-mob{
+                justify-content: space-around;
+            }
+        }
+    }
+}
+
+
+

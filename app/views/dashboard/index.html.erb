@@ -1,36 +1,48 @@
-<% if current_user.organisation.nil? %>
-  <div class="row">
-    <div class="col">
-      <%= button_to "Inscrire une organisation", new_organisation_path, method: :get, class: "btn btn-primary" %>
-    </div>
+<div class="page-user col-10 m-auto mt-5 mb-5">
 
-    <div class="col">
-      <form>
-        <div class="form-group">
-          <label for="code">Code d'invitation</label>
-          <input type="text" id="code" class="form-control">
-        </div>
-        <button type="submit" class="btn btn-primary">Rejoindre une organisation</button>
-      </form>
+  <header>
+    <h1>Dashboard</h1>
+  </header>
+
+  <% if current_user.organisation.nil? %>
+    <div class="row">
+      <div class="col">
+        <%= button_to "Inscrire une organisation", new_organisation_path, method: :get, class: "btn btn-primary" %>
+      </div>
+
+      <div class="col">
+        <form>
+          <div class="form-group">
+            <label for="code">Code d'invitation</label>
+            <input type="text" id="code" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-primary">Rejoindre une organisation</button>
+        </form>
+      </div>
     </div>
-  </div>
-<% else %>
-  <h2><%= current_user.organisation %></h2>
-  <% if !current_user.organisation.validation_admin %>
-    <p>En attente de vérification par un administrateur.<p>
   <% else %>
-    <p>
-      <strong><%= current_user.organisation.statut_juridique %></strong><br />
-      <strong><%= current_user.organisation.secteur_activite %></strong>
-    </p>
-    <% current_user.organisation.evaluations.each do |evaluation| %>
-      <ul>
-        <li>
-          <%= link_to "#{ evaluation.annee }", evaluation %>
-        </li>
-      </ul>
-    <% end %>
+    <div class="col-10 text-break me-auto ms-auto rounded bg-white shadow border-start border-primary p-3 p-sm-4 mb-5 col-input mt-5 p-sm-5">
+      <h2 class="mb-3"><%= current_user.organisation %></h2>
+      <% if !current_user.organisation.validation_admin %>
+        <p class="fst-italic">En attente de vérification par un administrateur.<p>
 
-    <%= button_to "Ajouter une évaluation", new_evaluation_path, method: :get, class: "btn btn-primary" %>
+      <% else %>
+        <div class="d-flex">
+          <strong class="me-2"><%= current_user.organisation.statut_juridique %></strong>
+          <strong class="me-2"><%= current_user.organisation.secteur_activite %></strong>
+        </div>
+      <% current_user.organisation.evaluations.each do |evaluation| %>
+        <ul class="m-3">
+          <li>
+            <%= link_to "#{ evaluation.annee }", evaluation %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+    <% end %>
+    <div class="d-flex align-items-center justify-content-center">
+      <%= button_to "Ajouter une évaluation", new_evaluation_path, method: :get, class: "btn btn-primary" %>
+    </div>
   <% end %>
-<% end %>
+
+</div>
