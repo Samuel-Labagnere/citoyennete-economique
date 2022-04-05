@@ -1,13 +1,31 @@
-<h1>Éditer une évaluation</h1>
+<div class="page-orga-new mt-5 mt-sm-0 pt-5 pt-sm-0">
 
-<%= render "form", evaluation: @evaluation %>
+  <header class="me-3 me-sm-5 ms-3 ms-sm-5 p-5">
+    <h1>Editer une évaluation</h1>
+  </header>
 
-<br>
+  <div class="d-flex align-items-center justify-content-center me-3 me-sm-5 ms-3 ms-sm-5 pe-5 ps-5 pb-5">
+    <% if current_user.is_super_admin %>
+      <%= link_to "Back to evaluations", evaluations_path, class: "btn rounded light pt-1 pb-1 pe-3 ps-3 btn-primary me-3" %>
+    <% else %>
+      <%= link_to "Back to dashboard", user_root_path, class: "btn rounded light pt-1 pb-1 pe-3 ps-3 btn-secondary" %>
+    <% end %>
+  </div>
 
-<div>
-  <% if current_user.is_super_admin %>
-    <%= link_to "Back to evaluations", evaluations_path %>
-  <% else %>
-    <%= link_to "Back to dashboard", user_root_path %>
-  <% end %>
-</div>
+ <div class="d-flex align-items-center justify-content-start">
+    <% if current_user.is_super_admin %>
+      <%= link_to "Back to evaluations", evaluations_path, class: "rounded bg-primary white" %>
+    <% else %>
+      <%= link_to "Back to dashboard", user_root_path, class: "rounded bg-secondary white" %>
+    <% end %>
+  </div>
+
+  <%= render "form", evaluation: @evaluation %>
+
+ <div class="d-flex align-items-center justify-content-center me-3 me-sm-5 ms-3 ms-sm-5 pe-5 ps-5 pb-5">
+    <% if current_user.is_super_admin %>
+      <%= link_to "Back to evaluations", evaluations_path, class: "btn rounded light pt-1 pb-1 pe-3 ps-3 btn-secondary me-3 ms-3" %>
+    <% else %>
+      <%= link_to "Back to dashboard", user_root_path, class: "btn rounded light pt-1 pb-1 pe-3 ps-3 btn-primary me-3 ms-3" %>
+    <% end %>
+  </div>

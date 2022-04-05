@@ -1,12 +1,12 @@
 <%= render "form", evaluation: @evaluation, disabled: true %>
 
 <div>
-  <%= link_to "Edit this evaluation", edit_evaluation_path(@evaluation) %> |
+  <%= link_to "Éditer cette évaluation", edit_evaluation_path(@evaluation) %> |
   <% if current_user.is_super_admin %>
-    <%= link_to "Back to evaluations", evaluations_path %>
+    <%= link_to "Retour aux évaluations", evaluations_path %>
   <% else %>
-    <%= link_to "Back to dashboard", user_root_path %>
+    <%= link_to "Retour au tableau de bord", user_root_path %>
   <% end %>
 
-  <%= button_to "Destroy this evaluation", @evaluation, method: :delete %>
+  <%= button_to "Supprimer cette évaluation", @evaluation, method: :delete %>
 </div>

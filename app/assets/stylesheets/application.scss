@@ -5,15 +5,15 @@
 
 // $theme-colors: (
 //   "primary": #EB225A,
-//   "secondary": #007CAA, 
+//   "secondary": #007CAA,
 //   "white": #EEF0F2,
 //   "black": #231F20,
-//   "grey": #E2E2E2, 
+//   "grey": #E2E2E2,
 //   "blue": #007CAA,
 //   "orange": #F15921,
 //   "green": #007A78,
 //   "bg-primary": #EB225A,
-//   "bg-secondary": #007CAA, 
+//   "bg-secondary": #007CAA,
 //   "bg-light": #E2E2E2,
 //   "bg-white": #EEF0F2,
 //   "bg-info": #007CAA,
@@ -28,7 +28,7 @@
 //   "text-secondary": #007CAA,
 //   "text-success": #007A78,
 //   "text-danger": #F15921,
-//   "text-dark": #231F20, 
+//   "text-dark": #231F20,
 // );
 
 $our_white: #EEF0F2;
@@ -36,7 +36,7 @@ $our_blue: #007CAA;
 
 $colors: (
     "white": $our_white,
-    "gray": #E2E2E2, 
+    "gray": #E2E2E2,
     "blue": $our_blue,
     "orange": #F15921,
     "green": #007A78,
@@ -144,18 +144,18 @@ body {
                 span{
                     font:$fontNavbar;
                 }
-            
+
                 a{
                     font: $fontNavbar;
                     transition: all 0.2s;
                 }
-            
+
                 a:hover{
                     text-decoration: none;
                     color: #EB225A !important;
                     transition: all 0.2s;
                 }
-            
+
                 button{
                     font: $fontNavbar;
                 }
@@ -165,7 +165,7 @@ body {
         &.sticky {
             transition: ease .3s;
             margin-top: -10px;
-            
+
             .logoSite {
             width: 40px;
             transition-delay: .3s;
@@ -212,7 +212,7 @@ body {
         .navbar-nav {
             align-items:center;
             font-family: $fontTitre;
-    
+
             .nav-item {
                 a.nav-link {
                     &::after {
@@ -234,13 +234,13 @@ body {
                     }
                 }
             }
-    
+
         }
         #content-wrapper {
-    
+
             overflow: unset !important;
-    
-            #wrap {                    
+
+            #wrap {
                 header {
                     h1 {
                         font: $fontH1;
@@ -250,7 +250,7 @@ body {
                     font: $fontH2;
                 }
                 section {
-                    
+
                     .row {
                         justify-content: space-between;
                         width: 100%;
@@ -264,7 +264,7 @@ body {
                                 width: 100%;
                             }
                         }
-            
+
                         .card {
                             position:relative;
                             height: 225px;
@@ -291,7 +291,7 @@ body {
                                 z-index: 2;
                                 align-items: flex-end;
                                 font-size: 20px;
-    
+
                                 span {
                                     font-family: $fontTitre;
                                     position:absolute;
@@ -341,7 +341,7 @@ body {
                     &.d-flex {
                         a {
                             img {height:79px;}
-                            
+
                             &:nth-child(3) {
                                 img {height: unset;}
                             }
@@ -377,13 +377,13 @@ body {
             }
             .page-orga-new {
                 .col-11 {
-                    border-width: 8px !important; 
+                    border-width: 8px !important;
                 }
                 .col-11, .col-input {
                     .form-check {
                         display: inline-flex;
                         padding: 0;
-                        
+
                         input[type="radio"] {
                             opacity:0;
                             right: 0;
@@ -421,7 +421,7 @@ body {
                                 color: #fff;
                             }
                         }
-                        
+
                     }
                 }
                 .col-sm-6 {
@@ -438,7 +438,7 @@ body {
                         padding: calc($spacer * 4) calc($spacer * 4) 0;
                         margin: auto;
                         position:relative;
-                        
+
                         legend {
                             position: absolute;
                             left: 0; top: calc($spacer * 2);;
@@ -448,11 +448,18 @@ body {
                         }
                     }
                 }
-                
+
+            }
+            .page-user {
+              form {
+                .row {
+                  border-width: 8px !important;
+                }
+              }
             }
         }
     }
-    
+
     h1 {
         font: $fontH1;
     }
@@ -524,7 +531,7 @@ body {
                     h4 {font-size: 1rem !important;}
                     .lead {font-size: 1rem;}
                     ul.list-group {width: 100% !important;}
-                    
+
                     section {
                         p {
                             margin-right: 0 !important;
