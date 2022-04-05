@@ -1,4 +1,4 @@
-<% disable = "disabled" unless !defined?(disabled) || disabled != true %> 
+<% disable = "disabled" unless !defined?(disabled) || disabled != true %>
 <%= simple_form_for @evaluation do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <fieldset class="row d-flex flex-sm-row flex-column col-11 col-sm-8 text-break me-auto ms-auto rounded bg-white shadow border-start border-primary p-3 p-sm-4 mb-4 col-input mt-4" <%= disable %>>
@@ -26,7 +26,7 @@
 
   <%= f.association :indicateurs_list do |il| %>
 
-    <div class="w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
+    <div class="w-100 pe-2 ps-2 pe-sm-5 ps-sm-5 mb-5">
 
       <fieldset class="row flex-sm-row flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between" <%= disable %>>
         <%# <legend class="w-auto">Pilier 1 : Partage du pouvoir et des décisions</legend> %>
@@ -65,7 +65,7 @@
     <div class="col-10 col-sm-6 bg-white rounded-end border-end border-primary p-4 mt-5 shadow">
       <h3 class="text-primary">Participation à la prise de décision stratégique</h3>
     </div>
-      
+
     <div class="w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
       <fieldset class="row flex-sm-row flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between" <%= disable %>>
         <div class="col-12 col-sm-5">
@@ -232,8 +232,8 @@
       </fieldset>
     </div>
   <% end %>
-  
+
   <% unless disable == "disabled" %>
-    <%= f.button :submit, "Enregistrer", class: 'btn btn-primary me-auto ms-auto d-flex' %>
+    <%= f.button :submit, "Enregistrer", class: 'btn btn-primary me-auto ms-auto d-flex mb-5' %>
   <% end %>
 <% end %>

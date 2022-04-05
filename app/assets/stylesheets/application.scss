@@ -428,15 +428,19 @@ body {
                             }
                         }
                         &:nth-child(4) {
-                            label {
-                                border-top-left-radius: 0;
-                                border-bottom-left-radius: 0;
-                            }
-                            input[type="radio"]:checked + label, input[type="radio"]:hover + label {
-                                background-color:$bg-danger;
-                                color: #fff;
-                            }
+                          label {
+                              border-top-left-radius: 0;
+                              border-bottom-left-radius: 0;
+                              margin-left: 7px;
+                              margin-right: 10px;
+                          }
+                          input[type="radio"]:checked + label, input[type="radio"]:hover + label {
+                              background-color:$bg-danger;
+                              color: #fff !important;
+                          }
                         }
+                        .form-check-input[disabled] ~ .form-check-label, .form-check-input:disabled ~ .form-check-label {pointer-events:none;}
+                        .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {color: unset ;}
 
                     }
                 }
@@ -500,6 +504,9 @@ body {
     footer {
         div {
             flex:1;
+            img {
+              height: 70px;
+            }
         }
     }
 
@@ -534,6 +541,9 @@ body {
 
 @media (max-width: 800px) {
     body {
+      h1 {
+          font-size: 2rem !important;
+      }
         #wrapper {
             #content-wrapper {
                 #wrap {
@@ -561,32 +571,89 @@ body {
                                     height: 150px;
                                 }
                             }
-                            .card {height: auto !important;}
+                            .card {height: 150px;}
                         }
                     }
                 }
             }
         }
-        .page-orga{
+        .page-orga {
           h2 {font-size: 1.5rem !important;}
           h3 {font-size: 1rem !important;}
+
           .form-group {
-              margin-bottom: 0 !important;
-              &.check_boxes {
-                  padding: calc($spacer * 3) 0 0 !important;
-              }
-          }
-          &.show {
-            h1 {font-size: 2rem;}
+            margin-bottom: 0 !important;
+            &.check_boxes {
+              padding: calc($spacer * 3) 0 0 !important;
+            }
           }
         }
+        .page-user {
+          h2 {font-size: 1.5rem !important;}
+        }
+      }
     }
+@media (max-width: 550px) {
+  body {
+
+    #navigationBar{
+        
+        &.sticky {;
+    
+            .logoSite {
+                span {
+                    transform: none;
+                }
+                b {
+                    transform: none;
+                }
+            }
+        }
+
+        .d-flex{
+            .d-flex{
+                a.logoSite{
+                    height: 60px;
+                    align-items: baseline;
+                    img{
+                        display: none;
+                    }
+                    span{
+                        opacity: 1;
+                        width: unset;
+                        top:unset;
+                        position: relative;
+                    }
+                    b{
+                        opacity: 1;
+                        bottom: unset; right:unset;
+                        width: unset;
+                        position: relative;
+                    }
+                }
+            }
+        
+        }
+    #wrapper {
+      #content-wrapper {
+        #wrap {
+            
+            }
+          section {
+            .row{
+              .card {
+                height: unset;
+              .card-body {span {display:none !important;}}
+            }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 @media (max-width: 400px) {
     body {
-        h1 {
-            font-size: 2rem !important;
-        }
         label, select, option, li, li b {
             font-size: 1rem !important;
         }
