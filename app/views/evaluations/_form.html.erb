@@ -67,19 +67,22 @@
     </div>
 
     <div class="w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
-      <fieldset class="row flex-sm-row flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between" <%= disable %>>
+      <fieldset class="row flex-sm-row flex-column m-0 mb-0 me-sm-5 ms-sm-5 mt-sm-5 row-cols-2 justify-content-between" <%= disable %>>
         <div class="col-12 col-sm-5">
           <%= il.input :pouvoir_strategique_taux_presence_assemblee %>
           <%= il.input :pouvoir_strategique_implication_partage %>
         </div>
         <div class="col-12 col-sm-5 offset-sm-1">
           <%= il.input :pouvoir_strategique_actifs_total %>
-          <%= il.input :pouvoir_estimation_realite %>
         </div>
       </fieldset>
+
+      <div class="estim col-11 col-sm-8 text-break me-auto ms-auto rounded bg-white shadow border-start border-secondary pt-1 pb-1 pe-5 ps-5 mt-3 mb-5 col-input">
+        <%= il.input :pouvoir_estimation_realite %>
+      </div>
     </div>
 
-    <div class="formul d-flex flex-sm-row flex-column justify-content-around align-items-center bg-blue pt-0 pb-0 pt-sm-4 pb-sm-4 mt-0 mt-sm-5">
+    <div class="formul d-flex flex-sm-row flex-column justify-content-around align-items-center bg-blue pt-0 pb-0 pt-sm-4 pb-sm-4 mt-5">
       <span class="d-none d-sm-flex pt-4 pb-4 col-1 "><%= image_tag '2.svg', alt: 'numéro 2' %></span>
       <h2 class="p-4 white">Pérénnité économique et partage de la valeur créée</h2>
     </div>
@@ -110,21 +113,25 @@
     </div>
 
     <div class="w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
-      <fieldset class="row flex-sm-row flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between" <%= disable %>>
+      <fieldset class="row flex-sm-row flex-column m-0 mb-0 me-sm-5 ms-sm-5 mt-sm-5 row-cols-2 justify-content-between" <%= disable %>>
         <div class="col-12 col-sm-5 col-input">
           <%= il.input :valeur_partage_part_resultat_net_actionnaires %>
           <%= il.input :valeur_partage_part_resultat_salaries %>
-          <%= il.input :valeur_partage_existence_accord, as: :radio_buttons %>
           <%= il.input :valeur_partage_ecart_revenus_hauts_bas %>
           <%= il.input :valeur_partage_index_egalite_homme_femme %>
         </div>
         <div class="col-12 col-sm-5 offset-sm-1 col-input">
+          <%= il.input :valeur_partage_existence_accord, as: :radio_buttons %>
           <%= il.input :valeur_partage_existence_epargne_salariale, as: :radio_buttons %>
           <%= il.input :valeur_partage_existence_grille_salariale, as: :radio_buttons %>
           <%= il.input :valeur_partage_publicite_grille, as: :radio_buttons %>
-          <%= il.input :valeur_estimation_realite %>
         </div>
       </fieldset>
+
+      <div class="estim col-11 col-sm-8 text-break me-auto ms-auto rounded bg-white shadow border-start border-secondary pt-1 pb-1 pe-5 ps-5 mt-3 mb-5 col-input">
+          <%= il.input :valeur_estimation_realite %>
+      </div>
+
     </div>
 
     <div class="formul d-flex flex-sm-row flex-column justify-content-around align-items-center bg-blue pt-0 pb-0 pt-sm-4 pb-sm-4 mt-0 mt-sm-5">
@@ -156,16 +163,18 @@
     </div>
 
     <div class="w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
-      <fieldset class="row flex-sm-row flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between" <%= disable %>>
+      <fieldset class="row flex-sm-row flex-column m-0 mb-0 me-sm-5 ms-sm-5 mt-sm-5 row-cols-2 justify-content-between" <%= disable %>>
         <div class="col-12 col-sm-5">
           <%= il.input :qualite_emancipation_moyenne_heures_formation %>
           <%= il.input :qualite_emancipation_taux_budget_formation_masse_salariale %>
-          <%= il.input :qualite_emancipation_taux_direction_promotion_interne %>
         </div>
         <div class="col-12 col-sm-5 offset-sm-1">
-          <%= il.input :qualite_estimation_realite %>
+          <%= il.input :qualite_emancipation_taux_direction_promotion_interne %>
         </div>
       </fieldset>
+      <div class="estim col-11 col-sm-8 text-break me-auto ms-auto rounded bg-white shadow border-start border-secondary pt-1 pb-1 pe-5 ps-5 mt-3 mb-5 col-input">
+        <%= il.input :qualite_estimation_realite %>
+      </div>
     </div>
 
     <div class="formul d-flex flex-sm-row flex-column justify-content-around align-items-center bg-blue pt-0 pb-0 pt-sm-4 pb-sm-4 mt-0 mt-sm-5">
@@ -219,7 +228,7 @@
     </div>
 
     <div class="w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
-      <fieldset class="row flex-sm-row flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between" <%= disable %>>
+      <fieldset class="row flex-sm-row flex-column m-0 mb-0 me-sm-5 ms-sm-5 mt-sm-5 row-cols-2 justify-content-between" <%= disable %>>
         <div class="col-12 col-sm-5">
           <%= il.input :impact_engagement_part_resultat_missions_utiles %>
           <%= il.input :impact_engagement_part_placements_responsables %>
@@ -227,9 +236,11 @@
         </div>
         <div class="col-12 col-sm-5 offset-sm-1 col-input">
           <%= il.input :impact_engagement_demarche_ethique_fournisseurs, as: :radio_buttons %>
-          <%= il.input :impact_estimation_realite %>
-        </div>
+          </div>
       </fieldset>
+      <div class="estim col-11 col-sm-8 text-break me-auto ms-auto rounded bg-white shadow border-start border-secondary pt-1 pb-1 pe-5 ps-5 mt-3 mb-5 col-input">
+        <%= il.input :impact_estimation_realite %>
+      </div>
     </div>
   <% end %>
 
