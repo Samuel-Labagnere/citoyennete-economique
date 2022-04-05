@@ -436,11 +436,11 @@ body {
                           }
                           input[type="radio"]:checked + label, input[type="radio"]:hover + label {
                               background-color:$bg-danger;
-                              color: #fff;
+                              color: #fff !important;
                           }
                         }
                         .form-check-input[disabled] ~ .form-check-label, .form-check-input:disabled ~ .form-check-label {pointer-events:none;}
-                        .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {color: unset !important;}
+                        .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {color: unset ;}
 
                     }
                 }
@@ -504,6 +504,9 @@ body {
     footer {
         div {
             flex:1;
+            img {
+              height: 70px;
+            }
         }
     }
 
@@ -568,7 +571,7 @@ body {
                                     height: 150px;
                                 }
                             }
-                            .card {height: auto !important;}
+                            .card {height: 150px;}
                         }
                     }
                 }
@@ -585,9 +588,29 @@ body {
             }
           }
         }
+        .page-user {
+          h2 {font-size: 1.5rem !important;}
+        }
       }
     }
-
+@media (max-width: 550px) {
+  body {
+    #wrapper {
+      #content-wrapper {
+        #wrap {
+          section {
+            .row{
+              .card {
+                height: unset;
+              .card-body {span {display:none !important;}}
+            }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 @media (max-width: 400px) {
     body {
         label, select, option, li, li b {
