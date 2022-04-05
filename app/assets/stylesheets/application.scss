@@ -428,15 +428,19 @@ body {
                             }
                         }
                         &:nth-child(4) {
-                            label {
-                                border-top-left-radius: 0;
-                                border-bottom-left-radius: 0;
-                            }
-                            input[type="radio"]:checked + label, input[type="radio"]:hover + label {
-                                background-color:$bg-danger;
-                                color: #fff;
-                            }
+                          label {
+                              border-top-left-radius: 0;
+                              border-bottom-left-radius: 0;
+                              margin-left: 7px;
+                              margin-right: 10px;
+                          }
+                          input[type="radio"]:checked + label, input[type="radio"]:hover + label {
+                              background-color:$bg-danger;
+                              color: #fff;
+                          }
                         }
+                        .form-check-input[disabled] ~ .form-check-label, .form-check-input:disabled ~ .form-check-label {pointer-events:none;}
+                        .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {color: unset !important;}
 
                     }
                 }
@@ -534,6 +538,9 @@ body {
 
 @media (max-width: 800px) {
     body {
+      h1 {
+          font-size: 2rem !important;
+      }
         #wrapper {
             #content-wrapper {
                 #wrap {
@@ -567,26 +574,22 @@ body {
                 }
             }
         }
-        .page-orga{
+        .page-orga {
           h2 {font-size: 1.5rem !important;}
           h3 {font-size: 1rem !important;}
+
           .form-group {
-              margin-bottom: 0 !important;
-              &.check_boxes {
-                  padding: calc($spacer * 3) 0 0 !important;
-              }
-          }
-          &.show {
-            h1 {font-size: 2rem;}
+            margin-bottom: 0 !important;
+            &.check_boxes {
+              padding: calc($spacer * 3) 0 0 !important;
+            }
           }
         }
+      }
     }
-}
+
 @media (max-width: 400px) {
     body {
-        h1 {
-            font-size: 2rem !important;
-        }
         label, select, option, li, li b {
             font-size: 1rem !important;
         }
