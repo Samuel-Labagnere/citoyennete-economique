@@ -81,8 +81,8 @@ $fontMenu : 16px 'Open Sans';
     background-color: #DFDFDF !important;
 }
 
-.btn-primary {
-    color: #fff;
+.btn-primary, .btn-danger {
+    color: #fff !important ;
 }
 
 .btn-primary:hover {
@@ -223,7 +223,6 @@ body {
         .p_notice {
           font-family: $fontTitre;
           font-size: 1rem;
-          border-width: 8px !important;
         }
 
         .navbar-nav {
