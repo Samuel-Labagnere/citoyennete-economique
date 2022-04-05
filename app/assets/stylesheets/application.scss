@@ -441,14 +441,20 @@ body {
                         }
                         .form-check-input[disabled] ~ .form-check-label, .form-check-input:disabled ~ .form-check-label {pointer-events:none;}
                         .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {color: unset ;}
-
                     }
                 }
+                .estim {
+                  .form-group {
+                    display: flex;
+                    align-items: center;
+                    label {margin-right: 40px;}}
+                  }
                 .col-sm-6 {
                     border-width: 8px !important;
                 }
                 .form-group {
                     margin: calc($spacer * 2) 0;
+                    label {margin-bottom: 10px;}
                 }
                 .list-diversite {
                     fieldset.form-group {
