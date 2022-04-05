@@ -220,6 +220,12 @@ body {
     #wrapper {
         margin-top: 80px;
 
+        .p_notice {
+          font-family: $fontTitre;
+          font-size: 1rem;
+          border-width: 8px !important;
+        }
+
         .navbar-nav {
             align-items:center;
             font-family: $fontTitre;
@@ -386,7 +392,7 @@ body {
                     }
                 }
             }
-            .page-orga-new {
+            .page-orga {
                 .col-11 {
                     border-width: 8px !important;
                 }
@@ -459,13 +465,13 @@ body {
                         }
                     }
                 }
-
+              &.show {
+                h1 {font-size: 4rem;}
+              }
             }
             .page-user {
-              form {
-                .row {
-                  border-width: 8px !important;
-                }
+              .bg-white {
+                border-width: 8px !important;
               }
             }
         }
@@ -562,15 +568,18 @@ body {
                 }
             }
         }
-        .page-orga-new{
-            h2 {font-size: 1.5rem !important;}
-            h3 {font-size: 1rem !important;}
-            .form-group {
-                margin-bottom: 0 !important;
-                &.check_boxes {
-                    padding: calc($spacer * 3) 0 0 !important;
-                }
-            }
+        .page-orga{
+          h2 {font-size: 1.5rem !important;}
+          h3 {font-size: 1rem !important;}
+          .form-group {
+              margin-bottom: 0 !important;
+              &.check_boxes {
+                  padding: calc($spacer * 3) 0 0 !important;
+              }
+          }
+          &.show {
+            h1 {font-size: 2rem;}
+          }
         }
     }
 }

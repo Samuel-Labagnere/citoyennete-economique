@@ -58,8 +58,8 @@
     <!-- Fin NavBar -->
       <!-- Page Wrapper -->
     <div id="wrapper" class="bg-light">
-    
-    
+
+
     <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -67,14 +67,18 @@
             <div id="content">
 
                 <!-- Topbar -->
-            
+
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid mt-n3">
-                    <p><%= flash[:notice] %></p>
-                    <p><%= flash[:alert] %></p>
-                    <%= yield %>
+                  <% if flash[:notice].present? %>
+                    <p class="p_notice col-8 text-center m-auto mt-5 mb-5 p-3 m-5 rounded bg-white shadow border-start border-primary"><%= flash[:notice] %></p>
+                  <% end %>
+                  <% if flash[:alert].present? %>
+                    <p class="p_notice col-8 text-center m-auto mt-5 mb-5 p-3 m-5 rounded bg-white shadow border-start border-primary"><%= flash[:alert] %></p>
+                  <% end %>
+                  <%= yield %>
                 </div>
                 <!-- /.container-fluid -->
 
