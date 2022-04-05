@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :objectifs_lists
   resources :evaluations
   devise_for :users, path: '', path_names: { sign_in: "connexion", sign_out: "deconnexion", sign_up: "inscription", edit: "compte" }
   resources :organisations

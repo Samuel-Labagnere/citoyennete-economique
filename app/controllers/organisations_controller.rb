@@ -41,10 +41,8 @@ class OrganisationsController < ApplicationController
         end
 
         format.html { redirect_to user_root_path, notice: "L'organisation a bien été créée." }
-        format.json { render :show, status: :created, location: @organisation }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @organisation.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -54,10 +52,8 @@ class OrganisationsController < ApplicationController
     respond_to do |format|
       if @organisation.update(organisation_params)
         format.html { redirect_to organisation_url(@organisation), notice: "Organisation was successfully updated." }
-        format.json { render :show, status: :ok, location: @organisation }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @organisation.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -68,7 +64,6 @@ class OrganisationsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to organisations_url, notice: "Organisation was successfully destroyed." }
-      format.json { head :no_content }
     end
   end
 
