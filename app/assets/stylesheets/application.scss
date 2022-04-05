@@ -601,9 +601,50 @@ body {
     }
 @media (max-width: 550px) {
   body {
+
+    #navigationBar{
+        
+        &.sticky {;
+    
+            .logoSite {
+                span {
+                    transform: none;
+                }
+                b {
+                    transform: none;
+                }
+            }
+        }
+
+        .d-flex{
+            .d-flex{
+                a.logoSite{
+                    height: 60px;
+                    align-items: baseline;
+                    img{
+                        display: none;
+                    }
+                    span{
+                        opacity: 1;
+                        width: unset;
+                        top:unset;
+                        position: relative;
+                    }
+                    b{
+                        opacity: 1;
+                        bottom: unset; right:unset;
+                        width: unset;
+                        position: relative;
+                    }
+                }
+            }
+        
+        }
     #wrapper {
       #content-wrapper {
         #wrap {
+            
+            }
           section {
             .row{
               .card {

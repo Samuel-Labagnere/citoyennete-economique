@@ -1,0 +1,18 @@
+<div class="page-orga mt-5 mt-sm-0 pt-5 pt-sm-0">
+
+  <header class="me-3 me-sm-5 ms-3 ms-sm-5 p-5">
+    <h1>Éditer les objectifs</h1>
+  </header>
+
+  <div class="d-flex align-items-center justify-content-start me-3 me-sm-5 ms-3 ms-sm-5 pe-5 ps-5 pb-5">
+    <% if current_user.is_super_admin %>
+      <%= link_to "Back to evaluations", objectifs_lists_path, class: "btn rounded light pt-1 pb-1 pe-3 ps-3 btn-primary me-3" %>
+    <% else %>
+      <%= link_to "Back to dashboard", user_root_path, class: "btn rounded light pt-1 pb-1 pe-3 ps-3 btn-secondary" %>
+    <% end %>
+  </div>
+
+  <%= render "form", objectifs_list: @objectifs_list %>
+    <%= button_to "Destroy this objectifs_list", @objectifs_list, method: :delete, class: "btn rounded white pt-1 pb-1 pe-3 ps-3 btn-danger", form: { data: { turbo_confirm: "Êtes-vous sûr de vouloir supprimer vos objectifs ?" } } %>
+
+</div>

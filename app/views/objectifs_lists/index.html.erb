@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Listes d'objectifs</h1>
+
+<div id="objectifs_lists">
+  <% @objectifs_lists.each do |objectifs_list| %>
+    <%= render objectifs_list %>
+    <p>
+      <%= link_to "Show this objectifs_list", objectifs_list %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New objectifs_list", new_objectifs_list_path %>
