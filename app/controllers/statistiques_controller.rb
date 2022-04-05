@@ -1,8 +1,4 @@
 class StatistiquesController < ApplicationController
-  def simple_form_label(symbol)
-    I18n.t("simple_form.labels.indicateurs_list." + symbol.to_s)
-  end
-
   def index
     latest_years = []
     Organisation.all.each do |organisation|
@@ -12,11 +8,11 @@ class StatistiquesController < ApplicationController
     latest_indicateurs_lists = IndicateursList.where(evaluation_id: latest_evaluations)
 
     @pouvoir_gouvernance_taux = {
-      simple_form_label(:pouvoir_gouvernance_part_salaries_associes) => latest_indicateurs_lists.median(:pouvoir_gouvernance_part_salaries_associes),
-      simple_form_label(:pouvoir_gouvernance_taux_societariat_femmes) => latest_indicateurs_lists.median(:pouvoir_gouvernance_taux_societariat_femmes),
-      simple_form_label(:pouvoir_gouvernance_taux_droits_vote_salaries) => latest_indicateurs_lists.median(:pouvoir_gouvernance_taux_droits_vote_salaries),
-      simple_form_label(:pouvoir_gouvernance_part_salaries_conseil) => latest_indicateurs_lists.median(:pouvoir_gouvernance_part_salaries_conseil),
-      simple_form_label(:pouvoir_gouvernance_part_femmes_conseil) => latest_indicateurs_lists.median(:pouvoir_gouvernance_part_femmes_conseil)
+      indicateur_clean(:pouvoir_gouvernance_part_salaries_associes) => latest_indicateurs_lists.median(:pouvoir_gouvernance_part_salaries_associes),
+      indicateur_clean(:pouvoir_gouvernance_taux_societariat_femmes) => latest_indicateurs_lists.median(:pouvoir_gouvernance_taux_societariat_femmes),
+      indicateur_clean(:pouvoir_gouvernance_taux_droits_vote_salaries) => latest_indicateurs_lists.median(:pouvoir_gouvernance_taux_droits_vote_salaries),
+      indicateur_clean(:pouvoir_gouvernance_part_salaries_conseil) => latest_indicateurs_lists.median(:pouvoir_gouvernance_part_salaries_conseil),
+      indicateur_clean(:pouvoir_gouvernance_part_femmes_conseil) => latest_indicateurs_lists.median(:pouvoir_gouvernance_part_femmes_conseil)
     }
 
     @pouvoir_gouvernance_diversite_categories = {
@@ -34,16 +30,16 @@ class StatistiquesController < ApplicationController
     }
 
     @pouvoir_democratie_nombres = {
-      simple_form_label(:pouvoir_democratie_nombre_reunions) => latest_indicateurs_lists.median(:pouvoir_democratie_nombre_reunions),
-      simple_form_label(:pouvoir_democratie_nombre_accords_signes) => latest_indicateurs_lists.median(:pouvoir_democratie_nombre_accords_signes)
+      indicateur_clean(:pouvoir_democratie_nombre_reunions) => latest_indicateurs_lists.median(:pouvoir_democratie_nombre_reunions),
+      indicateur_clean(:pouvoir_democratie_nombre_accords_signes) => latest_indicateurs_lists.median(:pouvoir_democratie_nombre_accords_signes)
     }
 
     @pouvoir_democratie_taux_participation_formations = latest_indicateurs_lists.median(:pouvoir_democratie_taux_participation_formations)
 
     @pouvoir_strategique_taux = {
-      simple_form_label(:pouvoir_strategique_taux_presence_assemblee) => latest_indicateurs_lists.median(:pouvoir_strategique_taux_presence_assemblee),
-      simple_form_label(:pouvoir_strategique_implication_partage) => latest_indicateurs_lists.median(:pouvoir_strategique_implication_partage),
-      simple_form_label(:pouvoir_strategique_actifs_total) => latest_indicateurs_lists.median(:pouvoir_strategique_actifs_total)
+      indicateur_clean(:pouvoir_strategique_taux_presence_assemblee) => latest_indicateurs_lists.median(:pouvoir_strategique_taux_presence_assemblee),
+      indicateur_clean(:pouvoir_strategique_implication_partage) => latest_indicateurs_lists.median(:pouvoir_strategique_implication_partage),
+      indicateur_clean(:pouvoir_strategique_actifs_total) => latest_indicateurs_lists.median(:pouvoir_strategique_actifs_total)
     }
   end
 end
