@@ -73,10 +73,10 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid mt-n3">
                   <% if flash[:notice].present? %>
-                    <p class="p_notice col-8 text-center m-auto mt-5 mb-5 p-3 m-5 rounded bg-white shadow border-start border-primary"><%= flash[:notice] %></p>
+                    <p class="p_notice alert alert-success mt-5 mb-5 p-3 m-5 text-center col-8 ms-auto me-auto"><%= flash[:notice] %></p>
                   <% end %>
                   <% if flash[:alert].present? %>
-                    <p class="p_notice col-8 text-center m-auto mt-5 mb-5 p-3 m-5 rounded bg-white shadow border-start border-primary"><%= flash[:alert] %></p>
+                    <p class="p_notice alert alert-success mt-5 mb-5 p-3 m-5 text-center col-8 ms-auto me-auto"><%= flash[:alert] %>Connecté  </p>
                   <% end %>
                   <%= yield %>
                 </div>
