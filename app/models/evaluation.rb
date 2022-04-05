@@ -3,5 +3,5 @@ class Evaluation < ApplicationRecord
     has_one :indicateurs_list
 
     accepts_nested_attributes_for :indicateurs_list
-    validates_presence_of :annee
+    validates_presence_of :annee, message: "Le champ <strong>%{attribute}</strong> doit être rempli"
 end

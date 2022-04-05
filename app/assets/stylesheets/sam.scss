@@ -37,6 +37,19 @@ h2{
 
 @media (max-width:769px){
     body{
+
+        .page-user{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+
+            h1{
+                font-size: 50px;
+            }
+        } 
+
         .navigationBar{
 
             .align-items-center{
@@ -54,4 +67,6 @@ h2{
         }
     }
 }
-    
+
+
+
