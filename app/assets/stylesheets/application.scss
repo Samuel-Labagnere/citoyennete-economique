@@ -3,33 +3,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&family=Open+Sans:wght@300;400&display=swap');
 @import 'sam.scss';
 
+// $theme-colors: (
+//   "primary": #EB225A,
+//   "secondary": #007CAA, 
+//   "white": #EEF0F2,
+//   "black": #231F20,
+//   "grey": #E2E2E2, 
+//   "blue": #007CAA,
+//   "orange": #F15921,
+//   "green": #007A78,
+//   "bg-primary": #EB225A,
+//   "bg-secondary": #007CAA, 
+//   "bg-light": #E2E2E2,
+//   "bg-white": #EEF0F2,
+//   "bg-info": #007CAA,
+//   "bg-success": #007A78,
+//   "bg-danger": #F15921,
+//   "border-success": #007A78,
+//   "border-primary": #EB225A,
+//   "border-secondary": #007CAA,
+//   "border-danger": #F15921,
+//   "text-white": #EEF0F2,
+//   "text-primary":#EB225A,
+//   "text-secondary": #007CAA,
+//   "text-success": #007A78,
+//   "text-danger": #F15921,
+//   "text-dark": #231F20, 
+// );
+
+$our_white: #EEF0F2;
+$our_blue: #007CAA;
+
+$colors: (
+    "white": $our_white,
+    "gray": #E2E2E2, 
+    "blue": $our_blue,
+    "orange": #F15921,
+    "green": #007A78,
+);
 
 $theme-colors: (
-  "primary": #EB225A,
-  "secondary": #007CAA, 
-  "white": #EEF0F2,
-  "black": #231F20,
-  "grey": #E2E2E2, 
-  "blue": #007CAA,
-  "orange": #F15921,
-  "green": #007A78,
-  "bg-primary": #EB225A,
-  "bg-secondary": #007CAA, 
-  "bg-light": #E2E2E2,
-  "bg-white": #EEF0F2,
-  "bg-info": #007CAA,
-  "bg-success": #007A78,
-  "bg-danger": #F15921,
-  "border-success": #007A78,
-  "border-primary": #EB225A,
-  "border-secondary": #007CAA,
-  "border-danger": #F15921,
-  "text-white": #EEF0F2,
-  "text-primary":#EB225A,
-  "text-secondary": #007CAA,
-  "text-success": #007A78,
-  "text-danger": #F15921,
-  "text-dark": #231F20, 
+    "primary": #EB225A,
+    "secondary": #007CAA,
+    "success": #007A78,
+    "info": #007CAA,
+    "danger": #F15921,
+    "light": #f8f9fa,
+    "dark": #231F20
 );
 
 @import "bootstrap/scss/bootstrap";
@@ -48,10 +68,27 @@ $fontTitre: 'Alata';
 $fontText: 'Open Sans';
 
 $fontH1 : 5rem 'Alata';
-$fontH2 : 2rem'Alata';
+$fontH2 : 2rem 'Alata';
 $fontH3: 2.1rem 'Open Sans';
 $fontNavbar : 16px 'Alata';
 $fontMenu : 16px 'Open Sans';
+
+.btn-white {
+    background-color: $our_white;
+}
+
+.btn-primary {
+    color: #fff;
+}
+
+.card {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.bg-blue {
+    background-color: $our_blue;
+}
 
 .copyleft {
     display:inline-block;
@@ -63,6 +100,10 @@ html {
 }
 
 body {
+
+    a {
+        text-decoration: none;
+    }
 
     padding-top: 10px;
 
@@ -329,9 +370,6 @@ body {
                     top: 100px;
                 }
                 .puclic-stats-body {
-                    .col-12.border-left {
-                        border-left-width: 6px !important;                                        
-                    }
                     h5 {
                         font-size:1rem;
                     }
