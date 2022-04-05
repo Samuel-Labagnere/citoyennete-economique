@@ -1,4 +1,6 @@
 fr:
+  errors:
+    format: "%{message}"
   activerecord:
     attributes:
       evaluation:
