@@ -4,7 +4,7 @@
     <h1>Editer utilisateur</h1>
   </header>
 
-  <div class="form-body mt-5 mb-5">
+  <div class="form-body mt-5 mb-5 mt-sm-0 mt-xs-0">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, data: { turbo: false }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
