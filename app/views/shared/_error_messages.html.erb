@@ -1,0 +1,10 @@
+<% if object.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger m-4">
+     <b><u><%= I18n.t 'simple_form.error_notification.default_message' %></u></b>
+    <ul class="m-0">
+      <% object.errors.full_messages.each do |msg| %>
+        <li><%= raw msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
