@@ -77,9 +77,20 @@ $fontMenu : 16px 'Open Sans';
     background-color: $our_white;
 }
 
+.btn-white:hover {
+    background-color: #DFDFDF !important;
+}
+
 .btn-primary {
     color: #fff;
 }
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #BA1D59 !important;
+    border-color: #BA1D59;
+}
+
 
 .card {
     padding-left: 0px;
