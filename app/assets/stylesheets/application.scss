@@ -91,14 +91,15 @@ $fontMenu : 16px 'Open Sans';
     border-color: #BA1D59;
 }
 
-
-.card {
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
 .bg-blue {
     background-color: $our_blue;
+}
+
+.home {
+    .card {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 }
 
 .copyleft {
