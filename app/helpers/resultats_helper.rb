@@ -1,5 +1,8 @@
 module ResultatsHelper
-  def single_value_pie_chart(value, suffix: "%", max: 100)
+  def single_value_pie_chart(value, suffix: nil, max: nil)
+    suffix ||= "%"
+    max ||= 100
+
     data = {
       "value" => value,
       "remainder" => (max - value)

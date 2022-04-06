@@ -2,9 +2,14 @@
   <div class="container">
     <div class="row">
       <% group.each do |indicateur| %>
+        <% custom = {suffix: nil, max: nil} %>
+        <% if indicateur.is_a? Array %>
+          <% custom = indicateur[1] %>
+          <% indicateur = indicateur[0] %>
+        <% end %>
         <% if evaluation.indicateurs_list[indicateur].present? %>
           <div class="col">
-            <%= render "single_indicateur_box", evaluation: evaluation, indicateur: indicateur %>
+            <%= render "single_indicateur_box", evaluation: evaluation, indicateur: indicateur, suffix: custom[:suffix], max: custom[:max] %>
           </div>
         <% end %>
       <% end %>
