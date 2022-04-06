@@ -12,7 +12,7 @@
 
       <div class="col">
         <form>
-          <div class="form-group">
+          <div class="form-group mb-4">
             <label for="code">Code d'invitation</label>
             <input type="text" id="code" class="form-control">
           </div>
@@ -43,11 +43,11 @@
     <div class="d-flex align-items-center justify-content-center">
       <%= button_to "Ajouter une évaluation", new_evaluation_path, method: :get, class: "btn btn-primary" %>
     </div>
-    <div class="d-flex align-items-center justify-content-center">
+    <div class="d-flex align-items-center justify-content-center mt-4">
       <% if current_user.organisation.objectifs_list.present? %>
-        <%= button_to "Éditer les objectifs", edit_objectifs_list_path(id: current_user.organisation.objectifs_list.id), method: :get, class: "btn btn-primary" %>
+        <%= button_to "Éditer les objectifs", edit_objectifs_list_path(id: current_user.organisation.objectifs_list.id), method: :get, class: "btn btn-primary ms-2 me-2" %>
       <% else %>
-        <%= button_to "Définir des objectifs", new_objectifs_list_path, method: :get, class: "btn btn-primary" %>
+        <%= button_to "Définir des objectifs", new_objectifs_list_path, method: :get, class: "btn btn-secondary ms-2 me-2" %>
       <% end %>
     </div>
   <% end %>

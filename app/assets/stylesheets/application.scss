@@ -603,9 +603,9 @@ body {
   body {
 
     #navigationBar{
-        
-        &.sticky {;
-    
+
+        &.sticky {
+
             .logoSite {
                 span {
                     transform: none;
@@ -638,13 +638,10 @@ body {
                     }
                 }
             }
-        
+
         }
     #wrapper {
       #content-wrapper {
-        #wrap {
-            
-            }
           section {
             .row{
               .card {
