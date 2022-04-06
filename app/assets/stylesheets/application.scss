@@ -257,6 +257,10 @@ body {
 
             overflow: unset !important;
 
+            .border-start{
+                border-width: 8px !important;
+            }
+
             form#new_user {
               h2 {
                 font-size: 1.5rem;
