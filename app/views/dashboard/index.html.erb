@@ -49,6 +49,7 @@
       <% else %>
         <%= button_to "Définir des objectifs", new_objectifs_list_path, method: :get, class: "btn btn-secondary ms-2 me-2" %>
       <% end %>
+      <%= button_to "Générer un code d'invitation", code_invitation_path, method: :get, class: "btn btn-primary" %>
     </div>
   <% end %>
 

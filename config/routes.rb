@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get 'view_organisation', to: "view_organisation#index"
   get 'mentions_legales', to: "mentions_legales#index"
   get 'contact', to: "contact#index"
+  get 'code_invitation', to: "invitation_code#index"
 end
