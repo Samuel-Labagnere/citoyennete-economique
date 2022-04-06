@@ -11,13 +11,14 @@
       </div>
 
       <div class="col">
-        <form>
-          <div class="form-group mb-4">
-            <label for="code">Code d'invitation</label>
-            <input type="text" id="code" class="form-control">
+        <div id="code_messages"></div>
+        <%= form_with url: code_invitation_path, method: :post do |f| %>
+          <div class="form-group">
+            <%= f.label :code, "Code d'invitation:" %>
+            <%= f.text_field :code, class: "form-control" %>
           </div>
-          <button type="submit" class="btn btn-primary">Rejoindre une organisation</button>
-        </form>
+          <%= f.submit "Rejoindre une organisation", class: "btn btn-primary" %>
+        <% end %>
       </div>
     </div>
   <% else %>
