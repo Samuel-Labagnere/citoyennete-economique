@@ -60,7 +60,7 @@ class OrganisationsTest < ApplicationSystemTestCase
 
   test "should destroy Organisation" do
     visit organisation_url(@organisation)
-    click_on "Destroy this organisation", match: :first
+    click_on "Supprimer cette organisation", match: :first
 
     assert_text "Organisation was successfully destroyed"
   end

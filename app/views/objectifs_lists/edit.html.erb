@@ -8,11 +8,11 @@
     <% if current_user.is_super_admin %>
       <%= link_to "Back to evaluations", objectifs_lists_path, class: "btn rounded light pt-1 pb-1 pe-3 ps-3 btn-primary me-3" %>
     <% else %>
-      <%= link_to "Back to dashboard", user_root_path, class: "btn rounded light pt-1 pb-1 pe-3 ps-3 btn-secondary" %>
+      <%= link_to "Retourner au dashboard", user_root_path, class: "btn rounded light pt-1 pb-1 pe-3 ps-3 btn-secondary" %>
     <% end %>
   </div>
 
   <%= render "form", objectifs_list: @objectifs_list %>
-    <%= button_to "Destroy this objectifs_list", @objectifs_list, method: :delete, class: "btn rounded white pt-1 pb-1 pe-3 ps-3 btn-danger", form: { data: { turbo_confirm: "Êtes-vous sûr de vouloir supprimer vos objectifs ?" } } %>
+    <%= button_to "Supprimer ces objectifs", @objectifs_list, method: :delete, class: "btn rounded white pt-1 pb-1 pe-3 ps-3 btn-danger", form: { data: { turbo_confirm: "Êtes-vous sûr de vouloir supprimer vos objectifs ?" } } %>
 
 </div>

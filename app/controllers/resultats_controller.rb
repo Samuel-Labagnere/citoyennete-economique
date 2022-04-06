@@ -28,20 +28,20 @@ class ResultatsController < ApplicationController
       :pouvoir_democratie_nombre_accords_signes,
     ])
 
-    @pouvoir_strategique_taux = indicateurs_hash(@evaluation, [
+    @pouvoir_strategique_taux = [
       :pouvoir_strategique_taux_presence_assemblee,
       :pouvoir_strategique_implication_partage,
       :pouvoir_strategique_actifs_total
-    ])
+    ]
 
     # Pilier 2
 
-    @valeur_perennite_taux = indicateurs_hash(@evaluation, [
+    @valeur_perennite_taux = [
       :valeur_perennite_part_capital_salaries,
       :valeur_perennite_part_resultat_reserve,
       :valeur_perennite_ebe_caht,
       :valeur_perennite_part_endettement
-    ])
+    ]
 
   end
 end

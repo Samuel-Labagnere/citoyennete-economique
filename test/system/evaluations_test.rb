@@ -144,7 +144,7 @@ class EvaluationsTest < ApplicationSystemTestCase
 
   test "should destroy Evaluation" do
     visit evaluation_url(@evaluation)
-    click_on "Destroy this evaluation", match: :first
+    click_on "Supprimer cette évaluation", match: :first
 
     assert_text "Evaluation was successfully destroyed"
   end
