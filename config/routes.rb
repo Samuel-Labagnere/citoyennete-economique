@@ -11,9 +11,11 @@ Rails.application.routes.draw do
   get "admin", to: "admin#index"
   get "entreprises", to: "organisations#public_list"
   get 'statistiques', to: "statistiques#index"
-  get 'view_organisation', to: "view_organisation#index"
   get 'mentions_legales', to: "mentions_legales#index"
   get 'contact', to: "contact#index"
+
   get 'code_invitation', to: "invitation_code#index"
   post 'code_invitation', to: "invitation_code#join"
+
+  get 'resultats/:evaluation_id', to: "resultats#index", as: "resultats"
 end
