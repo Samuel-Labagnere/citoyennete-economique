@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get 'mentions_legales', to: "mentions_legales#index"
   get 'contact', to: "contact#index"
   get 'code_invitation', to: "invitation_code#index"
+  post 'code_invitation', to: "invitation_code#join"
 end
