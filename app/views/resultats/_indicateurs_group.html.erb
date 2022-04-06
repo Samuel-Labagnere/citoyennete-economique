@@ -1,0 +1,13 @@
+<% if group.any? %>
+  <div class="container">
+    <div class="row">
+      <% group.each do |indicateur| %>
+        <% if evaluation.indicateurs_list[indicateur].present? %>
+          <div class="col">
+            <%= render "single_indicateur_box", evaluation: evaluation, indicateur: indicateur %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
