@@ -3,7 +3,7 @@ class ResultatsController < ApplicationController
     hash = {}
     sym_list.each do |sym|
       if evaluation.indicateurs_list[sym].present?
-        hash[indicateur_clean(sym)] = evaluation.indicateurs_list[sym]
+        hash[helpers.indicateur_clean(sym)] = evaluation.indicateurs_list[sym]
       end
     end
     return hash
@@ -24,6 +24,12 @@ class ResultatsController < ApplicationController
     @pouvoir_democratie_nombres = indicateurs_hash(@evaluation, [
       :pouvoir_democratie_nombre_reunions,
       :pouvoir_democratie_nombre_accords_signes,
+    ])
+
+    @pouvoir_strategique_taux = indicateurs_hash(@evaluation, [
+      :pouvoir_strategique_taux_presence_assemblee,
+      :pouvoir_strategique_implication_partage,
+      :pouvoir_strategique_actifs_total
     ])
   end
 end

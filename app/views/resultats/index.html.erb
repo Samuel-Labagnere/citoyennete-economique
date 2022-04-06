@@ -48,45 +48,64 @@
         <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">I.</b> <u class="text-secondary text-decoration-none">Composition de la gouvernance</u></h4>
 
         <% if @pouvoir_gouvernance_taux.any? %>
-          <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-              <div class="bg-white m-0 p-2">
-                  <div class="d-flex">
-                      <%= bar_chart @pouvoir_gouvernance_taux, suffix: "%", min: 0, max: 100 %>
-                  </div>
-              </div>
-          </div>
+        <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
+            <div class="bg-white m-0 p-2">
+                <div class="d-flex">
+                    <%= bar_chart @pouvoir_gouvernance_taux, suffix: "%", min: 0, max: 100 %>
+                </div>
+            </div>
+        </div>
         <% end %>
 
         <% if @evaluation.indicateurs_list.pouvoir_gouvernance_diversite_categories.present? %>
-          <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-              <div class="bg-light font-weight-bold text-center p-2">Catégories d'associés : <%= @evaluation.indicateurs_list.pouvoir_gouvernance_diversite_categories.count %></div>
-              <div class="bg-white m-0 p-2">
-                  <div class="d-flex">
-                      <% @evaluation.indicateurs_list.pouvoir_gouvernance_diversite_categories.each do |category| %>
-                        <div class="card">
-                          <div class="card-body">
-                            <h5 class="card-title"><%= category %></h5>
-                          </div>
+        <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
+            <div class="bg-light fw-bold text-center p-2">Catégories d'associés : <%= @evaluation.indicateurs_list.pouvoir_gouvernance_diversite_categories.count %></div>
+            <div class="bg-white m-0 p-2">
+                <div class="d-flex">
+                    <% @evaluation.indicateurs_list.pouvoir_gouvernance_diversite_categories.each do |category| %>
+                    <div class="card">
+                        <div class="card-body">
+                        <h5 class="card-title"><%= category %></h5>
                         </div>
-                      <% end %>
-                  </div>
-              </div>
-          </div>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
         <% end %>
 
         <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">II.</b> Mise en place des <u class="text-secondary text-decoration-none">conditions du bon exercice de la démocratie</u></h4>
 
+        <% if @pouvoir_democratie_nombres.any? %>
         <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
             <div class="bg-white m-0 p-2">
                 <div class="d-flex">
-                    <%= column_chart @pouvoir_democratie_nombres  %>
+                    <%= column_chart @pouvoir_democratie_nombres %>
+                </div>
+            </div>
+        </div>
+        <% end %>
+
+        <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
+            <div class="bg-light fw-bold text-center p-2"><%= indicateur_clean :pouvoir_democratie_taux_participation_formations %></div>
+            <div class="bg-white m-0 p-2">
+                <div class="d-flex">
+                    <%= single_value_pie_chart @evaluation.indicateurs_list.pouvoir_democratie_taux_participation_formations %>
                 </div>
             </div>
         </div>
 
         <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">III.</b> Participation à la <u class="text-secondary text-decoration-none">prise de décision stratégique</u></h4>
 
-        <p>EN CONSTRUCTION</p>
+        <% if @pouvoir_strategique_taux.any? %>
+        <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
+            <div class="bg-white m-0 p-2">
+                <div class="d-flex">
+                    <%= bar_chart @pouvoir_strategique_taux, suffix: "%" %>
+                </div>
+            </div>
+        </div>
+        <% end %>
 
         <!-- IMPACT 2 -->
 
