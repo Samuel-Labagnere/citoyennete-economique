@@ -54,6 +54,10 @@ $theme-colors: (
 
 @import "bootstrap/scss/bootstrap";
 
+
+
+$primary: #EB225A;
+$secondary: #007CAA;
 $border-success: #007A78;
 $border-danger: #F15921;
 
@@ -396,12 +400,22 @@ body {
                 }
             }
             .public-stats {
-                .position-sticky {
-                    top: 100px;
+                .sticky-top {
+                    top: 80px;
+                    a {
+                      font-size: 1rem;
+                      font-family: $fontTitre;
+                      transition: .3s ease;
+                      b {font-size: 2.5rem;}
+                      &:hover {
+                        background-color: $primary !important;
+                        transition: .3s ease;
+                      }
+                    }
                 }
                 .puclic-stats-body {
                     h5 {
-                        font-size:1rem;
+                        font-size:.9rem;
                     }
                 }
             }
