@@ -9,6 +9,8 @@ fr:
     valeur_partage_existence_epargne_salariale: "Absence d'autres mécanismes d'épargne salariale (PEE, PERCO, PER)"
     valeur_partage_existence_grille_salariale: "Absence de grille salariale"
     valeur_partage_publicite_grille: "Absence de publicité de la grille salariale"
+    qualite_qvt_enquete_qvt: "Absence d'enquête annuelle sur la QVT perçue par les salariés"
+    impact_engagement_demarche_ethique_fournisseurs: "Absence d'engagement dans une démarche sociale, locale et/ou écologique dans le choix des fournisseurs"
   activerecord:
     attributes:
       evaluation:
@@ -49,9 +51,9 @@ fr:
         valeur_partage_index_egalite_homme_femme: "Index égalité des rémunérations entre hommes et femmes"
         valeur_estimation_realite: "Réalité du pilier « Pérennité économique et partage de la valeur créée » perçue par les salariés"
         qualite_qvt_enquete_qvt: "Enquête annuelle sur la QVT perçue par les salariés"
-        qualite_qvt_taux_qvt: "Si oui, taux de satisfaction sur la santé et qualité de vie au travail au sein de l'organisation"
+        qualite_qvt_taux_qvt: "Taux de satisfaction sur la santé et qualité de vie au travail au sein de l'organisation"
         qualite_qvt_part_cdi: "Salariés en CDI sur l'ensemble des salariés"
-        qualite_qvt_moyenne_anciennete: "Ancienneté moyenne (nombre d'années)"
+        qualite_qvt_moyenne_anciennete: "Ancienneté moyenne"
         qualite_qvt_taux_turnover: "Taux de turn-over"
         qualite_qvt_taux_absenteisme: "Taux d'absentéisme au travail"
         qualite_emancipation_moyenne_heures_formation: "Nombre moyen d'heures de formation par salariés"
@@ -73,7 +75,7 @@ fr:
         impact_engagement_part_resultat_missions_utiles: "Part du résultat consacré à des missions d'utilité sociale, locale ou environnementale"
         impact_engagement_part_placements_responsables: "Part des placements responsables dans les placements financiers"
         impact_engagement_part_impots_france: "Part des impôts payés sur le territoire français"
-        impact_engagement_demarche_ethique_fournisseurs: "Êtes-vous engagé dans une démarche sociale, locale et/ou écologique dans votre choix de fournisseurs ?"
+        impact_engagement_demarche_ethique_fournisseurs: "Engagement dans une démarche sociale, locale et/ou écologique dans le choix des fournisseurs"
         impact_estimation_realite: "Réalité du pilier « Impact environnemental, social et territorial » perçue par les salariés"
 
   simple_form:

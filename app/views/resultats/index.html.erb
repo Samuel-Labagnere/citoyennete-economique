@@ -57,7 +57,13 @@
 
     <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">I.</b> <u class="text-secondary text-decoration-none">Composition de la gouvernance</u></h4>
 
-    <%= render "indicateurs_taux_group", evaluation: @evaluation, group: @pouvoir_gouvernance_taux %>
+    <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
+      :pouvoir_gouvernance_part_salaries_associes,
+      :pouvoir_gouvernance_taux_societariat_femmes,
+      :pouvoir_gouvernance_taux_droits_vote_salaries,
+      :pouvoir_gouvernance_part_salaries_conseil,
+      :pouvoir_gouvernance_part_femmes_conseil
+    ] %>
 
     <% if @evaluation.indicateurs_list.pouvoir_gouvernance_diversite_categories.present? %>
     <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
@@ -112,7 +118,11 @@
 
     <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">III.</b> Participation à la <u class="text-secondary text-decoration-none">prise de décision stratégique</u></h4>
 
-    <%= render "indicateurs_taux_group", evaluation: @evaluation, group: @pouvoir_strategique_taux %>
+    <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
+      :pouvoir_strategique_taux_presence_assemblee,
+      :pouvoir_strategique_implication_partage,
+      :pouvoir_strategique_actifs_total
+    ] %>
 
     <div class="border-bottom my-5"></div>
 
@@ -126,7 +136,12 @@
 
     <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">I.</b> Pérennité : <u class="text-secondary text-decoration-none">création de valeur, inaliénabilité et robustesse</u> de l'entreprise</h4>
 
-    <%= render "indicateurs_taux_group", evaluation: @evaluation, group: @valeur_perennite_taux %>
+    <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
+      :valeur_perennite_part_capital_salaries,
+      :valeur_perennite_part_resultat_reserve,
+      :valeur_perennite_ebe_caht,
+      :valeur_perennite_part_endettement
+    ] %>
 
     <% if has_any_indicateur @evaluation, :valeur_perennite_existence_reserve, :valeur_perennite_reserve_impartageable, :valeur_perennite_attention_questions_innovation %>
     <div class="container">
@@ -218,22 +233,100 @@
 
     <h3 id="impact3" class="mt-3 mt-sm-5">Capital humain et qualité de vie au travail</h3>
     <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">I.</b> <u class="text-secondary text-decoration-none">Qualité de vie</u> au travail / <u class="text-secondary text-decoration-none">épanouissement</u> des salariés</h4>
+
+    <% if has_any_indicateur @evaluation, :qualite_qvt_enquete_qvt, :qualite_qvt_taux_qvt %>
+    <div class="container">
+      <div class="row">
+        <% if has_any_indicateur @evaluation, :qualite_qvt_enquete_qvt %>
+          <div class="col">
+            <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :qualite_qvt_enquete_qvt %>
+          </div>
+        <% end %>
+        <% if has_any_indicateur @evaluation, :qualite_qvt_taux_qvt %>
+          <div class="col">
+            <%= render "single_taux_box", evaluation: @evaluation, indicateur: :qualite_qvt_taux_qvt %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+    
+    <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
+      :qualite_qvt_part_cdi,
+      :qualite_qvt_taux_turnover,
+      :qualite_qvt_taux_absenteisme
+    ] %>
+
+    <% if has_any_indicateur @evaluation, :qualite_qvt_moyenne_anciennete %>
+      <%= render "single_number_box", evaluation: @evaluation, indicateur: :qualite_qvt_moyenne_anciennete, suffix: " ans" %>
+    <% end %>
+
     <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5">
     <b class="text-primary">II.</b>  Développement des
     <u class="text-secondary text-decoration-none">compétences individuelles et collectives</u>
       <br/>
       <u class="text-secondary text-decoration-none">Emancipation</u> des salariés
       </h4>
+    
+    <% if has_any_indicateur @evaluation, :qualite_emancipation_moyenne_heures_formation, :qualite_emancipation_taux_budget_formation_masse_salariale, :qualite_emancipation_taux_direction_promotion_interne %>
+      <div class="container">
+        <div class="row">
+          <% if has_any_indicateur @evaluation, :qualite_emancipation_moyenne_heures_formation %>
+            <div class="col">
+              <%= render "single_number_box", evaluation: @evaluation, indicateur: :qualite_emancipation_moyenne_heures_formation, suffix: " heures" %>
+            </div>
+          <% end %>
+          <% if has_any_indicateur @evaluation, :qualite_emancipation_taux_budget_formation_masse_salariale %>
+            <div class="col">
+              <%= render "single_taux_box", evaluation: @evaluation, indicateur: :qualite_emancipation_taux_budget_formation_masse_salariale %>
+            </div>
+          <% end %>
+          <% if has_any_indicateur @evaluation, :qualite_emancipation_taux_direction_promotion_interne %>
+            <div class="col">
+              <%= render "single_taux_box", evaluation: @evaluation, indicateur: :qualite_emancipation_taux_direction_promotion_interne %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="border-bottom my-5"></div>
+
+    <% if has_any_indicateur @evaluation, :qualite_estimation_realite %>
+      <%= render "single_taux_box", evaluation: @evaluation, indicateur: :qualite_estimation_realite, suffix: "/10", max: 10 %>
+    <% end %>
 
     <!-- IMPACT 4 -->
 
     <h3 id="impact4" class="mt-3 mt-sm-5">Impact environnemental, social et territorial</h3>
 
     <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">I.</b> Impact <u class="text-secondary text-decoration-none">environnemental</u></h4>
+
+    <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
+      :impact_environnement_part_energies_renouvelables,
+      :impact_environnement_part_salaries_mobilite,
+    ] %>
+
     <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">II.</b> Impact <u class="text-secondary text-decoration-none">social</u></h4>
+
+    <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
+      :impact_social_part_activite_structures_insertion,
+      :impact_social_alternance_apprentissage,
+      :impact_social_part_seniors,
+      :impact_social_part_handicap
+    ] %>
+
     <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">III.</b> <u class="text-secondary text-decoration-none">Engagement</u> en faveur de <u class="text-secondary text-decoration-none">l'écosystème</u> et du <u class="text-secondary text-decoration-none">territoire</u></h4>
 
+    <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
+      :impact_engagement_part_resultat_missions_utiles,
+      :impact_engagement_part_placements_responsables,
+      :impact_engagement_part_impots_france
+    ] %>
 
+    <% if has_any_indicateur @evaluation, :impact_engagement_demarche_ethique_fournisseurs %>
+      <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :impact_engagement_demarche_ethique_fournisseurs %>
+    <% end %>
 
     <div class="d-flex flex-sm-row flex-column align-items-sm-center justify-content-between mt-5 pt-5 mb-4">
       <div class="mb-3 mb-sm-0">
