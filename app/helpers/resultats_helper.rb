@@ -9,12 +9,10 @@ module ResultatsHelper
     }
 
     pie_chart data,
-    donut: true, legend: false, colors: ["#007A78", "#C7C2C3"], 
+    donut: true, legend: false, colors: ["#2E3092", "#ECD1D8"], 
     library: { 
+      events: [],
       plugins: {
-        tooltip: {
-          enabled: false
-        },
         donut_text: {
           text: "#{value}#{suffix}"
         }

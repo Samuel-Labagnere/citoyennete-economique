@@ -1,0 +1,116 @@
+
+    <div class="me-auto ms-auto rounded formul d-flex flex-sm-row flex-column justify-content-center align-items-center bg-blue pt-0 pb-0 mt-0 mt-sm-5 col-md-9">
+      <span class="d-none d-sm-flex pt-4 pb-4 col-1 "><%= image_tag '3.svg', alt: 'numéro 3' %></span>
+      <h2 class="p-4 white">Capital humain et qualité de vie au travail</h2>
+    </div>
+
+
+
+    <div class="d-flex flex-column align-items-center w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
+
+        <div class="mb-3 col-10 col-sm-8 bg-white rounded-end p-4 mt-5">
+          <h3 class="text-primary">Mise en place des conditions du bon exercice de la démocratie</h3>
+        </div>
+
+      <fieldset class="d-flex col-md-6 flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow form-border border-start border-primary" <%= disable %>>
+        <div class="col-12 col-sm-10 col-input">
+          <%= il.input :qualite_qvt_enquete_qvt, as: :radio_buttons %>
+          <%= il.input :qualite_qvt_taux_qvt %>
+          <%= il.input :qualite_qvt_part_cdi %>
+        </div>
+        <div class="col-12 col-sm-10">
+          <%= il.input :qualite_qvt_moyenne_anciennete %>
+          <%= il.input :qualite_qvt_taux_turnover %>
+          <%= il.input :qualite_qvt_taux_absenteisme %>
+        </div>
+      </fieldset>
+    </div>
+
+
+
+    <div class="d-flex flex-column align-items-center w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
+
+        <div class="mb-3 col-10 col-sm-8 bg-white rounded-end p-4 mt-5">
+          <h3 class="text-primary">Développement des compétences individuelles et collectives<br/>Émancipation des salariés</h3>
+        </div>
+
+      <fieldset class="d-flex col-md-6 flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow form-border border-start border-primary" <%= disable %>>
+        <div class="col-12 col-sm-10">
+          <%= il.input :qualite_emancipation_moyenne_heures_formation %>
+          <%= il.input :qualite_emancipation_taux_budget_formation_masse_salariale %>
+          <%= il.input :qualite_emancipation_taux_direction_promotion_interne %>
+        </div>
+      </fieldset>
+      <div class="estim col-11 col-sm-6 text-break me-auto ms-auto rounded bg-white shadow border-start border-secondary pt-1 pb-1 pe-5 ps-5 mt-3 mb-5">
+        <%= il.input :qualite_estimation_realite %>
+      </div>
+    </div>
+
+    <div class="me-auto ms-auto rounded formul d-flex flex-sm-row flex-column justify-content-center align-items-center bg-blue pt-0 pb-0 mt-0 mt-sm-5 col-md-9">
+      <span class="d-none d-sm-flex pt-4 pb-4 col-1 "><%= image_tag '4.svg', alt: 'numéro 4' %></span>
+      <h2 class="p-4 white">Impact environnemental, social et territorial</h2>
+    </div>
+
+
+
+    <div class="d-flex flex-column align-items-center w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
+
+        <div class="mb-3 col-10 col-sm-8 bg-white rounded-end p-4 mt-5">
+          <h3 class="text-primary">Impact environnemental</h3>
+        </div>
+
+      <fieldset class="d-flex col-md-6 flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow form-border border-start border-primary" <%= disable %>>
+        <div class="col-12 col-sm-10 col-input">
+          <%= il.input :impact_environnement_audit_impact, as: :radio_buttons %>
+          <%= il.input :impact_environnement_demarche_ecologique, as: :radio_buttons %>
+          <%= il.input :impact_environnement_discussion_impact, as: :radio_buttons %>
+        </div>
+        <div class="col-12 col-sm-10">
+          <%= il.input :impact_environnement_part_energies_renouvelables %>
+          <%= il.input :impact_environnement_part_salaries_mobilite %>
+          <p>Calculez-vous le bilan carbone ?<p>
+          <div class="m-3">
+            <%= il.input :impact_environnement_bilan_carbone_scope_1 %>
+            <%= il.input :impact_environnement_bilan_carbone_scope_2 %>
+            <%= il.input :impact_environnement_bilan_carbone_scope_3 %>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+
+
+    <div class="d-flex flex-column align-items-center w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
+
+        <div class="mb-3 col-10 col-sm-8 bg-white rounded-end p-4 mt-5">
+          <h3 class="text-primary">Impact social</h3>
+        </div>
+
+      <fieldset class="d-flex col-md-6 flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow form-border border-start border-primary" <%= disable %>>
+        <div class="col-12 col-sm-6">
+          <%= il.input :impact_social_part_activite_structures_insertion %>
+          <%= il.input :impact_social_alternance_apprentissage %>
+          <%= il.input :impact_social_part_seniors %>
+          <%= il.input :impact_social_part_handicap %>
+        </div>
+      </fieldset>
+    </div>
+
+
+    <div class="d-flex flex-column align-items-center w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
+
+        <div class="mb-3 col-10 col-sm-8 bg-white rounded-end p-4 mt-5">
+          <h3 class="text-primary">Engagement en faveur de l'écosystème et du territoire </h3>
+        </div>
+      <fieldset class="d-flex col-md-6 flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow form-border border-start border-primary" <%= disable %>>
+        <div class="col-12 col-sm-10">
+          <%= il.input :impact_engagement_part_resultat_missions_utiles %>
+          <%= il.input :impact_engagement_part_placements_responsables %>
+          <%= il.input :impact_engagement_part_impots_france %>
+          <%= il.input :impact_engagement_demarche_ethique_fournisseurs, as: :radio_buttons %>
+        </div>
+      </fieldset>
+      <div class="estim col-11 col-sm-6 text-break me-auto ms-auto rounded bg-white shadow border-start border-secondary pt-1 pb-1 pe-5 ps-5 mt-3 mb-5">
+        <%= il.input :impact_estimation_realite %>
+      </div>
+    </div>
