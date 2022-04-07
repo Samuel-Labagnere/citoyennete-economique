@@ -2,7 +2,7 @@
   <div class="bg-light fw-bold text-center p-2"><%= indicateur_clean indicateur %></div>
   <div class="bg-white m-0 p-2">
     <div class="d-flex justify-content-center">
-      <p class="h1"><%= evaluation.indicateurs_list[indicateur] %></p>
+      <p class="h1"><%= evaluation.indicateurs_list[indicateur] %><%= suffix ||= "" %></p>
     </div>
   </div>
 </div>

@@ -114,6 +114,12 @@
 
     <%= render "indicateurs_taux_group", evaluation: @evaluation, group: @pouvoir_strategique_taux %>
 
+    <div class="border-bottom my-5"></div>
+
+    <% if has_any_indicateur @evaluation, :pouvoir_estimation_realite %>
+      <%= render "single_taux_box", evaluation: @evaluation, indicateur: :pouvoir_estimation_realite, suffix: "/10", max: 10 %>
+    <% end %>
+
     <!-- IMPACT 2 -->
 
     <h3 id="impact2" class="mt-3 mt-sm-5">Pérennité économique et partage de la valeur créée</h3>
@@ -146,9 +152,67 @@
 
     <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">II.</b> <u class="text-secondary text-decoration-none">Partage</u> des richesses</h4>
 
-    <h5 class="mb-3 mb-sm-5 text-secondary font-italic text-uppercase">Avec les actionnaires/sociétaires</h5>
+    <h5 class="mb-3 mb-sm-5 text-secondary fst-italic text-uppercase">Avec les actionnaires/sociétaires</h5>
 
-    <h5 class="text-secondary font-italic text-uppercase">Avec/entre les salariés</h5>
+    <% if has_any_indicateur @evaluation, :valeur_partage_part_resultat_net_actionnaires %>
+      <%= render "single_taux_box", evaluation: @evaluation, indicateur: :valeur_partage_part_resultat_net_actionnaires %>
+    <% end %>
+
+    <h5 class="mb-3 mb-sm-5 text-secondary fst-italic text-uppercase">Avec/entre les salariés</h5>
+
+    <% if has_any_indicateur @evaluation, :valeur_partage_part_resultat_salaries %>
+      <%= render "single_taux_box", evaluation: @evaluation, indicateur: :valeur_partage_part_resultat_salaries %>
+    <% end %>
+
+    <% if has_any_indicateur @evaluation, :valeur_partage_existence_accord, :valeur_partage_existence_epargne_salariale, :valeur_partage_existence_grille_salariale, :valeur_partage_publicite_grille %>
+    <div class="container">
+      <div class="row">
+        <% if has_any_indicateur @evaluation, :valeur_partage_existence_accord %>
+          <div class="col">
+            <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_partage_existence_accord %>
+          </div>
+        <% end %>
+        <% if has_any_indicateur @evaluation, :valeur_partage_existence_epargne_salariale %>
+          <div class="col">
+            <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_partage_existence_epargne_salariale %>
+          </div>
+        <% end %>
+        <% if has_any_indicateur @evaluation, :valeur_partage_existence_grille_salariale %>
+          <div class="col">
+            <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_partage_existence_grille_salariale %>
+          </div>
+        <% end %>
+        <% if has_any_indicateur @evaluation, :valeur_partage_publicite_grille %>
+          <div class="col">
+            <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_partage_publicite_grille %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+
+    <% if has_any_indicateur @evaluation, :valeur_partage_ecart_revenus_hauts_bas, :valeur_partage_index_egalite_homme_femme %>
+    <div class="container">
+      <div class="row">
+        <% if has_any_indicateur @evaluation, :valeur_partage_ecart_revenus_hauts_bas %>
+          <div class="col">
+            <%= render "single_number_box", evaluation: @evaluation, indicateur: :valeur_partage_ecart_revenus_hauts_bas, suffix: "€" %>
+          </div>
+        <% end %>
+        <% if has_any_indicateur @evaluation, :valeur_partage_index_egalite_homme_femme %>
+          <div class="col">
+            <%= render "single_taux_box", evaluation: @evaluation, indicateur: :valeur_partage_index_egalite_homme_femme, suffix: "/100" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+
+    <div class="border-bottom my-5"></div>
+
+    <% if has_any_indicateur @evaluation, :valeur_estimation_realite %>
+      <%= render "single_taux_box", evaluation: @evaluation, indicateur: :valeur_estimation_realite, suffix: "/10", max: 10 %>
+    <% end %>
 
     <!-- IMPACT 3 -->
 
