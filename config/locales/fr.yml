@@ -26,6 +26,9 @@ fr:
     valeur_partage_publicite_grille: "Absence de publicité de la grille salariale"
     qualite_qvt_enquete_qvt: "Absence d'enquête annuelle sur la QVT perçue par les salariés"
     impact_engagement_demarche_ethique_fournisseurs: "Absence d'engagement dans une démarche sociale, locale et/ou écologique dans le choix des fournisseurs"
+    impact_environnement_audit_impact: "Audit spécifique relatif aux impacts environnementaux de l'entreprise non effectué"
+    impact_environnement_demarche_ecologique: "Absence de démarche d'identification des consommations ou de plan d'amélioration sur l'impact environnemental des activités de l'entreprise"
+    impact_environnement_discussion_impact: "Absence de discussion avec les parties prenantes sur l'impact environnemental de l'activité"
   activerecord:
     attributes:
       evaluation:
@@ -75,11 +78,11 @@ fr:
         qualite_emancipation_taux_budget_formation_masse_salariale: "Taux : budget de formation / masse salariale"
         qualite_emancipation_taux_direction_promotion_interne: "Taux des membres du comité de direction actuel issue de la promotion interne"
         qualite_estimation_realite: "Réalité du pilier « Capital humain et qualité de vie au travail » perçue par les salariés"
-        impact_environnement_audit_impact: "Avez-vous bénéficié d'un audit spécifique relatif aux impacts environnementaux de votre entreprise ?"
-        impact_environnement_demarche_ecologique: Avez-vous engagé une démarche d'identification de vos consommations et un plan d'amélioration sur l'impact environnemental des activités de l'entreprise ?'
+        impact_environnement_audit_impact: "Audit spécifique relatif aux impacts environnementaux de l'entreprise effectué"
+        impact_environnement_demarche_ecologique: "Engagement d'une démarche d'identification des consommations et d'un plan d'amélioration sur l'impact environnemental des activités de l'entreprise"
         impact_environnement_part_energies_renouvelables: "Part d'énergies renouvelables dans le mix énergétique"
         impact_environnement_part_salaries_mobilite: "Part des salariés utilisant la mobilité douce ou co-mobilité pour se rendre au travail"
-        impact_environnement_discussion_impact: "Discutez-vous avec vos parties prenantes de l'impact environnemental de votre activité ?"
+        impact_environnement_discussion_impact: "Discussion avec les parties prenantes de l'impact environnemental de l'activité"
         impact_environnement_bilan_carbone_scope_1: "Bilan Carbone Scope 1"
         impact_environnement_bilan_carbone_scope_2: "Bilan Carbone Scope 2"
         impact_environnement_bilan_carbone_scope_3: "Bilan Carbone Scope 3"
