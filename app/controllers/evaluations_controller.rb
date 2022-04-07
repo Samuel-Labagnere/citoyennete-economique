@@ -28,7 +28,7 @@ class EvaluationsController < ApplicationController
 
     respond_to do |format|
       if @evaluation.save
-        format.html { redirect_to evaluation_url(@evaluation), notice: "Évaluation créée avec succès." }
+        format.html { redirect_to evaluation_url(@evaluation), notice: I18n.t('notice.evaluation.create') }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -39,7 +39,7 @@ class EvaluationsController < ApplicationController
   def update
     respond_to do |format|
       if @evaluation.update(evaluation_params)
-        format.html { redirect_to evaluation_url(@evaluation), notice: "Évaluation mise à jour avec succès." }
+        format.html { redirect_to evaluation_url(@evaluation), notice: I18n.t('notice.evaluation.update') }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -51,7 +51,7 @@ class EvaluationsController < ApplicationController
     @evaluation.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_root_path, notice: "Évaluation supprimée avec succès." }
+      format.html { redirect_to user_root_path, notice: I18n.t('notice.evaluation.destroy') }
     end
   end
 

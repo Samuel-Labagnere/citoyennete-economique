@@ -16,7 +16,7 @@ class InvitationCodeController < ApplicationController
   def join
     ic = InvitationCode.find_by(code: params[:code])
     if ic.nil?
-      @message = "Code invalide."
+      @message = I18n.t('notice.invitation.error')
     else
       current_user.organisation = ic.organisation
       current_user.save
