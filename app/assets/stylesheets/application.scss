@@ -428,12 +428,21 @@ body {
                     .form-check {
                         display: inline-flex;
                         padding: 0;
-                        overflow:hidden;
+                        position: relative;
+                        overflow: hidden;
 
-                        input[type="checkbox"] {
+                        .text-muted {margin-left: 10px;}
+
+                        input[type="radio"] {
                             opacity:0;
                             right: 0;
                             cursor: pointer;
+                            width: 100%;
+                            height: 80%;
+                            position: absolute;
+                            border-radius: 8px;
+                            padding: 0 !important;
+                            margin: 0 !important;
                         }
                         label {
                             display: inline-block;
@@ -451,9 +460,8 @@ body {
                                 border-top-right-radius: 0;
                                 border-bottom-right-radius: 0;
                                 border-right: .5px solid #eee;
-                                margin-left: 10px;
                             }
-                            input[type="checkbox"]:checked + label, input[type="checkbox"]:hover + label {
+                            input[type="radio"]:checked + label, input[type="radio"]:hover + label {
                                 background-color:$bg-success;
                                 color: #fff;
                             }
@@ -462,10 +470,8 @@ body {
                           label {
                               border-top-left-radius: 0;
                               border-bottom-left-radius: 0;
-                              margin-left: 7px;
-                              margin-right: 10px;
                           }
-                          input[type="checkbox"]:checked + label, input[type="checkbox"]:hover + label {
+                          input[type="radio"]:checked + label, input[type="radio"]:hover + label {
                               background-color:$bg-danger;
                               color: #fff !important;
                           }
