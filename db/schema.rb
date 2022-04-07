@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_05_145931) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_07_142637) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,7 +23,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_05_145931) do
     t.float "resultat_net"
     t.integer "nombre_salaries"
     t.integer "nombre_salaries_etp"
-    t.index ["annee"], name: "index_evaluations_on_annee", unique: true
     t.index ["organisation_id"], name: "index_evaluations_on_organisation_id"
   end
 
