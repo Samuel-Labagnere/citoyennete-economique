@@ -1,0 +1,15 @@
+<% if [true, false].include? evaluation.indicateurs_list[indicateur] %>
+  <% if evaluation.indicateurs_list[indicateur] %>
+    <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
+      <div class="bg-success text-white m-0 p-2">
+        <p class="h2"><%= indicateur_clean indicateur %></p>
+      </div>
+    </div>
+  <% else %>
+    <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
+      <div class="bg-danger text-white m-0 p-2">
+        <p class="h2"><%= negative_indicateur indicateur %></p>
+      </div>
+    </div>
+  <% end %>
+<% end %>

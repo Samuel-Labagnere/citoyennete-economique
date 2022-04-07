@@ -5,7 +5,7 @@
   <div class="bg-light fw-bold text-center p-2"><%= indicateur_clean indicateur %></div>
   <div class="bg-white m-0 p-2">
     <div class="d-flex">
-      <%= single_value_pie_chart @evaluation.indicateurs_list[indicateur], suffix: suffix, max: max %>
+      <%= single_value_pie_chart evaluation.indicateurs_list[indicateur], suffix: suffix, max: max %>
     </div>
   </div>
 </div>
