@@ -1,42 +1,17 @@
-<div class="public-stats d-flex">
-    
-    <!-- Sidebar -->
-    <div class="navbar-nav bg-white sidebar sidebar-light accordion col-2 p-3 position-relative d-none d-md-flex flex-column" id="accordionSidebar">
-        
-        <ul class="position-sticky list-unstyled">
-            <!-- Nav Item - Impact 1 -->
-            <li class="nav-item">
-                <a class="nav-link position-relative collapsed text-dark d-flex align-items-center" href="#impact1">
-                    <span><b class="text-primary">1.</b> Partage du pouvoir et des décisions </span>
-                </a>
-            </li>
+<div class="public-stats">
 
-            <!-- Nav Item - Impact 2 -->
-            <li class="nav-item">
-                <a class="nav-link position-relative collapsed text-dark d-flex align-items-center" href="#impact2">
-                    <span><b class="text-primary">2.</b> Pérennité économique et partage de la valeur créée</span>
-                </a>
-            </li>
+    <!-- Navbar links -->
 
-            <!-- Nav Item - Impact 3 -->
-            <li class="nav-item">
-                <a class="nav-link position-relative collapsed text-dark d-flex align-items-center" href="#impact3">
-                    <span><b class="text-primary">3.</b> Capital humain et qualité de vie au travail</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Impact 4 -->
-            <li class="nav-item">
-                <a class="nav-link position-relative collapsed text-dark d-flex align-items-center" href="#impact4">
-                    <span><b class="text-primary">4.</b> Impact environnemental, social et territorial</span>
-                </a>
-            </li>
-        </ul>
-
+  <nav class="navbar sticky-top navbar-light p-0">
+    <div class="container-fluid">
+      <a class="navbar-brand w-25 bg-primary m-0 text-light text-center d-flex align-items-center justify-content-center pt-2 pb2" href="#"><b class="fw-normal lh-1">1.</b> Partage du pouvoir et des décisions</a>
+      <a class="navbar-brand w-25 bg-secondary m-0 text-light text-center  d-flex align-items-center justify-content-center pt-2 pb2" href="#"><b class="fw-normal lh-1">2.</b> Pérénnité économique et partage</a>
+      <a class="navbar-brand w-25 bg-secondary m-0 text-light text-center  d-flex align-items-center justify-content-center pt-2 pb2" href="#"><b class="fw-normal lh-1">3.</b> Capital humain et qualité de vie</a>
+      <a class="navbar-brand w-25 bg-secondary m-0 text-light text-center  d-flex align-items-center justify-content-center pt-2 pb2" href="#"><b class="fw-normal lh-1">4.</b> Environnement, société et territoire </a>
     </div>
-    <!-- End of Sidebar -->
+  </nav>
 
-    <div class="puclic-stats-body p-sm-5 w-100  me-4 ms-4">
+    <div class="puclic-stats-body me-0 ms-0 me-sm-5 ms-sm-5 p-sm-5 mt-5 pt-5 pt-sm-0">
         <header>
             <h1>Statistiques générales</h1>
         </header>
@@ -47,22 +22,24 @@
 
         <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">I.</b> <u class="text-secondary text-decoration-none">Composition de la gouvernance</u></h4>
 
-        <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-            <div class="bg-light fw-bold text-center p-2">Taux médians</div>
-            <div class="bg-white m-0 p-2">
-                <div class="d-flex">
-                    <%= bar_chart @pouvoir_gouvernance_taux, suffix: "%" %>
-                </div>
-            </div>
-        </div>
+        <div class="d-flex flex-sm-row flex-column">
+          <div class="rounded shadow col-7 p-0 overflow-hidden mb-5">
+              <div class="bg-light fw-bold text-center p-3">Taux médians</div>
+              <div class="bg-white m-0 p-2">
+                  <div class="d-flex">
+                      <%= bar_chart @pouvoir_gouvernance_taux, suffix: "%" %>
+                  </div>
+              </div>
+          </div>
 
-        <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-            <div class="bg-light fw-bold text-center p-2">Catégories d'associés</div>
-            <div class="bg-white m-0 p-2">
-                <div class="d-flex">
-                    <%= pie_chart @pouvoir_gouvernance_diversite_categories  %>
-                </div>
-            </div>
+          <div class="rounded shadow p-0 col-4 flex-fill overflow-hidden mb-5 offset-md-1">
+              <div class="bg-light fw-bold text-center p-3">Catégories d'associés</div>
+              <div class="bg-white m-0 p-2">
+                  <div class="d-flex">
+                      <%= pie_chart @pouvoir_gouvernance_diversite_categories  %>
+                  </div>
+              </div>
+          </div>
         </div>
 
         <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">II.</b> Mise en place des <u class="text-secondary text-decoration-none">conditions du bon exercice de la démocratie</u></h4>
@@ -78,7 +55,7 @@
         <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">III.</b> Participation à la <u class="text-secondary text-decoration-none">prise de décision stratégique</u></h4>
 
         <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-            <div class="bg-light fw-bold text-center p-2">Taux médians</div>
+            <div class="bg-light fw-bold text-center p-3">Taux médians</div>
             <div class="bg-white m-0 p-2">
                 <div class="d-flex">
                     <%= bar_chart @pouvoir_strategique_taux, suffix: "%" %>
@@ -92,26 +69,26 @@
 
         <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">I.</b> Prénnité : <u class="text-secondary text-decoration-none">création de valeur, inaliénabilité et robustesse</u> de l'entreprise</h4>
         <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">II.</b> <u class="text-secondary text-decoration-none">Partage</u> des richesses</h4>
-        
+
         <h5 class="mb-3 mb-sm-5 text-secondary font-italic text-uppercase">Avec les actionnaires/sociétaires</h5>
-        
+
         <h5 class="text-secondary font-italic text-uppercase">Avec/entre les salariés</h5>
 
         <!-- IMPACT 3 -->
-        
+
         <h3 id="impact3" class="mt-3 mt-sm-5">Capital humain et qualité de vie au travail</h3>
         <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">I.</b> <u class="text-secondary text-decoration-none">Qualité de vie</u> au travail / <u class="text-secondary text-decoration-none">épanouissement</u> des salariés</h4>
         <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5">
-        <b class="text-primary">II.</b>  Développement des 
-        <u class="text-secondary text-decoration-none">compétences individuelles et collectives</u> 
-            <br/> 
+        <b class="text-primary">II.</b>  Développement des
+        <u class="text-secondary text-decoration-none">compétences individuelles et collectives</u>
+            <br/>
             <u class="text-secondary text-decoration-none">Emancipation</u> des salariés
             </h4>
 
         <!-- IMPACT 4 -->
-        
+
         <h3 id="impact4" class="mt-3 mt-sm-5">Impact environnemental, social et territorial</h3>
-        
+
         <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">I.</b> Impact <u class="text-secondary text-decoration-none">environnemental</u></h4>
         <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">II.</b> Impact <u class="text-secondary text-decoration-none">social</u></h4>
         <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">III.</b> <u class="text-secondary text-decoration-none">Engagement</u> en faveur de <u class="text-secondary text-decoration-none">l'écosystème</u> et du <u class="text-secondary text-decoration-none">territoire</u></h4>
@@ -119,5 +96,5 @@
 
     </div>
 
-    
+
 </div>
