@@ -6,7 +6,7 @@
 
   <div class="form-body mt-0 mb-5 mt-sm-0">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, data: { turbo: false }) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
+      <%= render 'shared/small_error_message', object: f.object %>
 
       <div class="modiform row d-flex flex-sm-row flex-column col-10 text-break me-auto ms-auto rounded bg-white shadow border-start border-primary p-3 p-sm-4 mb-5 col-input mt-5 p-sm-5">
 
@@ -36,6 +36,7 @@
         </div>
       </div>
 
+  <% end %>
       <div class="col-10 m-auto mt-5 mb-5">
 
         <h3 class="mb-3">Supprimer mon compte</h3>
@@ -46,6 +47,5 @@
         </p>
         <%= link_to "Retour", :back, class: "btn btn-secondary mt-5" %>
       </div>
-  <% end %>
 
 </div>

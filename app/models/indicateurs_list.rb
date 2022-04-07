@@ -32,7 +32,7 @@ class IndicateursList < ApplicationRecord
     :impact_engagement_part_resultat_missions_utiles,
     :impact_engagement_part_placements_responsables,
     :impact_engagement_part_impots_france,
-    inclusion: {in: 0..100, message: "Le champ <strong>%{attribute}</strong> doit être un pourcentage compris entre 0,0 et 100,0"}, 
+    inclusion: {in: 0..100, message: "Le champ \"%{attribute}\" doit être un pourcentage compris entre 0,0 et 100,0"}, 
     allow_blank: true
   )
 
@@ -41,7 +41,7 @@ class IndicateursList < ApplicationRecord
     :valeur_estimation_realite,
     :qualite_estimation_realite,
     :impact_estimation_realite,
-    inclusion: {in: 0..10, message: "Le champ <strong>%{attribute}</strong> doit être compris entre 1 et 10"},
+    inclusion: {in: 0..10, message: "Le champ \"%{attribute}\" doit être compris entre 1 et 10"},
     allow_blank: true
   )
 end

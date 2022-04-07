@@ -1,0 +1,5 @@
+<% if object.errors.any? %>
+    <div class="alert alert-danger <%= defined?(addClass) ? addClass : '' %>">
+        <p class="m-0">Il semblerait qu'il y ait une erreur.</p>
+    </div>
+<% end %>
