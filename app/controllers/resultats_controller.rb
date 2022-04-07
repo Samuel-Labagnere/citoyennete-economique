@@ -23,11 +23,6 @@ class ResultatsController < ApplicationController
       :pouvoir_gouvernance_part_femmes_conseil
     ]
 
-    @pouvoir_democratie_nombres = indicateurs_hash(@evaluation, [
-      :pouvoir_democratie_nombre_reunions,
-      :pouvoir_democratie_nombre_accords_signes,
-    ])
-
     @pouvoir_strategique_taux = [
       :pouvoir_strategique_taux_presence_assemblee,
       :pouvoir_strategique_implication_partage,
