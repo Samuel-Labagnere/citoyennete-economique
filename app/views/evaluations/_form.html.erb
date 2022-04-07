@@ -1,7 +1,7 @@
 <% disable = "disabled" unless !defined?(disabled) || disabled != true %>
 <%= simple_form_for @evaluation do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <fieldset class="row d-flex flex-sm-row flex-column col-11 col-sm-8 text-break me-auto ms-auto rounded bg-white shadow border-start border-primary p-3 p-sm-4 mb-4 mt-4" <%= disable %>>
+  <fieldset class="row d-flex flex-sm-row flex-column col-11 col-sm-8 text-break me-auto ms-auto rounded bg-white shadow border-start border-primary p-3 p-sm-4 mb-4 col-input mt-4" <%= disable %>>
     <div class="col-12 col-sm-6">
       <%= f.input :annee %>
       <%= f.input :chiffre_affaires %>
@@ -81,7 +81,7 @@
         </div>
       </fieldset>
 
-      <div class="estim col-11 col-sm-6 text-break me-auto ms-auto rounded bg-white shadow border-start border-secondary pt-1 pb-1 pe-5 ps-5 mt-3 mb-5">
+      <div class="estim col-11 col-sm-6 text-break me-auto ms-auto rounded bg-white shadow border-start border-secondary pt-1 pb-1 pe-5 ps-5 mt-3 mb-5 col-input">
         <%= il.input :pouvoir_estimation_realite %>
       </div>
     </div>
@@ -236,8 +236,6 @@
           <%= il.input :impact_social_alternance_apprentissage %>
           <%= il.input :impact_social_part_seniors %>
           <%= il.input :impact_social_part_handicap %>
-
-
         </div>
       </fieldset>
     </div>
@@ -253,7 +251,7 @@
           <%= il.input :impact_engagement_part_resultat_missions_utiles %>
           <%= il.input :impact_engagement_part_placements_responsables %>
           <%= il.input :impact_engagement_part_impots_france %>
-          <%= il.input :impact_engagement_demarche_ethique_fournisseurs, as: :radio_buttons %>
+          <%= il.input :impact_engagement_demarche_ethique_fournisseurs, as: :radio_buttons, class: 'radio' %>
         </div>
       </fieldset>
       <div class="estim col-11 col-sm-6 text-break me-auto ms-auto rounded bg-white shadow border-start border-secondary pt-1 pb-1 pe-5 ps-5 mt-3 mb-5">
@@ -266,3 +264,15 @@
     <%= f.button :submit, "Enregistrer", class: 'btn btn-primary me-auto ms-auto d-flex mb-5' %>
   <% end %>
 <% end %>
+
+
+<script>
+  function toggleRadio(event)
+{
+    if(event.target.type === 'radio' && event.target.checked === true)
+    {
+        setTimeout(()=>{ event.target.checked = false; },0);
+    }
+}
+document.addEventListener('mouseup', toggleRadio);
+</script>

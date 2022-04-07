@@ -28,7 +28,7 @@ class ObjectifsListsController < ApplicationController
 
     respond_to do |format|
       if @objectifs_list.save
-        format.html { redirect_to objectifs_list_url(@objectifs_list), notice: "ObjectifsList was successfully updated." }
+        format.html { redirect_to objectifs_list_url(@objectifs_list), notice: I18n.t('notice.objectifs_list.create') }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -38,7 +38,7 @@ class ObjectifsListsController < ApplicationController
   def update
     respond_to do |format|
       if @objectifs_list.update(objectifs_list_params)
-        format.html { redirect_to objectifs_list_url(@objectifs_list), notice: "ObjectifsList was successfully updated." }
+        format.html { redirect_to objectifs_list_url(@objectifs_list), notice: I18n.t('notice.objectifs_list.update') }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -49,7 +49,7 @@ class ObjectifsListsController < ApplicationController
     @objectifs_list.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_root_path, notice: "ObjectifsList was successfully destroyed." }
+      format.html { redirect_to user_root_path, notice: I18n.t('notice.objectifs_list.destroy') }
     end
   end
 
