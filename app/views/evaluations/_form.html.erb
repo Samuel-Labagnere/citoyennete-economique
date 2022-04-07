@@ -1,7 +1,7 @@
 <% disable = "disabled" unless !defined?(disabled) || disabled != true %>
 <%= simple_form_for @evaluation do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <fieldset class="row d-flex flex-sm-row flex-column col-11 col-sm-8 text-break me-auto ms-auto rounded bg-white shadow border-start border-primary p-3 p-sm-4 mb-4 col-input mt-4" <%= disable %>>
+  <fieldset class="row d-flex flex-sm-row flex-column col-11 col-sm-8 text-break me-auto ms-auto rounded bg-white shadow border-start border-primary p-3 p-sm-4 mb-4 mt-4" <%= disable %>>
     <div class="col-12 col-sm-6">
       <%= f.input :annee %>
       <%= f.input :chiffre_affaires %>
@@ -81,7 +81,7 @@
         </div>
       </fieldset>
 
-      <div class="estim col-11 col-sm-6 text-break me-auto ms-auto rounded bg-white shadow border-start border-secondary pt-1 pb-1 pe-5 ps-5 mt-3 mb-5 col-input">
+      <div class="estim col-11 col-sm-6 text-break me-auto ms-auto rounded bg-white shadow border-start border-secondary pt-1 pb-1 pe-5 ps-5 mt-3 mb-5">
         <%= il.input :pouvoir_estimation_realite %>
       </div>
     </div>
@@ -107,9 +107,9 @@
           <%= il.input :valeur_perennite_part_endettement %>
         </div>
         <div class="col-12 col-sm-6 col-input">
-          <%= il.input :valeur_perennite_existence_reserve, as: :radio_buttons %>
-          <%= il.input :valeur_perennite_reserve_impartageable, as: :radio_buttons %>
-          <%= il.input :valeur_perennite_attention_questions_innovation, as: :radio_buttons %>
+          <%= il.input :valeur_perennite_existence_reserve, as: :check_boxes %>
+          <%= il.input :valeur_perennite_reserve_impartageable, as: :check_boxes %>
+          <%= il.input :valeur_perennite_attention_questions_innovation, as: :check_boxes %>
         </div>
       </fieldset>
     </div>
@@ -130,14 +130,14 @@
           <%= il.input :valeur_partage_index_egalite_homme_femme %>
         </div>
         <div class="col-12 col-sm-6 col-input">
-          <%= il.input :valeur_partage_existence_accord, as: :radio_buttons %>
-          <%= il.input :valeur_partage_existence_epargne_salariale, as: :radio_buttons %>
-          <%= il.input :valeur_partage_existence_grille_salariale, as: :radio_buttons %>
-          <%= il.input :valeur_partage_publicite_grille, as: :radio_buttons %>
+          <%= il.input :valeur_partage_existence_accord, as: :check_boxes %>
+          <%= il.input :valeur_partage_existence_epargne_salariale, as: :check_boxes %>
+          <%= il.input :valeur_partage_existence_grille_salariale, as: :check_boxes %>
+          <%= il.input :valeur_partage_publicite_grille, as: :check_boxes %>
         </div>
       </fieldset>
 
-      <div class="estim col-11 col-sm-7 text-break me-auto ms-auto rounded bg-white shadow border-start border-secondary pt-1 pb-1 pe-5 ps-5 mt-3 mb-5 col-input">
+      <div class="estim col-11 col-sm-7 text-break me-auto ms-auto rounded bg-white shadow border-start border-secondary pt-1 pb-1 pe-5 ps-5 mt-3 mb-5">
           <%= il.input :valeur_estimation_realite %>
       </div>
 
@@ -158,7 +158,7 @@
 
       <fieldset class="d-flex col-md-7 flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow form-border border-start border-primary" <%= disable %>>
         <div class="col-12 col-sm-6 col-input">
-          <%= il.input :qualite_qvt_enquete_qvt, as: :radio_buttons %>
+          <%= il.input :qualite_qvt_enquete_qvt, as: :check_boxes %>
           <%= il.input :qualite_qvt_taux_qvt %>
           <%= il.input :qualite_qvt_part_cdi %>
         </div>
@@ -185,7 +185,7 @@
           <%= il.input :qualite_emancipation_taux_direction_promotion_interne %>
         </div>
       </fieldset>
-      <div class="estim col-11 col-sm-7 text-break me-auto ms-auto rounded bg-white shadow border-start border-secondary pt-1 pb-1 pe-5 ps-5 mt-3 mb-5 col-input">
+      <div class="estim col-11 col-sm-7 text-break me-auto ms-auto rounded bg-white shadow border-start border-secondary pt-1 pb-1 pe-5 ps-5 mt-3 mb-5">
         <%= il.input :qualite_estimation_realite %>
       </div>
     </div>
@@ -205,9 +205,9 @@
 
       <fieldset class="d-flex col-md-7 flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow form-border border-start border-primary" <%= disable %>>
         <div class="col-12 col-sm-6 col-input">
-          <%= il.input :impact_environnement_audit_impact, as: :radio_buttons %>
-          <%= il.input :impact_environnement_demarche_ecologique, as: :radio_buttons %>
-          <%= il.input :impact_environnement_discussion_impact, as: :radio_buttons %>
+          <%= il.input :impact_environnement_audit_impact, as: :check_boxes %>
+          <%= il.input :impact_environnement_demarche_ecologique, as: :check_boxes %>
+          <%= il.input :impact_environnement_discussion_impact, as: :check_boxes %>
         </div>
         <div class="col-12 col-sm-6">
           <%= il.input :impact_environnement_part_energies_renouvelables %>
@@ -256,7 +256,7 @@
           <%= il.input :impact_engagement_demarche_ethique_fournisseurs, as: :radio_buttons %>
         </div>
       </fieldset>
-      <div class="estim col-11 col-sm-7 text-break me-auto ms-auto rounded bg-white shadow border-start border-secondary pt-1 pb-1 pe-5 ps-5 mt-3 mb-5 col-input">
+      <div class="estim col-11 col-sm-7 text-break me-auto ms-auto rounded bg-white shadow border-start border-secondary pt-1 pb-1 pe-5 ps-5 mt-3 mb-5">
         <%= il.input :impact_estimation_realite %>
       </div>
     </div>

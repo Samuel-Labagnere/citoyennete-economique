@@ -1,6 +1,14 @@
 fr:
   errors:
     format: "%{message}"
+  negative_indicateurs:
+    valeur_perennite_existence_reserve: "Absence de réserve statutaire"
+    valeur_perennite_reserve_impartageable: "Réserve statutaire partageable"
+    valeur_perennite_attention_questions_innovation: "Pas d'attention particulière portée aux questions relatives à l'innovation"
+    valeur_partage_existence_accord: "Absence d'accord d'intéressement et/ou de participation"
+    valeur_partage_existence_epargne_salariale: "Absence d'autres mécanismes d'épargne salariale (PEE, PERCO, PER)"
+    valeur_partage_existence_grille_salariale: "Absence de grille salariale"
+    valeur_partage_publicite_grille: "Absence de publicité de la grille salariale"
   activerecord:
     attributes:
       evaluation:
@@ -19,27 +27,27 @@ fr:
         pouvoir_democratie_nombre_reunions: "Nombre par an de réunions des salariés et des associés par la gouvernance"
         pouvoir_democratie_taux_participation_formations: "Taux de participation des salariés, à des formations sur le fonctionnement d'une entreprise et/ou à des dispositifs d'intégration dans l'entreprise"
         pouvoir_democratie_nombre_accords_signes: "Nombre d'accords signés entre les représentants du personnel et la direction"
-        pouvoir_democratie_accords_signes: "Si oui, lesquels ?"
+        pouvoir_democratie_accords_signes: "Accords signés entre les représentants du personnel et la direction"
         pouvoir_strategique_taux_presence_assemblee: "Taux de présence des salariés associés en assemblée générale"
         pouvoir_strategique_implication_partage: "Part des salariés impliqués dans une instance contribuant au partage du pouvoir et des décisions (CSE, CA, commission...)"
         pouvoir_strategique_actifs_total: "Nombre de salariés actifs / nombre total de salariés"
-        pouvoir_estimation_realite: "Estimation du pilier « Partage du pouvoir et des décisions »"
+        pouvoir_estimation_realite: "Réalité du pilier « Partage du pouvoir et des décisions » perçue par les salariés"
         valeur_perennite_part_capital_salaries: "Part du capital détenu par les salariés"
         valeur_perennite_existence_reserve: "Existence d'une réserve statutaire"
-        valeur_perennite_reserve_impartageable: "Si oui, est-elle au moins en partie impartageable ?"
+        valeur_perennite_reserve_impartageable: "Réserve statutaire au moins en partie impartageable"
         valeur_perennite_part_resultat_reserve: "Part du résultat mis en réserve (tous les types de réserves)"
         valeur_perennite_ebe_caht: "Excédent brut d'exploitation (EBE) / CA HT"
         valeur_perennite_part_endettement: "Part de l'endettement à long terme"
-        valeur_perennite_attention_questions_innovation: "L'entreprise porte-t-elle une attention particulière aux questions relatives à l'innovation ?"
+        valeur_perennite_attention_questions_innovation: "Attention particulière portée aux questions relatives à l'innovation"
         valeur_partage_part_resultat_net_actionnaires: "Part du résultat net distribué aux actionnaires"
         valeur_partage_existence_accord: "Existence d'un accord d'intéressement et/ou de participation"
         valeur_partage_existence_epargne_salariale: "Existence d'autres mécanismes d'épargne salariale (PEE, PERCO, PER)"
         valeur_partage_part_resultat_salaries: "Part du résultat distribué aux salariés (PEE, PERCO, PER)"
         valeur_partage_existence_grille_salariale: "Existence d'une grille salariale"
-        valeur_partage_publicite_grille: "Si oui, y a-t-il eu publicité de la grille ?"
+        valeur_partage_publicite_grille: "Publicité de la grille salariale"
         valeur_partage_ecart_revenus_hauts_bas: "Écart entre les 5 revenus les plus hauts de l'entreprise (incluant les primes et autres compléments de salaires) et les 5 plus bas"
-        valeur_partage_index_egalite_homme_femme: Résultat de l'indec (sur 100 points) égalité des rémunérations entre hommes et femmes'
-        valeur_estimation_realite: "Estimation du pilier « Pérennité économique et partage de la valeur créée »"
+        valeur_partage_index_egalite_homme_femme: "Index égalité des rémunérations entre hommes et femmes"
+        valeur_estimation_realite: "Réalité du pilier « Pérennité économique et partage de la valeur créée » perçue par les salariés"
         qualite_qvt_enquete_qvt: "Enquête annuelle sur la QVT perçue par les salariés"
         qualite_qvt_taux_qvt: "Si oui, taux de satisfaction sur la santé et qualité de vie au travail au sein de l'organisation"
         qualite_qvt_part_cdi: "Salariés en CDI sur l'ensemble des salariés"
@@ -49,7 +57,7 @@ fr:
         qualite_emancipation_moyenne_heures_formation: "Nombre moyen d'heures de formation par salariés"
         qualite_emancipation_taux_budget_formation_masse_salariale: "Taux : budget de formation / masse salariale"
         qualite_emancipation_taux_direction_promotion_interne: "Taux des membres du comité de direction actuel issue de la promotion interne"
-        qualite_estimation_realite: "Estimation du pilier « Capital humain et qualité de vie au travail »"
+        qualite_estimation_realite: "Réalité du pilier « Capital humain et qualité de vie au travail » perçue par les salariés"
         impact_environnement_audit_impact: "Avez-vous bénéficié d'un audit spécifique relatif aux impacts environnementaux de votre entreprise ?"
         impact_environnement_demarche_ecologique: Avez-vous engagé une démarche d'identification de vos consommations et un plan d'amélioration sur l'impact environnemental des activités de l'entreprise ?'
         impact_environnement_part_energies_renouvelables: "Part d'énergies renouvelables dans le mix énergétique"
@@ -66,7 +74,7 @@ fr:
         impact_engagement_part_placements_responsables: "Part des placements responsables dans les placements financiers"
         impact_engagement_part_impots_france: "Part des impôts payés sur le territoire français"
         impact_engagement_demarche_ethique_fournisseurs: "Êtes-vous engagé dans une démarche sociale, locale et/ou écologique dans votre choix de fournisseurs ?"
-        impact_estimation_realite: "Estimation du pilier « Impact environnemental, social et territorial »"
+        impact_estimation_realite: "Réalité du pilier « Impact environnemental, social et territorial » perçue par les salariés"
 
   simple_form:
     "yes": "Oui"
@@ -129,7 +137,7 @@ fr:
         valeur_partage_existence_grille_salariale: "Existence d'une grille salariale"
         valeur_partage_publicite_grille: "Si oui, y a-t-il eu publicité de la grille ?"
         valeur_partage_ecart_revenus_hauts_bas: "Écart entre les 5 revenus les plus hauts de l'entreprise (incluant les primes et autres compléments de salaires) et les 5 plus bas"
-        valeur_partage_index_egalite_homme_femme: Résultat de l'indec (sur 100 points) égalité des rémunérations entre hommes et femmes'
+        valeur_partage_index_egalite_homme_femme: "Résultat de l'index (sur 100 points) égalité des rémunérations entre hommes et femmes"
         valeur_estimation_realite: "Sur une échelle de 1 à 10, comment les salariés estiment-ils la réalité du pilier « Pérennité économique et partage de la valeur créée » au sein de l'entreprise ?"
         qualite_qvt_enquete_qvt: "Enquête annuelle sur la QVT perçue par les salariés"
         qualite_qvt_taux_qvt: "Si oui, taux de satisfaction sur la santé et qualité de vie au travail au sein de l'organisation"

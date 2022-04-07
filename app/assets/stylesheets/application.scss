@@ -428,8 +428,9 @@ body {
                     .form-check {
                         display: inline-flex;
                         padding: 0;
+                        overflow:hidden;
 
-                        input[type="radio"] {
+                        input[type="checkbox"] {
                             opacity:0;
                             right: 0;
                             cursor: pointer;
@@ -450,8 +451,9 @@ body {
                                 border-top-right-radius: 0;
                                 border-bottom-right-radius: 0;
                                 border-right: .5px solid #eee;
+                                margin-left: 10px;
                             }
-                            input[type="radio"]:checked + label, input[type="radio"]:hover + label {
+                            input[type="checkbox"]:checked + label, input[type="checkbox"]:hover + label {
                                 background-color:$bg-success;
                                 color: #fff;
                             }
@@ -463,7 +465,7 @@ body {
                               margin-left: 7px;
                               margin-right: 10px;
                           }
-                          input[type="radio"]:checked + label, input[type="radio"]:hover + label {
+                          input[type="checkbox"]:checked + label, input[type="checkbox"]:hover + label {
                               background-color:$bg-danger;
                               color: #fff !important;
                           }
