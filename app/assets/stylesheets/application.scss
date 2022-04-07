@@ -60,6 +60,7 @@ $primary: #EB225A;
 $secondary: #007CAA;
 $border-success: #007A78;
 $border-danger: #F15921;
+$border-grey : #CBCBCB;
 
 $bg-success: #007A78;
 $bg-danger: #F15921;
@@ -125,8 +126,10 @@ body {
 
     .border-danger {border-color: $border-danger !important;}
     .border-success {border-color: $border-success !important;}
+    .border-grey {border-color: $border-grey !important;}
     .text-success {color: $text-success !important;}
-    .text-danger {color: $text-danger !important}
+    .text-danger {color: $text-danger !important;}
+
 
     .navigationBar{
         z-index: 9999;
@@ -258,6 +261,10 @@ body {
 
         }
         #content-wrapper {
+
+            .border-grey{
+
+            }
 
             overflow: unset !important;
 
