@@ -15,20 +15,20 @@
 
   <br/>
 
-  <div class="formul d-flex flex-sm-row flex-column justify-content-around align-items-center bg-blue pt-0 pb-0 pt-sm-4 pb-sm-4 mt-0 mt-sm-5">
+  <div class="me-auto ms-auto rounded formul d-flex flex-sm-row flex-column justify-content-center align-items-center bg-blue pt-0 pb-0 mt-0 mt-sm-5 col-md-9">
     <span class="d-none d-sm-flex m-4 col-1"><%= image_tag '1.svg', alt: 'numéro 1' %></span>
     <h2 class="m-4 white">Partage du pouvoir et des décisions</h2>
   </div>
 
-  <div class="col-10 col-sm-6 bg-white rounded-end border-end border-primary p-4 mt-5 shadow">
-    <h3 class="text-primary">Composition de la gouvernance</h3>
-  </div>
 
   <%= f.association :indicateurs_list do |il| %>
 
-    <div class="w-100 pe-2 ps-2 pe-sm-5 ps-sm-5 mb-5">
+    <div class="d-flex flex-column align-items-center w-100 pe-2 ps-2 pe-sm-5 ps-sm-5 mb-5">
+      <div class="mb-3 col-10 col-sm-8 bg-white rounded-end p-4 mt-5 shadow">
+        <h3 class="text-primary">Composition de la gouvernance</h3>
+      </div>
 
-      <fieldset class="d-flex flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between align-items-center" <%= disable %>>
+      <fieldset class="d-flex col-sm-7 flex-column justify-content-between align-items-center rounded bg-white shadow form-border border-start border-primary" <%= disable %>>
         <%# <legend class="w-auto">Pilier 1 : Partage du pouvoir et des décisions</legend> %>
         <div class="col-sm-6 col-8">
           <%= il.input :pouvoir_gouvernance_part_salaries_associes %>
@@ -43,12 +43,15 @@
       </fieldset>
     </div>
 
-    <div class="col-10 col-sm-6 bg-white rounded-end border-end border-primary p-4 mt-4 mt-sm-5 shadow">
-      <h3 class="text-primary">Mise en place des conditions du bon exercice de la démocratie</h3>
-    </div>
 
-    <div class="w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
-      <fieldset class="d-flex flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between align-items-center" <%= disable %>>
+
+    <div class="d-flex flex-column align-items-center w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
+
+        <div class="mb-3 col-10 col-sm-8 bg-white rounded-end p-4 mt-4 mt-sm-5 shadow">
+          <h3 class="text-primary">Mise en place des conditions du bon exercice de la démocratie</h3>
+        </div>
+
+      <fieldset class="d-flex col-md-7 flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow form-border border-start border-primary" <%= disable %>>
         <div class="col-12 col-sm-6">
           <%= il.input :pouvoir_democratie_nombre_reunions %>
           <%= il.input :pouvoir_democratie_taux_participation_formations %>
@@ -60,12 +63,15 @@
       </fieldset>
     </div>
 
-    <div class="col-10 col-sm-6 bg-white rounded-end border-end border-primary p-4 mt-5 shadow">
-      <h3 class="text-primary">Participation à la prise de décision stratégique</h3>
-    </div>
 
-    <div class="w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
-      <fieldset class="d-flex flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between align-items-center" <%= disable %>>
+    <div class="d-flex flex-column align-items-center w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
+
+
+      <div class="mb-3 col-10 col-sm-8 bg-white rounded-end p-4 mt-5 shadow">
+        <h3 class="text-primary">Participation à la prise de décision stratégique</h3>
+      </div>
+
+      <fieldset class="d-flex col-md-7 flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow form-border border-start border-primary" <%= disable %>>
         <div class="col-12 col-sm-6">
           <%= il.input :pouvoir_strategique_taux_presence_assemblee %>
           <%= il.input :pouvoir_strategique_implication_partage %>
@@ -80,18 +86,20 @@
       </div>
     </div>
 
-    <div class="formul d-flex flex-sm-row flex-column justify-content-around align-items-center bg-blue pt-0 pb-0 pt-sm-4 pb-sm-4 mt-5">
+    <div class="me-auto ms-auto rounded formul d-flex flex-sm-row flex-column justify-content-center align-items-center bg-blue pt-0 pb-0 mt-5 col-md-9">
       <span class="d-none d-sm-flex pt-4 pb-4 col-1 "><%= image_tag '2.svg', alt: 'numéro 2' %></span>
       <h2 class="p-4 white">Pérénnité économique et partage de la valeur créée</h2>
     </div>
 
-    <div class="col-10 col-sm-6 bg-white rounded-end border-end border-primary p-4 mt-5 shadow">
-      <h3 class="text-primary">Pérennité : création de valeur, inaliénabilité et robustesse de l'entreprise</h3>
-    </div>
 
-    <div class="w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
 
-      <fieldset class="d-flex flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between align-items-center" <%= disable %>>
+    <div class="d-flex flex-column align-items-center w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
+
+        <div class="mb-3 col-10 col-sm-8 bg-white rounded-end p-4 mt-5 shadow">
+          <h3 class="text-primary">Pérennité : création de valeur, inaliénabilité et robustesse de l'entreprise</h3>
+        </div>
+
+      <fieldset class="d-flex col-md-7 flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow form-border border-start border-primary" <%= disable %>>
         <div class="col-12 col-sm-6">
           <%= il.input :valeur_perennite_part_capital_salaries %>
           <%= il.input :valeur_perennite_part_resultat_reserve %>
@@ -106,12 +114,15 @@
       </fieldset>
     </div>
 
-    <div class="col-10 col-sm-6 bg-white rounded-end border-end border-primary p-4 mt-5 shadow">
-      <h3 class="text-primary">Partage des richesses</h3>
-    </div>
 
-    <div class="w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
-      <fieldset class="d-flex flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between align-items-center" <%= disable %>>
+
+    <div class="d-flex flex-column align-items-center w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
+
+        <div class="mb-3 col-10 col-sm-8 bg-white rounded-end p-4 mt-5 shadow">
+          <h3 class="text-primary">Partage des richesses</h3>
+        </div>
+
+      <fieldset class="d-flex col-md-7 flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow form-border border-start border-primary" <%= disable %>>
         <div class="col-12 col-sm-6 col-input">
           <%= il.input :valeur_partage_part_resultat_net_actionnaires %>
           <%= il.input :valeur_partage_part_resultat_salaries %>
@@ -132,17 +143,20 @@
 
     </div>
 
-    <div class="formul d-flex flex-sm-row flex-column justify-content-around align-items-center bg-blue pt-0 pb-0 pt-sm-4 pb-sm-4 mt-0 mt-sm-5">
+    <div class="me-auto ms-auto rounded formul d-flex flex-sm-row flex-column justify-content-center align-items-center bg-blue pt-0 pb-0 mt-0 mt-sm-5 col-md-9">
       <span class="d-none d-sm-flex pt-4 pb-4 col-1 "><%= image_tag '3.svg', alt: 'numéro 3' %></span>
       <h2 class="p-4 white">Capital humain et qualité de vie au travail</h2>
     </div>
 
-    <div class="col-10 col-sm-6 bg-white rounded-end border-end border-primary p-4 mt-5 shadow">
-      <h3 class="text-primary">Mise en place des conditions du bon exercice de la démocratie</h3>
-    </div>
 
-    <div class="w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
-      <fieldset class="d-flex flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between align-items-center" <%= disable %>>
+
+    <div class="d-flex flex-column align-items-center w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
+
+        <div class="mb-3 col-10 col-sm-8 bg-white rounded-end p-4 mt-5 shadow">
+          <h3 class="text-primary">Mise en place des conditions du bon exercice de la démocratie</h3>
+        </div>
+
+      <fieldset class="d-flex col-md-7 flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow form-border border-start border-primary" <%= disable %>>
         <div class="col-12 col-sm-6 col-input">
           <%= il.input :qualite_qvt_enquete_qvt, as: :radio_buttons, class: 'radio' %>
           <%= il.input :qualite_qvt_taux_qvt %>
@@ -156,12 +170,15 @@
       </fieldset>
     </div>
 
-    <div class="col-10 col-sm-6 bg-white rounded-end border-end border-primary p-4 mt-5 shadow">
-      <h3 class="text-primary">Développement des compétences individuelles et collectives<br/>Émancipation des salariés</h3>
-    </div>
 
-    <div class="w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
-      <fieldset class="d-flex flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between align-items-center" <%= disable %>>
+
+    <div class="d-flex flex-column align-items-center w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
+
+        <div class="mb-3 col-10 col-sm-8 bg-white rounded-end p-4 mt-5 shadow">
+          <h3 class="text-primary">Développement des compétences individuelles et collectives<br/>Émancipation des salariés</h3>
+        </div>
+
+      <fieldset class="d-flex col-md-7 flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow form-border border-start border-primary" <%= disable %>>
         <div class="col-12 col-sm-6">
           <%= il.input :qualite_emancipation_moyenne_heures_formation %>
           <%= il.input :qualite_emancipation_taux_budget_formation_masse_salariale %>
@@ -173,17 +190,20 @@
       </div>
     </div>
 
-    <div class="formul d-flex flex-sm-row flex-column justify-content-around align-items-center bg-blue pt-0 pb-0 pt-sm-4 pb-sm-4 mt-0 mt-sm-5">
+    <div class="me-auto ms-auto rounded formul d-flex flex-sm-row flex-column justify-content-center align-items-center bg-blue pt-0 pb-0 mt-0 mt-sm-5 col-md-9">
       <span class="d-none d-sm-flex pt-4 pb-4 col-1 "><%= image_tag '4.svg', alt: 'numéro 4' %></span>
       <h2 class="p-4 white">Impact environnemental, social et territorial</h2>
     </div>
 
-    <div class="col-10 col-sm-6 bg-white rounded-end border-end border-primary p-4 mt-5 shadow">
-      <h3 class="text-primary">Impact environnemental</h3>
-    </div>
 
-    <div class="w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
-      <fieldset class="d-flex flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between align-items-center" <%= disable %>>
+
+    <div class="d-flex flex-column align-items-center w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
+
+        <div class="mb-3 col-10 col-sm-8 bg-white rounded-end p-4 mt-5 shadow">
+          <h3 class="text-primary">Impact environnemental</h3>
+        </div>
+
+      <fieldset class="d-flex col-md-7 flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow form-border border-start border-primary" <%= disable %>>
         <div class="col-12 col-sm-6 col-input">
           <%= il.input :impact_environnement_audit_impact, as: :radio_buttons, class: 'radio' %>
           <%= il.input :impact_environnement_demarche_ecologique, as: :radio_buttons, class: 'radio' %>
@@ -202,12 +222,15 @@
       </fieldset>
     </div>
 
-    <div class="col-10 col-sm-6 bg-white rounded-end border-end border-primary p-4 mt-5 shadow">
-      <h3 class="text-primary">Impact social</h3>
-    </div>
 
-    <div class="w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
-      <fieldset class="d-flex flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between align-items-center" <%= disable %>>
+
+    <div class="d-flex flex-column align-items-center w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
+
+        <div class="mb-3 col-10 col-sm-8 bg-white rounded-end p-4 mt-5 shadow">
+          <h3 class="text-primary">Impact social</h3>
+        </div>
+
+      <fieldset class="d-flex col-md-7 flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow form-border border-start border-primary" <%= disable %>>
         <div class="col-12 col-sm-6">
           <%= il.input :impact_social_part_activite_structures_insertion %>
           <%= il.input :impact_social_alternance_apprentissage %>
@@ -217,12 +240,13 @@
       </fieldset>
     </div>
 
-    <div class="col-10 col-sm-6 bg-white rounded-end border-end border-primary p-4 mt-5 shadow">
-      <h3 class="text-primary">Engagement en faveur de l'écosystème et du territoire </h3>
-    </div>
 
-    <div class="w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
-      <fieldset class="d-flex flex-column mb-4 m-0 m-sm-5 row-cols-2 justify-content-between align-items-center" <%= disable %>>
+    <div class="d-flex flex-column align-items-center w-100 pe-2 ps-2 pe-sm-5 ps-sm-5">
+
+        <div class="mb-3 col-10 col-sm-8 bg-white rounded-end p-4 mt-5 shadow">
+          <h3 class="text-primary">Engagement en faveur de l'écosystème et du territoire </h3>
+        </div>
+      <fieldset class="d-flex col-md-7 flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow form-border border-start border-primary" <%= disable %>>
         <div class="col-12 col-sm-6 col-input">
           <%= il.input :impact_engagement_part_resultat_missions_utiles %>
           <%= il.input :impact_engagement_part_placements_responsables %>
