@@ -499,13 +499,14 @@ body {
                         display: flex;
                         flex-wrap: wrap;
                         justify-content: space-around;
-                        padding: calc($spacer * 4) calc($spacer * 4) 0;
+                        padding: calc($spacer * 3) calc($spacer * 3) 0;
                         margin: auto;
                         position:relative;
 
                         legend {
-                            position: absolute;
-                            left: 0; top: calc($spacer * 2);;
+                          position: absolute;
+                          left: calc($spacer * 3);
+                          top: 0;
                         }
                         .form-check {
                             margin: $spacer;
