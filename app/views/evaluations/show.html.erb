@@ -16,10 +16,9 @@
     </div>
   </div>
 
-  <div class="">
+  <div>
 
-  <%= render "form", evaluation: @evaluation, disabled: true %>
-  <%= button_to "Supprimer cette évaluation", @evaluation, method: :delete, class: "btn rounded white pt-1 pb-1 pe-3 ps-3 btn-danger", form: { data: { turbo_confirm: "Êtes-vous sûr de vouloir supprimer l'évaluation de #{@evaluation.annee}?" } } %>
+    <%= render "form", evaluation: @evaluation, disabled: true %>
+    <%= button_to "Supprimer cette évaluation", @evaluation, method: :delete, class: "btn rounded white pt-1 pb-1 pe-3 ps-3 btn-danger", form: { data: { turbo_confirm: "Êtes-vous sûr de vouloir supprimer l'évaluation de #{@evaluation.annee}?" } } %>
 
 </div>
-
