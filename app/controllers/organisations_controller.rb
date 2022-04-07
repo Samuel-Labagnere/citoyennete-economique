@@ -40,7 +40,7 @@ class OrganisationsController < ApplicationController
           current_user.save
         end
 
-        format.html { redirect_to user_root_path, notice: "L'organisation a bien été créée." }
+        format.html { redirect_to user_root_path, notice: I18n.t('notice.organisation.create') }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -51,7 +51,7 @@ class OrganisationsController < ApplicationController
   def update
     respond_to do |format|
       if @organisation.update(organisation_params)
-        format.html { redirect_to organisation_url(@organisation), notice: "Organisation was successfully updated." }
+        format.html { redirect_to organisation_url(@organisation), notice: I18n.t('notice.organisation.update') }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -63,7 +63,7 @@ class OrganisationsController < ApplicationController
     @organisation.destroy
 
     respond_to do |format|
-      format.html { redirect_to organisations_url, notice: "Organisation was successfully destroyed." }
+      format.html { redirect_to organisations_url, notice: I18n.t('notice.organisation.destroy') }
     end
   end
 

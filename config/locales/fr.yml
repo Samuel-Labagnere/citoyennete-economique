@@ -1,4 +1,19 @@
 fr:
+  notice:
+    evaluation:
+      create: "Évaluation créée avec succès."
+      update: "Évaluation mise à jour avec succès."
+      destroy: "Évaluation supprimée avec succès."
+    invitation:
+      error: "Code invalide."
+    objectifs_list:
+      create: "Liste d'objectifs créée avec succès."
+      update: "Liste d'objectifs mise à jour avec succès."
+      destroy: "Liste d'objectifs supprimée avec succès."
+    organisation:
+      create: "Organisation créée avec succès."
+      update: "Organisation mise à jour avec succès."
+      destroy: "Organisation supprimée avec succès."
   errors:
     format: "%{message}"
   negative_indicateurs:
