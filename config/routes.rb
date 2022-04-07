@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   get "admin", to: "admin#index"
   get "entreprises", to: "organisations#public_list"
   get 'statistiques', to: "statistiques#index"
-  get 'mentions_legales', to: "mentions_legales#index"
+  get 'mentions-legales', to: "home#mentions_legales"
+  get 'cgu', to: 'home#cgu'
+  get 'politique-de-confidentialite', to: 'home#politique'
   get 'contact', to: "contact#index"
 
   get 'code_invitation', to: "invitation_code#index"
