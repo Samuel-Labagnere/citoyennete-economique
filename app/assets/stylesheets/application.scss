@@ -33,6 +33,7 @@
 
 $our_white: #EEF0F2;
 $our_blue: #007CAA;
+$form-bg-color:#f8f9fa;
 
 $colors: (
     "white": $our_white,
@@ -98,6 +99,10 @@ $fontMenu : 16px 'Open Sans';
 
 .bg-blue {
     background-color: $our_blue;
+}
+
+.grey-bg-form{
+    background-color: $form-bg-color;
 }
 
 .home {
