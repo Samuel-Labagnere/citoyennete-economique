@@ -1,4 +1,4 @@
-<p>Bonjour, <%= @last_name.upcase + ' ' + @first_name.capitalize %>!</p>
+<p>Bonjour, <%= @resource.last_name.upcase + ' ' + @resource.first_name.capitalize %>!</p>
 
 <% if @resource.try(:unconfirmed_email?) %>
   <p>Nous vous contactons pour vous informer que votre mail est en train d'être changé pour <%= @resource.unconfirmed_email %>.</p>
