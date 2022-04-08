@@ -13,10 +13,13 @@ Chart.register({
       ctx = chart.ctx;
 
       ctx.restore();
-      var fontSize = (height / 114).toFixed(2);
+      if(width <= 310) {
+        var fontSize = (width / 114).toFixed(2);
+      } else {
+        var fontSize = (height / 114).toFixed(2);
+      }
       ctx.font = fontSize + "em sans-serif";
       ctx.textBaseline = "middle";
-
       var text = options.text,
         textX = Math.round((width - ctx.measureText(text).width) / 2),
         textY = height / 2;
