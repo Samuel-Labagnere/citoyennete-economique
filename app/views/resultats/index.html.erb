@@ -1,412 +1,418 @@
-<div class="public-stats d-flex">
+<div class="public-stats mx-0 mx-sm-5 p-sm-5 mt-5 pt-5 pt-sm-0">
 
-  <!-- Sidebar -->
-  <div class="navbar-nav bg-white sidebar sidebar-light accordion col-2 p-3 position-relative d-none d-md-flex flex-column" id="accordionSidebar">
+  <header>
+    <h1>Résultats pour l'année <%= @evaluation.annee %></h1>
+  </header>
 
-    <ul class="position-sticky list-unstyled">
-      <!-- Nav Item - Impact 1 -->
-      <li class="nav-item">
-        <a class="nav-link position-relative collapsed text-dark d-flex align-items-center" href="#impact1">
-          <span><b class="text-primary">1.</b> Partage du pouvoir et des décisions </span>
-        </a>
-      </li>
-
-      <!-- Nav Item - Impact 2 -->
-      <li class="nav-item">
-        <a class="nav-link position-relative collapsed text-dark d-flex align-items-center" href="#impact2">
-          <span><b class="text-primary">2.</b> Pérennité économique et partage de la valeur créée</span>
-        </a>
-      </li>
-
-      <!-- Nav Item - Impact 3 -->
-      <li class="nav-item">
-        <a class="nav-link position-relative collapsed text-dark d-flex align-items-center" href="#impact3">
-          <span><b class="text-primary">3.</b> Capital humain et qualité de vie au travail</span>
-        </a>
-      </li>
-
-      <!-- Nav Item - Impact 4 -->
-      <li class="nav-item">
-        <a class="nav-link position-relative collapsed text-dark d-flex align-items-center" href="#impact4">
-          <span><b class="text-primary">4.</b> Impact environnemental, social et territorial</span>
-        </a>
-      </li>
-    </ul>
-
-  </div>
-  <!-- End of Sidebar -->
-
-  <div class="puclic-stats-body p-sm-5 w-100  mx-2">
-    <header>
-      <h1>Résultats pour l'année <%= @evaluation.annee %></h1>
-    </header>
-
-    <div class="d-flex flex-sm-row flex-column align-items-sm-center justify-content-between mt-5 mb-4">
-      <div class="mb-3 mb-sm-0">
-      <% if current_user.is_super_admin %>
-        <%= link_to "Back to evaluations", evaluations_path, class: "btn btn-secondary me-3" %>
-      <% else %>
-        <%= link_to "Retourner au dashboard", user_root_path, class: "btn btn-secondary me-3" %>
-      <% end %>
-      </div>
+  <div class="d-flex flex-sm-row flex-column align-items-sm-center justify-content-between mt-5 mb-4">
+    <div class="mb-3 mb-sm-0">
+    <% if current_user.is_super_admin %>
+      <%= link_to "Back to evaluations", evaluations_path, class: "btn btn-secondary me-3" %>
+    <% else %>
+      <%= link_to "Retourner au dashboard", user_root_path, class: "btn btn-secondary me-3" %>
+    <% end %>
     </div>
+  </div>
 
-    <!-- IMPACT 1 -->
+  <div class="puclic-stats-body d-flex">
 
-    <h3 id="impact1" class="mt-3 mt-sm-5">Partage du pouvoir et décisions</h3>
+    <!-- Sidebar -->
+    <div class="navbar-nav col-3 position-relative d-none d-md-flex me-3 ">
 
-    <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">I.</b> <u class="text-secondary text-decoration-none">Composition de la gouvernance</u></h4>
+      <ul class="m-0 sticky-top list-unstyled d-flex flex-column justify-content-evenly">
+        <!-- Nav Item - Impact 1 -->
+        <li class="nav-item">
+          <a class="nav-link position-relative text-dark d-flex align-items-center rounded px-2" href="#impact1">
+            <b class="text-primary me-2">1.</b> Partage du pouvoir et des décisions
+          </a>
+        </li>
 
-    <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
-      :pouvoir_gouvernance_part_salaries_associes,
-      :pouvoir_gouvernance_taux_societariat_femmes,
-      :pouvoir_gouvernance_taux_droits_vote_salaries,
-      :pouvoir_gouvernance_part_salaries_conseil,
-      :pouvoir_gouvernance_part_femmes_conseil
-    ] %>
+        <!-- Nav Item - Impact 2 -->
+        <li class="nav-item">
+          <a class="nav-link position-relative text-dark d-flex align-items-center rounded px-2" href="#impact2">
+            <b class="text-primary me-2">2.</b> Pérennité économique et partage de la valeur créée
+          </a>
+        </li>
 
-    <% if @evaluation.indicateurs_list.pouvoir_gouvernance_diversite_categories.present? %>
-    <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-      <div class="bg-light text-center p-3"><b class="text-primary"><%= @evaluation.indicateurs_list.pouvoir_gouvernance_diversite_categories.count %></b> catégories d'associés</div>
-      <div class="bg-white m-0 p-2">
-        <div class="d-flex p-3">
-          <% @evaluation.indicateurs_list.pouvoir_gouvernance_diversite_categories.each do |category| %>
-          <div class="card bg-success text-white border-0 mx-2">
-            <div class="card-body pt-2 pb-2 pe-3 ps-3">
-            <h5 class="card-title m-0"><%= category %></h5>
+        <!-- Nav Item - Impact 3 -->
+        <li class="nav-item">
+          <a class="nav-link position-relative text-dark d-flex align-items-center rounded px-2" href="#impact3">
+            <b class="text-primary me-2">3.</b> Capital humain et qualité de vie au travail
+          </a>
+        </li>
+
+        <!-- Nav Item - Impact 4 -->
+        <li class="nav-item">
+          <a class="nav-link position-relative text-dark d-flex align-items-center rounded px-2" href="#impact4">
+            <b class="text-primary me-2">4.</b> Impact environnemental, social et territorial
+          </a>
+        </li>
+      </ul>
+
+    </div>
+    <!-- End of Sidebar -->
+
+    <div class="stats-container">
+
+      <!-- IMPACT 1 -->
+
+      <h3 id="impact1" class="mt-3 mt-sm-5 pb-5">Partage du pouvoir et décisions</h3>
+
+      <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">I.</b> <u class="text-secondary text-decoration-none">Composition de la gouvernance</u></h4>
+
+      <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
+        :pouvoir_gouvernance_part_salaries_associes,
+        :pouvoir_gouvernance_taux_societariat_femmes,
+        :pouvoir_gouvernance_taux_droits_vote_salaries,
+        :pouvoir_gouvernance_part_salaries_conseil,
+        :pouvoir_gouvernance_part_femmes_conseil
+      ] %>
+
+      <% if @evaluation.indicateurs_list.pouvoir_gouvernance_diversite_categories.present? %>
+      <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
+        <div class="bg-light text-center p-3"><b class="text-primary"><%= @evaluation.indicateurs_list.pouvoir_gouvernance_diversite_categories.count %></b> catégories d'associés</div>
+        <div class="bg-white m-0 p-2">
+          <div class="d-flex p-3">
+            <% @evaluation.indicateurs_list.pouvoir_gouvernance_diversite_categories.each do |category| %>
+            <div class="card bg-success text-white border-0 mx-2">
+              <div class="card-body pt-2 pb-2 pe-3 ps-3">
+              <h5 class="card-title m-0"><%= category %></h5>
+              </div>
             </div>
+            <% end %>
           </div>
-          <% end %>
         </div>
       </div>
-    </div>
-    <% end %>
+      <% end %>
 
-    <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">II.</b> Mise en place des <u class="text-secondary text-decoration-none">conditions du bon exercice de la démocratie</u></h4>
+      <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">II.</b> Mise en place des <u class="text-secondary text-decoration-none">conditions du bon exercice de la démocratie</u></h4>
 
-    <% if has_any_indicateur @evaluation, :pouvoir_democratie_nombre_reunions, :pouvoir_democratie_taux_participation_formations, :pouvoir_democratie_nombre_accords_signes %>
-    <div class="container">
-      <div class="row row-hybrid">
-        <% if has_any_indicateur @evaluation, :pouvoir_democratie_nombre_reunions, :pouvoir_democratie_nombre_accords_signes %>
-          <div class="col">
-            <% if has_any_indicateur @evaluation, :pouvoir_democratie_nombre_reunions %>
-              <%= render "single_number_box", evaluation: @evaluation, indicateur: :pouvoir_democratie_nombre_reunions %>
-            <% end %>
-            <% if has_any_indicateur @evaluation, :pouvoir_democratie_nombre_accords_signes %>
-              <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden">
-                <div class="bg-light fw-bold text-center p-3"><%= indicateur_clean :pouvoir_democratie_accords_signes %></div>
-                <div class="bg-white m-0 p-2">
-                  <div class="d-flex justify-content-center border-bottom">
-                    <p class="h1"><%= @evaluation.indicateurs_list.pouvoir_democratie_nombre_accords_signes %></p>
-                  </div>
-                  <div class="d-flex justify-content-center pt-4">
-                    <p class="fw-bold"><%= @evaluation.indicateurs_list.pouvoir_democratie_accords_signes %></p>
+      <% if has_any_indicateur @evaluation, :pouvoir_democratie_nombre_reunions, :pouvoir_democratie_taux_participation_formations, :pouvoir_democratie_nombre_accords_signes %>
+      <div class="container p-0">
+        <div class="row row-hybrid">
+          <% if has_any_indicateur @evaluation, :pouvoir_democratie_nombre_reunions, :pouvoir_democratie_nombre_accords_signes %>
+            <div class="col">
+              <% if has_any_indicateur @evaluation, :pouvoir_democratie_nombre_reunions %>
+                <%= render "single_number_box", evaluation: @evaluation, indicateur: :pouvoir_democratie_nombre_reunions %>
+              <% end %>
+              <% if has_any_indicateur @evaluation, :pouvoir_democratie_nombre_accords_signes %>
+                <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden">
+                  <div class="bg-light fw-bold text-center p-3"><%= indicateur_clean :pouvoir_democratie_accords_signes %></div>
+                  <div class="bg-white m-0 p-2">
+                    <div class="d-flex justify-content-center border-bottom">
+                      <p class="h1"><%= @evaluation.indicateurs_list.pouvoir_democratie_nombre_accords_signes %></p>
+                    </div>
+                    <div class="d-flex justify-content-center pt-4">
+                      <p class="fw-bold"><%= @evaluation.indicateurs_list.pouvoir_democratie_accords_signes %></p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-        <% if has_any_indicateur @evaluation, :pouvoir_democratie_taux_participation_formations %>
-          <div class="col d-flex flex-column ">
-            <%= render "single_taux_box", evaluation: @evaluation, indicateur: :pouvoir_democratie_taux_participation_formations %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-    <% end %>
-
-    <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">III.</b> Participation à la <u class="text-secondary text-decoration-none">prise de décision stratégique</u></h4>
-
-    <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
-      :pouvoir_strategique_taux_presence_assemblee,
-      :pouvoir_strategique_implication_partage,
-      :pouvoir_strategique_actifs_total
-    ] %>
-
-    <div class="w-100 my-5 bg-primary rounded separator"></div>
-
-    <% if has_any_indicateur @evaluation, :pouvoir_estimation_realite %>
-      <div class="estim w-50 ms-auto me-auto">
-        <%= render "single_taux_box", evaluation: @evaluation, indicateur: :pouvoir_estimation_realite, suffix: "/10", max: 10 %>
-      </div>
-    <% end %>
-
-    <!-- IMPACT 2 -->
-
-    <h3 id="impact2" class="mt-3 mt-sm-5">Pérennité économique et partage de la valeur créée</h3>
-
-    <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">I.</b> Pérennité : <u class="text-secondary text-decoration-none">création de valeur, inaliénabilité et robustesse</u> de l'entreprise</h4>
-
-    <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
-      :valeur_perennite_part_capital_salaries,
-      :valeur_perennite_part_resultat_reserve,
-      :valeur_perennite_ebe_caht,
-      :valeur_perennite_part_endettement
-    ] %>
-
-    <% if has_any_indicateur @evaluation, :valeur_perennite_existence_reserve, :valeur_perennite_reserve_impartageable, :valeur_perennite_attention_questions_innovation %>
-      <div class="bool row mt-5 mb-5 ms-n1 me-n1">
-        <div class="container">
-          <div class="row">
-            <% if has_any_indicateur @evaluation, :valeur_perennite_existence_reserve %>
-              <div class="col-4">
-                <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_perennite_existence_reserve %>
-              </div>
-            <% end %>
-            <% if has_any_indicateur @evaluation, :valeur_perennite_reserve_impartageable %>
-              <div class="col-4">
-                <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_perennite_reserve_impartageable %>
-              </div>
-            <% end %>
-            <% if has_any_indicateur @evaluation, :valeur_perennite_attention_questions_innovation %>
-              <div class="col-4">
-                <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_perennite_attention_questions_innovation %>
-              </div>
-            <% end %>
-          </div>
+              <% end %>
+            </div>
+          <% end %>
+          <% if has_any_indicateur @evaluation, :pouvoir_democratie_taux_participation_formations %>
+            <div class="col d-flex flex-column ">
+              <%= render "single_taux_box", evaluation: @evaluation, indicateur: :pouvoir_democratie_taux_participation_formations %>
+            </div>
+          <% end %>
         </div>
       </div>
-    <% end %>
+      <% end %>
 
-    <h4 class="my-3 my-sm-5"><b class="text-primary">II.</b> <u class="text-secondary text-decoration-none">Partage</u> des richesses</h4>
+      <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">III.</b> Participation à la <u class="text-secondary text-decoration-none">prise de décision stratégique</u></h4>
 
-    <h5 class="my-3 my-sm-5 text-secondary fst-italic text-uppercase">Avec les actionnaires/sociétaires</h5>
+      <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
+        :pouvoir_strategique_taux_presence_assemblee,
+        :pouvoir_strategique_implication_partage,
+        :pouvoir_strategique_actifs_total
+      ] %>
 
-    <% if has_any_indicateur @evaluation, :valeur_partage_part_resultat_net_actionnaires %>
-      <%= render "single_taux_box", evaluation: @evaluation, indicateur: :valeur_partage_part_resultat_net_actionnaires %>
-    <% end %>
+      <div class="w-100 mb-5 bg-primary rounded separator"></div>
 
-    <h5 class="my-3 my-sm-5 text-secondary fst-italic text-uppercase">Avec/entre les salariés</h5>
+      <% if has_any_indicateur @evaluation, :pouvoir_estimation_realite %>
+        <div class="estim d-invers">
+          <%= render "single_taux_box", evaluation: @evaluation, indicateur: :pouvoir_estimation_realite, suffix: "/10", max: 10 %>
+        </div>
+      <% end %>
 
+      <!-- IMPACT 2 -->
 
-    <% if has_any_indicateur @evaluation, :valeur_partage_part_resultat_salaries %>
-      <%= render "single_taux_box", evaluation: @evaluation, indicateur: :valeur_partage_part_resultat_salaries %>
-    <% end %>
+      <h3 id="impact2" class="mt-3 mt-sm-5 py-5">Pérennité économique et partage de la valeur créée</h3>
 
-    <% if has_any_indicateur @evaluation, :valeur_partage_existence_accord, :valeur_partage_existence_epargne_salariale, :valeur_partage_existence_grille_salariale, :valeur_partage_publicite_grille %>
+      <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">I.</b> Pérennité : <u class="text-secondary text-decoration-none">création de valeur, inaliénabilité et robustesse</u> de l'entreprise</h4>
 
-      <div class="bool row mt-5 mb-5 ms-n1 me-n1">
-          <% if has_any_indicateur @evaluation, :valeur_partage_existence_accord %>
-            <div class="col-4 mb-4">
-              <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_partage_existence_accord %>
-            </div>
-          <% end %>
-          <% if has_any_indicateur @evaluation, :valeur_partage_existence_epargne_salariale %>
-            <div class="col-4 mb-4">
-              <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_partage_existence_epargne_salariale %>
-            </div>
-          <% end %>
-          <% if has_any_indicateur @evaluation, :valeur_partage_existence_grille_salariale %>
-            <div class="col-4 mb-4">
-              <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_partage_existence_grille_salariale %>
-            </div>
-          <% end %>
-          <% if has_any_indicateur @evaluation, :valeur_partage_publicite_grille %>
+      <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
+        :valeur_perennite_part_capital_salaries,
+        :valeur_perennite_part_resultat_reserve,
+        :valeur_perennite_ebe_caht,
+        :valeur_perennite_part_endettement
+      ] %>
+
+      <% if has_any_indicateur @evaluation, :valeur_perennite_existence_reserve, :valeur_perennite_reserve_impartageable, :valeur_perennite_attention_questions_innovation %>
+        <div class="bool row mb-5">
+          <% if has_any_indicateur @evaluation, :valeur_perennite_existence_reserve %>
             <div class="col-4">
-              <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_partage_publicite_grille %>
+              <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_perennite_existence_reserve %>
             </div>
           <% end %>
+          <% if has_any_indicateur @evaluation, :valeur_perennite_reserve_impartageable %>
+            <div class="col-4">
+              <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_perennite_reserve_impartageable %>
+            </div>
+          <% end %>
+          <% if has_any_indicateur @evaluation, :valeur_perennite_attention_questions_innovation %>
+            <div class="col-4">
+              <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_perennite_attention_questions_innovation %>
+            </div>
+          <% end %>
+        </div>
       <% end %>
-    </div>
 
-    <% if has_any_indicateur @evaluation, :valeur_partage_ecart_revenus_hauts_bas, :valeur_partage_index_egalite_homme_femme %>
-    <div class="container">
-      <div class="row indic-row-reverse">
-        <% if has_any_indicateur @evaluation, :valeur_partage_ecart_revenus_hauts_bas %>
-          <div class="col">
-            <%= render "single_number_box", evaluation: @evaluation, indicateur: :valeur_partage_ecart_revenus_hauts_bas, suffix: "€" %>
+      <h4 class="my-3 my-sm-5"><b class="text-primary">II.</b> <u class="text-secondary text-decoration-none">Partage</u> des richesses</h4>
+      <div class="row text-center">
+        <h5 class="col mb-5 text-secondary fst-italic text-uppercase">Avec les actionnaires/sociétaires</h5>
+        <h5 class="col mb-5 text-secondary fst-italic text-uppercase">Avec/entre les salariés</h5>
+      </div>
+      <div class="indic-row row rich-share">
+        <div class="col">
+          <% if has_any_indicateur @evaluation, :valeur_partage_part_resultat_net_actionnaires %>
+            <%= render "single_taux_box", evaluation: @evaluation, indicateur: :valeur_partage_part_resultat_net_actionnaires %>
+          <% end %>
+        </div>
+        <div class="col">
+          <% if has_any_indicateur @evaluation, :valeur_partage_part_resultat_salaries %>
+            <%= render "single_taux_box", evaluation: @evaluation, indicateur: :valeur_partage_part_resultat_salaries %>
+          <% end %>
+        </div>
+      </div>
+
+      <% if has_any_indicateur @evaluation, :valeur_partage_existence_accord, :valeur_partage_existence_epargne_salariale, :valeur_partage_existence_grille_salariale, :valeur_partage_publicite_grille %>
+
+        <div class="bool row mt-5 mb-5">
+            <% if has_any_indicateur @evaluation, :valeur_partage_existence_accord %>
+              <div class="col-4 mb-4">
+                <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_partage_existence_accord %>
+              </div>
+            <% end %>
+            <% if has_any_indicateur @evaluation, :valeur_partage_existence_epargne_salariale %>
+              <div class="col-4 mb-4">
+                <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_partage_existence_epargne_salariale %>
+              </div>
+            <% end %>
+            <% if has_any_indicateur @evaluation, :valeur_partage_existence_grille_salariale %>
+              <div class="col-4 mb-4">
+                <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_partage_existence_grille_salariale %>
+              </div>
+            <% end %>
+            <% if has_any_indicateur @evaluation, :valeur_partage_publicite_grille %>
+              <div class="col-4">
+                <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_partage_publicite_grille %>
+              </div>
+            <% end %>
+        <% end %>
+      </div>
+
+      <% if has_any_indicateur @evaluation, :valeur_partage_ecart_revenus_hauts_bas, :valeur_partage_index_egalite_homme_femme %>
+      <div class="container p-0">
+        <div class="row indic-row-reverse">
+          <% if has_any_indicateur @evaluation, :valeur_partage_ecart_revenus_hauts_bas %>
+            <div class="col">
+              <%= render "single_number_box", evaluation: @evaluation, indicateur: :valeur_partage_ecart_revenus_hauts_bas, suffix: "€" %>
+            </div>
+          <% end %>
+          <% if has_any_indicateur @evaluation, :valeur_partage_index_egalite_homme_femme %>
+            <div class="col">
+              <%= render "single_taux_box", evaluation: @evaluation, indicateur: :valeur_partage_index_egalite_homme_femme, suffix: "/100" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+
+      <div class="w-100 my-5 bg-primary rounded separator"></div>
+
+      <% if has_any_indicateur @evaluation, :valeur_estimation_realite %>
+        <div class="estim d-invers">
+          <%= render "single_taux_box", evaluation: @evaluation, indicateur: :valeur_estimation_realite, suffix: "/10", max: 10 %>
+      </div>
+      <% end %>
+
+
+      <!-- IMPACT 3 -->
+
+      <h3 id="impact3" class="mt-3 mt-sm-5 py-5">Capital humain et qualité de vie au travail</h3>
+
+      <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">I.</b> <u class="text-secondary text-decoration-none">Qualité de vie</u> au travail / <u class="text-secondary text-decoration-none">épanouissement</u> des salariés</h4>
+
+      <% if has_any_indicateur @evaluation, :qualite_qvt_enquete_qvt %>
+        <div class="col me-2 ms-2 mb-5">
+          <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :qualite_qvt_enquete_qvt %>
+        </div>
+      <% end %>
+
+      <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
+        :qualite_qvt_taux_qvt,
+        :qualite_qvt_part_cdi,
+        :qualite_qvt_taux_turnover,
+        :qualite_qvt_taux_absenteisme
+      ] %>
+
+      <% if has_any_indicateur @evaluation, :qualite_qvt_moyenne_anciennete %>
+        <div class="col d-invers">
+          <%= render "single_number_box", evaluation: @evaluation, indicateur: :qualite_qvt_moyenne_anciennete, suffix: " ans" %>
+        </div>
+      <% end %>
+
+      <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5">
+      <b class="text-primary">II.</b>  Développement des
+      <u class="text-secondary text-decoration-none">compétences individuelles et collectives</u>
+        <br/>
+        <u class="text-secondary text-decoration-none">Emancipation</u> des salariés
+        </h4>
+
+      <% if has_any_indicateur @evaluation, :qualite_emancipation_moyenne_heures_formation, :qualite_emancipation_taux_budget_formation_masse_salariale, :qualite_emancipation_taux_direction_promotion_interne %>
+
+        <% if has_any_indicateur @evaluation, :qualite_emancipation_moyenne_heures_formation %>
+          <div class="col d-invers">
+            <%= render "single_number_box", evaluation: @evaluation, indicateur: :qualite_emancipation_moyenne_heures_formation, suffix: " heures" %>
           </div>
         <% end %>
-        <% if has_any_indicateur @evaluation, :valeur_partage_index_egalite_homme_femme %>
-          <div class="col">
-            <%= render "single_taux_box", evaluation: @evaluation, indicateur: :valeur_partage_index_egalite_homme_femme, suffix: "/100" %>
+        <div class="container p-0">
+          <div class="row indic-row">
+            <% if has_any_indicateur @evaluation, :qualite_emancipation_taux_budget_formation_masse_salariale %>
+              <div class="col">
+                <%= render "single_taux_box", evaluation: @evaluation, indicateur: :qualite_emancipation_taux_budget_formation_masse_salariale %>
+              </div>
+            <% end %>
+            <% if has_any_indicateur @evaluation, :qualite_emancipation_taux_direction_promotion_interne %>
+              <div class="col">
+                <%= render "single_taux_box", evaluation: @evaluation, indicateur: :qualite_emancipation_taux_direction_promotion_interne %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="w-100 my-5 bg-primary rounded separator"></div>
+
+      <% if has_any_indicateur @evaluation, :qualite_estimation_realite %>
+        <div class="estim d-invers">
+          <%= render "single_taux_box", evaluation: @evaluation, indicateur: :qualite_estimation_realite, suffix: "/10", max: 10 %>
+        </div>
+      <% end %>
+
+      <!-- IMPACT 4 -->
+
+      <h3 id="impact4" class="mt-3 mt-sm-5 py-5">Impact environnemental, social et territorial</h3>
+
+      <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">I.</b> Impact <u class="text-secondary text-decoration-none">environnemental</u></h4>
+
+      <% if has_any_indicateur @evaluation, :impact_environnement_audit_impact, :impact_environnement_demarche_ecologique, :impact_environnement_discussion_impact %>
+
+      <div class="bool row my-5 mx-1">
+        <% if has_any_indicateur @evaluation, :impact_environnement_audit_impact %>
+          <div class="col-4">
+            <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :impact_environnement_audit_impact %>
+          </div>
+        <% end %>
+        <% if has_any_indicateur @evaluation, :impact_environnement_demarche_ecologique %>
+          <div class="col-4">
+            <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :impact_environnement_demarche_ecologique %>
+          </div>
+        <% end %>
+        <% if has_any_indicateur @evaluation, :impact_environnement_discussion_impact %>
+          <div class="col-4">
+            <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :impact_environnement_discussion_impact %>
           </div>
         <% end %>
       </div>
-    </div>
-    <% end %>
-
-    <div class="w-100 my-5 bg-primary rounded separator"></div>
-
-    <% if has_any_indicateur @evaluation, :valeur_estimation_realite %>
-      <div class="estim w-50 ms-auto me-auto">
-        <%= render "single_taux_box", evaluation: @evaluation, indicateur: :valeur_estimation_realite, suffix: "/10", max: 10 %>
-    </div>
-    <% end %>
-
-
-    <!-- IMPACT 3 -->
-
-    <h3 id="impact3" class="mt-3 mt-sm-5">Capital humain et qualité de vie au travail</h3>
-    <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">I.</b> <u class="text-secondary text-decoration-none">Qualité de vie</u> au travail / <u class="text-secondary text-decoration-none">épanouissement</u> des salariés</h4>
-
-    <% if has_any_indicateur @evaluation, :qualite_qvt_enquete_qvt %>
-      <div class="col me-2 ms-2 mb-5">
-        <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :qualite_qvt_enquete_qvt %>
-      </div>
-    <% end %>
-
-    <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
-      :qualite_qvt_taux_qvt,
-      :qualite_qvt_part_cdi,
-      :qualite_qvt_taux_turnover,
-      :qualite_qvt_taux_absenteisme
-    ] %>
-
-    <% if has_any_indicateur @evaluation, :qualite_qvt_moyenne_anciennete %>
-      <div class="col d-invers me-2 ms-2">
-        <%= render "single_number_box", evaluation: @evaluation, indicateur: :qualite_qvt_moyenne_anciennete, suffix: " ans" %>
-      </div>
-    <% end %>
-
-    <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5">
-    <b class="text-primary">II.</b>  Développement des
-    <u class="text-secondary text-decoration-none">compétences individuelles et collectives</u>
-      <br/>
-      <u class="text-secondary text-decoration-none">Emancipation</u> des salariés
-      </h4>
-
-    <% if has_any_indicateur @evaluation, :qualite_emancipation_moyenne_heures_formation, :qualite_emancipation_taux_budget_formation_masse_salariale, :qualite_emancipation_taux_direction_promotion_interne %>
-
-      <% if has_any_indicateur @evaluation, :qualite_emancipation_moyenne_heures_formation %>
-        <div class="col d-invers me-2 ms-2">
-          <%= render "single_number_box", evaluation: @evaluation, indicateur: :qualite_emancipation_moyenne_heures_formation, suffix: " heures" %>
-        </div>
       <% end %>
-      <div class="container">
-        <div class="row indic-row">
-          <% if has_any_indicateur @evaluation, :qualite_emancipation_taux_budget_formation_masse_salariale %>
-            <div class="col">
-              <%= render "single_taux_box", evaluation: @evaluation, indicateur: :qualite_emancipation_taux_budget_formation_masse_salariale %>
-            </div>
-          <% end %>
-          <% if has_any_indicateur @evaluation, :qualite_emancipation_taux_direction_promotion_interne %>
-            <div class="col">
-              <%= render "single_taux_box", evaluation: @evaluation, indicateur: :qualite_emancipation_taux_direction_promotion_interne %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
 
-    <div class="w-100 my-5 bg-primary rounded separator"></div>
+      <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
+        :impact_environnement_part_energies_renouvelables,
+        :impact_environnement_part_salaries_mobilite,
+      ] %>
 
-    <% if has_any_indicateur @evaluation, :qualite_estimation_realite %>
-      <div class="estim w-50 ms-auto me-auto">
-        <%= render "single_taux_box", evaluation: @evaluation, indicateur: :qualite_estimation_realite, suffix: "/10", max: 10 %>
-      </div>
-    <% end %>
-
-    <!-- IMPACT 4 -->
-
-    <h3 id="impact4" class="mt-3 mt-sm-5">Impact environnemental, social et territorial</h3>
-
-    <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">I.</b> Impact <u class="text-secondary text-decoration-none">environnemental</u></h4>
-
-    <% if has_any_indicateur @evaluation, :impact_environnement_audit_impact, :impact_environnement_demarche_ecologique, :impact_environnement_discussion_impact %>
-
-    <div class="bool row my-5 mx-1">
-      <% if has_any_indicateur @evaluation, :impact_environnement_audit_impact %>
-        <div class="col-4">
-          <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :impact_environnement_audit_impact %>
-        </div>
-      <% end %>
-      <% if has_any_indicateur @evaluation, :impact_environnement_demarche_ecologique %>
-        <div class="col-4">
-          <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :impact_environnement_demarche_ecologique %>
-        </div>
-      <% end %>
-      <% if has_any_indicateur @evaluation, :impact_environnement_discussion_impact %>
-        <div class="col-4">
-          <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :impact_environnement_discussion_impact %>
-        </div>
-      <% end %>
-    </div>
-    <% end %>
-
-    <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
-      :impact_environnement_part_energies_renouvelables,
-      :impact_environnement_part_salaries_mobilite,
-    ] %>
-
-    <% if has_any_indicateur @evaluation, :impact_environnement_bilan_carbone_scope_1, :impact_environnement_bilan_carbone_scope_2, :impact_environnement_bilan_carbone_scope_3 %>
-      <div class="col me-2 ms-2">
-      <% if !@evaluation.indicateurs_list.impact_environnement_bilan_carbone_scope_1 && !@evaluation.indicateurs_list.impact_environnement_bilan_carbone_scope_2  && !@evaluation.indicateurs_list.impact_environnement_bilan_carbone_scope_3 %>
-        <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-          <div class="bg-danger text-white m-0 p-2">
-            <p class="h2">Bilan carbone non calculé</p>
-          </div>
-        </div>
-      <% else %>
-        <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-          <div class="bg-light fw-bold text-center p-3">Bilan carbone calculé</div>
-          <div class="bg-white m-0 p-2">
-            <div class="d-flex p-3">
-              <% if @evaluation.indicateurs_list.impact_environnement_bilan_carbone_scope_1 %>
-                <div class="card bg-success text-white border-0 mx-2">
-                  <div class="card-body pt-2 pb-2 pe-3 ps-3">
-                  <h5 class="card-title m-0">Scope 1</h5>
-                  </div>
-                </div>
-              <% end %>
-              <% if @evaluation.indicateurs_list.impact_environnement_bilan_carbone_scope_2 %>
-                <div class="card bg-success text-white border-0 mx-2">
-                  <div class="card-body pt-2 pb-2 pe-3 ps-3">
-                  <h5 class="card-title m-0">Scope 2</h5>
-                  </div>
-                </div>
-              <% end %>
-              <% if @evaluation.indicateurs_list.impact_environnement_bilan_carbone_scope_3 %>
-                <div class="card bg-success text-white border-0 mx-2">
-                  <div class="card-body pt-2 pb-2 pe-3 ps-3">
-                  <h5 class="card-title m-0">Scope 3</h5>
-                  </div>
-                </div>
-              <% end %>
+      <% if has_any_indicateur @evaluation, :impact_environnement_bilan_carbone_scope_1, :impact_environnement_bilan_carbone_scope_2, :impact_environnement_bilan_carbone_scope_3 %>
+        <div class="col me-2 ms-2">
+        <% if !@evaluation.indicateurs_list.impact_environnement_bilan_carbone_scope_1 && !@evaluation.indicateurs_list.impact_environnement_bilan_carbone_scope_2  && !@evaluation.indicateurs_list.impact_environnement_bilan_carbone_scope_3 %>
+          <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
+            <div class="bg-danger text-white m-0 p-2">
+              <p class="h2">Bilan carbone non calculé</p>
             </div>
           </div>
+        <% else %>
+          <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
+            <div class="bg-light fw-bold text-center p-3">Bilan carbone calculé</div>
+            <div class="bg-white m-0 p-2">
+              <div class="d-flex p-3">
+                <% if @evaluation.indicateurs_list.impact_environnement_bilan_carbone_scope_1 %>
+                  <div class="card bg-success text-white border-0 mx-2">
+                    <div class="card-body pt-2 pb-2 pe-3 ps-3">
+                    <h5 class="card-title m-0">Scope 1</h5>
+                    </div>
+                  </div>
+                <% end %>
+                <% if @evaluation.indicateurs_list.impact_environnement_bilan_carbone_scope_2 %>
+                  <div class="card bg-success text-white border-0 mx-2">
+                    <div class="card-body pt-2 pb-2 pe-3 ps-3">
+                    <h5 class="card-title m-0">Scope 2</h5>
+                    </div>
+                  </div>
+                <% end %>
+                <% if @evaluation.indicateurs_list.impact_environnement_bilan_carbone_scope_3 %>
+                  <div class="card bg-success text-white border-0 mx-2">
+                    <div class="card-body pt-2 pb-2 pe-3 ps-3">
+                    <h5 class="card-title m-0">Scope 3</h5>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+
+      <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">II.</b> Impact <u class="text-secondary text-decoration-none">social</u></h4>
+
+      <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
+        :impact_social_part_activite_structures_insertion,
+        :impact_social_alternance_apprentissage,
+        :impact_social_part_seniors,
+        :impact_social_part_handicap
+      ] %>
+
+      <h4 class="mb-3 mb-sm-5 "><b class="text-primary">III.</b> <u class="text-secondary text-decoration-none">Engagement</u> en faveur de <u class="text-secondary text-decoration-none">l'écosystème</u> et du <u class="text-secondary text-decoration-none">territoire</u></h4>
+
+      <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
+        :impact_engagement_part_resultat_missions_utiles,
+        :impact_engagement_part_placements_responsables,
+        :impact_engagement_part_impots_france
+      ] %>
+
+      <% if has_any_indicateur @evaluation, :impact_engagement_demarche_ethique_fournisseurs %>
+        <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :impact_engagement_demarche_ethique_fournisseurs %>
+      <% end %>
+
+      <div class="w-100 my-5 bg-primary rounded separator"></div>
+
+      <% if has_any_indicateur @evaluation, :impact_estimation_realite %>
+        <div class="estim d-invers">
+          <%= render "single_taux_box", evaluation: @evaluation, indicateur: :impact_estimation_realite, suffix: "/10", max: 10 %>
         </div>
       <% end %>
-    <% end %>
-
-    <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">II.</b> Impact <u class="text-secondary text-decoration-none">social</u></h4>
-
-    <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
-      :impact_social_part_activite_structures_insertion,
-      :impact_social_alternance_apprentissage,
-      :impact_social_part_seniors,
-      :impact_social_part_handicap
-    ] %>
-
-    <h4 class="my-3 my-sm-5"><b class="text-primary">III.</b> <u class="text-secondary text-decoration-none">Engagement</u> en faveur de <u class="text-secondary text-decoration-none">l'écosystème</u> et du <u class="text-secondary text-decoration-none">territoire</u></h4>
-
-    <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
-      :impact_engagement_part_resultat_missions_utiles,
-      :impact_engagement_part_placements_responsables,
-      :impact_engagement_part_impots_france
-    ] %>
-
-    <% if has_any_indicateur @evaluation, :impact_engagement_demarche_ethique_fournisseurs %>
-      <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :impact_engagement_demarche_ethique_fournisseurs %>
-    <% end %>
-
-    <div class="w-100 my-5 bg-primary rounded separator"></div>
-
-    <% if has_any_indicateur @evaluation, :impact_estimation_realite %>
-      <div class="estim w-50 ms-auto me-auto">
-        <%= render "single_taux_box", evaluation: @evaluation, indicateur: :impact_estimation_realite, suffix: "/10", max: 10 %>
-      </div>
-    <% end %>
-
-    <div class="d-flex flex-sm-row flex-column align-items-sm-center justify-content-between mt-5 pt-5 mb-4">
-      <div class="mb-3 mb-sm-0">
-      <% if current_user.is_super_admin %>
-        <%= link_to "Back to evaluations", evaluations_path, class: "btn btn-secondary me-3" %>
-      <% else %>
-        <%= link_to "Retourner au dashboard", user_root_path, class: "btn btn-secondary me-3" %>
-      <% end %>
-      </div>
     </div>
   </div>
+</div>
+
+  <div class="d-flex flex-sm-row flex-column align-items-sm-center justify-content-between mt-5 pt-5 mb-4">
+    <div class="mb-3 mb-sm-0">
+    <% if current_user.is_super_admin %>
+      <%= link_to "Back to evaluations", evaluations_path, class: "btn btn-secondary me-3" %>
+    <% else %>
+      <%= link_to "Retourner au dashboard", user_root_path, class: "btn btn-secondary me-3" %>
+    <% end %>
+    </div>
+  </div>
+
 </div>
