@@ -1,4 +1,20 @@
-<div class="public-stats d-flex">
+<div class="public-stats mx-0 mx-sm-5 p-sm-5 mt-5 pt-5 pt-sm-0">
+
+  <header>
+    <h1>Résultats pour l'année <%= @evaluation.annee %></h1>
+  </header>
+
+  <div class="d-flex flex-sm-row flex-column align-items-sm-center justify-content-between mt-5 mb-4">
+    <div class="mb-3 mb-sm-0">
+    <% if current_user.is_super_admin %>
+      <%= link_to "Back to evaluations", evaluations_path, class: "btn btn-secondary me-3" %>
+    <% else %>
+      <%= link_to "Retourner au dashboard", user_root_path, class: "btn btn-secondary me-3" %>
+    <% end %>
+    </div>
+  </div>
+
+  <div class="puclic-stats-body d-flex">
 
   <!-- Sidebar -->
   <div class="navbar-nav bg-white sidebar sidebar-light accordion col-2 p-3 position-relative d-none d-md-flex flex-column" id="accordionSidebar">
@@ -36,20 +52,7 @@
   </div>
   <!-- End of Sidebar -->
 
-  <div class="puclic-stats-body p-sm-5 w-100  mx-2">
-    <header>
-      <h1>Résultats pour l'année <%= @evaluation.annee %></h1>
-    </header>
-
-    <div class="d-flex flex-sm-row flex-column align-items-sm-center justify-content-between mt-5 mb-4">
-      <div class="mb-3 mb-sm-0">
-      <% if current_user.is_super_admin %>
-        <%= link_to "Back to evaluations", evaluations_path, class: "btn btn-secondary me-3" %>
-      <% else %>
-        <%= link_to "Retourner au dashboard", user_root_path, class: "btn btn-secondary me-3" %>
-      <% end %>
-      </div>
-    </div>
+  <div class="stats-container">
 
     <!-- IMPACT 1 -->
 
