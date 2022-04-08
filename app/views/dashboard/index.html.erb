@@ -1,7 +1,7 @@
 <div class="page-user col-10 m-auto mt-5 mb-5">
 
   <header>
-    <h1>Dashboard</h1>
+    <h1 class="h2">Dashboard</h1>
   </header>
 
   <% if current_user.organisation.nil? %>
@@ -23,7 +23,7 @@
     </div>
   <% else %>
     <div class="col-10 text-break me-auto ms-auto rounded bg-white shadow border-start border-primary p-3 p-sm-4 mb-5 col-input mt-5 p-sm-5">
-      <h2 class="mb-3"><%= current_user.organisation %></h2>
+      <a href="/organisations/<%= current_user.organisation.id %>/edit"><h2 class="mb-3"><%= current_user.organisation %></h2></a>
       <% if !current_user.organisation.validation_admin %>
         <p class="fst-italic">En attente de vérification par un administrateur.<p>
       <% else %>
