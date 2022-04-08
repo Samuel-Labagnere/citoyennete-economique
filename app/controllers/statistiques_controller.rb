@@ -42,4 +42,16 @@ class StatistiquesController < ApplicationController
       helpers.indicateur_clean(:pouvoir_strategique_actifs_total) => latest_indicateurs_lists.median(:pouvoir_strategique_actifs_total)
     }
   end
+
+  def pil1
+  end
+
+  def pil2
+  end
+
+  def pil3
+  end
+
+  def pil4
+  end
 end
