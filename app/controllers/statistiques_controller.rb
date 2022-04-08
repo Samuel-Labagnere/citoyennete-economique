@@ -10,6 +10,36 @@ class StatistiquesController < ApplicationController
     $latest_indicateurs_lists = IndicateursList.where(evaluation_id: $latest_evaluations)
   end
 
+  def boolean_group(indic_lists, indic_symbols)
+    group = {}
+
+    indic_symbols.each do |indic_symbol|
+      indic = single_boolean(indic_lists, indic_symbol)
+      if not indic.nil?
+        group[indic_symbol] = indic
+      end
+    end
+
+    return group
+  end
+
+  def single_boolean(indic_lists, indic_symbol)
+    result = nil
+
+    true_count = indic_lists.where("#{indic_symbol.to_s} = ?", true).count
+    false_count = indic_lists.where("#{indic_symbol.to_s} = ?", false).count
+    sum = true_count + false_count
+
+    if sum > 0
+      result = {
+        helpers.indicateur_clean(indic_symbol) => (true_count / sum * 100),
+        helpers.negative_indicateur(indic_symbol) => (false_count / sum * 100)
+      }
+    end
+
+    return result
+  end
+
   def index
   end
 
@@ -59,108 +89,45 @@ class StatistiquesController < ApplicationController
   end
 
   def pil2
-    @valeur_perennite_booleens = {}
+    @valeur_perennite_booleens = boolean_group($latest_indicateurs_lists, [
+      :valeur_perennite_existence_reserve,
+      :valeur_perennite_reserve_impartageable,
+      :valeur_perennite_attention_questions_innovation
+    ])
 
-    valeur_perennite_existence_reserve_true = $latest_indicateurs_lists.where(valeur_perennite_existence_reserve: true).count
-    valeur_perennite_existence_reserve_false = $latest_indicateurs_lists.where(valeur_perennite_existence_reserve: false).count
-    valeur_perennite_reserve_impartageable_false = $latest_indicateurs_lists.where(valeur_perennite_reserve_impartageable: false).count
-    valeur_perennite_reserve_impartageable_true = $latest_indicateurs_lists.where(valeur_perennite_reserve_impartageable: true).count
-    valeur_perennite_attention_questions_innovation_false = $latest_indicateurs_lists.where(valeur_perennite_attention_questions_innovation: false).count
-    valeur_perennite_attention_questions_innovation_true = $latest_indicateurs_lists.where(valeur_perennite_attention_questions_innovation: true).count
+    @valeur_part_resultat = {
+      helpers.indicateur_clean(:valeur_partage_part_resultat_net_actionnaires) => $latest_indicateurs_lists.median(:valeur_partage_part_resultat_net_actionnaires),
+      helpers.indicateur_clean(:valeur_partage_part_resultat_salaries) => $latest_indicateurs_lists.median(:valeur_partage_part_resultat_salaries)
+    }
 
-    valeur_perennite_existence_reserve_somme = valeur_perennite_existence_reserve_true + valeur_perennite_existence_reserve_false
-    valeur_perennite_reserve_impartageable_somme = valeur_perennite_reserve_impartageable_true + valeur_perennite_reserve_impartageable_false
-    valeur_perennite_attention_questions_innovation_somme = valeur_perennite_attention_questions_innovation_true + valeur_perennite_attention_questions_innovation_false
+    @valeur_partage_ecart_revenus_hauts_bas = $latest_indicateurs_lists.median(:valeur_partage_ecart_revenus_hauts_bas)
+    @valeur_partage_index_egalite_homme_femme = $latest_indicateurs_lists.median(:valeur_partage_index_egalite_homme_femme)
 
-    if valeur_perennite_existence_reserve_somme > 0
-      @valeur_perennite_booleens[:valeur_perennite_existence_reserve] = {
-        helpers.indicateur_clean(:valeur_perennite_existence_reserve) => (valeur_perennite_existence_reserve_true / valeur_perennite_existence_reserve_somme * 100),
-        helpers.negative_indicateur(:valeur_perennite_existence_reserve) => (valeur_perennite_existence_reserve_false / valeur_perennite_existence_reserve_somme * 100)
-      }
-    end
-
-    if valeur_perennite_reserve_impartageable_somme > 0
-      @valeur_perennite_booleens[:valeur_perennite_reserve_impartageable] = {
-        helpers.indicateur_clean(:valeur_perennite_reserve_impartageable) => (valeur_perennite_reserve_impartageable_true / valeur_perennite_reserve_impartageable_somme * 100),
-        helpers.negative_indicateur(:valeur_perennite_reserve_impartageable) => (valeur_perennite_reserve_impartageable_false / valeur_perennite_reserve_impartageable_somme * 100)
-      }
-    end
-
-    if valeur_perennite_attention_questions_innovation_somme > 0
-      @valeur_perennite_booleens[:valeur_perennite_attention_questions_innovation] = {
-        helpers.indicateur_clean(:valeur_perennite_attention_questions_innovation) => (valeur_perennite_attention_questions_innovation_true / valeur_perennite_attention_questions_innovation_somme * 100),
-        helpers.negative_indicateur(:valeur_perennite_attention_questions_innovation) => (valeur_perennite_attention_questions_innovation_false / valeur_perennite_attention_questions_innovation_somme * 100)
-      }
-
-      @valeur_part_resultat = {
-        helpers.indicateur_clean(:valeur_partage_part_resultat_net_actionnaires) => $latest_indicateurs_lists.median(:valeur_partage_part_resultat_net_actionnaires),
-        helpers.indicateur_clean(:valeur_partage_part_resultat_salaries) => $latest_indicateurs_lists.median(:valeur_partage_part_resultat_salaries)
-      }
-
-      @valeur_partage_ecart_revenus_hauts_bas = $latest_indicateurs_lists.median(:valeur_partage_ecart_revenus_hauts_bas)
-      @valeur_partage_index_egalite_homme_femme = $latest_indicateurs_lists.median(:valeur_partage_index_egalite_homme_femme)
-
-      @valeur_partage_booleens = {}
-
-      valeur_partage_existence_accord_false = $latest_indicateurs_lists.where(valeur_partage_existence_accord: false).count
-      valeur_partage_existence_accord_true = $latest_indicateurs_lists.where(valeur_partage_existence_accord: true).count
-      valeur_partage_existence_accord_somme = valeur_partage_existence_accord_true + valeur_partage_existence_accord_false
-      valeur_partage_existence_epargne_salariale_false = $latest_indicateurs_lists.where(valeur_partage_existence_epargne_salariale: false).count
-      valeur_partage_existence_epargne_salariale_true = $latest_indicateurs_lists.where(valeur_partage_existence_epargne_salariale: true).count
-      valeur_partage_existence_epargne_salariale_somme = valeur_partage_existence_epargne_salariale_true + valeur_partage_existence_epargne_salariale_false
-      valeur_partage_existence_grille_salariale_false = $latest_indicateurs_lists.where(valeur_partage_existence_grille_salariale: false).count
-      valeur_partage_existence_grille_salariale_true = $latest_indicateurs_lists.where(valeur_partage_existence_grille_salariale: true).count
-      valeur_partage_existence_grille_salariale_somme = valeur_partage_existence_grille_salariale_true + valeur_partage_existence_grille_salariale_false
-      valeur_partage_publicite_grille_false = $latest_indicateurs_lists.where(valeur_partage_publicite_grille: false).count
-      valeur_partage_publicite_grille_true = $latest_indicateurs_lists.where(valeur_partage_publicite_grille: true).count
-      valeur_partage_publicite_grille_somme = valeur_partage_publicite_grille_true + valeur_partage_publicite_grille_false
-
-      if valeur_partage_existence_accord_somme > 0
-        @valeur_partage_booleens = {
-          helpers.indicateur_clean(:valeur_partage_existence_accord) => (valeur_partage_existence_accord_true / valeur_partage_existence_accord_somme * 100),
-          helpers.negative_indicateur(:valeur_partage_existence_accord) => (valeur_partage_existence_accord_false / valeur_partage_existence_accord_somme * 100)
-        }
-      end
-
-      if valeur_partage_existence_epargne_salariale_somme > 0
-        @valeur_partage_booleens = {
-          helpers.indicateur_clean(:valeur_partage_existence_epargne_salariale) => (valeur_partage_existence_epargne_salariale_true / valeur_partage_existence_epargne_salariale_somme * 100),
-          helpers.negative_indicateur(:valeur_partage_existence_epargne_salariale) => (valeur_partage_existence_epargne_salariale_false / valeur_partage_existence_epargne_salariale_somme * 100)
-        }
-      end
-
-      if valeur_partage_existence_grille_salariale_somme > 0
-        @valeur_partage_booleens = {
-          helpers.indicateur_clean(:valeur_partage_existence_grille_salariale) => (valeur_partage_existence_grille_salariale_true / valeur_partage_existence_grille_salariale_somme * 100),
-          helpers.negative_indicateur(:valeur_partage_existence_grille_salariale) => (valeur_partage_existence_grille_salariale_false / valeur_partage_existence_grille_salariale_somme * 100)
-        }
-      end
-
-      if valeur_partage_publicite_grille_somme > 0
-        @valeur_partage_booleens = {
-          helpers.indicateur_clean(:valeur_partage_publicite_grille) => (valeur_partage_publicite_grille_true / valeur_partage_publicite_grille_somme * 100),
-          helpers.negative_indicateur(:valeur_partage_publicite_grille) => (valeur_partage_publicite_grille_false / valeur_partage_publicite_grille_somme * 100)
-        }
-      end
-    end
-
-    # @valeur_perennite_booleens = {
-    #   :valeur_perennite_existence_reserve => [
-    #     ($latest_indicateurs_lists.where(valeur_perennite_existence_reserve: false).count / $latest_indicateurs_lists.where.not(valeur_perennite_existence_reserve: nil).count * 100),
-    #     ($latest_indicateurs_lists.where(valeur_perennite_existence_reserve: true).count / $latest_indicateurs_lists.where.not(valeur_perennite_existence_reserve: nil).count * 100) 
-    #   ],
-    #   :valeur_perennite_reserve_impartageable => [
-    #     ($latest_indicateurs_lists.where(valeur_perennite_reserve_impartageable: false).count / $latest_indicateurs_lists.where.not(valeur_perennite_reserve_impartageable: nil).count * 100),
-    #     ($latest_indicateurs_lists.where(valeur_perennite_reserve_impartageable: true).count / $latest_indicateurs_lists.where.not(valeur_perennite_reserve_impartageable: nil).count * 100)
-    #   ],
-    #   :valeur_perennite_attention_questions_innovation => [
-    #     ($latest_indicateurs_lists.where(valeur_perennite_attention_questions_innovation: false).count / $latest_indicateurs_lists.where.not(valeur_perennite_attention_questions_innovation: nil) * 100),
-    #     ($latest_indicateurs_lists.where(valeur_perennite_attention_questions_innovation: true).count / $latest_indicateurs_lists.where.not(valeur_perennite_attention_questions_innovation: nil) * 100)
-    #   ]
-    # }
+    @valeur_partage_booleens = boolean_group($latest_indicateurs_lists, [
+      :valeur_partage_existence_accord,
+      :valeur_partage_existence_epargne_salariale,
+      :valeur_partage_existence_grille_salariale,
+      :valeur_partage_publicite_grille
+    ])
   end
 
   def pil3
+    @qualite_qvt_enquete_qvt = single_boolean($latest_indicateurs_lists, :qualite_qvt_enquete_qvt)
+
+    @qualite_qvt_taux_all = {
+      helpers.indicateur_clean(:qualite_qvt_taux_qvt) => $latest_indicateurs_lists.median(:qualite_qvt_taux_qvt),
+      helpers.indicateur_clean(:qualite_qvt_part_cdi) => $latest_indicateurs_lists.median(:qualite_qvt_part_cdi),
+      helpers.indicateur_clean(:qualite_qvt_taux_turnover) => $latest_indicateurs_lists.median(:qualite_qvt_taux_turnover),
+      helpers.indicateur_clean(:qualite_qvt_taux_absenteisme) => $latest_indicateurs_lists.median(:qualite_qvt_taux_absenteisme)
+    }
+
+    @qualite_qvt_moyenne_anciennete = $latest_indicateurs_lists.average(:qualite_qvt_moyenne_anciennete)
+    @qualite_emancipation_moyenne_heures_formation = $latest_indicateurs_lists.average(:qualite_emancipation_moyenne_heures_formation)
+
+    @qualite_emancipation_taux = {
+      helpers.indicateur_clean(:qualite_emancipation_taux_budget_formation_masse_salariale) => $latest_indicateurs_lists.median(:qualite_emancipation_taux_budget_formation_masse_salariale),
+      helpers.indicateur_clean(:qualite_emancipation_taux_direction_promotion_interne) => $latest_indicateurs_lists.median(:qualite_emancipation_taux_direction_promotion_interne)
+    }
   end
 
   def pil4
