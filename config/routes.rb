@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   root "home#index"
   get "dashboard", to: "dashboard#index", as: "user_root"
   get "admin", to: "admin#index"
-  get "entreprises", to: "organisations#public_list"
+  # get "entreprises", to: "organisations#public_list"
   get 'statistiques', to: "statistiques#index"
   get 'mentions-legales', to: "home#mentions_legales"
   get 'cgu', to: 'home#cgu'
