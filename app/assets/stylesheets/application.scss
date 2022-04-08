@@ -407,25 +407,82 @@ body {
                 }
             }
             .public-stats {
-                .sticky-top {
-                    top: 80px;
-                    a {
-                      font-size: 1rem;
-                      font-family: $fontTitre;
+              .sticky-top {
+                  top: 80px;
+                  a {
+                    font-size: 1rem;
+                    font-family: $fontTitre;
+                    transition: .3s ease;
+                    b {font-size: 2.5rem;}
+                    &:hover {
+                      background-color: $primary !important;
                       transition: .3s ease;
-                      b {font-size: 2.5rem;}
-                      &:hover {
-                        background-color: $primary !important;
-                        transition: .3s ease;
+                    }
+                  }
+              }
+              .puclic-stats-body {
+                h5 {
+                    font-size:.9rem;
+                }
+                .bg-light {
+                  font-family: $fontTitre;
+                }
+                .indic-row, .indic-row-reverse {
+                  .col {
+                    height: auto;
+                    max-width: 50%;
+                    margin-left: auto;
+                    margin-right: auto;
+                    .rounded {
+                      height: 100%;
+                      .bg-light {flex:1;}
+                    }
+                  }
+                }
+                .indic-row-reverse {
+                  .col {
+                    .rounded {
+                      .bg-white {flex:1;
+                        display:flex;
+                        align-items: center;
+                        justify-content: center;
                       }
+                      .bg-light {flex: unset !important;}
                     }
+                  }
                 }
-                .puclic-stats-body {
-                    h5 {
-                        font-size:.9rem;
+                .row-hybrid {
+                  .bg-white {flex-grow: 1;}
+                }
+                p {
+                  font-size: .9rem;
+                  font-family: $fontTitre;
+                  span {
+                    font-size: 4rem;
+                    top: - calc($spacer / 2)  !important;
+                    left: - calc($spacer / 2) !important;
+                  }
+                  &.h1 {font-size: 3.5rem;}
+                }
+                .bool p {
+                  height: 100%;
+                }
+                .d-invers {
+                  .rounded {
+                    flex-direction: row !important;
+                    div {
+                      flex: 1 !important;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
                     }
-                    .bg-light.fw-bold {font-family: $fontTitre;}
+                  }
                 }
+                .separator {
+                  height: 6px;
+                }
+                .estim .bg-light {color: #007CAA !important;}
+              }
             }
             .page-orga {
                 .col-11 {
