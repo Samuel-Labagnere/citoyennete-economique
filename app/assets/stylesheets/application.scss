@@ -403,7 +403,8 @@ body {
                 .indic-row-reverse {
                   .col {
                     .rounded {
-                      .bg-white {flex:1;
+                      .bg-white {
+                        flex:1;
                         display:flex;
                         align-items: center;
                         justify-content: center;
@@ -437,6 +438,13 @@ body {
                       align-items: center;
                       justify-content: center;
                     }
+                  }
+                }
+                /***** ESTIMATIONS *****/
+                .estim.d-invers {
+                  .bg-light {text-align: left !important;}
+                  .bg-white {flex: unset !important;}
+                    #chart-18, #chart-10, #chart-25, #chart-35 {height: 150px !important;
                   }
                 }
                 .separator {
