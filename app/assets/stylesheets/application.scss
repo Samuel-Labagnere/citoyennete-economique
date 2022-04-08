@@ -133,7 +133,9 @@ body {
     .navigationBar{
         z-index: 9999;
         transition: ease .3s;
-
+        & * {
+          transition: ease .3s;
+        }
         .logoSite {
             display:flex;
             position:relative;
@@ -150,7 +152,6 @@ body {
                 height: 100%;
                 color: black;
             }
-
             b {
                 position:absolute;
                 bottom: 0; right: 0;
@@ -159,7 +160,6 @@ body {
                 text-align:right;
             }
         }
-
         .navbar__links {
           a {
             font-family: $fontTitre;
@@ -168,29 +168,30 @@ body {
         }
 
         &.sticky {
-            transition: ease .3s;
-            margin-top: -10px;
+          transition: ease .3s;
+          margin-top: -10px;
 
-            .logoSite {
-            width: 40px;
-            transition-delay: .3s;
+          .logoSite {
+          width: 40px;
+          transition-delay: .3s;
 
-                img {
-                    opacity: 0;
-                    transform: translateX(-50%);
-                    transition: ease .3s;
-                }
-                span {
-                    opacity: 1;
-                    transform: translateY(calc(50% - 14px));
-                    transition: ease .3s;
-                }
-                b {
-                    opacity: 1;
-                    transform: translateX(calc(-100% + 30px)) translateY(calc(-50% + 14px));
-                    transition: ease .3s;
-                }
-            }
+              img {
+                  opacity: 0;
+                  transform: translateX(-50%);
+                  transition: ease .3s;
+              }
+              span {
+                  opacity: 1;
+                  transform: translateY(calc(50% - 14px));
+                  transition: ease .3s;
+              }
+              b {
+                  opacity: 1;
+                  transform: translateX(calc(-100% + 30px)) translateY(calc(-50% + 14px));
+                  transition: ease .3s;
+              }
+          }
+          .navbar__links {margin-left: calc($spacer * 2);}
         }
 
         button{
@@ -211,39 +212,21 @@ body {
         }
 
         .navbar-nav {
-            align-items:center;
             font-family: $fontTitre;
 
             .nav-item {
-                a.nav-link {
-                    &::after {
-                        position:absolute;
-                        right: 0;
-                    }
-                    b {
-                        font-size: 2.2rem;
-                    }
-                    span {
-                        font-size: 1rem;
-                    }
+              a.nav-link {
+                b {
+                  font-size: 2.2rem;
                 }
-                a.collapse-item {
-                    font-size: 16px !important;
-                    white-space: normal !important;
-                    b {
-                        font-size: 16px;
-                    }
+                span {
+                  font-size: 1rem;
                 }
+              }
             }
-
         }
         #content-wrapper {
-
-            .border-grey{
-
-            }
-
-            overflow: unset !important;
+          overflow: unset !important;
 
             .border-start{
                 border-width: 8px !important;
@@ -386,13 +369,14 @@ body {
             .public-stats {
               .sticky-top {
                   top: 80px;
+                  height: calc(100vh - 80px);
                   a {
                     font-size: 1rem;
                     font-family: $fontTitre;
                     transition: .3s ease;
                     b {font-size: 2.5rem;}
                     &:hover {
-                      background-color: $primary !important;
+                      background-color: $border-grey!important;
                       transition: .3s ease;
                     }
                   }
