@@ -188,29 +188,29 @@
 
       <% if has_any_indicateur @evaluation, :valeur_partage_existence_accord, :valeur_partage_existence_epargne_salariale, :valeur_partage_existence_grille_salariale, :valeur_partage_publicite_grille %>
 
-        <div class="bool row mt-5 mb-5">
-            <% if has_any_indicateur @evaluation, :valeur_partage_existence_accord %>
-              <div class="col-4 mb-4">
-                <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_partage_existence_accord %>
-              </div>
-            <% end %>
-            <% if has_any_indicateur @evaluation, :valeur_partage_existence_epargne_salariale %>
-              <div class="col-4 mb-4">
-                <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_partage_existence_epargne_salariale %>
-              </div>
-            <% end %>
-            <% if has_any_indicateur @evaluation, :valeur_partage_existence_grille_salariale %>
-              <div class="col-4 mb-4">
-                <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_partage_existence_grille_salariale %>
-              </div>
-            <% end %>
-            <% if has_any_indicateur @evaluation, :valeur_partage_publicite_grille %>
-              <div class="col-4">
-                <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_partage_publicite_grille %>
-              </div>
-            <% end %>
-        <% end %>
-      </div>
+      <div class="bool row mt-5 mb-5">
+          <% if has_any_indicateur @evaluation, :valeur_partage_existence_accord %>
+            <div class="col-4 mb-4">
+              <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_partage_existence_accord %>
+            </div>
+          <% end %>
+          <% if has_any_indicateur @evaluation, :valeur_partage_existence_epargne_salariale %>
+            <div class="col-4 mb-4">
+              <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_partage_existence_epargne_salariale %>
+            </div>
+          <% end %>
+          <% if has_any_indicateur @evaluation, :valeur_partage_existence_grille_salariale %>
+            <div class="col-4 mb-4">
+              <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_partage_existence_grille_salariale %>
+            </div>
+          <% end %>
+          <% if has_any_indicateur @evaluation, :valeur_partage_publicite_grille %>
+            <div class="col-4">
+              <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :valeur_partage_publicite_grille %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
 
       <% if has_any_indicateur @evaluation, :valeur_partage_ecart_revenus_hauts_bas, :valeur_partage_index_egalite_homme_femme %>
       <div class="container p-0">
