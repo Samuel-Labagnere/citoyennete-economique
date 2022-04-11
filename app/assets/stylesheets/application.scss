@@ -453,8 +453,9 @@ body {
                   height: 6px;
                 }
                 .estim .bg-light {color: $secondary !important;}
+                &.public {.estim.d-invers {#chart-13 {height: 240px !important;}}}
               }
-              .public-stats-body.public {.estim.d-invers {#chart-13 {height: 150px !important;}}}
+
             }
             .page-orga {
                 .col-11 {
