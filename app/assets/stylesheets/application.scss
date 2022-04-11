@@ -32,7 +32,7 @@
 // );
 
 $our_white: #EEF0F2;
-$our_blue: #007CAA;
+$our_blue: #2E3092;
 $form-bg-color:#f8f9fa;
 
 $colors: (
@@ -45,7 +45,7 @@ $colors: (
 
 $theme-colors: (
     "primary": #EB225A,
-    "secondary": #007CAA,
+    "secondary": #2E3092,
     "success": #007A78,
     "info": #007CAA,
     "danger": #F15921,
@@ -58,7 +58,7 @@ $theme-colors: (
 
 
 $primary: #EB225A;
-$secondary: #007CAA;
+$secondary: #2E3092;
 $border-success: #007A78;
 $border-danger: #F15921;
 $border-grey : #CBCBCB;
@@ -75,7 +75,7 @@ $fontText: 'Open Sans';
 
 $fontH1 : 5rem 'Alata';
 $fontH2 : 2rem 'Alata';
-$fontH3: 2.1rem 'Open Sans';
+$fontH3: 1.4rem 'Alata';
 $fontNavbar : 16px 'Alata';
 $fontMenu : 16px 'Open Sans';
 
@@ -387,12 +387,9 @@ body {
                   }
               }
               .puclic-stats-body {
-                h5 {
-                    font-size:.9rem;
-                }
-                .bg-light {
-                  font-family: $fontTitre;
-                }
+                h5 {font-size:.9rem;}
+                h3 {font-size: 3rem !important;}
+                .bg-light {font-family: $fontTitre;}
                 .indic-row, .indic-row-reverse {
                   .col {
                     height: auto;
@@ -455,7 +452,7 @@ body {
                 .separator {
                   height: 6px;
                 }
-                .estim .bg-light {color: #007CAA !important;}
+                .estim .bg-light {color: $secondary !important;}
               }
             }
             .page-orga {
@@ -559,6 +556,9 @@ body {
               .bg-white {
                 border-width: 8px !important;
               }
+            }
+            .public-stats {
+              h1 {font-size: 3rem;}
             }
         }
     }

@@ -1,108 +1,115 @@
-<div class="public-stats">
-    <header class="container-fluid">
-        <h1 class="h2 bg-secondary m-0 text-light text-center mt-5 py-2">1. Partage du pouvoir et des décisions</h1>
-    </header>
-    <div class="puclic-stats-body me-0 ms-0 me-sm-5 ms-sm-5 p-sm-5 mt-5 pt-5 pt-sm-0">
+<div class="public-stats mx-3 mx-sm-5 mx-bg-5 mt-5 pt-2 px-5">
+  <header class="container-fluid">
+      <h1 class="mb-5"><b class="text-secondary">1.</b> Partage du pouvoir et des décisions</h1>
+  </header>
 
-        <!-- IMPACT 1 -->
+  <p class="w-75">
+    Le premier pilier, à partir duquel les trois autres découlent, la <b class="text-secondary">gouvernance démocratique</b> s’exprime par le <b class="text-secondary">partage du pouvoir et des décisions</b>.
+    <br/><br/>
+    La robustesse de ce pilier dédié à la gouvernance démocratique est un indicateur à part entière de la capacité de l’entreprise à déployer les actions quant à sa pérennité économique et le partage de la valeur créée, la qualité de vie au travail et le bien-être des salariés, mais également les actions à impact social, environnemental et territorial. La composition de la gouvernance est l’élément le plus visible, nécessaire à interroger s’agissant de l’expression d’un pouvoir partagé. Il convient cependant d’apprécier les conditions de mise en œuvre par la mise à disposition des connaissances ainsi que les expressions de participation des parties prenantes internes.
+  </p>
 
-        <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">I.</b> <u class="text-secondary text-decoration-none">Composition de la gouvernance</u></h4>
+  <div class="puclic-stats-body">
 
-        <div class="d-flex flex-sm-row flex-column">
-          <div class="rounded shadow col-7 p-0 overflow-hidden mb-5">
-              <div class="bg-light fw-bold text-center p-3">Taux médians</div>
+      <!-- IMPACT 1 -->
+
+      <h4 class="my-3 py-3 py-sm-5 my-sm-5"><b class="text-primary">I.</b> <u class="text-secondary text-decoration-none">Composition de la gouvernance</u></h4>
+
+      <div class="d-flex flex-sm-row flex-column">
+        <div class="rounded shadow col-7 p-0 overflow-hidden mb-5">
+            <div class="bg-light text-center p-3">Taux médians</div>
+            <div class="bg-white m-0 p-2">
+                <div class="d-flex">
+                    <%= bar_chart @pouvoir_gouvernance_taux, suffix: "%" %>
+                </div>
+            </div>
+        </div>
+
+        <div class="rounded shadow p-0 col-4 flex-fill overflow-hidden mb-5 offset-md-1">
+            <div class="bg-light text-center p-3">Catégories d'associés</div>
+            <div class="bg-white m-0 p-2">
+                <div class="d-flex">
+                    <%= pie_chart @pouvoir_gouvernance_diversite_categories  %>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <% unless @pouvoir_gouvernance_part_salaries_conseil[:pouvoir_gouvernance_part_salaries_conseil].nil? %>
+          <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
+              <div class="bg-light text-center p-3"><%= indicateur_clean :pouvoir_gouvernance_part_salaries_conseil %></div>
               <div class="bg-white m-0 p-2">
                   <div class="d-flex">
-                      <%= bar_chart @pouvoir_gouvernance_taux, suffix: "%" %>
+                      <%= single_value_pie_chart(@pouvoir_gouvernance_part_salaries_conseil[:pouvoir_gouvernance_part_salaries_conseil]) %>
                   </div>
               </div>
           </div>
+      <% end %>
 
-          <div class="rounded shadow p-0 col-4 flex-fill overflow-hidden mb-5 offset-md-1">
-              <div class="bg-light fw-bold text-center p-3">Catégories d'associés</div>
-              <div class="bg-white m-0 p-2">
-                  <div class="d-flex">
-                      <%= pie_chart @pouvoir_gouvernance_diversite_categories  %>
+      <h4 class="my-3 py-3 py-sm-5 my-sm-5"><b class="text-primary">II.</b> Mise en place des <u class="text-secondary text-decoration-none">conditions du bon exercice de la démocratie</u></h4>
+
+      <div class="row">
+          <div class="col">
+              <div class="rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
+                  <div class="bg-light text-center p-3"><%= indicateur_clean :pouvoir_democratie_nombre_reunions %> (médiane)</div>
+                  <div class="bg-white m-0 p-2">
+                      <div class="d-flex justify-content-center">
+                          <p class="h1"><%= @pouvoir_democratie_nombres[:pouvoir_democratie_nombre_reunions] %></p>
+                      </div>
                   </div>
               </div>
           </div>
-        </div>
+          <div class="col">
+              <div class="rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
+                  <div class="bg-light text-center p-3"><%= indicateur_clean :pouvoir_democratie_nombre_accords_signes %> (médiane)</div>
+                  <div class="bg-white m-0 p-2">
+                      <div class="d-flex justify-content-center">
+                          <p class="h1"><%= @pouvoir_democratie_nombres[:pouvoir_democratie_nombre_accords_signes] %></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
 
-        <% unless @pouvoir_gouvernance_part_salaries_conseil[:pouvoir_gouvernance_part_salaries_conseil].nil? %>
-            <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-                <div class="bg-light fw-bold text-center p-3"><%= indicateur_clean :pouvoir_gouvernance_part_salaries_conseil %></div>
-                <div class="bg-white m-0 p-2">
-                    <div class="d-flex">
-                        <%= single_value_pie_chart(@pouvoir_gouvernance_part_salaries_conseil[:pouvoir_gouvernance_part_salaries_conseil]) %>
-                    </div>
-                </div>
-            </div>
-        <% end %>
+      <h4 class="my-3 py-3 py-sm-5 my-sm-5"><b class="text-primary">III.</b> Participation à la <u class="text-secondary text-decoration-none">prise de décision stratégique</u></h4>
 
-        <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">II.</b> Mise en place des <u class="text-secondary text-decoration-none">conditions du bon exercice de la démocratie</u></h4>
-
-        <div class="row">
-            <div class="col">
-                <div class="rounded shadow col-12 p-0 overflow-hidden mb-5 d-flex flex-column">
-                    <div class="bg-light text-center p-3"><%= indicateur_clean :pouvoir_democratie_nombre_reunions %> (médiane)</div>
-                    <div class="bg-white m-0 p-2">
-                        <div class="d-flex justify-content-center">
-                            <p class="h1"><%= @pouvoir_democratie_nombres[:pouvoir_democratie_nombre_reunions] %></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="rounded shadow col-12 p-0 overflow-hidden mb-5 d-flex flex-column">
-                    <div class="bg-light text-center p-3"><%= indicateur_clean :pouvoir_democratie_nombre_accords_signes %> (médiane)</div>
-                    <div class="bg-white m-0 p-2">
-                        <div class="d-flex justify-content-center">
-                            <p class="h1"><%= @pouvoir_democratie_nombres[:pouvoir_democratie_nombre_accords_signes] %></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">III.</b> Participation à la <u class="text-secondary text-decoration-none">prise de décision stratégique</u></h4>
-
-        <div class="row">
-            <% unless @pouvoir_strategique_taux[:pouvoir_strategique_taux_presence_assemblee].nil? %>
-                <div class="col">
-                    <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-                        <div class="bg-light fw-bold text-center p-3"><%= indicateur_clean :pouvoir_strategique_taux_presence_assemblee %></div>
-                        <div class="bg-white m-0 p-2">
-                            <div class="d-flex">
-                                <%= single_value_pie_chart(@pouvoir_strategique_taux[:pouvoir_strategique_taux_presence_assemblee]) %>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <% end %>
-            <% unless @pouvoir_strategique_taux[:pouvoir_strategique_implication_partage].nil? %>
-                <div class="col">
-                    <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-                        <div class="bg-light fw-bold text-center p-3"><%= indicateur_clean :pouvoir_strategique_implication_partage %></div>
-                        <div class="bg-white m-0 p-2">
-                            <div class="d-flex">
-                                <%= single_value_pie_chart(@pouvoir_strategique_taux[:pouvoir_strategique_implication_partage]) %>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <% end %>
-            <% unless @pouvoir_strategique_taux[:pouvoir_strategique_actifs_total].nil? %>
-                <div class="col">
-                    <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-                        <div class="bg-light fw-bold text-center p-3"><%= indicateur_clean :pouvoir_strategique_actifs_total %></div>
-                        <div class="bg-white m-0 p-2">
-                            <div class="d-flex">
-                                <%= single_value_pie_chart(@pouvoir_strategique_taux[:pouvoir_strategique_actifs_total]) %>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <% end %>
-        </div>
-    </div>
+      <div class="row indic-row pb-5 mb-5">
+          <% unless @pouvoir_strategique_taux[:pouvoir_strategique_taux_presence_assemblee].nil? %>
+              <div class="col">
+                  <div class="rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
+                      <div class="bg-light text-center p-3"><%= indicateur_clean :pouvoir_strategique_taux_presence_assemblee %></div>
+                      <div class="bg-white m-0 p-2">
+                          <div class="d-flex">
+                              <%= single_value_pie_chart(@pouvoir_strategique_taux[:pouvoir_strategique_taux_presence_assemblee]) %>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          <% end %>
+          <% unless @pouvoir_strategique_taux[:pouvoir_strategique_implication_partage].nil? %>
+              <div class="col">
+                  <div class="rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
+                      <div class="bg-light text-center p-3"><%= indicateur_clean :pouvoir_strategique_implication_partage %></div>
+                      <div class="bg-white m-0 p-2">
+                          <div class="d-flex">
+                              <%= single_value_pie_chart(@pouvoir_strategique_taux[:pouvoir_strategique_implication_partage]) %>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          <% end %>
+          <% unless @pouvoir_strategique_taux[:pouvoir_strategique_actifs_total].nil? %>
+              <div class="col">
+                  <div class="rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
+                      <div class="bg-light text-center p-3"><%= indicateur_clean :pouvoir_strategique_actifs_total %></div>
+                      <div class="bg-white m-0 p-2">
+                          <div class="d-flex">
+                              <%= single_value_pie_chart(@pouvoir_strategique_taux[:pouvoir_strategique_actifs_total]) %>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          <% end %>
+      </div>
+  </div>
 </div>
