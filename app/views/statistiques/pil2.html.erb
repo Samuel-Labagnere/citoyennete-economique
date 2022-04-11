@@ -1,12 +1,17 @@
-<div class="public-stats">
-    <header class="container-fluid">
-        <h1 class="h2 bg-secondary m-0 text-light text-center mt-5 py-2">2. Pérennité économique et partage de la valeur créée</h1>
-    </header>
-    <div class="puclic-stats-body me-0 ms-0 me-sm-5 ms-sm-5 p-sm-5 mt-5 pt-5 pt-sm-0">
-        
-        <!-- IMPACT 2 -->
+<div class="public-stats mx-3 mx-sm-5 mx-bg-5 mt-5 pt-2 px-5">
+  <header class="container-fluid">
+      <h1 class="mb-5"><b class="text-secondary">2.</b> Pérennité économique et partage de la valeur créée</h1>
+  </header>
 
-        <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">I.</b> Pérennité : <u class="text-secondary text-decoration-none">création de valeur, inaliénabilité et robustesse</u> de l'entreprise</h4>
+  <p class="w-75">
+    L’enjeu de la <b class="text-secondary">démocratie dans l’entreprise</b> s’exprime également dans un modèle de développement pérenne visant <b class="text-secondary">stablilité, robustesse, efficacité et rentabilité</b> sans maximisation du profit à court terme. Il s’agit également de garantir l’autonomie de l’entreprise, voir l’inaliénabilité de la structure. Par ailleurs, seconjuguent positivement une large association aux orientations stratégiques, une distribution équitable des richesses produites entre les parties prenantes internes de l’entreprise et performance.
+  </p>
+
+  <div class="puclic-stats-body">
+
+  <!-- IMPACT 2 -->
+
+        <h4 class="my-3 py-3 py-sm-5 my-sm-5"><b class="text-primary">I.</b> Pérennité : <u class="text-secondary text-decoration-none">création de valeur, inaliénabilité et robustesse</u> de l'entreprise</h4>
         <div class="row">
             <% unless @valeur_perennite_booleens[:valeur_perennite_existence_reserve].nil? %>
                 <div class="col">
@@ -41,10 +46,10 @@
             </div>
         <% end %>
 
-        <h4 class="mt-3 mb-3 mt-sm-5 mb-sm-5"><b class="text-primary">II.</b> <u class="text-secondary text-decoration-none">Partage</u> des richesses</h4>
+        <h4 class="my-3 py-3 py-sm-5 my-sm-5"><b class="text-primary">II.</b> <u class="text-secondary text-decoration-none">Partage</u> des richesses</h4>
 
         <div class="rounded shadow p-0 overflow-hidden mb-5">
-            <div class="bg-light fw-bold text-center p-3">Taux médians</div>
+            <div class="bg-light text-center p-3">Taux médians</div>
             <div class="bg-white m-0 p-2">
                 <div class="d-flex">
                     <%= bar_chart @valeur_part_resultat, suffix: "%" %>
@@ -52,9 +57,9 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row indic-row mb-5 pb-5">
             <div class="col">
-            <div class="rounded shadow col-12 p-0 overflow-hidden mb-5 d-flex flex-column">
+            <div class="rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
                     <div class="bg-light text-center p-3"><%= indicateur_clean :valeur_partage_ecart_revenus_hauts_bas %> (médiane)</div>
                     <div class="bg-white m-0 p-2">
                         <div class="d-flex justify-content-center">
@@ -64,7 +69,7 @@
                 </div>
             </div>
             <div class="col">
-            <div class="rounded shadow col-12 p-0 overflow-hidden mb-5 d-flex flex-column">
+            <div class="rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
                     <div class="bg-light text-center p-3"><%= indicateur_clean :valeur_partage_index_egalite_homme_femme %> (médiane)</div>
                     <div class="bg-white m-0 p-2">
                         <div class="d-flex justify-content-center">
