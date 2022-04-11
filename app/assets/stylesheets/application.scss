@@ -607,6 +607,13 @@ body {
 
 }
 @media (max-width: 1000px) {
+  body {
+    h1 {
+        font-size: 4rem !important;
+    }
+    #navigationBar {
+      .navbar__links {a { p:nth-child(2) {display:none;}}}
+    }
     #wrapper {
         #wrap {
             section {
@@ -621,11 +628,12 @@ body {
         }
     }
   }
+}
 
 @media (max-width: 800px) {
     body {
       h1 {
-          font-size: 2rem !important;
+          font-size: 3rem !important;
       }
         #wrapper {
             #content-wrapper {

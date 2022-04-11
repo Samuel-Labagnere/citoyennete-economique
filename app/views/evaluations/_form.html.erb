@@ -28,15 +28,13 @@
 
 
     <div class="accordion-item m-5 col-sm-8 mx-auto border-0 grey-bg-form">
-     <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-        <button class="accordion-button collapsed p-0 pe-3" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-          <div class=" col-10 col-sm-8 bg-white rounded-end p-4 form-border rounded border-primary">
-            <h3 class="text-primary">Composition de la gouvernance</h3>
-          </div>
+     <h2 class="accordion-header col-sm-10 mx-auto" id="panelsStayOpen-headingOne">
+        <button class="accordion-button collapsed bg-white rounded-end p-4 form-border rounded border-primary shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#compo_gouv" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+          <h3 class="text-primary">Composition de la gouvernance</h3>
         </button>
       </h2>
-      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-        <div class="accordion-body d-flex flex-column align-items-center">
+      <div id="compo_gouv" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+        <div class="accordion-body d-flex flex-column align-items-center p-0 mt-3">
           <fieldset class="mt-3 mb-2 col-sm-10 d-flex flex-column justify-content-between align-items-center rounded bg-white shadow" <%= disable %>>
           <%# <legend class="w-auto">Pilier 1 : Partage du pouvoir et des décisions</legend> %>
           <div class="col-sm-10 col-8">
@@ -56,15 +54,13 @@
 
 
     <div class="accordion-item m-5 col-sm-8 mx-auto border-0 grey-bg-form">
-      <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-        <button class="accordion-button collapsed p-0 pe-3" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-          <div class=" col-10 col-sm-8 bg-white rounded-end p-4 form-border rounded border-primary">
-            <h3 class="text-primary">Mise en place des conditions du bon exercice de la démocratie</h3>
-          </div>
+     <h2 class="accordion-header col-sm-10 mx-auto" id="panelsStayOpen-headingOne">
+        <button class="accordion-button collapsed bg-white rounded-end p-4 form-border rounded border-primary shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#condition_democratie" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+          <h3 class="text-primary">Mise en place des conditions du bon exercice de la démocratie</h3>
         </button>
       </h2>
-      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-        <div class="accordion-body d-flex flex-column align-items-center">
+      <div id="condition_democratie" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+        <div class="accordion-body d-flex flex-column align-items-center p-0 mt-3">
           <fieldset class="mt-3 mb-2 col-sm-10 d-flex flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow" <%= disable %>>
             <div class="col-12 col-sm-10">
               <%= il.input :pouvoir_democratie_nombre_reunions %>
@@ -81,15 +77,13 @@
 
 
     <div class="accordion-item m-5 col-sm-8 mx-auto border-0 grey-bg-form">
-      <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-        <button class="accordion-button collapsed p-0 pe-3" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-          <div class=" col-10 col-sm-8 bg-white rounded-end p-4 form-border rounded border-primary">
-            <h3 class="text-primary">Participation à la prise de décision stratégique</h3>
-          </div>
+     <h2 class="accordion-header col-sm-10 mx-auto" id="panelsStayOpen-headingOne">
+        <button class="accordion-button collapsed bg-white rounded-end p-4 form-border rounded border-primary shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#partage_decision" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+          <h3 class="text-primary">Participation à la prise de décision stratégique</h3>
         </button>
       </h2>
-      <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-        <div class="accordion-body d-flex flex-column align-items-center">
+      <div id="partage_decision" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+        <div class="accordion-body d-flex flex-column align-items-center p-0 mt-3">
           <fieldset class="mt-3 mb-2 col-sm-10 d-flex flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow" <%= disable %>>
             <div class="col-12 col-sm-10">
               <%= il.input :pouvoir_strategique_taux_presence_assemblee %>
@@ -123,14 +117,12 @@
 
 
   <div class="accordion-item m-5 col-sm-8 mx-auto border-0 grey-bg-form">
-    <h2 class="accordion-header" id="panelsStayOpen-headingFour">
-      <button class="accordion-button p-0 pe-3" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="true" aria-controls="panelsStayOpen-collapseFour">
-        <div class=" col-10 col-sm-8 bg-white rounded-end p-4 form-border rounded border-primary">
+     <h2 class="accordion-header col-sm-10 mx-auto" id="panelsStayOpen-headingOne">
+        <button class="accordion-button collapsed bg-white rounded-end p-4 form-border rounded border-primary shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#perennite" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
           <h3 class="text-primary">Pérennité : création de valeur, inaliénabilité et robustesse de l'entreprise</h3>
-        </div>
       </button>
     </h2>
-    <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingFour">
+    <div id="perennite" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
       <div class="accordion-body d-flex flex-column align-items-center">
                     <fieldset class="mt-3 mb-2 col-sm-10 d-flex flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow " <%= disable %>>
         <div class="col-12 col-sm-10">
@@ -151,16 +143,14 @@
 
 
   <div class="accordion-item m-5 col-sm-8 mx-auto border-0 grey-bg-form">
-    <h2 class="accordion-header" id="panelsStayOpen-headingFive">
-      <button class="accordion-button collapsed p-0 pe-3" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
-        <div class=" col-10 col-sm-8 bg-white rounded-end p-4 form-border rounded border-primary">
+     <h2 class="accordion-header col-sm-10 mx-auto" id="panelsStayOpen-headingOne">
+        <button class="accordion-button collapsed bg-white rounded-end p-4 form-border rounded border-primary shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#partage_richesses" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
           <h3 class="text-primary">Partage des richesses</h3>
-        </div>
       </button>
     </h2>
-    <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFive">
-      <div class="accordion-body">
-        <fieldset class="me-auto ms-auto mt-3 mb-2 col-sm-10 d-flex flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow " <%= disable %>>
+    <div id="partage_richesses" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+        <div class="accordion-body d-flex flex-column align-items-center p-0 mt-3">
+          <fieldset class="me-auto ms-auto mt-3 mb-2 col-sm-10 d-flex flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow " <%= disable %>>
           <div class="col-12 col-sm-10 col-input">
             <%= il.input :valeur_partage_part_resultat_net_actionnaires %>
             <%= il.input :valeur_partage_part_resultat_salaries %>
@@ -200,16 +190,14 @@
 
 
   <div class="accordion-item m-5 col-sm-8 mx-auto border-0 grey-bg-form">
-    <h2 class="accordion-header" id="panelsStayOpen-headingSix">
-      <button class="accordion-button p-0 pe-3" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="true" aria-controls="panelsStayOpen-collapseSix">
-        <div class="col-10 col-sm-8 bg-white rounded-end p-4 form-border rounded border-primary">
+     <h2 class="accordion-header col-sm-10 mx-auto" id="panelsStayOpen-headingOne">
+        <button class="accordion-button collapsed bg-white rounded-end p-4 form-border rounded border-primary shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#exercice_democratie" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
           <h3 class="text-primary">Mise en place des conditions du bon exercice de la démocratie</h3>
-        </div>
       </button>
     </h2>
-    <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingSix">
-      <div class="accordion-body">
-        <fieldset class="me-auto ms-auto mt-3 mb-2 col-sm-10 d-flex flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow " <%= disable %>>
+    <div id="exercice_democratie" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+        <div class="accordion-body d-flex flex-column align-items-center p-0 mt-3">
+          <fieldset class="me-auto ms-auto mt-3 mb-2 col-sm-10 d-flex flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow " <%= disable %>>
           <div class="col-12 col-sm-10 col-input">
             <%= il.input :qualite_qvt_enquete_qvt, as: :radio_buttons %>
             <%= il.input :qualite_qvt_taux_qvt %>
@@ -227,16 +215,14 @@
 
 
   <div class="accordion-item m-5 col-sm-8 mx-auto border-0 grey-bg-form">
-    <h2 class="accordion-header" id="panelsStayOpen-headingSeven">
-      <button class="accordion-button collapsed p-0 pe-3" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSeve" aria-expanded="false" aria-controls="panelsStayOpen-collapseSeven">
-        <div class=" col-10 col-sm-8 bg-white rounded-end p-4 form-border rounded border-primary">
+     <h2 class="accordion-header col-sm-10 mx-auto" id="panelsStayOpen-headingOne">
+        <button class="accordion-button collapsed bg-white rounded-end p-4 form-border rounded border-primary shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#dev_competences" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
           <h3 class="text-primary">Développement des compétences individuelles et collectives<br/>Émancipation des salariés</h3>
-        </div>
-      </button>
+        </button>
     </h2>
-    <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingSeven">
-      <div class="accordion-body">
-        <fieldset class="me-auto ms-auto mt-3 mb-2 col-sm-10 d-flex flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow " <%= disable %>>
+    <div id="dev_competences" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+        <div class="accordion-body d-flex flex-column align-items-center p-0 mt-3">
+          <fieldset class="me-auto ms-auto mt-3 mb-2 col-sm-10 d-flex flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow " <%= disable %>>
           <div class="col-12 col-sm-10">
             <%= il.input :qualite_emancipation_moyenne_heures_formation %>
             <%= il.input :qualite_emancipation_taux_budget_formation_masse_salariale %>
@@ -266,16 +252,14 @@
 
 
   <div class="accordion-item m-5 col-sm-8 mx-auto border-0 grey-bg-form">
-    <h2 class="accordion-header" id="panelsStayOpen-headingEight">
-      <button class="accordion-button p-0 pe-3" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseEight" aria-expanded="true" aria-controls="panelsStayOpen-collapseEight">
-        <div class=" col-10 col-sm-8 bg-white rounded-end p-4 form-border rounded border-primary">
+     <h2 class="accordion-header col-sm-10 mx-auto" id="panelsStayOpen-headingOne">
+        <button class="accordion-button collapsed bg-white rounded-end p-4 form-border rounded border-primary shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#impact_environnement" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
           <h3 class="text-primary">Impact environnemental</h3>
-        </div>
       </button>
     </h2>
-    <div id="panelsStayOpen-collapseEight" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingEight">
-      <div class="accordion-body">
-        <fieldset class="me-auto ms-auto mt-3 mb-2 col-sm-10 d-flex flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow " <%= disable %>>
+    <div id="impact_environnement" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+        <div class="accordion-body d-flex flex-column align-items-center p-0 mt-3">
+          <fieldset class="me-auto ms-auto mt-3 mb-2 col-sm-10 d-flex flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow " <%= disable %>>
           <div class="col-12 col-sm-10 col-input">
             <%= il.input :impact_environnement_audit_impact, as: :radio_buttons %>
             <%= il.input :impact_environnement_demarche_ecologique, as: :radio_buttons %>
@@ -298,16 +282,14 @@
 
 
   <div class="accordion-item m-5 col-sm-8 mx-auto border-0 grey-bg-form">
-    <h2 class="accordion-header" id="panelsStayOpen-headingNine">
-      <button class="accordion-button collapsed p-0 pe-3" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseNine" aria-expanded="false" aria-controls="panelsStayOpen-collapseNine">
-        <div class=" col-10 col-sm-8 bg-white rounded-end p-4 form-border rounded border-primary">
+     <h2 class="accordion-header col-sm-10 mx-auto" id="panelsStayOpen-headingOne">
+        <button class="accordion-button collapsed bg-white rounded-end p-4 form-border rounded border-primary shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#impact_social" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
           <h3 class="text-primary">Impact social</h3>
-        </div>
-      </button>
+        </button>
     </h2>
-    <div id="panelsStayOpen-collapseNine" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingNine">
-      <div class="accordion-body">
-        <fieldset class="me-auto ms-auto mt-3 mb-2 col-sm-10 d-flex flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow " <%= disable %>>
+    <div id="impact_social" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+        <div class="accordion-body d-flex flex-column align-items-center p-0 mt-3">
+          <fieldset class="me-auto ms-auto mt-3 mb-2 col-sm-10 d-flex flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow " <%= disable %>>
           <div class="col-12 col-sm-6">
             <%= il.input :impact_social_part_activite_structures_insertion %>
             <%= il.input :impact_social_alternance_apprentissage %>
@@ -321,17 +303,15 @@
   </div>
 
 
-<div class="accordion-item m-5 col-sm-8 mx-auto border-0 grey-bg-form">
-    <h2 class="accordion-header" id="panelsStayOpen-headingTe">
-      <button class="accordion-button collapsed p-0 pe-3" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTen" aria-expanded="false" aria-controls="panelsStayOpen-collapseTen">
-        <div class=" col-10 col-sm-8 bg-white rounded-end p-4 form-border rounded border-primary">
+  <div class="accordion-item m-5 col-sm-8 mx-auto border-0 grey-bg-form">
+     <h2 class="accordion-header col-sm-10 mx-auto" id="panelsStayOpen-headingOne">
+        <button class="accordion-button collapsed bg-white rounded-end p-4 form-border rounded border-primary shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#engag_eco_territoire" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
           <h3 class="text-primary">Engagement en faveur de l'écosystème et du territoire </h3>
-        </div>
       </button>
     </h2>
-    <div id="panelsStayOpen-collapseTen" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTen">
-      <div class="accordion-body">
-        <fieldset class="me-auto ms-auto mt-3 mb-2 col-sm-10 d-flex flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow " <%= disable %>>
+    <div id="engag_eco_territoire" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+        <div class="accordion-body d-flex flex-column align-items-center p-0 mt-3">
+          <fieldset class="me-auto ms-auto mt-3 mb-2 col-sm-10 d-flex flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow " <%= disable %>>
           <div class="col-12 col-sm-10">
             <%= il.input :impact_engagement_part_resultat_missions_utiles %>
             <%= il.input :impact_engagement_part_placements_responsables %>
