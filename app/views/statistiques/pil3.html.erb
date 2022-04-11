@@ -1,4 +1,4 @@
-<div class="public-stats mx-3 mx-sm-5 mx-bg-5 mt-5 pt-2 px-5">
+<div class="public-stats mx-3 mx-sm-5 mx-bg-5 mt-5 pt-2 px-0 px-md-5">
   <header class="container-fluid">
     <h1 class="mb-5"><b class="text-secondary">3.</b> Capital humain et qualité de vie au travail</h1>
   </header>
@@ -14,11 +14,11 @@
   <div class="puclic-stats-body">
 
   <!-- IMPACT 3 -->
-    <h4 class="my-3 py-3 py-sm-5 my-sm-5"><b class="text-primary">I.</b> <u class="text-secondary text-decoration-none">Qualité de vie</u> au travail / <u class="text-secondary text-decoration-none">épanouissement</u> des salariés</h4>
+    <h4 class="my-3 pt-3 pb-4 pt-sm-5 pb-sm-5 my-sm-5"><b class="text-primary">I.</b> <u class="text-secondary text-decoration-none">Qualité de vie</u> au travail / <u class="text-secondary text-decoration-none">épanouissement</u> des salariés</h4>
 
-    <div class="row indic-row-reverse mb-5 mx-1">
+    <div class="row indic-row-reverse mx-1">
       <% unless @qualite_qvt_enquete_qvt.nil? %>
-            <div class="rounded shadow col p-0 overflow-hidden me-2">
+            <div class="rounded shadow col-12 col-sm-6 p-0 overflow-hidden me-2 mb-5 ">
               <div class="bg-white m-0 p-2">
                 <div class="d-flex">
                   <%= pie_chart @qualite_qvt_enquete_qvt, suffix: '%' %>
@@ -26,8 +26,8 @@
               </div>
             </div>
       <% end %>
-        <div class="col ms-2">
-            <div class="rounded shadow col-12 p-0 overflow-hidden mb-5 d-flex flex-column">
+        <div class="col-12 col-sm ms-0 ms-sm-2 p-0 mb-5">
+            <div class="rounded shadow p-0 overflow-hidden mb-5 d-flex flex-column">
                 <div class="bg-light text-center p-3"><%= indicateur_clean :qualite_qvt_moyenne_anciennete %></div>
                 <div class="bg-white m-0 p-2">
                     <div class="d-flex justify-content-center">
@@ -47,7 +47,7 @@
         </div>
     </div>
 
-    <h4 class="my-3 py-3 py-sm-5 my-sm-5">
+    <h4 class="my-3 pt-3 pb-4 pt-sm-5 pb-sm-5 my-sm-5">
         <b class="text-primary">II.</b>
         Développement des <u class="text-secondary text-decoration-none">compétences individuelles et collectives</u><br/>
         <u class="text-secondary text-decoration-none">Emancipation</u> des salariés
