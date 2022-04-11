@@ -4,34 +4,6 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
 @import 'sam.scss';
 
-// $theme-colors: (
-//   "primary": #EB225A,
-//   "secondary": #007CAA,
-//   "white": #EEF0F2,
-//   "black": #231F20,
-//   "grey": #E2E2E2,
-//   "blue": #007CAA,
-//   "orange": #F15921,
-//   "green": #007A78,
-//   "bg-primary": #EB225A,
-//   "bg-secondary": #007CAA,
-//   "bg-light": #E2E2E2,
-//   "bg-white": #EEF0F2,
-//   "bg-info": #007CAA,
-//   "bg-success": #007A78,
-//   "bg-danger": #F15921,
-//   "border-success": #007A78,
-//   "border-primary": #EB225A,
-//   "border-secondary": #007CAA,
-//   "border-danger": #F15921,
-//   "text-white": #EEF0F2,
-//   "text-primary":#EB225A,
-//   "text-secondary": #007CAA,
-//   "text-success": #007A78,
-//   "text-danger": #F15921,
-//   "text-dark": #231F20,
-// );
-
 $our_white: #EEF0F2;
 $our_blue: #2E3092;
 $form-bg-color:#f8f9fa;
@@ -55,7 +27,6 @@ $theme-colors: (
 );
 
 @import "bootstrap/scss/bootstrap";
-
 
 
 $primary: #EB225A;
@@ -404,8 +375,9 @@ body {
                   }
                 }
                 .indic-row-reverse {
-                  .col {
+                  .col, .col-12 {
                     .rounded {
+                      height: 100%;
                       .bg-white {
                         flex:1;
                         display:flex;

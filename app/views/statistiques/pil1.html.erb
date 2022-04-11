@@ -1,4 +1,4 @@
-<div class="public-stats mx-3 mx-sm-5 mx-bg-5 mt-5 pt-2 px-5">
+<div class="public-stats mx-3 mx-sm-5 mx-bg-5 mt-5 pt-2 px-0 px-md-5">
   <header class="container-fluid">
       <h1 class="mb-5"><b class="text-secondary">1.</b> Partage du pouvoir et des décisions</h1>
   </header>
@@ -13,10 +13,10 @@
 
       <!-- IMPACT 1 -->
 
-      <h4 class="my-3 py-3 py-sm-5 my-sm-5"><b class="text-primary">I.</b> <u class="text-secondary text-decoration-none">Composition de la gouvernance</u></h4>
+      <h4 class="my-3 pt-3 pb-4 pt-sm-5 pb-sm-5 my-sm-5"><b class="text-primary">I.</b> <u class="text-secondary text-decoration-none">Composition de la gouvernance</u></h4>
 
       <div class="d-flex flex-sm-row flex-column">
-        <div class="rounded shadow col-7 p-0 overflow-hidden mb-5">
+        <div class="rounded shadow col-7 p-0 overflow-hidden mb-5 w-100"">
             <div class="bg-light text-center p-3">Taux médians</div>
             <div class="bg-white m-0 p-2">
                 <div class="d-flex">
@@ -25,7 +25,7 @@
             </div>
         </div>
 
-        <div class="rounded shadow p-0 col-4 flex-fill overflow-hidden mb-5 offset-md-1">
+        <div class="rounded shadow p-0 col-4 flex-fill overflow-hidden mb-5 w-100">
             <div class="bg-light text-center p-3">Catégories d'associés</div>
             <div class="bg-white m-0 p-2">
                 <div class="d-flex">
@@ -46,7 +46,7 @@
           </div>
       <% end %>
 
-      <h4 class="my-3 py-3 py-sm-5 my-sm-5"><b class="text-primary">II.</b> Mise en place des <u class="text-secondary text-decoration-none">conditions du bon exercice de la démocratie</u></h4>
+      <h4 class="my-3 pt-3 pb-4 pt-sm-5 pb-sm-5 my-sm-5"><b class="text-primary">II.</b> Mise en place des <u class="text-secondary text-decoration-none">conditions du bon exercice de la démocratie</u></h4>
 
       <div class="row">
           <div class="col">
@@ -71,11 +71,11 @@
           </div>
       </div>
 
-      <h4 class="my-3 py-3 py-sm-5 my-sm-5"><b class="text-primary">III.</b> Participation à la <u class="text-secondary text-decoration-none">prise de décision stratégique</u></h4>
+      <h4 class="my-3 pt-3 pb-4 pt-sm-5 pb-sm-5 my-sm-5"><b class="text-primary">III.</b> Participation à la <u class="text-secondary text-decoration-none">prise de décision stratégique</u></h4>
 
-      <div class="row indic-row pb-5 mb-5">
+      <div class="row indic-row pb-5">
           <% unless @pouvoir_strategique_taux[:pouvoir_strategique_taux_presence_assemblee].nil? %>
-              <div class="col">
+              <div class="col mb-5">
                   <div class="rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
                       <div class="bg-light text-center p-3"><%= indicateur_clean :pouvoir_strategique_taux_presence_assemblee %></div>
                       <div class="bg-white m-0 p-2">
@@ -87,7 +87,7 @@
               </div>
           <% end %>
           <% unless @pouvoir_strategique_taux[:pouvoir_strategique_implication_partage].nil? %>
-              <div class="col">
+              <div class="col mb-5">
                   <div class="rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
                       <div class="bg-light text-center p-3"><%= indicateur_clean :pouvoir_strategique_implication_partage %></div>
                       <div class="bg-white m-0 p-2">
@@ -99,7 +99,7 @@
               </div>
           <% end %>
           <% unless @pouvoir_strategique_taux[:pouvoir_strategique_actifs_total].nil? %>
-              <div class="col">
+              <div class="col mb-5">
                   <div class="rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
                       <div class="bg-light text-center p-3"><%= indicateur_clean :pouvoir_strategique_actifs_total %></div>
                       <div class="bg-white m-0 p-2">

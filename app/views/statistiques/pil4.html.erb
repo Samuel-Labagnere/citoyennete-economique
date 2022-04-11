@@ -1,10 +1,10 @@
-<div class="public-stats mx-3 mx-sm-5 mx-bg-5 mt-5 pt-2 px-5">
+<div class="public-stats mx-3 mx-sm-5 mx-bg-5 mt-5 pt-2 px-0 px-md-5">
 
   <header class="container-fluid">
     <h1 class="mb-5"><b class="text-secondary">4.</b> Impact environnemental, social et territorial</h1>
   </header>
 
-  <p class="w-75">
+  <p class="col-12 col-md-8">
     « Une <b class="text-secondary">entreprise citoyenne</b>, c’est une entreprise soucieuse du long terme », pour elle-même et pour le monde dans lequel elle vit.
     <br/><br/>
     Vigueur dans les engagements <b class="text-secondary">environnementaux</b>, attention de la qualité de son <b class="text-secondary">impact social</b>, « <b class="text-secondary">intégration hamonieuse de l’entreprise à ses écosystèmes</b> » sont autant d’indicateurs d’une citoyenneté économique.
@@ -16,7 +16,7 @@
 
     <!-- IMPACT 4 -->
 
-    <h4 class="my-3 py-3 py-sm-5 my-sm-5"><b class="text-primary">I.</b> Impact <u class="text-secondary text-decoration-none">environnemental</u></h4>
+    <h4 class="my-3 pt-3 pb-4 pt-sm-5 pb-sm-5 my-sm-5"><b class="text-primary">I.</b> Impact <u class="text-secondary text-decoration-none">environnemental</u></h4>
 
     <div class="row">
         <% unless @impact_environnement_booleens[:impact_environnement_audit_impact].nil?  %>
@@ -87,7 +87,7 @@
         </div>
     <% end %>
 
-    <h4 class="my-3 py-3 py-sm-5 my-sm-5"><b class="text-primary">II.</b> Impact <u class="text-secondary text-decoration-none">social</u></h4>
+    <h4 class="my-3 pt-3 pb-4 pt-sm-5 pb-sm-5 my-sm-5"><b class="text-primary">II.</b> Impact <u class="text-secondary text-decoration-none">social</u></h4>
 
     <div class="row indic-row">
         <% unless @impact_social_part_activite_structures_insertion.nil? %>
@@ -142,7 +142,7 @@
         <% end%>
     </div>
 
-    <h4 class="my-3 py-3 py-sm-5 my-sm-5"><b class="text-primary">III.</b> <u class="text-secondary text-decoration-none">Engagement</u> en faveur de <u class="text-secondary text-decoration-none">l'écosystème</u> et du <u class="text-secondary text-decoration-none">territoire</u></h4>
+    <h4 class="my-3 pt-3 pb-4 pt-sm-5 pb-sm-5 my-sm-5"><b class="text-primary">III.</b> <u class="text-secondary text-decoration-none">Engagement</u> en faveur de <u class="text-secondary text-decoration-none">l'écosystème</u> et du <u class="text-secondary text-decoration-none">territoire</u></h4>
 
     <div class="row indic-row mb-5">
         <% unless @impact_engagement[indicateur_clean :impact_engagement_part_placements_responsables].nil? %>
