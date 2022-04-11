@@ -1,10 +1,10 @@
 <div class="public-stats mx-3 mx-sm-5 mx-bg-5 mt-5 pt-2 px-5">
   <header class="container-fluid">
-    <h1 class="mb-5"><b class="text-secondary">3.</b> Partage du pouvoir et des décisions</h1>
+    <h1 class="mb-5"><b class="text-secondary">3.</b> Capital humain et qualité de vie au travail</h1>
   </header>
 
   <p class="w-75">
-    Ce troisième pilier rassemble tant les questions de la démocratie des l’entreprise (par la reconnaissance du pouvoir de décision des salariés et les conditions de « vie » au sein de l’organisation) que la démocratie de l’entreprise (pour laquelle les salariés et plus globalement les parties prenantes expriment une réelle préoccupation, facteur également de fidélité).
+    Ce troisième pilier rassemble tant les questions de la <b class="text-secondary">démocratie des l’entreprise</b> (par la reconnaissance du pouvoir de décision des salariés et les conditions de « vie » au sein de l’organisation) que la démocratie de l’entreprise (pour laquelle les salariés et plus globalement les parties prenantes expriment une réelle préoccupation, facteur également de fidélité).
     <br/><br/>
     Les mesures de prévention ont un rôle direct quant à la réduction des risques professionnels, la prévention des accidents et de la maladie, les risques biologiques ou psychosociaux. Au-delà du contexte réglementaire, les actions en matière de santé, de sécurité et de qualité de vie au travail s’inscrivent dans une action volontaire de préservation de l’individu, mais également dans une relation positive à la performance économique.
     <br/><br/>
@@ -14,65 +14,63 @@
   <div class="puclic-stats-body">
 
   <!-- IMPACT 3 -->
+    <h4 class="my-3 py-3 py-sm-5 my-sm-5"><b class="text-primary">I.</b> <u class="text-secondary text-decoration-none">Qualité de vie</u> au travail / <u class="text-secondary text-decoration-none">épanouissement</u> des salariés</h4>
 
-        <h3 id="impact3" class="mt-3 mt-sm-5">Capital humain et qualité de vie au travail</h3>
-        <h4 class="my-3 py-3 py-sm-5 my-sm-5"><b class="text-primary">I.</b> <u class="text-secondary text-decoration-none">Qualité de vie</u> au travail / <u class="text-secondary text-decoration-none">épanouissement</u> des salariés</h4>
-
-        <div class="row indic-row-reverse mb-5 mx-1">
-          <% unless @qualite_qvt_enquete_qvt.nil? %>
-                <div class="rounded shadow col p-0 overflow-hidden me-2">
-                  <div class="bg-white m-0 p-2">
-                    <div class="d-flex">
-                      <%= pie_chart @qualite_qvt_enquete_qvt, suffix: '%' %>
-                    </div>
-                  </div>
-                </div>
-          <% end %>
-            <div class="col ms-2">
-                <div class="rounded shadow col-12 p-0 overflow-hidden mb-5 d-flex flex-column">
-                    <div class="bg-light text-center p-3"><%= indicateur_clean :qualite_qvt_moyenne_anciennete %></div>
-                    <div class="bg-white m-0 p-2">
-                        <div class="d-flex justify-content-center">
-                            <p class="h1"><%= @qualite_qvt_moyenne_anciennete %> ans</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="rounded shadow p-0 overflow-hidden mb-5">
-            <div class="bg-light text-center p-3">Taux médians</div>
-            <div class="bg-white m-0 p-2">
+    <div class="row indic-row-reverse mb-5 mx-1">
+      <% unless @qualite_qvt_enquete_qvt.nil? %>
+            <div class="rounded shadow col p-0 overflow-hidden me-2">
+              <div class="bg-white m-0 p-2">
                 <div class="d-flex">
-                    <%= bar_chart @qualite_qvt_taux_all, suffix: "%" %>
+                  <%= pie_chart @qualite_qvt_enquete_qvt, suffix: '%' %>
+                </div>
+              </div>
+            </div>
+      <% end %>
+        <div class="col ms-2">
+            <div class="rounded shadow col-12 p-0 overflow-hidden mb-5 d-flex flex-column">
+                <div class="bg-light text-center p-3"><%= indicateur_clean :qualite_qvt_moyenne_anciennete %></div>
+                <div class="bg-white m-0 p-2">
+                    <div class="d-flex justify-content-center">
+                        <p class="h1"><%= @qualite_qvt_moyenne_anciennete %> ans</p>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <h4 class="my-3 py-3 py-sm-5 my-sm-5">
-            <b class="text-primary">II.</b>
-            Développement des <u class="text-secondary text-decoration-none">compétences individuelles et collectives</u><br/>
-            <u class="text-secondary text-decoration-none">Emancipation</u> des salariés
-        </h4>
-        <div class="estim d-invers">
-          <div class="rounded shadow col-12 p-0 overflow-hidden mb-5 d-flex flex-column">
-            <div class="bg-light text-center p-3 w-50"><%= indicateur_clean :qualite_emancipation_moyenne_heures_formation %></div>
-            <div class="bg-white m-0 p-3 w-50">
-              <div class="d-flex justify-content-center">
-                <p class="h1"><%= @qualite_emancipation_moyenne_heures_formation %> heures</p>                  </div>
-              </div>
-          </div>
-        </div>
-
-        <div class="pb-5">
-          <div class="rounded shadow p-0 overflow-hidden mb-5">
-            <div class="bg-light text-center p-3">Taux médians</div>
-            <div class="bg-white m-0 p-2">
-              <div class="d-flex">
-                <%= bar_chart @qualite_emancipation_taux, suffix: "%" %>
-              </div>
-            </div>
-          </div>
         </div>
     </div>
+
+    <div class="rounded shadow p-0 overflow-hidden mb-5">
+        <div class="bg-light text-center p-3">Taux médians</div>
+        <div class="bg-white m-0 p-2">
+            <div class="d-flex">
+                <%= bar_chart @qualite_qvt_taux_all, suffix: "%" %>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="my-3 py-3 py-sm-5 my-sm-5">
+        <b class="text-primary">II.</b>
+        Développement des <u class="text-secondary text-decoration-none">compétences individuelles et collectives</u><br/>
+        <u class="text-secondary text-decoration-none">Emancipation</u> des salariés
+    </h4>
+    <div class="estim d-invers">
+      <div class="rounded shadow col-12 p-0 overflow-hidden mb-5 d-flex flex-column">
+        <div class="bg-light text-center p-3 w-50"><%= indicateur_clean :qualite_emancipation_moyenne_heures_formation %></div>
+        <div class="bg-white m-0 p-3 w-50">
+          <div class="d-flex justify-content-center">
+            <p class="h1"><%= @qualite_emancipation_moyenne_heures_formation %> heures</p>                  </div>
+          </div>
+      </div>
+    </div>
+
+      <div class="pb-5">
+        <div class="rounded shadow p-0 overflow-hidden mb-5">
+          <div class="bg-light text-center p-3">Taux médians</div>
+          <div class="bg-white m-0 p-2">
+            <div class="d-flex">
+              <%= bar_chart @qualite_emancipation_taux, suffix: "%" %>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
 </div>
