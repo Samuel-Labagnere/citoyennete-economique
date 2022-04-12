@@ -1,7 +1,11 @@
 <div class="page-orga mx-3 mx-sm-5 mx-bg-5 mt-5 pt-2">
 
   <header class="mb-5">
-    <h1 class="h2">Nouvelle évaluation</h1>
+    <% if @evaluation.status != 'active' %>
+        <h1 class="h2">Nouvelle évaluation</h1>
+    <% else %>
+        <h1 class="h2">Édition de l'évaluation de l'année <%= @evaluation.annee %></h1>
+    <% end %>
     <h2 class="h3"><span class="text-secondary fs-2 me-1 m-0">1.</span> Partage du pouvoir et des décisions</h2>
   </header>
   
@@ -62,7 +66,7 @@
     <% end %>
 
     <div class="d-flex">
-        <%= button_to 'Précédent', wizard_path(@previous_step), class: 'btn btn-primary me-auto ms-auto d-flex mb-5' %>
+        <%= link_to 'Précédent', wizard_path(@previous_step), class: 'btn btn-primary me-auto ms-auto d-flex mb-5' %>
         <%= f.button :submit, "Suivant", class: 'btn btn-primary me-auto ms-auto d-flex mb-5' %>
     </div>
   <% end %>

@@ -1,0 +1,62 @@
+<div class="page-orga mx-3 mx-sm-5 mx-bg-5 mt-5 pt-2">
+
+  <header class="mb-5">
+    <% if @evaluation.status != 'active' %>
+      <h1 class="h2">Nouvelle évaluation</h1>
+    <% else %>
+      <h1 class="h2">Édition de l'évaluation de l'année <%= @evaluation.annee %></h1>
+    <% end %>
+    <h2 class="h3"><span class="text-secondary fs-2 me-1 m-0">2.</span>Pérennité économique et partage de la valeur créée</h2>
+  </header>
+  
+  <%= simple_form_for @evaluation, url: wizard_path, method: :put, data: {turbo: false} do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <%= f.association :indicateurs_list do |il| %>
+        <h2 class="accordion-header col-sm-10 mx-auto">Pérennité : création de valeur, inaliénabilité et robustesse de l'entreprise</h2>
+        <fieldset class="mt-3 mb-2 col-sm-10 d-flex flex-column justify-content-between align-items-center rounded bg-white shadow">
+          <div class="col-8 col-sm-10">
+            <%= il.input :valeur_perennite_part_capital_salaries %>
+            <%= il.input :valeur_perennite_part_resultat_reserve %>
+            <%= il.input :valeur_perennite_ebe_caht %>
+            <%= il.input :valeur_perennite_part_endettement %>
+          </div>
+          <div class="col-8 col-sm-10 col-input">
+            <%= il.input :valeur_perennite_existence_reserve, as: :radio_buttons %>
+            <%= il.input :valeur_perennite_reserve_impartageable, as: :radio_buttons %>
+            <%= il.input :valeur_perennite_attention_questions_innovation, as: :radio_buttons %>
+          </div>
+        </fieldset>
+
+
+        <h2 class="accordion-header col-sm-10 mx-auto" id="panelsStayOpen-headingOne">
+            <button class="accordion-button collapsed bg-white rounded-end p-4 form-border rounded border-primary shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#condition_democratie" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+            <h3 class="text-primary">Partage des richesses</h3>
+            </button>
+        </h2>
+        <fieldset class="mt-3 mb-2 col-sm-10 d-flex flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow">
+          <div class="col-8 col-sm-10 col-input">
+            <%= il.input :valeur_partage_part_resultat_net_actionnaires %>
+            <%= il.input :valeur_partage_part_resultat_salaries %>
+            <%= il.input :valeur_partage_ecart_revenus_hauts_bas %>
+            <%= il.input :valeur_partage_index_egalite_homme_femme %>
+          </div>
+          <div class="col-8 col-sm-10 col-input">
+            <%= il.input :valeur_partage_existence_accord, as: :radio_buttons %>
+            <%= il.input :valeur_partage_existence_epargne_salariale, as: :radio_buttons %>
+            <%= il.input :valeur_partage_existence_grille_salariale, as: :radio_buttons %>
+            <%= il.input :valeur_partage_publicite_grille, as: :radio_buttons %>
+          </div>
+        </fieldset>
+
+        <div class="estim col-8 col-sm-7 text-break me-auto ms-auto rounded bg-white shadow border-start border-secondary pt-1 pb-1 pe-5 ps-5 mt-3 mb-5 col-input">
+            <%= il.input :valeur_estimation_realite %>
+        </div>
+    <% end %>
+
+    <div class="d-flex">
+        <%= link_to 'Précédent', wizard_path(@previous_step), class: 'btn btn-primary me-auto ms-auto d-flex mb-5' %>
+        <%= f.button :submit, "Suivant", class: 'btn btn-primary me-auto ms-auto d-flex mb-5' %>
+    </div>
+  <% end %>
+
+</div>
