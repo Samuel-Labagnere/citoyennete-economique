@@ -246,13 +246,8 @@ body {
           h3 {font-size: 3rem !important;}
 
           .navbar-nav {
-            .side-scroll {
-              * {transition: .3s ease;}
-              &.scrollTopUn {top: 0% !important;}
-              &.scrollTopDeux{top: 25% !important;}
-              &.scrollTopTrois {top: 50% !important;}
-              &.scrollTopQuatre {top: 75% !important;}
-            }
+            * {transition: .3s ease;}
+            .scrollBg {background-color: $primary !important; }
           }
           .data-intit {font-family: $fontTitre;}
           .indic-row, .indic-row-reverse {
