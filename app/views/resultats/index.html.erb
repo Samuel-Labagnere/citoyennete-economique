@@ -9,7 +9,10 @@
     <% if current_user.is_super_admin %>
       <%= link_to "Back to evaluations", evaluations_path, class: "btn btn-secondary me-3" %>
     <% else %>
-      <%= link_to "Retourner au dashboard", user_root_path, class: "btn btn-secondary me-3" %>
+      <%# <div class="d-flex"> %>
+        <%= link_to "Retourner au dashboard", user_root_path, class: "btn btn-secondary me-3" %>
+        <%# <button class="btn btn-secondary me-3" onclick="window.print();">Imprimer la page</button> %>
+      <%# </div> %>
     <% end %>
     </div>
   </div>

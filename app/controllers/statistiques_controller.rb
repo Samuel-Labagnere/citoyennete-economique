@@ -4,9 +4,9 @@ class StatistiquesController < ApplicationController
   def set_vars
     $latest_years = []
     Organisation.all.each do |organisation|
-      $latest_years.push organisation.evaluations.pluck(:annee).max
+      $latest_years.push organisation.evaluations.active.pluck(:annee).max
     end
-    $latest_evaluations = Evaluation.where(annee: $latest_years)
+    $latest_evaluations = Evaluation.active.where(annee: $latest_years)
     $latest_indicateurs_lists = IndicateursList.where(evaluation_id: $latest_evaluations)
   end
 

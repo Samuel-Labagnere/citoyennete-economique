@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :evaluations
 
   get '/evaluations_build/new', to: 'evaluations_build#new'
-  get '/evaluations_build/:evaluation_id/:id', to: 'evaluations_build#show'
+  get '/evaluations_build/:evaluation_id/:id', to: 'evaluations_build#show', as: 'evaluation_build'
   put '/evaluations_build/:evaluation_id/:id', to: 'evaluations_build#update'
 
   devise_for :users, path: '', path_names: { sign_in: "connexion", sign_out: "deconnexion", sign_up: "inscription", edit: "compte" }
