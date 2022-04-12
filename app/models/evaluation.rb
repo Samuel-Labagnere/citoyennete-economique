@@ -11,6 +11,6 @@ class Evaluation < ApplicationRecord
     end
 
     def active_or_year?
-        status == 'add_year' || active?
+        status == 'informations' || active?
     end
 end
