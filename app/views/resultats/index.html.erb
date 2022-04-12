@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <div class="puclic-stats-body d-flex">
+  <div class="public-stats-body d-flex">
 
     <!-- Sidebar -->
     <div class="navbar-nav col-3 position-relative d-none d-md-flex me-3 ">
@@ -69,9 +69,9 @@
       ] %>
 
       <% if @evaluation.indicateurs_list.pouvoir_gouvernance_diversite_categories.present? %>
-      <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-        <div class="bg-light text-center p-3"><b class="text-primary"><%= @evaluation.indicateurs_list.pouvoir_gouvernance_diversite_categories.count %></b> catégories d'associés</div>
-        <div class="bg-white m-0 p-2">
+      <div class="data-container rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
+        <div class="data-intit bg-light text-center p-3"><b class="text-primary"><%= @evaluation.indicateurs_list.pouvoir_gouvernance_diversite_categories.count %></b> catégories d'associés</div>
+        <div class="data-cont bg-white m-0 p-2">
           <div class="d-flex p-3">
             <% @evaluation.indicateurs_list.pouvoir_gouvernance_diversite_categories.each do |category| %>
             <div class="card bg-success text-white border-0 mx-2">
@@ -96,9 +96,9 @@
                 <%= render "single_number_box", evaluation: @evaluation, indicateur: :pouvoir_democratie_nombre_reunions %>
               <% end %>
               <% if has_any_indicateur @evaluation, :pouvoir_democratie_nombre_accords_signes %>
-                <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden">
-                  <div class="bg-light fw-bold text-center p-3"><%= indicateur_clean :pouvoir_democratie_accords_signes %></div>
-                  <div class="bg-white m-0 p-2">
+                <div class="data-container rounded shadow col-12 col-mb-5 p-0 overflow-hidden">
+                  <div class="data-intit bg-light fw-bold text-center p-3"><%= indicateur_clean :pouvoir_democratie_accords_signes %></div>
+                  <div class="data-cont bg-white m-0 p-2">
                     <div class="d-flex justify-content-center border-bottom">
                       <p class="h1"><%= @evaluation.indicateurs_list.pouvoir_democratie_nombre_accords_signes %></p>
                     </div>
@@ -174,12 +174,12 @@
         <h5 class="col mb-5 text-secondary fst-italic text-uppercase">Avec/entre les salariés</h5>
       </div>
       <div class="indic-row row rich-share">
-        <div class="col">
+        <div class="col col-data">
           <% if has_any_indicateur @evaluation, :valeur_partage_part_resultat_net_actionnaires %>
             <%= render "single_taux_box", evaluation: @evaluation, indicateur: :valeur_partage_part_resultat_net_actionnaires %>
           <% end %>
         </div>
-        <div class="col">
+        <div class="col col-data">
           <% if has_any_indicateur @evaluation, :valeur_partage_part_resultat_salaries %>
             <%= render "single_taux_box", evaluation: @evaluation, indicateur: :valeur_partage_part_resultat_salaries %>
           <% end %>
@@ -216,12 +216,12 @@
       <div class="container p-0">
         <div class="row indic-row-reverse">
           <% if has_any_indicateur @evaluation, :valeur_partage_ecart_revenus_hauts_bas %>
-            <div class="col">
+            <div class="col col-data">
               <%= render "single_number_box", evaluation: @evaluation, indicateur: :valeur_partage_ecart_revenus_hauts_bas, suffix: "€" %>
             </div>
           <% end %>
           <% if has_any_indicateur @evaluation, :valeur_partage_index_egalite_homme_femme %>
-            <div class="col">
+            <div class="col col-data">
               <%= render "single_taux_box", evaluation: @evaluation, indicateur: :valeur_partage_index_egalite_homme_femme, suffix: "/100" %>
             </div>
           <% end %>
@@ -280,12 +280,12 @@
         <div class="container p-0">
           <div class="row indic-row">
             <% if has_any_indicateur @evaluation, :qualite_emancipation_taux_budget_formation_masse_salariale %>
-              <div class="col">
+              <div class="col col-data">
                 <%= render "single_taux_box", evaluation: @evaluation, indicateur: :qualite_emancipation_taux_budget_formation_masse_salariale %>
               </div>
             <% end %>
             <% if has_any_indicateur @evaluation, :qualite_emancipation_taux_direction_promotion_interne %>
-              <div class="col">
+              <div class="col col-data">
                 <%= render "single_taux_box", evaluation: @evaluation, indicateur: :qualite_emancipation_taux_direction_promotion_interne %>
               </div>
             <% end %>
@@ -342,9 +342,9 @@
             </div>
           </div>
         <% else %>
-          <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-            <div class="bg-light fw-bold text-center p-3">Bilan carbone calculé</div>
-            <div class="bg-white m-0 p-2">
+          <div class="data-container rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
+            <div class="data-intit bg-light fw-bold text-center p-3">Bilan carbone calculé</div>
+            <div class="data-cont bg-white m-0 p-2">
               <div class="d-flex p-3">
                 <% if @evaluation.indicateurs_list.impact_environnement_bilan_carbone_scope_1 %>
                   <div class="card bg-success text-white border-0 mx-2">

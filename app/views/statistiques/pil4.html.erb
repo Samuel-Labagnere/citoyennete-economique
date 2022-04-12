@@ -12,7 +12,7 @@
     Certains indicateurs font directement référence aux 17 objectifs de développement durable adoptés par l’ONU dans le cadre de l’<b class="text-secondary">Agenda 2030</b>.
   </p>
 
-  <div class="puclic-stats-body public">
+  <div class="public-stats-body public">
 
     <!-- IMPACT 4 -->
 
@@ -21,8 +21,8 @@
     <div class="row">
         <% unless @impact_environnement_booleens[:impact_environnement_audit_impact].nil?  %>
             <div class="col">
-                <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-                    <div class="bg-white m-0 p-2">
+                <div class="data-container rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
+                    <div class="data-cont bg-white m-0 p-2">
                         <div class="d-flex">
                             <%= pie_chart @impact_environnement_booleens[:impact_environnement_audit_impact], suffix: '%' %>
                         </div>
@@ -32,8 +32,8 @@
         <% end %>
         <% unless @impact_environnement_booleens[:impact_environnement_demarche_ecologique].nil?  %>
             <div class="col">
-                <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-                    <div class="bg-white m-0 p-2">
+                <div class="data-container rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
+                    <div class="data-cont bg-white m-0 p-2">
                         <div class="d-flex">
                             <%= pie_chart @impact_environnement_booleens[:impact_environnement_discussion_impact], suffix: '%' %>
                         </div>
@@ -43,8 +43,8 @@
         <% end %>
     </div>
     <% unless @impact_environnement_booleens[:impact_environnement_discussion_impact].nil?  %>
-        <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-            <div class="bg-white m-0 p-2">
+        <div class="data-container rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
+            <div class="data-cont bg-white m-0 p-2">
                 <div class="d-flex">
                     <%= pie_chart @impact_environnement_booleens[:impact_environnement_demarche_ecologique], suffix: '%' %>
                 </div>
@@ -53,10 +53,10 @@
     <% end %>
     <div class="row indic-row mb-5">
       <% unless @impact_environnement_part_energies_renouvelables.nil? %>
-          <div class="col">
-            <div class="rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
-              <div class="bg-light text-center p-3"><%= indicateur_clean :impact_environnement_part_energies_renouvelables %></div>
-              <div class="bg-white m-0 p-2">
+          <div class="col col-data">
+            <div class="data-container rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
+              <div class="data-intit bg-light text-center p-3"><%= indicateur_clean :impact_environnement_part_energies_renouvelables %></div>
+              <div class="data-cont bg-white m-0 p-2">
                 <div class="d-flex">
                   <%= single_value_pie_chart(@impact_environnement_part_energies_renouvelables) %>
                 </div>
@@ -65,10 +65,10 @@
           </div>
       <% end%>
       <% unless @impact_environnement_part_salaries_mobilite.nil? %>
-          <div class="col">
-            <div class="rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
-              <div class="bg-light text-center p-3"><%= indicateur_clean :impact_environnement_part_salaries_mobilite %></div>
-              <div class="bg-white m-0 p-2">
+          <div class="col col-data">
+            <div class="data-container rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
+              <div class="data-intit bg-light text-center p-3"><%= indicateur_clean :impact_environnement_part_salaries_mobilite %></div>
+              <div class="data-cont bg-white m-0 p-2">
                 <div class="d-flex">
                   <%= single_value_pie_chart(@impact_environnement_part_salaries_mobilite) %>
                 </div>
@@ -78,8 +78,8 @@
       <% end%>
     </div>
     <% unless @impact_environnement_scope_booleens.nil?  %>
-        <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-            <div class="bg-white m-0 p-2">
+        <div class="data-container rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
+            <div class="data-cont bg-white m-0 p-2">
                 <div class="d-flex">
                     <%= bar_chart @impact_environnement_scope_booleens, suffix: '%' %>
                 </div>
@@ -91,10 +91,10 @@
 
     <div class="row indic-row">
         <% unless @impact_social_part_activite_structures_insertion.nil? %>
-            <div class="col">
-                <div class="rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1 mb-5">
-                    <div class="bg-light text-center p-3"><%= indicateur_clean :impact_social_part_activite_structures_insertion %></div>
-                    <div class="bg-white m-0 p-2">
+            <div class="col col-data">
+                <div class="data-container rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1 mb-5">
+                    <div class="data-intit bg-light text-center p-3"><%= indicateur_clean :impact_social_part_activite_structures_insertion %></div>
+                    <div class="data-cont bg-white m-0 p-2">
                         <div class="d-flex">
                         <%= single_value_pie_chart(@impact_social_part_activite_structures_insertion) %>
                         </div>
@@ -103,10 +103,10 @@
             </div>
         <% end%>
         <% unless @impact_social_alternance_apprentissage.nil? %>
-            <div class="col">
-                <div class="rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1 mb-5">
-                    <div class="bg-light text-center p-3"><%= indicateur_clean :impact_social_alternance_apprentissage %></div>
-                    <div class="bg-white m-0 p-2">
+            <div class="col col-data">
+                <div class="data-container rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1 mb-5">
+                    <div class="data-intit bg-light text-center p-3"><%= indicateur_clean :impact_social_alternance_apprentissage %></div>
+                    <div class="data-cont bg-white m-0 p-2">
                         <div class="d-flex">
                         <%= single_value_pie_chart(@impact_social_alternance_apprentissage) %>
                         </div>
@@ -117,10 +117,10 @@
     </div>
     <div class="row indic-row mt-5">
         <% unless @impact_social_part_seniors.nil? %>
-        <div class="col">
-                <div class="rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1 mb-5">
-                    <div class="bg-light text-center p-3"><%= indicateur_clean :impact_social_part_seniors %></div>
-                    <div class="bg-white m-0 p-2">
+        <div class="col col-data">
+                <div class="data-container rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1 mb-5">
+                    <div class="data-intit bg-light text-center p-3"><%= indicateur_clean :impact_social_part_seniors %></div>
+                    <div class="data-cont bg-white m-0 p-2">
                         <div class="d-flex">
                         <%= single_value_pie_chart(@impact_social_part_seniors) %>
                         </div>
@@ -129,10 +129,10 @@
             </div>
         <% end%>
         <% unless @impact_social_part_handicap.nil? %>
-            <div class="col">
-                <div class="rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1 mb-5">
-                    <div class="bg-light text-center p-3"><%= indicateur_clean :impact_social_part_handicap %></div>
-                    <div class="bg-white m-0 p-2">
+            <div class="col col-data">
+                <div class="data-container rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1 mb-5">
+                    <div class="data-intit bg-light text-center p-3"><%= indicateur_clean :impact_social_part_handicap %></div>
+                    <div class="data-cont bg-white m-0 p-2">
                         <div class="d-flex">
                         <%= single_value_pie_chart(@impact_social_part_handicap) %>
                         </div>
@@ -146,10 +146,10 @@
 
     <div class="row indic-row mb-5">
         <% unless @impact_engagement[indicateur_clean :impact_engagement_part_placements_responsables].nil? %>
-            <div class="col">
-                <div class="rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
-                    <div class="bg-light text-center p-3"><%= indicateur_clean :impact_engagement_part_placements_responsables %> (médiane)</div>
-                    <div class="bg-white m-0 p-2">
+            <div class="col col-data">
+                <div class="data-container rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
+                    <div class="data-intit bg-light text-center p-3"><%= indicateur_clean :impact_engagement_part_placements_responsables %> (médiane)</div>
+                    <div class="data-cont bg-white m-0 p-2">
                         <div class="d-flex">
                             <%= single_value_pie_chart(@impact_engagement[indicateur_clean :impact_engagement_part_placements_responsables])%>
                         </div>
@@ -158,10 +158,10 @@
             </div>
         <% end %>
         <% unless @impact_engagement[indicateur_clean :impact_engagement_part_impots_france].nil? %>
-            <div class="col">
-                <div class="rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
-                    <div class="bg-light text-center p-3"><%= indicateur_clean :impact_engagement_part_impots_france %> (médiane)</div>
-                    <div class="bg-white m-0 p-2">
+            <div class="col col-data">
+                <div class="data-container rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
+                    <div class="data-intit bg-light text-center p-3"><%= indicateur_clean :impact_engagement_part_impots_france %> (médiane)</div>
+                    <div class="data-cont bg-white m-0 p-2">
                         <div class="d-flex">
                             <%= single_value_pie_chart(@impact_engagement[indicateur_clean :impact_engagement_part_impots_france])%>
                         </div>
@@ -172,9 +172,9 @@
     </div>
     <% unless @impact_engagement[indicateur_clean :impact_engagement_part_resultat_missions_utiles].nil? %>
         <div class="estim d-invers">
-          <div class="rounded shadow col-12 p-0 overflow-hidden mb-5 d-flex flex-column">
-            <div class="bg-light text-center p-3"><%= indicateur_clean :impact_engagement_part_resultat_missions_utiles %> (médiane)</div>
-              <div class="bg-white m-0 p-2">
+          <div class="data-container rounded shadow col-12 p-0 overflow-hidden mb-5 d-flex flex-column">
+            <div class="data-intit bg-light text-center p-3"><%= indicateur_clean :impact_engagement_part_resultat_missions_utiles %> (médiane)</div>
+              <div class="data-cont bg-white m-0 p-2">
                   <div class="d-flex">
                       <%= single_value_pie_chart(@impact_engagement[indicateur_clean :impact_engagement_part_resultat_missions_utiles]) %>
                   </div>
@@ -184,8 +184,8 @@
         </div>
     <% end %>
     <% unless @impact_engagement_demarche_ethique_fournisseurs.nil? %>
-        <div class="rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-            <div class="bg-white m-0 p-2">
+        <div class="data-container rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
+            <div class="data-cont bg-white m-0 p-2">
                 <div class="d-flex">
                     <%= pie_chart @impact_engagement_demarche_ethique_fournisseurs, suffix: '%' %>
                 </div>

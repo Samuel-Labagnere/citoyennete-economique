@@ -38,38 +38,53 @@ module ApplicationHelper
     }
   end
 
-  # def single_value_pie_chart(value, suffix: nil, max: nil)
-  #   suffix ||= "%"
-  #   max ||= 100
+  def evo_value_pie_chart(value, old_value, suffix: nil, max: nil)
+    suffix ||= "%"
+    max ||= 100
 
-  #   data = {
-  #     "value" => value,
-  #     "remainder" => (max - value)
-  #   }
+    difference = value - old_value
+    if difference >= 0
+      difference_color = "#198754"
+      slice1 = value - difference
+      slice2 = difference
+      remainder = max - value
+    else
+      difference_color = "#dc3545"
+      slice1 = value
+      slice2 = difference.abs
+      remainder = max - old_value
+    end
 
-  #   chart = pie_chart data,
-  #     donut: true, suffix: "%", colors: ["#2E3092", "#ECD1D8"], 
-  #     library: { 
-  #       plugins: {
-  #         tooltip: {
-  #           filter: "__fn__tooltipFilter"
-  #         },
-  #         legend: {
-  #           labels: {
-  #             filter: "__fn__legendFilter"
-  #           }
-  #         }
-  #       }
-  #     }
-    
-  #   chart["\"__fn__tooltipFilter\""]= raw "function(a) {
-  #     return a.dataIndex === 0;
-  #   }"
+    data = {
+      "slice1" => slice1,
+      "slice2" => slice2,
+      "remainder" => remainder
+    }
 
-  #   chart["\"__fn__legendFilter\""]= raw "function(legendItem) {
-  #     return legendItem.index === 0;
-  #   }"
-
-  #   return chart
-  # end
+    pie_chart data,
+    donut: true, legend: false, colors: ["#2E3092", difference_color, "#ECD1D8"], 
+    library: { 
+      events: [],
+      plugins: {
+        donut_text: {
+          texts: [
+            {
+              text: value.to_s + "%",
+              font: {
+                size: "30"
+              },
+              color: "black"
+            },
+            {
+              text: sprintf("%+.1f", difference) + "%",
+              font: {
+                size: "20"
+              },
+              color: difference_color
+            },
+          ]
+        }
+      }
+    }
+  end
 end
