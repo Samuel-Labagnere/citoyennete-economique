@@ -5,6 +5,10 @@ class EvaluationsBuildController < ApplicationController
 
   steps :informations, :pilier1, :pilier2, :pilier3, :pilier4
 
+  def finish_wizard_path
+    user_root_path
+  end
+
   def update
     @evaluation.update(evaluation_params)
     render_wizard @evaluation
