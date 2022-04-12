@@ -18,58 +18,56 @@
     <body class="bg-white">
 
     <!-- NavBar -->
-    <div id="navigationBar" class="navigationBar bg-white container-fluid pe-3 ps-3 pb-3 pt-1 pb-1 position-fixed">
-      <div class="d-flex nav-mob">
-        <div class="d-flex align-items-center justify-content-between">
-            <a href="/" class="logoSite">
-                <span>c</span>
-                <%= image_tag 'titre.svg', alt: 'logo de la citoyenneté économique' %>
-                <b class="text-primary">.</b>
-            </a>
-        </div>
-        <div class="navbar__links d-flex flex-grow-1 justify-content-around mx-4">
-          <a href="<%= pilier_1_path %>" class="d-flex <%= current_page?(pilier_1_path) ? 'text-secondary' : 'text-black' %> align-items-center">
-              <p class="text-secondary fs-2 me-1 m-0">1.</p>
-              <p class="m-0">Partage du pouvoir et des décisions</p>
+    <div id="navigationBar" class="navigationBar bg-white container-fluid pe-3 ps-3 pb-3 pt-1 pb-1 position-fixed d-flex align-items-center">
+      <div class="nav-logo d-flex align-items-center justify-content-between">
+          <a href="/" class="logoSite">
+              <span>c</span>
+              <%= image_tag 'titre.svg', alt: 'logo de la citoyenneté économique' %>
+              <b class="text-primary">.</b>
           </a>
-          <div class="vr my-4 mx-3"></div>
-          <a href="<%= pilier_2_path %>" class="d-flex <%= current_page?(pilier_2_path) ? 'text-secondary' : 'text-black' %> align-items-center">
-              <p class="text-secondary fs-2 me-1 m-0">2.</p>
-              <p class="m-0">Pérennité économique et partage de la valeur créée</p>
-          </a>
-          <div class="vr my-4 mx-3"></div>
-          <a href="<%= pilier_3_path %>" class="d-flex <%= current_page?(pilier_3_path) ? 'text-secondary' : 'text-black' %> align-items-center">
-              <p class="text-secondary fs-2 me-1 m-0">3.</p>
-              <p class="m-0">Capital humain et qualité de vie au travail</p>
-          </a>
-          <div class="vr my-4 mx-3"></div>
-          <a href="<%= pilier_4_path %>" class="d-flex <%= current_page?(pilier_4_path) ? 'text-secondary' : 'text-black' %> align-items-center">
-              <p class="text-secondary fs-2 me-1 m-0">4.</p>
-              <p class="m-0">Impact environnemental, social et territorial</p>
-          </a>
-        </div>
-
-        <%if user_signed_in? %>
-          <div class="d-flex align-items-center justify-content-center justify-content-md-end justify-content-sm-center col-md-2 mt-2 mt-md-0 mt-sm-2 ">
-              <div class="btn-group">
-                  <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="bi bi-person-fill d-inline d-md-none"></i>
-                      <span class="d-none d-md-inline"><%= current_user %></span>
-                  </button>
-                  <div class="dropdown-menu dropdown-menu-end">
-                      <%= link_to 'Dashboard', user_root_path, class: 'dropdown-item dropButton' %>
-                      <%= link_to 'Mon compte', edit_user_registration_path, class: 'dropdown-item dropButton' %>
-                      <%= button_to "Déconnexion", destroy_user_session_path, class: " dropdown-item",type:"button", method: :delete, form: {data: {turbo: false}} %>
-                  </div>
-              </div>
-          </div>
-        <%else %>
-          <div class="d-flex align-items-center justify-content-center justify-content-md-end justify-content-sm-center col-md-2 mt-2 mt-md-0 mt-sm-2">
-              <%= button_to "Connexion", new_user_session_path, class: "btn btn-white pb-2 me-2 co-btn", method: :get %>
-              <%= button_to "Inscription", new_user_registration_path, class: "btn btn-primary pb-2 ms-2 reg-btn", method: :get %>
-          </div>
-        <%end%>
       </div>
+      <div class="navbar__links d-flex flex-grow-1 justify-content-around mx-4">
+        <a href="<%= pilier_1_path %>" class="d-flex <%= current_page?(pilier_1_path) ? 'text-secondary' : 'text-black' %> align-items-center">
+            <p class="text-secondary fs-2 me-1 m-0">1.</p>
+            <p class="m-0">Partage du pouvoir et des décisions</p>
+        </a>
+        <div class="vr my-4 mx-3"></div>
+        <a href="<%= pilier_2_path %>" class="d-flex <%= current_page?(pilier_2_path) ? 'text-secondary' : 'text-black' %> align-items-center">
+            <p class="text-secondary fs-2 me-1 m-0">2.</p>
+            <p class="m-0">Pérennité économique et partage de la valeur créée</p>
+        </a>
+        <div class="vr my-4 mx-3"></div>
+        <a href="<%= pilier_3_path %>" class="d-flex <%= current_page?(pilier_3_path) ? 'text-secondary' : 'text-black' %> align-items-center">
+            <p class="text-secondary fs-2 me-1 m-0">3.</p>
+            <p class="m-0">Capital humain et qualité de vie au travail</p>
+        </a>
+        <div class="vr my-4 mx-3"></div>
+        <a href="<%= pilier_4_path %>" class="d-flex <%= current_page?(pilier_4_path) ? 'text-secondary' : 'text-black' %> align-items-center">
+            <p class="text-secondary fs-2 me-1 m-0">4.</p>
+            <p class="m-0">Impact environnemental, social et territorial</p>
+        </a>
+      </div>
+
+      <%if user_signed_in? %>
+        <div class="d-flex align-items-center justify-content-center justify-content-md-end justify-content-sm-center col-md-2 mt-2 mt-md-0 mt-sm-2 ">
+            <div class="btn-group">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="bi bi-person-fill d-inline d-md-none"></i>
+                    <span class="d-none d-md-inline"><%= current_user %></span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <%= link_to 'Dashboard', user_root_path, class: 'dropdown-item dropButton' %>
+                    <%= link_to 'Mon compte', edit_user_registration_path, class: 'dropdown-item dropButton' %>
+                    <%= button_to "Déconnexion", destroy_user_session_path, class: " dropdown-item",type:"button", method: :delete, form: {data: {turbo: false}} %>
+                </div>
+            </div>
+        </div>
+      <%else %>
+        <div class="d-flex align-items-center justify-content-center justify-content-md-end justify-content-sm-center col-md-2 mt-2 mt-md-0 mt-sm-2">
+            <%= button_to "Connexion", new_user_session_path, class: "btn btn-white pb-2 me-2 co-btn", method: :get %>
+            <%= button_to "Inscription", new_user_registration_path, class: "btn btn-primary pb-2 ms-2 reg-btn", method: :get %>
+        </div>
+      <%end%>
     </div>
 
     <!-- Fin NavBar -->
@@ -107,7 +105,6 @@
 
     </div>
     <!-- End of Page Wrapper -->
-
      <!-- Footer -->
     <footer class="sticky-footer bg-white d-flex justify-content-between d-flex flex-md-row flex-sm-column flex-column">
         <div class="m-3 m-md-5 d-flex flex-column align-items-md-start align-items-center text-center text-md-start">

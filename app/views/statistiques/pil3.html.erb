@@ -11,25 +11,25 @@
     Au-delà de la démarche de prévention des risques, la citoyenneté économique implique des conditions de qualité de vie au travail permettant l’émancipation, le pouvoir d’agir, l’autonomie des salariés adaptées à leur attente et leurs capacités. Le lien entre efficacité économique, responsabilisation et satisfaction des salariés, et qualité de vie au travail est reconnu.
   </p>
 
-  <div class="puclic-stats-body">
+  <div class="public-stats-body">
 
   <!-- IMPACT 3 -->
     <h4 class="my-3 pt-3 pb-4 pt-sm-5 pb-sm-5 my-sm-5"><b class="text-primary">I.</b> <u class="text-secondary text-decoration-none">Qualité de vie</u> au travail / <u class="text-secondary text-decoration-none">épanouissement</u> des salariés</h4>
 
     <div class="row indic-row-reverse mx-1">
       <% unless @qualite_qvt_enquete_qvt.nil? %>
-            <div class="rounded shadow col-12 col-sm-6 p-0 overflow-hidden me-2 mb-5 ">
-              <div class="bg-white m-0 p-2">
+            <div class="data-container rounded shadow col-12 col-sm-6 p-0 overflow-hidden me-2 mb-5 ">
+              <div class="data-cont bg-white m-0 p-2">
                 <div class="d-flex">
                   <%= pie_chart @qualite_qvt_enquete_qvt, suffix: '%' %>
                 </div>
               </div>
             </div>
       <% end %>
-        <div class="col-12 col-sm ms-0 ms-sm-2 p-0 mb-5">
-            <div class="rounded shadow p-0 overflow-hidden mb-5 d-flex flex-column">
-                <div class="bg-light text-center p-3"><%= indicateur_clean :qualite_qvt_moyenne_anciennete %></div>
-                <div class="bg-white m-0 p-2">
+        <div class="col-data col-12 col-sm ms-0 ms-sm-2 p-0 mb-5">
+            <div class="data-container rounded shadow p-0 overflow-hidden mb-5 d-flex flex-column">
+                <div class="data-intit bg-light text-center p-3"><%= indicateur_clean :qualite_qvt_moyenne_anciennete %></div>
+                <div class="data-cont bg-white m-0 p-2">
                     <div class="d-flex justify-content-center">
                         <p class="h1"><%= @qualite_qvt_moyenne_anciennete %> ans</p>
                     </div>
@@ -38,9 +38,9 @@
         </div>
     </div>
 
-    <div class="rounded shadow p-0 overflow-hidden mb-5">
-        <div class="bg-light text-center p-3">Taux médians</div>
-        <div class="bg-white m-0 p-2">
+    <div class="data-container rounded shadow p-0 overflow-hidden mb-5">
+        <div class="data-intit bg-light text-center p-3">Taux médians</div>
+        <div class="data-cont bg-white m-0 p-2">
             <div class="d-flex">
                 <%= bar_chart @qualite_qvt_taux_all, suffix: "%" %>
             </div>
@@ -53,9 +53,9 @@
         <u class="text-secondary text-decoration-none">Emancipation</u> des salariés
     </h4>
     <div class="estim d-invers">
-      <div class="rounded shadow col-12 p-0 overflow-hidden mb-5 d-flex flex-column">
-        <div class="bg-light text-center p-3 w-50"><%= indicateur_clean :qualite_emancipation_moyenne_heures_formation %></div>
-        <div class="bg-white m-0 p-3 w-50">
+      <div class="data-container rounded shadow col-12 p-0 overflow-hidden mb-5 d-flex flex-column">
+        <div class="data-intit bg-light text-center p-3 w-50"><%= indicateur_clean :qualite_emancipation_moyenne_heures_formation %></div>
+        <div class="data-cont bg-white m-0 p-3 w-50">
           <div class="d-flex justify-content-center">
             <p class="h1"><%= @qualite_emancipation_moyenne_heures_formation %> heures</p>                  </div>
           </div>
@@ -63,9 +63,9 @@
     </div>
 
       <div class="pb-5">
-        <div class="rounded shadow p-0 overflow-hidden mb-5">
-          <div class="bg-light text-center p-3">Taux médians</div>
-          <div class="bg-white m-0 p-2">
+        <div class="data-container rounded shadow p-0 overflow-hidden mb-5">
+          <div class="data-intit bg-light text-center p-3">Taux médians</div>
+          <div class="data-cont bg-white m-0 p-2">
             <div class="d-flex">
               <%= bar_chart @qualite_emancipation_taux, suffix: "%" %>
             </div>

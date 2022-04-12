@@ -1,9 +1,9 @@
 <% suffix ||= nil %>
 <% max ||= nil %>
 
-<div class="rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
-  <div class="bg-light text-center p-3"><%= indicateur_clean indicateur %></div>
-  <div class="bg-white m-0 p-2">
+<div class="data-container rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
+  <div class="data-intit bg-light text-center p-3"><%= indicateur_clean indicateur %></div>
+  <div class="data-cont bg-white m-0 p-2">
     <div class="d-flex">
       <%= single_value_pie_chart evaluation.indicateurs_list[indicateur], suffix: suffix, max: max %>
     </div>
