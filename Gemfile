@@ -82,3 +82,5 @@ gem "simple_form", "~> 5.1"
 gem "chartkick", "~> 4.1"
 
 gem "active_median", "~> 0.3.3"
+
+gem "wicked", "~> 1.4"
