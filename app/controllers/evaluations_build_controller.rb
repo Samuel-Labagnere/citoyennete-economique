@@ -3,7 +3,7 @@ class EvaluationsBuildController < ApplicationController
   before_action :authenticate_user!
   before_action :set_evaluation, only: %i[ update show ]
 
-  steps :add_year, :add_pillar1, :add_pillar2, :add_pillar3, :add_pillar4
+  steps :informations, :pilier1, :pilier2, :pilier3, :pilier4
 
   def update
     @evaluation.update(evaluation_params)
