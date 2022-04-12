@@ -295,6 +295,12 @@ body {
               }
             }
           }
+          .row-bilanCarb {
+            .col-intit {
+              background-color: #ddd;
+              h5 {font:$fontH3 !important;}
+            }
+          }
           /***** ESTIMATIONS *****/
           .estim.d-invers {
             .data-intit {text-align: left !important;}
