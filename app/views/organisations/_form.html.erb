@@ -1,14 +1,18 @@
 
 
 <%= simple_form_for @organisation do |f| %>
-  <div class="col-form col-sm-8 text-break me-auto ms-auto rounded bg-white shadow border-start border-primary p-3 p-sm-4 mb-5 mt-0 mt-sm-5">
+  <div class="row col-12 col-sm-8 text-break me-auto ms-auto rounded bg-white shadow border-start border-primary p-3 p-sm-4 mb-5 mt-0 mt-sm-5">
+    <div class="col-form col">
       <%= f.input :nom %>
       <%= f.input :statut_juridique, collection: Organisation.statut_juridiques.keys %>
       <%= f.input :date_creation %>
       <%= f.input :secteur_activite %>
+    </div>
+    <div class="col-form col">
       <%= f.input :ape %>
       <%= f.input :siren %>
       <%= f.input :agrement_specifique %>
+    </div>
   </div>
 
   <div class="col-form col-sm-8 text-break me-auto ms-auto rounded bg-white shadow border-start border-secondary p-3 p-sm-4 mb-5 col-input">
