@@ -313,6 +313,9 @@ body {
         }
       }
       .page-orga {
+        p.protection {
+          i {font-size: 4rem;}
+        }
         .col-form {border-width: 8px !important;}
         .col-form, .col-input {
           .form-check {

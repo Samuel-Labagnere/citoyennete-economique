@@ -4,6 +4,7 @@
     <h1 class="h2">Inscrire une organisation</h1>
   </header>
 
+  <p class="protection my-5 text-primary d-flex align-items-center fw-bold justify-content-center"><i class="bi bi-shield-check me-4"></i>Toutes ces données sont protégées et anonimysées.</p>
 
   <% if current_user.organisation.nil? || current_user.is_super_admin %>
     <%= render "form", organisation: @organisation %>
