@@ -99,6 +99,7 @@ body {
     &.sticky {
       transition: ease .3s;
       margin-top: -10px;
+      padding-top: 10px !important;
       .logoSite {
       width: 40px;
       transition-delay: .3s;
@@ -243,6 +244,16 @@ body {
         .public-stats-body {
           h5 {font-size:.9rem;}
           h3 {font-size: 3rem !important;}
+
+          .navbar-nav {
+            .side-scroll {
+              * {transition: .3s ease;}
+              &.scrollTopUn {top: 0% !important;}
+              &.scrollTopDeux{top: 25% !important;}
+              &.scrollTopTrois {top: 50% !important;}
+              &.scrollTopQuatre {top: 75% !important;}
+            }
+          }
           .data-intit {font-family: $fontTitre;}
           .indic-row, .indic-row-reverse {
             .col-data {

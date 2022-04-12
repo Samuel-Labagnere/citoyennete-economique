@@ -29,28 +29,29 @@
       <div class="nav-cont flex-grow-1 d-flex align-items-center justify-content-end">
 
         <div class="dropdown me-4">
-          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            <%= image_tag 'icon_piliers.svg', alt: 'icone publique', class: "me-2" %>Citoyenneté des entreprises
+          <button class="btn dropdown-toggle d-flex align-items-center" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= image_tag 'icon_piliers.svg', alt: 'icone publique', class: "me-2" %>
+            <span class="lh-1">Citoyenneté des entreprises</span>
           </button>
           <ul class="dropdown-menu p-0" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item d-flex <%= current_page?(pilier_1_path) ? 'text-secondary' : 'text-black' %> align-items-center" href="<%= pilier_1_path %>"><b class="text-secondary fs-2 me-1 m-0">1.</b>Partage du pouvoir et des décisions</a></li>
-            <li><a class="dropdown-item d-flex <%= current_page?(pilier_2_path) ? 'text-secondary' : 'text-black' %> align-items-center" href="<%= pilier_2_path %>"><b class="text-secondary fs-2 me-1 m-0">2.</b>Pérennité économique et partage de la valeur créée</a></li>
-            <li><a class="dropdown-item d-flex <%= current_page?(pilier_3_path) ? 'text-secondary' : 'text-black' %> align-items-center" href="<%= pilier_3_path %>"><b class="text-secondary fs-2 me-1 m-0">3.</b>Capital humain et qualité de vie au travail</a></li>
-            <li><a class="dropdown-item d-flex <%= current_page?(pilier_4_path) ? 'text-secondary' : 'text-black' %> align-items-center" href="<%= pilier_4_path %>"><b class="text-secondary fs-2 me-1 m-0">4.</b>Impact environnemental, social et territorial</a></li>
+            <li><a class="dropdown-item d-flex <%= current_page?(pilier_1_path) ? 'text-secondary fw-bold' : 'text-black, fw-normal' %> align-items-center" href="<%= pilier_1_path %>"><b class="text-secondary fs-2 me-1 m-0">1.</b>Partage du pouvoir et des décisions</a></li>
+            <li><a class="dropdown-item d-flex <%= current_page?(pilier_2_path) ? 'text-secondary fw-bold' : 'text-black, fw-normal' %> align-items-center" href="<%= pilier_2_path %>"><b class="text-secondary fs-2 me-1 m-0">2.</b>Pérennité économique et partage de la valeur créée</a></li>
+            <li><a class="dropdown-item d-flex <%= current_page?(pilier_3_path) ? 'text-secondary fw-bold' : 'text-black, fw-normal' %> align-items-center" href="<%= pilier_3_path %>"><b class="text-secondary fs-2 me-1 m-0">3.</b>Capital humain et qualité de vie au travail</a></li>
+            <li><a class="dropdown-item d-flex <%= current_page?(pilier_4_path) ? 'text-secondary fw-bold' : 'text-black, fw-normal' %> align-items-center" href="<%= pilier_4_path %>"><b class="text-secondary fs-2 me-1 m-0">4.</b>Impact environnemental, social et territorial</a></li>
           </ul>
         </div>
 
         <%if user_signed_in? %>
           <div class="d-flex align-items-center justify-content-center justify-content-md-end justify-content-sm-center mt-2 mt-md-0 mt-sm-2 ">
               <div class="btn-group">
-                  <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="bi bi-person-fill d-inline d-md-none"></i>
                       <span class="d-none d-md-inline"><%= current_user %></span>
                   </button>
-                  <div class="dropdown-menu dropdown-menu-end">
+                  <div class="dropdown-menu dropdown-menu-end p-0">
                       <%= link_to 'Dashboard', user_root_path, class: 'dropdown-item dropButton' %>
                       <%= link_to 'Mon compte', edit_user_registration_path, class: 'dropdown-item dropButton' %>
-                      <%= button_to "Déconnexion", destroy_user_session_path, class: " dropdown-item",type:"button", method: :delete, form: {data: {turbo: false}} %>
+                      <%= button_to "Déconnexion", destroy_user_session_path, class: "text-primary dropdown-item",type:"button", method: :delete, form: {data: {turbo: false}} %>
                   </div>
               </div>
           </div>
