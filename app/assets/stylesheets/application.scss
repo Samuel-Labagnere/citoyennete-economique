@@ -295,6 +295,12 @@ body {
               }
             }
           }
+          .row-bilanCarb {
+            .col-intit {
+              background-color: #ddd;
+              h5 {font:$fontH3 !important;}
+            }
+          }
           /***** ESTIMATIONS *****/
           .estim.d-invers {
             .data-intit {text-align: left !important;}
@@ -307,6 +313,9 @@ body {
         }
       }
       .page-orga {
+        p.protection {
+          i {font-size: 4rem;}
+        }
         .col-form {border-width: 8px !important;}
         .col-form, .col-input {
           .form-check {
