@@ -1,137 +1,43 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Citoyenneté Économique</title>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <%= csrf_meta_tags %>
-        <%= csp_meta_tag %>
+  <head>
+    <title>Citoyenneté Économique</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/js/fontawesome.min.js" integrity="sha256-1lGQuZh8a4EiccMxEc18J0h4nhr5oCmXEXPzca+Lbrk=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-        <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-        <link rel="icon" href="/favicon.ico" />
-    </head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/js/fontawesome.min.js" integrity="sha256-1lGQuZh8a4EiccMxEc18J0h4nhr5oCmXEXPzca+Lbrk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <link rel="icon" href="/favicon.ico"/>
+  </head>
 
-    <body class="bg-white">
-
-    <!-- NavBar -->
-    <div id="navigationBar" class="navigationBar bg-white container-fluid pe-3 ps-3 pb-3 pt-1 pb-1 position-fixed d-flex align-items-center">
-      <div class="nav-logo d-flex align-items-center justify-content-between">
-          <a href="/" class="logoSite">
-              <span>c</span>
-              <%= image_tag 'titre.svg', alt: 'logo de la citoyenneté économique' %>
-              <b class="text-primary">.</b>
-          </a>
-      </div>
-      <div class="nav-cont flex-grow-1 d-flex align-items-center justify-content-end">
-
-        <div class="dropdown me-4">
-          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            <%= image_tag 'icon_piliers.svg', alt: 'icone publique', class: "me-2" %>Citoyenneté des entreprises
-          </button>
-          <ul class="dropdown-menu p-0" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item d-flex <%= current_page?(pilier_1_path) ? 'text-secondary' : 'text-black' %> align-items-center" href="<%= pilier_1_path %>"><b class="text-secondary fs-2 me-1 m-0">1.</b>Partage du pouvoir et des décisions</a></li>
-            <li><a class="dropdown-item d-flex <%= current_page?(pilier_2_path) ? 'text-secondary' : 'text-black' %> align-items-center" href="<%= pilier_2_path %>"><b class="text-secondary fs-2 me-1 m-0">2.</b>Pérennité économique et partage de la valeur créée</a></li>
-            <li><a class="dropdown-item d-flex <%= current_page?(pilier_3_path) ? 'text-secondary' : 'text-black' %> align-items-center" href="<%= pilier_3_path %>"><b class="text-secondary fs-2 me-1 m-0">3.</b>Capital humain et qualité de vie au travail</a></li>
-            <li><a class="dropdown-item d-flex <%= current_page?(pilier_4_path) ? 'text-secondary' : 'text-black' %> align-items-center" href="<%= pilier_4_path %>"><b class="text-secondary fs-2 me-1 m-0">4.</b>Impact environnemental, social et territorial</a></li>
-          </ul>
-        </div>
-
-        <%if user_signed_in? %>
-          <div class="d-flex align-items-center justify-content-center justify-content-md-end justify-content-sm-center mt-2 mt-md-0 mt-sm-2 ">
-              <div class="btn-group">
-                  <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="bi bi-person-fill d-inline d-md-none"></i>
-                      <span class="d-none d-md-inline"><%= current_user %></span>
-                  </button>
-                  <div class="dropdown-menu dropdown-menu-end">
-                      <%= link_to 'Dashboard', user_root_path, class: 'dropdown-item dropButton' %>
-                      <%= link_to 'Mon compte', edit_user_registration_path, class: 'dropdown-item dropButton' %>
-                      <%= button_to "Déconnexion", destroy_user_session_path, class: " dropdown-item",type:"button", method: :delete, form: {data: {turbo: false}} %>
-                  </div>
-              </div>
-          </div>
-        <%else %>
-          <div class="d-flex align-items-center justify-content-center justify-content-md-end justify-content-sm-center mt-2 mt-md-0 mt-sm-2">
-              <%= button_to "Connexion", new_user_session_path, class: "btn btn-white pb-2 me-2 co-btn", method: :get %>
-              <%= button_to "Inscription", new_user_registration_path, class: "btn btn-primary pb-2 ms-2 reg-btn", method: :get %>
-          </div>
-        <%end%>
-      </div>
-    </div>
-
-    <!-- Fin NavBar -->
-      <!-- Page Wrapper -->
+  <body class="bg-white">
+    <%= render 'nav' %>
     <div id="wrapper" class="bg-light">
-
-
-    <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-
-            <!-- Main Content -->
-            <div id="content">
-
-                <!-- Topbar -->
-
-                <!-- End of Topbar -->
-
-                <!-- Begin Page Content -->
-                <div class="container mt-n3">
-                  <% if flash[:notice].present? %>
-                    <p class="p_notice alert alert-success mt-5 mb-5 p-3 m-5 text-center col-8 ms-auto me-auto"><%= flash[:notice] %></p>
-                  <% end %>
-                  <% if flash[:alert].present? %>
-                    <p class="p_notice alert alert-danger mt-5 mb-5 p-3 m-5 text-center col-8 ms-auto me-auto"><%= flash[:alert] %></p>
-                  <% end %>
-                  <%= yield %>
-                </div>
-                <!-- /.container-fluid -->
-
-            </div>
-            <!-- End of Main Content -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
+      <div class="container py-5">
+        <%= render 'flash' %>
+        <%= yield %>
+      </div>
     </div>
-    <!-- End of Page Wrapper -->
-     <!-- Footer -->
-    <footer class="sticky-footer bg-white d-flex justify-content-between d-flex flex-md-row flex-sm-column flex-column">
-        <div class="m-3 m-md-5 d-flex flex-column align-items-md-start align-items-center text-center text-md-start">
-            <a href="/mentions-legales" class="text-dark">Mentions légales</a>
-            <a href="/CGU" class="mb-3 mt-3 text-dark">Conditions générales d'utilisation</a>
-            <a href="/confidentialite" class="text-dark">Politique de confidentialité</a>
-        </div>
-        <div class="copyright text-center m-5 d-flex flex-column align-items-center order-3 order-sm-0">
-            <a href="/">
-                <%= image_tag 'titre.svg', alt: 'logo de la citoyenneté économique' %>
-            </a>
-            <span class="mt-2 mt-sm-4 small"><b class="text-primary">Copyleft <span class="copyleft">&copy;</span></b> Samuel ABADIE, Théo DESCHAMPS, Samuel LABAGNÈRE, Maxime LASSERRE, Yani MADEBOS, Sarah MARGUERETTAZ, Laurent MALUCELLI, Thomas MARILLEAU, Maxime REBIERE, Mathéo REULIER, Olivia SIMONET</span>
-        </div>
-        <div class="m-3 m-md-5 d-flex flex-column align-items-md-end align-items-center text-center text-md-end">
-            <a href="#" class="mb-3 text-dark">Statistiques</a>
-            <%# link_to 'Entreprises', entreprises_path, class: 'text-dark' %>
-            <a href="https://www.les-scop.coop/les-scop" targuet="_blank" title="Les SCOP" class="mt-3">
-              <%= image_tag 'lesscop.png', alt: 'logo des SCOP' %>
-            </a>
-        </div>
-    </footer>
-    <!-- End of Footer -->
+    <%= render 'footer' %>
 
     <script>
-    window.onscroll = function() {sitckyNav()};
-    var navbar = document.getElementById("navigationBar");
-    var sticky = navbar.offsetTop;
-    function sitckyNav() {
+      window.onscroll = function () {
+        sitckyNav()
+      };
+      var navbar = document.getElementById("navigationBar");
+      var sticky = navbar.offsetTop;
+      function sitckyNav() {
         if (window.pageYOffset >= sticky) {
-            navbar.classList.add("sticky")
+          navbar.classList.add("sticky")
         } else {
-            navbar.classList.remove("sticky");
+          navbar.classList.remove("sticky");
         }
-    }
+      }
     </script>
   </body>
 </html>

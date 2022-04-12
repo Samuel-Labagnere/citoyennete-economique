@@ -1,0 +1,6 @@
+<% if flash[:notice].present? %>
+  <p class="p_notice alert alert-success mt-5 mb-5 p-3 m-5 text-center col-8 ms-auto me-auto"><%= flash[:notice] %></p>
+<% end %>
+<% if flash[:alert].present? %>
+  <p class="p_notice alert alert-danger mt-5 mb-5 p-3 m-5 text-center col-8 ms-auto me-auto"><%= flash[:alert] %></p>
+<% end %>

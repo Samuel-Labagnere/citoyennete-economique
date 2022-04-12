@@ -31,7 +31,7 @@
           <strong class="me-2"><%= current_user.organisation.statut_juridique %></strong>
           <strong class="me-2"><%= current_user.organisation.secteur_activite %></strong>
         </div>
-      <% current_user.organisation.evaluations.each do |evaluation| %>
+      <% current_user.organisation.evaluations.active.each do |evaluation| %>
         <ul class="mb-3 mt-3 ms-0 ms-sm-3 me-0 ms-sm-3">
           <li>
             <%= link_to "Evaluation de l'année #{ evaluation.annee }", evaluation, class: "text-secondary fw-bold" %> | <%= link_to "Voir les résultats", resultats_path(evaluation_id: evaluation.id), class: "text-success fw-bold" %>
