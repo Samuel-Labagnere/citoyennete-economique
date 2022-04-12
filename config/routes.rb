@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   resources :objectifs_lists
   resources :evaluations
+
+  get '/evaluations_build/new', to: 'evaluations_build#new'
+  get '/evaluations_build/:evaluation_id/:id', to: 'evaluations_build#show'
+  put '/evaluations_build/:evaluation_id/:id', to: 'evaluations_build#update'
+
   devise_for :users, path: '', path_names: { sign_in: "connexion", sign_out: "deconnexion", sign_up: "inscription", edit: "compte" }
   resources :organisations
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

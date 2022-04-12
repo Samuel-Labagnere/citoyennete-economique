@@ -1,0 +1,24 @@
+<div class="page-orga mx-3 mx-sm-5 mx-bg-5 mt-5 pt-2">
+
+  <header class="mb-5">
+    <h1 class="h2">Nouvelle évaluation</h1>
+  </header>
+  
+  <%= simple_form_for @evaluation, url: wizard_path, method: :put, data: {turbo: false} do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <fieldset class="row d-flex flex-sm-row flex-column col-11 col-sm-8 text-break me-auto ms-auto rounded bg-white shadow border-start border-primary p-3 p-sm-4 mb-4 col-input mt-4">
+      <div class="col-12 col-sm-6">
+        <%= f.input :annee %>
+        <%= f.input :chiffre_affaires %>
+        <%= f.input :resultat_net %>
+      </div>
+      <div class="col-12 col-sm-6">
+        <%= f.input :nombre_salaries %>
+        <%= f.input :nombre_salaries_etp %>
+      </div>
+    </fieldset>
+
+    <%= f.button :submit, "Suivant", class: 'btn btn-primary me-auto ms-auto d-flex mb-5' %>
+  <% end %>
+
+</div>
