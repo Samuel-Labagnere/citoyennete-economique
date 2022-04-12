@@ -1,7 +1,11 @@
 <div class="page-orga mx-3 mx-sm-5 mx-bg-5 mt-5 pt-2">
 
   <header class="mb-5">
-    <h1 class="h2">Nouvelle évaluation</h1>
+    <% if @evaluation.status != 'active' %>
+      <h1 class="h2">Nouvelle évaluation</h1>
+    <% else %>
+      <h1 class="h2">Édition de l'évaluation de l'année <%= @evaluation.annee %></h1>
+    <% end %>
     <h2 class="h3"><span class="text-secondary fs-2 me-1 m-0">2.</span>Pérennité économique et partage de la valeur créée</h2>
   </header>
   
