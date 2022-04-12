@@ -78,7 +78,6 @@ body {
       width: 180px;
       font-size: 40px;
       overflow:hidden;
-
       span {
         line-height: 7px;
         position:absolute;
@@ -96,7 +95,7 @@ body {
         text-align:right;
       }
     }
-    .navbar__links {a {font-family: $fontTitre; p:nth-child(2) {font-size: .9rem;}}}
+    .nav-cont {.dropdown {img {height:1.4rem;} a{b{font-family: $fontTitre;}}}}
     &.sticky {
       transition: ease .3s;
       margin-top: -10px;
@@ -119,7 +118,6 @@ body {
           transition: ease .3s;
         }
       }
-      .navbar__links {margin-left: calc($spacer * 2);}
     }
     button{font: $fontNavbar !important;box-shadow: none !important;}
   }
