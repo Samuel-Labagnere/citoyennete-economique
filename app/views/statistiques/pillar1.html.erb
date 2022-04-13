@@ -15,18 +15,18 @@
   <%= bar_chart @pouvoir_gouvernance_taux, suffix: "%", title: 'Indicateurs clés (taux médians)' %>
 </div>
 <table class="table mb-5">
-    <thead>
-        <tr>
-            <th scope="col">Indicateur</th>
-            <th scope="col">Valeur médiane</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Part de salariés associés</td>
-            <td>53%</td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <th scope="col">Indicateur</th>
+      <th scope="col">Valeur médiane</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Part de salariés associés</td>
+      <td>53%</td>
+    </tr>
+  </tbody>
 </table>
 
 
@@ -43,22 +43,26 @@
   <div class="col-md-6">
     <%= single_value_pie_chart State.evaluations
                                     .up_to_date
-                                    .average(:pouvoir_gouvernance_part_salaries_conseil) %>
-   <p class="text-center mt-3">
-     Part de salariés participant au conseil d'administration ou de surveillance
-   </p>
+                                    .median(:pouvoir_gouvernance_part_salaries_conseil) %>
+    <p class="text-center mt-3">
+      Part de salariés participant au conseil d'administration ou de surveillance
+    </p>
   </div>
 </div>
 
-<% unless @pouvoir_gouvernance_part_salaries_conseil.nil? %>
-  <h3><%= indicateur_clean :pouvoir_gouvernance_part_salaries_conseil %></h3>
-  <%= single_value_pie_chart(@pouvoir_gouvernance_part_salaries_conseil) %>
-<% end %>
+<%= single_value_pie_chart State.evaluations
+                                .up_to_date
+                                .median(:pouvoir_gouvernance_part_salaries_conseil) %>
+<p class="text-center mt-3">
+  <%= indicateur_clean :pouvoir_gouvernance_part_salaries_conseil %>
+</p>
 
 <h2><b class="text-primary">II.</b> Mise en place des <span class="text-secondary">conditions du bon exercice de la démocratie</span></h2>
 <p class="lead">
-  <%= @pouvoir_democratie_nombres[:pouvoir_democratie_nombre_reunions] %>
-  <%= indicateur_clean :pouvoir_democratie_nombre_reunions %> (médiane)
+  <%= State.evaluations
+           .up_to_date
+           .median(:pouvoir_democratie_nombre_reunions) %>
+  <%= indicateur_clean :pouvoir_democratie_nombre_reunions %>
 </p>
 
 <h2>III. Participation à la <u class="text-secondary text-decoration-none">prise de décision stratégique</h2>

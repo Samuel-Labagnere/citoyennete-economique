@@ -4,8 +4,6 @@ class StatistiquesController < ApplicationController
     pillar1 = aggregate.pillar1
 
     @pouvoir_gouvernance_taux = pillar1[:pouvoir_gouvernance_taux]
-    @pouvoir_gouvernance_part_salaries_conseil = pillar1[:pouvoir_gouvernance_part_salaries_conseil]
-    @pouvoir_gouvernance_diversite_categories = pillar1[:pouvoir_gouvernance_diversite_categories]
     @pouvoir_democratie_nombres = pillar1[:pouvoir_democratie_nombres]
     @pouvoir_democratie_taux_participation_formations = pillar1[:pouvoir_democratie_taux_participation_formations]
     @pouvoir_strategique_taux = pillar1[:pouvoir_strategique_taux]
