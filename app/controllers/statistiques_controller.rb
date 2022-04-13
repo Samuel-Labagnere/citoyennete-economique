@@ -59,7 +59,7 @@ class StatistiquesController < ApplicationController
       "Salariés" => $latest_indicateurs_lists.where("'Salariés' = ANY (pouvoir_gouvernance_diversite_categories)").count,
       "Investisseurs" => $latest_indicateurs_lists.where("'Investisseurs' = ANY (pouvoir_gouvernance_diversite_categories)").count,
       "Fournisseurs" => $latest_indicateurs_lists.where("'Fournisseurs' = ANY (pouvoir_gouvernance_diversite_categories)").count,
-      "Sous-traitants" => $latest_indicateurs_lists.where("'Sous-traitans' = ANY (pouvoir_gouvernance_diversite_categories)").count,
+      "Sous-traitants" => $latest_indicateurs_lists.where("'Sous-traitants' = ANY (pouvoir_gouvernance_diversite_categories)").count,
       "Clients" => $latest_indicateurs_lists.where("'Clients' = ANY (pouvoir_gouvernance_diversite_categories)").count,
       "Experts" => $latest_indicateurs_lists.where("'Experts' = ANY (pouvoir_gouvernance_diversite_categories)").count,
       "Syndicats" => $latest_indicateurs_lists.where("'Syndicats' = ANY (pouvoir_gouvernance_diversite_categories)").count,
