@@ -1,1 +1,10 @@
 a, a:hover {text-decoration:none !important;}
+
+.form-control{
+    background-color: #fff !important;
+}
+.form-control:focus {
+  border-color: none !important;
+  box-shadow: none !important;
+  background-color: #fff !important;
+}
