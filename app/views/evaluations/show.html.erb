@@ -1,14 +1,6 @@
-<div class="row">
-  <div class="col-lg-8">
-    <h1>
-      Evaluation de l'année <%= @evaluation.annee%>
-    </h1>
-  </div>
-</div>
+<h1><%= @evaluation %></h1>
 
-<div class="d-flex">
-  <%= render "evaluation", evaluation: @evaluation %>
-</div>
+<%= render "evaluation", evaluation: @evaluation %>
 
 <%= button_to "Supprimer cette évaluation",
               @evaluation,
