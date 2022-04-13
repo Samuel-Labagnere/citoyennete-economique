@@ -43,7 +43,7 @@ body {
   .text-success {color: $text-success !important;}
   .text-danger {color: $text-danger !important;}
 
-  .navigationBar{
+  #navigationBar{
     z-index: 9999;
     transition: ease .3s;
     & * {transition: ease .3s;}

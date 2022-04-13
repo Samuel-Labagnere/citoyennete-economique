@@ -13,27 +13,14 @@
 
   <body class="bg-white">
     <%= render 'nav' %>
-    <div id="wrapper" class="bg-light">
-      <div class="container py-5">
+    <div id="wrapper" class="bg-light pt-5">
+      <div class="container py-5 mt-5">
         <%= render 'flash' %>
         <%= yield %>
       </div>
     </div>
     <%= render 'footer' %>
 
-    <script>
-      window.onscroll = function () {
-        sitckyNav()
-      };
-      var navbar = document.getElementById("navigationBar");
-      var sticky = navbar.offsetTop;
-      function sitckyNav() {
-        if (window.pageYOffset >= sticky) {
-          navbar.classList.add("sticky")
-        } else {
-          navbar.classList.remove("sticky");
-        }
-      }
-    </script>
+
   </body>
 </html>
