@@ -50,7 +50,6 @@ class EvaluationsController < ApplicationController
   # DELETE /evaluations/1 or /evaluations/1.json
   def destroy
     @evaluation.destroy
-    @evaluation.set_up_to_date
 
     respond_to do |format|
       format.html { redirect_to user_root_path, notice: I18n.t('notice.evaluation.destroy') }
