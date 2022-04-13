@@ -38,15 +38,13 @@ class Evaluation < ApplicationRecord
     status == 'informations' || active?
   end
 
-
-  protected
-
   def set_up_to_date
     organisation.evaluations.each do |evaluation|
       evaluation.state
                 .update_column :up_to_date, false
     end
     organisation.evaluations
+                .active
                 .ordered
                 .first
                 .state
