@@ -11,11 +11,10 @@
 
 <h2><b class="text-primary">I.</b>Composition de la gouvernance</h2>
 
-<h3>Indicateurs clés</h3>
 <div class="mb-5">
-  <%= bar_chart @pouvoir_gouvernance_taux, suffix: "%", title: 'Taux médians' %>
+  <%= bar_chart @pouvoir_gouvernance_taux, suffix: "%", title: 'Indicateurs clés (taux médians)' %>
 </div>
-<table class="table">
+<table class="table mb-5">
     <thead>
         <tr>
             <th scope="col">Indicateur</th>
@@ -32,96 +31,38 @@
     </tbody>
 </table>
 
-<h3>Catégories d'associés</h3>
 
-<%= pie_chart @pouvoir_gouvernance_diversite_categories  %>
+<div class="row">
+  <div class="col-md-4">
+    <%= pie_chart @pouvoir_gouvernance_diversite_categories  %>
+    <p>Catégories d'associés</p>
+  </div>
+</div>
 
 <% unless @pouvoir_gouvernance_part_salaries_conseil[:pouvoir_gouvernance_part_salaries_conseil].nil? %>
   <h3><%= indicateur_clean :pouvoir_gouvernance_part_salaries_conseil %></h3>
   <%= single_value_pie_chart(@pouvoir_gouvernance_part_salaries_conseil[:pouvoir_gouvernance_part_salaries_conseil]) %>
 <% end %>
 
-<div class="public-stats mx-3 mx-sm-5 mx-bg-5 mt-5 pt-2 px-0 px-md-5">
+<h2><b class="text-primary">II.</b> Mise en place des <span class="text-secondary">conditions du bon exercice de la démocratie</span></h2>
+<p class="lead">
+  <%= @pouvoir_democratie_nombres[:pouvoir_democratie_nombre_reunions] %>
+  <%= indicateur_clean :pouvoir_democratie_nombre_reunions %> (médiane)
+</p>
 
-  <div class="public-stats-body">
+<h2>III. Participation à la <u class="text-secondary text-decoration-none">prise de décision stratégique</h2>
 
-
-
-      <% unless @pouvoir_gouvernance_part_salaries_conseil[:pouvoir_gouvernance_part_salaries_conseil].nil? %>
-          <div class="data-container rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-              <div class="data-intit bg-light text-center p-3"><%= indicateur_clean :pouvoir_gouvernance_part_salaries_conseil %></div>
-              <div class="data-cont bg-white m-0 p-2">
-                  <div class="d-flex">
-                      <%= single_value_pie_chart(@pouvoir_gouvernance_part_salaries_conseil[:pouvoir_gouvernance_part_salaries_conseil]) %>
-                  </div>
-              </div>
-          </div>
-      <% end %>
-
-      <h4 class="my-3 pt-3 pb-4 pt-sm-5 pb-sm-5 my-sm-5"><b class="text-primary">II.</b> Mise en place des <u class="text-secondary text-decoration-none">conditions du bon exercice de la démocratie</u></h4>
-
-      <div class="row">
-          <div class="col">
-              <div class="data-container rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
-                  <div class="data-intit bg-light text-center p-3"><%= indicateur_clean :pouvoir_democratie_nombre_reunions %> (médiane)</div>
-                  <div class="data-cont bg-white m-0 p-2">
-                      <div class="d-flex justify-content-center">
-                          <p class="h1"><%= @pouvoir_democratie_nombres[:pouvoir_democratie_nombre_reunions] %></p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col">
-              <div class="data-container rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
-                  <div class="data-intit bg-light text-center p-3"><%= indicateur_clean :pouvoir_democratie_nombre_accords_signes %> (médiane)</div>
-                  <div class="data-cont bg-white m-0 p-2">
-                      <div class="d-flex justify-content-center">
-                          <p class="h1"><%= @pouvoir_democratie_nombres[:pouvoir_democratie_nombre_accords_signes] %></p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-
-      <h4 class="my-3 pt-3 pb-4 pt-sm-5 pb-sm-5 my-sm-5"><b class="text-primary">III.</b> Participation à la <u class="text-secondary text-decoration-none">prise de décision stratégique</u></h4>
-
-      <div class="row indic-row pb-5">
-          <% unless @pouvoir_strategique_taux[:pouvoir_strategique_taux_presence_assemblee].nil? %>
-              <div class="col col-data mb-5">
-                  <div class="data-container rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
-                      <div class="data-intit bg-light text-center p-3"><%= indicateur_clean :pouvoir_strategique_taux_presence_assemblee %></div>
-                      <div class="data-cont bg-white m-0 p-2">
-                          <div class="d-flex">
-                              <%= single_value_pie_chart(@pouvoir_strategique_taux[:pouvoir_strategique_taux_presence_assemblee]) %>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          <% end %>
-          <% unless @pouvoir_strategique_taux[:pouvoir_strategique_implication_partage].nil? %>
-              <div class="col col-data mb-5">
-                  <div class="data-container rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
-                      <div class="data-intit bg-light text-center p-3"><%= indicateur_clean :pouvoir_strategique_implication_partage %></div>
-                      <div class="data-cont bg-white m-0 p-2">
-                          <div class="d-flex">
-                              <%= single_value_pie_chart(@pouvoir_strategique_taux[:pouvoir_strategique_implication_partage]) %>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          <% end %>
-          <% unless @pouvoir_strategique_taux[:pouvoir_strategique_actifs_total].nil? %>
-              <div class="col col-data mb-5">
-                  <div class="data-container rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
-                      <div class="data-intit bg-light text-center p-3"><%= indicateur_clean :pouvoir_strategique_actifs_total %></div>
-                      <div class="data-cont bg-white m-0 p-2">
-                          <div class="d-flex">
-                              <%= single_value_pie_chart(@pouvoir_strategique_taux[:pouvoir_strategique_actifs_total]) %>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          <% end %>
-      </div>
+<div class="row">
+  <div class="col-md-4">
+    <%= single_value_pie_chart @pouvoir_strategique_taux[:pouvoir_strategique_taux_presence_assemblee] %>
+    <p class="mt-4"><%= indicateur_clean :pouvoir_strategique_taux_presence_assemblee %></p>
+  </div>
+  <div class="col-md-4">
+    <%= single_value_pie_chart(@pouvoir_strategique_taux[:pouvoir_strategique_implication_partage]) %>
+    <p class="mt-4"><%= indicateur_clean :pouvoir_strategique_implication_partage %></p>
+  </div>
+  <div class="col-md-4">
+    <%= single_value_pie_chart(@pouvoir_strategique_taux[:pouvoir_strategique_actifs_total]) %>
+    <p class="mt-4"><%= indicateur_clean :pouvoir_strategique_actifs_total %></p>
   </div>
 </div>
