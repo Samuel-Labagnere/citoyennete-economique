@@ -6,7 +6,7 @@ $colors: (
     "gray": #E2E2E2,
     "blue": $our_blue,
     "orange": #F15921,
-    "green": #007A78,
+    "green": #007A78
 );
 $theme-colors: (
     "primary": #EB225A,
@@ -15,7 +15,9 @@ $theme-colors: (
     "info": #007CAA,
     "danger": #F15921,
     "light": #f8f9fa,
-    "dark": #231F20
+    "dark": #231F20,
+    "white": $our_white,
+    "body-bg": $our_white
 );
-
+$body-bg: $our_white;
 $primary: #EB225A;
