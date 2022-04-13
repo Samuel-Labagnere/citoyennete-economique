@@ -37,7 +37,7 @@
                        .group(:pouvoir_gouvernance_diversite_categories)
                        .count %>
     <p class="text-center mt-3">
-      Catégories d'associés
+      <%= indicateur_clean :pouvoir_gouvernance_diversite_categories %>
     </p>
   </div>
   <div class="col-md-6">
@@ -45,7 +45,7 @@
                                     .up_to_date
                                     .median(:pouvoir_gouvernance_part_salaries_conseil) %>
     <p class="text-center mt-3">
-      Part de salariés participant au conseil d'administration ou de surveillance
+      <%= indicateur_clean :pouvoir_gouvernance_part_salaries_conseil %>
     </p>
   </div>
 </div>
@@ -69,15 +69,27 @@
 
 <div class="row">
   <div class="col-md-4">
-    <%= single_value_pie_chart @pouvoir_strategique_taux[:pouvoir_strategique_taux_presence_assemblee] %>
-    <p class="mt-4"><%= indicateur_clean :pouvoir_strategique_taux_presence_assemblee %></p>
+    <%= single_value_pie_chart State.evaluations
+                                    .up_to_date
+                                    .median(:pouvoir_strategique_taux_presence_assemblee) %>
+    <p class="mt-3">
+      <%= indicateur_clean :pouvoir_strategique_taux_presence_assemblee %>
+    </p>
   </div>
   <div class="col-md-4">
-    <%= single_value_pie_chart(@pouvoir_strategique_taux[:pouvoir_strategique_implication_partage]) %>
-    <p class="mt-4"><%= indicateur_clean :pouvoir_strategique_implication_partage %></p>
+    <%= single_value_pie_chart State.evaluations
+                                .up_to_date
+                                .median(:pouvoir_strategique_implication_partage) %>
+    <p class="mt-3">
+      <%= indicateur_clean :pouvoir_strategique_implication_partage %>
+    </p>
   </div>
   <div class="col-md-4">
-    <%= single_value_pie_chart(@pouvoir_strategique_taux[:pouvoir_strategique_actifs_total]) %>
-    <p class="mt-4"><%= indicateur_clean :pouvoir_strategique_actifs_total %></p>
+        <%= single_value_pie_chart State.evaluations
+                                .up_to_date
+                                .median(:pouvoir_strategique_actifs_total) %>
+    <p class="mt-3">
+      <%= indicateur_clean :pouvoir_strategique_actifs_total %>
+    </p>
   </div>
 </div>
