@@ -101,58 +101,38 @@ class Aggregate
   }
   end
 
-  def pillar3
-    @qualite_qvt_enquete_qvt = single_boolean(@latest_indicateurs_lists, :qualite_qvt_enquete_qvt)
+  # PILLAR 4
 
-    @qualite_qvt_taux_all = {
-      indicateur_clean(:qualite_qvt_taux_qvt) => @latest_indicateurs_lists.median(:qualite_qvt_taux_qvt),
-      indicateur_clean(:qualite_qvt_part_cdi) => @latest_indicateurs_lists.median(:qualite_qvt_part_cdi),
-      indicateur_clean(:qualite_qvt_taux_turnover) => @latest_indicateurs_lists.median(:qualite_qvt_taux_turnover),
-      indicateur_clean(:qualite_qvt_taux_absenteisme) => @latest_indicateurs_lists.median(:qualite_qvt_taux_absenteisme)
-    }
-
-    @qualite_qvt_moyenne_anciennete = @latest_indicateurs_lists.average(:qualite_qvt_moyenne_anciennete)
-    @qualite_emancipation_moyenne_heures_formation = @latest_indicateurs_lists.average(:qualite_emancipation_moyenne_heures_formation)
-
-    @qualite_emancipation_taux = {
-      indicateur_clean(:qualite_emancipation_taux_budget_formation_masse_salariale) => @latest_indicateurs_lists.median(:qualite_emancipation_taux_budget_formation_masse_salariale),
-      indicateur_clean(:qualite_emancipation_taux_direction_promotion_interne) => @latest_indicateurs_lists.median(:qualite_emancipation_taux_direction_promotion_interne)
-    }
-  end
-
-  def pillar4
-    @impact_environnement_booleens = boolean_group(@latest_indicateurs_lists, [
+  def impact_environnement_booleens
+    boolean_group(@latest_states, [
       :impact_environnement_audit_impact,
       :impact_environnement_demarche_ecologique,
       :impact_environnement_discussion_impact
     ])
-
-    @impact_environnement_part_energies_renouvelables = @latest_indicateurs_lists.median(:impact_environnement_part_energies_renouvelables)
-    @impact_environnement_part_salaries_mobilite = @latest_indicateurs_lists.median(:impact_environnement_part_salaries_mobilite)
-
-    scope1 = @latest_indicateurs_lists.where(impact_environnement_bilan_carbone_scope_1: true).count
-    scope2 = @latest_indicateurs_lists.where(impact_environnement_bilan_carbone_scope_2: true).count
-    scope3 = @latest_indicateurs_lists.where(impact_environnement_bilan_carbone_scope_3: true).count
-
-    @impact_environnement_scope_booleens = {
-      indicateur_clean(:impact_environnement_bilan_carbone_scope_1) => (scope1.to_f / @latest_indicateurs_lists.count * 100),
-      indicateur_clean(:impact_environnement_bilan_carbone_scope_2) => (scope2.to_f / @latest_indicateurs_lists.count * 100),
-      indicateur_clean(:impact_environnement_bilan_carbone_scope_3) => (scope3.to_f / @latest_indicateurs_lists.count * 100),
-      'Total' => ((scope1 + scope2 + scope3).to_f / @latest_indicateurs_lists.count * 100)
-    }
-
-    @impact_social_part_activite_structures_insertion = @latest_indicateurs_lists.median(:impact_social_part_activite_structures_insertion)
-    @impact_social_alternance_apprentissage = @latest_indicateurs_lists.median(:impact_social_alternance_apprentissage)
-    @impact_social_part_seniors = @latest_indicateurs_lists.median(:impact_social_part_seniors)
-    @impact_social_part_handicap = @latest_indicateurs_lists.median(:impact_social_part_handicap)
-
-    @impact_engagement = {
-      indicateur_clean(:impact_engagement_part_resultat_missions_utiles) => @latest_indicateurs_lists.median(:impact_engagement_part_resultat_missions_utiles),
-      indicateur_clean(:impact_engagement_part_placements_responsables) => @latest_indicateurs_lists.median(:impact_engagement_part_placements_responsables),
-      indicateur_clean(:impact_engagement_part_impots_france) => @latest_indicateurs_lists.median(:impact_engagement_part_impots_france)
-    }
-
-    @impact_engagement_demarche_ethique_fournisseurs = single_boolean(@latest_indicateurs_lists, :impact_engagement_demarche_ethique_fournisseurs)
   end
 
+  def impact_environnement_scope_booleens
+    scope1 = @latest_states.where(impact_environnement_bilan_carbone_scope_1: true).count
+    scope2 = @latest_states.where(impact_environnement_bilan_carbone_scope_2: true).count
+    scope3 = @latest_states.where(impact_environnement_bilan_carbone_scope_3: true).count
+
+    {
+      indicateur_clean(:impact_environnement_bilan_carbone_scope_1) => (scope1.to_f / @latest_states.count * 100),
+      indicateur_clean(:impact_environnement_bilan_carbone_scope_2) => (scope2.to_f / @latest_states.count * 100),
+      indicateur_clean(:impact_environnement_bilan_carbone_scope_3) => (scope3.to_f / @latest_states.count * 100),
+      'Total' => ((scope1 + scope2 + scope3).to_f / @latest_states.count * 100)
+    }
+  end
+
+  def impact_engagement
+  {
+    indicateur_clean(:impact_engagement_part_resultat_missions_utiles) => @latest_states.median(:impact_engagement_part_resultat_missions_utiles),
+    indicateur_clean(:impact_engagement_part_placements_responsables) => @latest_states.median(:impact_engagement_part_placements_responsables),
+    indicateur_clean(:impact_engagement_part_impots_france) => @latest_states.median(:impact_engagement_part_impots_france)
+  }
+  end
+
+  def impact_engagement_demarche_ethique_fournisseurs
+    single_boolean(@latest_states, :impact_engagement_demarche_ethique_fournisseurs)
+  end
 end
