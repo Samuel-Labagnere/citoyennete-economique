@@ -3,6 +3,7 @@
   .card {
     min-height: 200px;
     box-shadow: 8px 8px 0px $primary;
+    transition: .3s ease;
     .card-body {
       span {
         font-size: 4rem;
@@ -12,6 +13,10 @@
         font-family: 'Alata';
         font-weight: bold;
       }
+    }
+    &:hover {
+      box-shadow: none;
+      transition: .3s ease;
     }
   }
 }
