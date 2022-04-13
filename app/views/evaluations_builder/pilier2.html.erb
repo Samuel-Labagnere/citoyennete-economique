@@ -8,10 +8,10 @@
     <% end %>
     <h2 class="h3"><span class="text-secondary fs-2 me-1 m-0">2.</span>Pérennité économique et partage de la valeur créée</h2>
   </header>
-  
-  <%= simple_form_for @evaluation, url: wizard_path, method: :put, data: {turbo: false} do |f| %>
+
+  <%= simple_form_for @evaluation, url: wizard_path, method: :put do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
-    <%= f.association :indicateurs_list do |il| %>
+    <%= f.association :state do |il| %>
 
     <div class="container-fluid w-100 d-flex flex-wrap justify-content-center">
 
@@ -57,7 +57,7 @@
         <div class="estim col-8 col-sm-10 text-break rounded bg-white shadow border-start border-secondary pt-3 pb-3 pe-4 ps-4 mt-3 mb-5 col-input">
             <%= il.input :valeur_estimation_realite %>
         </div>
-      
+
       </div>
 
     </div>

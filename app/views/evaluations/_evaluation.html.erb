@@ -1,3 +1,4 @@
+<% state = evaluation.state %>
 <div id="<%= dom_id evaluation %>">
   <p>
     <strong>Année :</strong>
@@ -6,277 +7,277 @@
 
   <p>
     <strong><%= indicateur_clean :pouvoir_gouvernance_part_salaries_associes %> : </strong>
-    <%= evaluation.indicateurs_list.pouvoir_gouvernance_part_salaries_associes %>
+    <%= state.pouvoir_gouvernance_part_salaries_associes %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :pouvoir_gouvernance_taux_societariat_femmes %> : </strong>
-    <%= evaluation.indicateurs_list.pouvoir_gouvernance_taux_societariat_femmes %>
+    <%= state.pouvoir_gouvernance_taux_societariat_femmes %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :pouvoir_gouvernance_part_salaries_conseil %> : </strong>
-    <%= evaluation.indicateurs_list.pouvoir_gouvernance_part_salaries_conseil %>
+    <%= state.pouvoir_gouvernance_part_salaries_conseil %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :pouvoir_gouvernance_part_femmes_conseil %> : </strong>
-    <%= evaluation.indicateurs_list.pouvoir_gouvernance_part_femmes_conseil %>
+    <%= state.pouvoir_gouvernance_part_femmes_conseil %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :pouvoir_gouvernance_diversite_categories %> : </strong>
-    <%= evaluation.indicateurs_list.pouvoir_gouvernance_diversite_categories %>
+    <%= state.pouvoir_gouvernance_diversite_categories %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :pouvoir_democratie_nombre_reunions %> : </strong>
-    <%= evaluation.indicateurs_list.pouvoir_democratie_nombre_reunions %>
+    <%= state.pouvoir_democratie_nombre_reunions %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :pouvoir_democratie_taux_participation_formations %> : </strong>
-    <%= evaluation.indicateurs_list.pouvoir_democratie_taux_participation_formations %>
+    <%= state.pouvoir_democratie_taux_participation_formations %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :pouvoir_democratie_nombre_accords_signes %> : </strong>
-    <%= evaluation.indicateurs_list.pouvoir_democratie_nombre_accords_signes %>
+    <%= state.pouvoir_democratie_nombre_accords_signes %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :pouvoir_democratie_accords_signes %> : </strong>
-    <%= evaluation.indicateurs_list.pouvoir_democratie_accords_signes %>
+    <%= state.pouvoir_democratie_accords_signes %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :pouvoir_strategique_taux_presence_assemblee %> : </strong>
-    <%= evaluation.indicateurs_list.pouvoir_strategique_taux_presence_assemblee %>
+    <%= state.pouvoir_strategique_taux_presence_assemblee %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :pouvoir_strategique_actifs_total %> : </strong>
-    <%= evaluation.indicateurs_list.pouvoir_strategique_actifs_total %>
+    <%= state.pouvoir_strategique_actifs_total %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :pouvoir_estimation_realite %> : </strong>
-    <%= evaluation.indicateurs_list.pouvoir_estimation_realite %>
+    <%= state.pouvoir_estimation_realite %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :valeur_perennite_part_capital_salaries %> : </strong>
-    <%= evaluation.indicateurs_list.valeur_perennite_part_capital_salaries %>
+    <%= state.valeur_perennite_part_capital_salaries %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :valeur_perennite_existence_reserve %> : </strong>
-    <%= evaluation.indicateurs_list.valeur_perennite_existence_reserve %>
+    <%= state.valeur_perennite_existence_reserve %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :valeur_perennite_reserve_impartageable %> : </strong>
-    <%= evaluation.indicateurs_list.valeur_perennite_reserve_impartageable %>
+    <%= state.valeur_perennite_reserve_impartageable %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :valeur_perennite_part_resultat_reserve %> : </strong>
-    <%= evaluation.indicateurs_list.valeur_perennite_part_resultat_reserve %>
+    <%= state.valeur_perennite_part_resultat_reserve %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :valeur_perennite_ebe_caht %> : </strong>
-    <%= evaluation.indicateurs_list.valeur_perennite_ebe_caht %>
+    <%= state.valeur_perennite_ebe_caht %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :valeur_perennite_part_endettement %> : </strong>
-    <%= evaluation.indicateurs_list.valeur_perennite_part_endettement %>
+    <%= state.valeur_perennite_part_endettement %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :valeur_perennite_attention_questions_innovation  %> : </strong>
-    <%= evaluation.indicateurs_list.valeur_perennite_attention_questions_innovation %>
+    <%= state.valeur_perennite_attention_questions_innovation %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :valeur_partage_part_resultat_net_actionnaires %> : </strong>
-    <%= evaluation.indicateurs_list.valeur_partage_part_resultat_net_actionnaires %>
+    <%= state.valeur_partage_part_resultat_net_actionnaires %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :valeur_partage_existence_accord %> : </strong>
-    <%= evaluation.indicateurs_list.valeur_partage_existence_accord %>
+    <%= state.valeur_partage_existence_accord %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :valeur_partage_existence_epargne_salariale %> : </strong>
-    <%= evaluation.indicateurs_list.valeur_partage_existence_epargne_salariale %>
+    <%= state.valeur_partage_existence_epargne_salariale %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :valeur_partage_part_resultat_salaries %> : </strong>
-    <%= evaluation.indicateurs_list.valeur_partage_part_resultat_salaries %>
+    <%= state.valeur_partage_part_resultat_salaries %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :valeur_partage_existence_grille_salariale %> : </strong>
-    <%= evaluation.indicateurs_list.valeur_partage_existence_grille_salariale %>
+    <%= state.valeur_partage_existence_grille_salariale %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :valeur_partage_publicite_grille %> : </strong>
-    <%= evaluation.indicateurs_list.valeur_partage_publicite_grille %>
+    <%= state.valeur_partage_publicite_grille %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :valeur_partage_ecart_revenus_hauts_bas  %> : </strong>
-    <%= evaluation.indicateurs_list.valeur_partage_ecart_revenus_hauts_bas %>
+    <%= state.valeur_partage_ecart_revenus_hauts_bas %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :valeur_partage_index_egalite_homme_femme %> : </strong>
-    <%= evaluation.indicateurs_list.valeur_partage_index_egalite_homme_femme %>
+    <%= state.valeur_partage_index_egalite_homme_femme %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :valeur_estimation_realite %> : </strong>
-    <%= evaluation.indicateurs_list.valeur_estimation_realite %>
+    <%= state.valeur_estimation_realite %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :qualite_qvt_enquete_qvt %> : </strong>
-    <%= evaluation.indicateurs_list.qualite_qvt_enquete_qvt %>
+    <%= state.qualite_qvt_enquete_qvt %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :qualite_qvt_taux_qvt %> : </strong>
-    <%= evaluation.indicateurs_list.qualite_qvt_taux_qvt %>
+    <%= state.qualite_qvt_taux_qvt %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :qualite_qvt_part_cdi %> : </strong>
-    <%= evaluation.indicateurs_list.qualite_qvt_part_cdi %>
+    <%= state.qualite_qvt_part_cdi %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :qualite_qvt_moyenne_anciennete %> : </strong>
-    <%= evaluation.indicateurs_list.qualite_qvt_moyenne_anciennete %>
+    <%= state.qualite_qvt_moyenne_anciennete %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :qualite_qvt_taux_turnover %> : </strong>
-    <%= evaluation.indicateurs_list.qualite_qvt_taux_turnover %>
+    <%= state.qualite_qvt_taux_turnover %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :qualite_qvt_taux_absenteisme %> : </strong>
-    <%= evaluation.indicateurs_list.qualite_qvt_taux_absenteisme %>
+    <%= state.qualite_qvt_taux_absenteisme %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :qualite_emancipation_moyenne_heures_formation %> : </strong>
-    <%= evaluation.indicateurs_list.qualite_emancipation_moyenne_heures_formation %>
+    <%= state.qualite_emancipation_moyenne_heures_formation %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :qualite_emancipation_taux_budget_formation_masse_salariale %> : </strong>
-    <%= evaluation.indicateurs_list.qualite_emancipation_taux_budget_formation_masse_salariale %>
+    <%= state.qualite_emancipation_taux_budget_formation_masse_salariale %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :qualite_emancipation_taux_direction_promotion_interne %> : </strong>
-    <%= evaluation.indicateurs_list.qualite_emancipation_taux_direction_promotion_interne %>
+    <%= state.qualite_emancipation_taux_direction_promotion_interne %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :qualite_estimation_realite %> : </strong>
-    <%= evaluation.indicateurs_list.qualite_estimation_realite %>
+    <%= state.qualite_estimation_realite %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :impact_environnement_audit_impact %> : </strong>
-    <%= evaluation.indicateurs_list.impact_environnement_audit_impact %>
+    <%= state.impact_environnement_audit_impact %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :impact_environnement_demarche_ecologique %> : </strong>
-    <%= evaluation.indicateurs_list.impact_environnement_demarche_ecologique %>
+    <%= state.impact_environnement_demarche_ecologique %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :impact_environnement_part_energies_renouvelables %> : </strong>
-    <%= evaluation.indicateurs_list.impact_environnement_part_energies_renouvelables %>
+    <%= state.impact_environnement_part_energies_renouvelables %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :impact_environnement_part_salaries_mobilite %> : </strong>
-    <%= evaluation.indicateurs_list.impact_environnement_part_salaries_mobilite %>
+    <%= state.impact_environnement_part_salaries_mobilite %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :impact_environnement_discussion_impact %> : </strong>
-    <%= evaluation.indicateurs_list.impact_environnement_discussion_impact %>
+    <%= state.impact_environnement_discussion_impact %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :impact_environnement_bilan_carbone_scope_1 %> : </strong>
-    <%= evaluation.indicateurs_list.impact_environnement_bilan_carbone_scope_1 %>
+    <%= state.impact_environnement_bilan_carbone_scope_1 %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :impact_environnement_bilan_carbone_scope_2 %> : </strong>
-    <%= evaluation.indicateurs_list.impact_environnement_bilan_carbone_scope_2 %>
+    <%= state.impact_environnement_bilan_carbone_scope_2 %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :impact_environnement_bilan_carbone_scope_3 %> : </strong>
-    <%= evaluation.indicateurs_list.impact_environnement_bilan_carbone_scope_3 %>
+    <%= state.impact_environnement_bilan_carbone_scope_3 %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :impact_social_part_activite_structures_insertion %> : </strong>
-    <%= evaluation.indicateurs_list.impact_social_part_activite_structures_insertion %>
+    <%= state.impact_social_part_activite_structures_insertion %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :impact_social_alternance_apprentissage %> : </strong>
-    <%= evaluation.indicateurs_list.impact_social_alternance_apprentissage %>
+    <%= state.impact_social_alternance_apprentissage %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :impact_social_part_seniors %> : </strong>
-    <%= evaluation.indicateurs_list.impact_social_part_seniors %>
+    <%= state.impact_social_part_seniors %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :impact_social_part_handicap %> : </strong>
-    <%= evaluation.indicateurs_list.impact_social_part_handicap %>
+    <%= state.impact_social_part_handicap %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :impact_engagement_part_resultat_missions_utiles %> : </strong>
-    <%= evaluation.indicateurs_list.impact_engagement_part_resultat_missions_utiles %>
+    <%= state.impact_engagement_part_resultat_missions_utiles %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :impact_engagement_part_placements_responsables %> : </strong>
-    <%= evaluation.indicateurs_list.impact_engagement_part_placements_responsables %>
+    <%= state.impact_engagement_part_placements_responsables %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :impact_engagement_part_impots_france %> : </strong>
-    <%= evaluation.indicateurs_list.impact_engagement_part_impots_france %>
+    <%= state.impact_engagement_part_impots_france %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :impact_engagement_demarche_ethique_fournisseurs %> : </strong>
-    <%= evaluation.indicateurs_list.impact_engagement_demarche_ethique_fournisseurs %>
+    <%= state.impact_engagement_demarche_ethique_fournisseurs %>
   </p>
 
   <p>
     <strong><%= indicateur_clean :impact_estimation_realite %> : </strong>
-    <%= evaluation.indicateurs_list.impact_estimation_realite %>
+    <%= state.impact_estimation_realite %>
   </p>
 
 </div>

@@ -8,10 +8,10 @@
     <% end %>
     <h2 class="h3"><span class="text-secondary fs-2 me-1 m-0">3.</span>Capital humain et qualité de vie au travail</h2>
   </header>
-  
-  <%= simple_form_for @evaluation, url: wizard_path, method: :put, data: {turbo: false} do |f| %>
+
+  <%= simple_form_for @evaluation, url: wizard_path, method: :put do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
-    <%= f.association :indicateurs_list do |il| %>
+    <%= f.association :state do |il| %>
 
     <div class="container-fluid w-100 d-flex flex-wrap justify-content-center">
 

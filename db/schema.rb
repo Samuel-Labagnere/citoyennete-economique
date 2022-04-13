@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_12_065222) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_13_102852) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,7 +27,40 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_12_065222) do
     t.index ["organisation_id"], name: "index_evaluations_on_organisation_id"
   end
 
-  create_table "indicateurs_lists", force: :cascade do |t|
+  create_table "invitation_codes", force: :cascade do |t|
+    t.string "code"
+    t.bigint "organisation_id", null: false
+    t.datetime "expires_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["organisation_id"], name: "index_invitation_codes_on_organisation_id"
+  end
+
+  create_table "objectifs_lists", force: :cascade do |t|
+    t.bigint "organisation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["organisation_id"], name: "index_objectifs_lists_on_organisation_id"
+  end
+
+  create_table "organisations", force: :cascade do |t|
+    t.string "nom", null: false
+    t.integer "statut_juridique", null: false
+    t.integer "date_creation", null: false
+    t.string "secteur_activite", null: false
+    t.string "ape", null: false
+    t.string "siren", null: false
+    t.string "agrement_specifique"
+    t.boolean "objectifs_extra_financiers"
+    t.text "distinctions"
+    t.string "valeurs_entreprise"
+    t.boolean "validation_admin", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["siren"], name: "index_organisations_on_siren", unique: true
+  end
+
+  create_table "states", force: :cascade do |t|
     t.bigint "evaluation_id"
     t.bigint "objectifs_list_id"
     t.float "pouvoir_gouvernance_part_salaries_associes"
@@ -89,41 +122,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_12_065222) do
     t.integer "impact_estimation_realite"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["evaluation_id"], name: "index_indicateurs_lists_on_evaluation_id"
-    t.index ["objectifs_list_id"], name: "index_indicateurs_lists_on_objectifs_list_id"
-  end
-
-  create_table "invitation_codes", force: :cascade do |t|
-    t.string "code"
-    t.bigint "organisation_id", null: false
-    t.datetime "expires_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["organisation_id"], name: "index_invitation_codes_on_organisation_id"
-  end
-
-  create_table "objectifs_lists", force: :cascade do |t|
-    t.bigint "organisation_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["organisation_id"], name: "index_objectifs_lists_on_organisation_id"
-  end
-
-  create_table "organisations", force: :cascade do |t|
-    t.string "nom", null: false
-    t.integer "statut_juridique", null: false
-    t.integer "date_creation", null: false
-    t.string "secteur_activite", null: false
-    t.string "ape", null: false
-    t.string "siren", null: false
-    t.string "agrement_specifique"
-    t.boolean "objectifs_extra_financiers"
-    t.text "distinctions"
-    t.string "valeurs_entreprise"
-    t.boolean "validation_admin", default: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["siren"], name: "index_organisations_on_siren", unique: true
+    t.boolean "up_to_date", default: false
+    t.index ["evaluation_id"], name: "index_states_on_evaluation_id"
+    t.index ["objectifs_list_id"], name: "index_states_on_objectifs_list_id"
   end
 
   create_table "users", force: :cascade do |t|
