@@ -8,10 +8,6 @@ Rails.application.routes.draw do
 
   devise_for :users, path: '', path_names: { sign_in: "connexion", sign_out: "deconnexion", sign_up: "inscription", edit: "compte" }
   resources :organisations
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  root "home#index"
   get "dashboard", to: "dashboard#index", as: "user_root"
   get "admin", to: "admin#index"
   # get "entreprises", to: "organisations#public_list"
@@ -28,4 +24,5 @@ Rails.application.routes.draw do
   post 'code_invitation', to: "invitation_code#join"
 
   get 'resultats/:evaluation_id', to: "resultats#index", as: "resultats"
+  root "home#index"
 end

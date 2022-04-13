@@ -13,7 +13,9 @@
       <div class="card-body">
         <span class="text-secondary">1.</span>
         <h4 class="card-title">
-          Partage du <b class="text-secondary">pouvoir</b> et des <b class="text-secondary">décisions</b>
+          <%= link_to pilier_1_path, class: 'stretched-link text-black' do %>
+            Partage du <b class="text-secondary">pouvoir</b> et des <b class="text-secondary">décisions</b>
+          <% end %>
         </h4>
       </div>
     </div>
@@ -23,7 +25,9 @@
       <div class="card-body">
         <span class="text-primary e d-flex">2.</span>
         <h4 class="card-title">
-          <b class="text-primary">Pérennité</b> économique et <b class="text-primary">partage</b> de la valeur créée
+          <%= link_to pilier_2_path, class: 'stretched-link text-black' do %>
+            <b class="text-primary">Pérennité</b> économique et <b class="text-primary">partage</b> de la valeur créée
+          <% end %>
         </h4>
       </div>
     </div>
@@ -33,7 +37,9 @@
       <div class="card-body">
         <span class="text-secondary d-flex">3.</span>
         <h4 class="card-title">
-          Capital <b class="text-secondary">humain</b> et Qualité de <b class="text-secondary">vie</b> au travail
+          <%= link_to pilier_3_path, class: 'stretched-link text-black' do %>
+            Capital <b class="text-secondary">humain</b> et Qualité de <b class="text-secondary">vie</b> au travail
+          <% end %>
         </h4>
       </div>
     </div>
@@ -43,7 +49,9 @@
       <div class="card-body">
         <span class="text-primary d-flex">4.</span>
         <h4 class="card-title">
-          Impact <b class="text-primary">environnemental</b>, <b class="text-primary">social</b> et <b class="text-primary">territorial</b>
+          <%= link_to pilier_4_path, class: 'stretched-link text-black' do %>
+            Impact <b class="text-primary">environnemental</b>, <b class="text-primary">social</b> et <b class="text-primary">territorial</b>
+          <% end %>
         </h4>
       </div>
     </div>
@@ -87,13 +95,15 @@
   <div class="col-lg-4">
     <div class="card border-0 bg-transparent">
       <h3 class="text-primary">Les SCOP</h3>
-      <h4>
-        <a class="stretched-link" href="https://www.les-scop.coop/les-scop" target="_blank">
-          Sociétés coopératives et participatives
-        </a>
-      </h4>
+      <p>
+        <b>
+          <a class="stretched-link" href="https://www.les-scop.coop/les-scop" target="_blank">
+            Sociétés coopératives et participatives
+          </a>
+        </b>
+      </p>
+      <p>Les sociétés coopératives correspondent à un modèle de gouvernance fondé sur la transparence, le partage des informations sur la stratégie et les résultats. Les objectifs sont clairement définis et s’inscrivent dans les enjeux actuels : on ne peut pas faire une transition écologique, économique et sociale, sans une implication plus forte des salariés et les entreprises.</p>
     </div>
-    <p>Les sociétés coopératives correspondent à un modèle de gouvernance fondé sur la transparence, le partage des informations sur la stratégie et les résultats. Les objectifs sont clairement définis et s’inscrivent dans les enjeux actuels : on ne peut pas faire une transition écologique, économique et sociale, sans une implication plus forte des salariés et les entreprises.</p>
 
       <blockquote class="blockquote">
         « L’entreprise n’a-t-elle pas un <b class="text-secondary">rôle</b> à jouer pour le <b class="text-secondary">bien de la cité</b> ? »
