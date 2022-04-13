@@ -20,12 +20,17 @@ module ApplicationHelper
   def single_value_pie_chart(value, suffix: nil, max: nil)
     suffix ||= "%"
     max ||= 100
-    value = value.round
 
-    data = {
-      "value" => value,
-      "remainder" => (max - value)
-    }
+    if value.present?
+      value = value.round
+
+      data = {
+        "value" => value,
+        "remainder" => (max - value)
+      }
+    else
+      data = {}
+    end
 
     pie_chart data,
               donut: true,
