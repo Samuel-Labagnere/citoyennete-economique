@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-lg-8">
+    <h1><b class="text-secondary">1.</b> Partage du pouvoir et des décisions</h1>
+    <p class="lead">
+      Le premier pilier, dont les trois autres découlent, la <b class="text-secondary">gouvernance démocratique</b> s’exprime par le <b class="text-secondary">partage du pouvoir et des décisions</b>.
+      <br/><br/>
+      La robustesse de ce pilier dédié à la gouvernance démocratique est un indicateur à part entière de la capacité de l’entreprise à déployer les actions quant à sa pérennité économique et le partage de la valeur créée, la qualité de vie au travail et le bien-être des salariés, mais également les actions à impact social, environnemental et territorial. La composition de la gouvernance est l’élément le plus visible, nécessaire à interroger s’agissant de l’expression d’un pouvoir partagé. Il convient cependant d’apprécier les conditions de mise en œuvre par la mise à disposition des connaissances ainsi que les expressions de participation des parties prenantes internes.
+    </p>
+  </div>
+</div>
+
+<h2><b class="text-primary">I.</b>Composition de la gouvernance</h2>
+
+<div class="mb-5">
+  <%= bar_chart @pouvoir_gouvernance_taux, suffix: "%", title: 'Indicateurs clés (taux médians)' %>
+</div>
+<table class="table mb-5">
+    <thead>
+        <tr>
+            <th scope="col">Indicateur</th>
+            <th scope="col">Valeur médiane</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div class="row">
+  <div class="col-md-4">
+    <%= pie_chart @pouvoir_gouvernance_diversite_categories  %>
+    <p>Catégories d'associés</p>
+  </div>
+</div>
+
+<% unless @pouvoir_gouvernance_part_salaries_conseil.nil? %>
+  <h3><%= indicateur_clean :pouvoir_gouvernance_part_salaries_conseil %></h3>
+  <%= single_value_pie_chart(@pouvoir_gouvernance_part_salaries_conseil) %>
+<% end %>
+
+<h2><b class="text-primary">II.</b> Mise en place des <span class="text-secondary">conditions du bon exercice de la démocratie</span></h2>
+<p class="lead">
+  <%= @pouvoir_democratie_nombres[:pouvoir_democratie_nombre_reunions] %>
+  <%= indicateur_clean :pouvoir_democratie_nombre_reunions %> (médiane)
+</p>
+
+<h2>III. Participation à la <u class="text-secondary text-decoration-none">prise de décision stratégique</h2>
+
+<div class="row">
+  <div class="col-md-4">
+    <%= single_value_pie_chart @pouvoir_strategique_taux[:pouvoir_strategique_taux_presence_assemblee] %>
+    <p class="mt-4"><%= indicateur_clean :pouvoir_strategique_taux_presence_assemblee %></p>
+  </div>
+  <div class="col-md-4">
+    <%= single_value_pie_chart(@pouvoir_strategique_taux[:pouvoir_strategique_implication_partage]) %>
+    <p class="mt-4"><%= indicateur_clean :pouvoir_strategique_implication_partage %></p>
+  </div>
+  <div class="col-md-4">
+    <%= single_value_pie_chart(@pouvoir_strategique_taux[:pouvoir_strategique_actifs_total]) %>
+    <p class="mt-4"><%= indicateur_clean :pouvoir_strategique_actifs_total %></p>
+  </div>
+</div>

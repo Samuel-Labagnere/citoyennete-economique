@@ -7,19 +7,24 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="icon" href="/favicon.ico"/>
   </head>
+<<<<<<< HEAD
 
   <body>
     <%= render 'nav' %>
     <main>
+=======
+  <body class="bg-white">
+    <%= render 'nav' %>
+    <div id="wrapper" class="bg-light py-5">
+>>>>>>> 79a72952c14d0d1e676657d18c9a94b00d81430b
       <div class="container py-5 mt-5">
         <%= render 'flash' %>
         <%= yield %>
       </div>
     </main>
     <%= render 'footer' %>
-
-
   </body>
 </html>
