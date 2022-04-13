@@ -7,8 +7,6 @@
 @import 'components/card';
 @import 'components/navbar';
 @import 'components/dropdown';
-@import "bootstrap/scss/bootstrap";
+@import 'pages/home';
 
-.card {
-    min-height: 200px;
-  }
+@import "bootstrap/scss/bootstrap";
