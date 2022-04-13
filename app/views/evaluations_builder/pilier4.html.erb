@@ -13,7 +13,7 @@
 
     <h3 class="text-primary">Impact environnemental</h3>
 
-    <div class="row align-items-baseline">
+    <div class="row align-items-baseline m-5">
       <div class="col-md-4 mb-4">
       <%= il.input :impact_environnement_audit_impact, as: :radio_buttons %>
       </div>
@@ -37,7 +37,7 @@
       </div>
     </div>
 
-    <h3 class="text-primary">Impact social</h3>
+    <h3 class="text-primary mb-5 mt-5">Impact social</h3>
 
     <div class="row align-items-baseline">
       <div class="col-md-4 mb-4">
@@ -54,7 +54,7 @@
       </div>
     </div>
 
-    <h3 class="text-primary">Engagement en faveur de l'écosystème et du territoire</h3>
+    <h3 class="text-primary mb-5 mt-5">Engagement en faveur de l'écosystème et du territoire</h3>
 
     <div class="row align-items-baseline">
       <div class="col-md-4 mb-4">
@@ -78,7 +78,7 @@
   <% end %>
 
   <div class="d-flex mt-5">
-      <%= link_to 'Précédent', wizard_path(@previous_step), class: 'btn btn-primary me-auto ms-auto d-flex mb-5' %>
-      <%= f.button :submit, "Suivant", class: 'btn btn-primary me-auto ms-auto d-flex mb-5' %>
+      <%= link_to 'Précédent', wizard_path(@previous_step), class: 'btn btn-primary me-auto ms-auto d-flex mb-5 text-white' %>
+      <%= f.button :submit, "Suivant", class: 'btn btn-primary me-auto ms-auto d-flex mb-5 text-white' %>
   </div>
 <% end %>

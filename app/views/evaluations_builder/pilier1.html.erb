@@ -11,7 +11,7 @@
 <%= render 'shared/error_messages', object: f.object %>
 	<%= f.association :indicateurs_list do |il| %>
 
-		<h3 class="text-primary">Composition de la gouvernance</h3>
+		<h3 class="text-primary mb-5">Composition de la gouvernance</h3>
 				
 		<div class="row align-items-baseline">
 				<div class="col-md-4 mb-4">
@@ -32,7 +32,7 @@
 		</div>
 		<%= il.input :pouvoir_gouvernance_diversite_categories, as: :check_boxes, collection: ['Salariés', 'Investisseurs', 'Fournisseurs', 'Sous-traitants', 'Clients', 'Experts', 'Syndicats', 'Pouvoirs publics', 'Associations', 'Grand public', 'Autres'], include_hidden: false %>
 
-		<h3 class="text-primary mt-5">Conditions du bon exercice de la démocratie</h3>
+		<h3 class="text-primary mt-5 mb-5">Conditions du bon exercice de la démocratie</h3>
 
 		<div class="row align-items-baseline">
 				<div class="col-md-4 mb-4">
@@ -50,7 +50,7 @@
 				</div>
 		</div>
 
-		<h3 class="text-primary mt-5">Participation à la prise de décision stratégique</h3>
+		<h3 class="text-primary mt-5 mb-5">Participation à la prise de décision stratégique</h3>
 
 		<div class="row align-items-baseline">
 				<div class="col-md-4 mb-4">
@@ -69,7 +69,7 @@
 	<% end %>
 
 	<div class="d-flex mt-5">
-			<%= link_to 'Précédent', wizard_path(@previous_step), class: 'btn btn-primary me-auto ms-auto d-flex mb-5' %>
-			<%= f.button :submit, "Suivant", class: 'btn btn-primary me-auto ms-auto d-flex mb-5' %>
+			<%= link_to 'Précédent', wizard_path(@previous_step), class: 'btn btn-primary me-auto ms-auto d-flex mb-5 text-white' %>
+			<%= f.button :submit, "Suivant", class: 'btn btn-primary me-auto ms-auto d-flex mb-5 text-white' %>
 	</div>
 <% end %>
