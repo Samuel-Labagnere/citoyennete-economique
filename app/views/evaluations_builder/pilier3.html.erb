@@ -5,15 +5,16 @@
     Édition de l'évaluation de l'année <%= @evaluation.annee %>
   <% end %>
 </h1>
-<h2 class="text-secondary"><span class="fs-2 me-1 m-0">3.</span>Capital humain et qualité de vie au travail</h2>
+
+<h2><span class="me-1 m-0">3.</span>Capital humain et qualité de vie au travail</h2>
 
 <%= simple_form_for @evaluation, url: wizard_path, method: :put do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <%= f.association :state do |il| %>
 
-    <h3 class="text-primary mb-5">Mise en place des conditions du bon exercice de la démocratie</h3>
+    <h3>Mise en place des conditions du bon exercice de la démocratie</h3>
 
-    <div class="row align-items-baseline">
+    <div class="row align-items-baseline col-input my-5">
       <div class="col-md-4 mb-4">
         <%= il.input :qualite_qvt_enquete_qvt, as: :radio_buttons %>
       </div>
@@ -34,9 +35,9 @@
       </div>
     </div>
 
-    <h3 class="text-primary mb-5 mt-5">Développement des compétences individuelles et collectives, émancipation des salariés</h3>
+    <h3>Développement des compétences individuelles et collectives, émancipation des salariés</h3>
 
-    <div class="row align-items-baseline">
+    <div class="row align-items-baseline my-5">
       <div class="col-md-4 mb-4">
         <%= il.input :qualite_emancipation_moyenne_heures_formation %>
       </div>
@@ -59,3 +60,12 @@
   </div>
 
 <% end %>
+
+<script>
+  function toggleRadio(event) {
+    if(event.target.type === 'radio' && event.target.checked === true) {
+      setTimeout(()=>{ event.target.checked = false; },0);
+    }
+  }
+document.addEventListener('mouseup', toggleRadio);
+</script>

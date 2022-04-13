@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-lg-8">
     <h1><b class="text-secondary">4.</b> Impact environnemental, social et territorial</h1>
-    <p class="lead">
+    <p class="lead mt-5">
       « Une <b class="text-secondary">entreprise citoyenne</b>, c’est une entreprise soucieuse du long terme », pour elle-même et pour le monde dans lequel elle vit.
       <br/><br/>
       Vigueur dans les engagements <b class="text-secondary">environnementaux</b>, attention de la qualité de son <b class="text-secondary">impact social</b>, « <b class="text-secondary">intégration hamonieuse de l’entreprise à ses écosystèmes</b> » sont autant d’indicateurs d’une citoyenneté économique.
@@ -13,7 +13,7 @@
 
 <h2><b class="text-primary">I.</b>Impact environnemental</h2>
 
-<div class="row mb-5">
+<div class="row my-5">
   <% unless @impact_environnement_booleens[:impact_environnement_audit_impact].nil?  %>
     <div class="col-md-6">
       <%= pie_chart @impact_environnement_booleens[:impact_environnement_audit_impact], suffix: '%' %>
@@ -21,7 +21,7 @@
   <% end %>
   <% unless @impact_environnement_booleens[:impact_environnement_demarche_ecologique].nil?  %>
     <div class="col-md-6">
-      <%= pie_chart @impact_environnement_booleens[:impact_environnement_discussion_impact], suffix: '%' %> 
+      <%= pie_chart @impact_environnement_booleens[:impact_environnement_discussion_impact], suffix: '%' %>
     </div>
   <% end %>
 </div>
@@ -30,7 +30,7 @@
   <%= pie_chart @impact_environnement_booleens[:impact_environnement_demarche_ecologique], suffix: '%' %>
 <% end %>
 
-<div class="row mb-5">
+<div class="row my-5">
   <div class="col-md-6">
     <%= single_value_pie_chart State.evaluations
                     .up_to_date
@@ -55,7 +55,7 @@
 
 <h2><b class="text-primary">II.</b>Impact social</h2>
 
-<div class="row mb-5">
+<div class="row my-5">
   <div class="col-md-6">
   <%= single_value_pie_chart State.evaluations
                   .up_to_date
@@ -74,7 +74,7 @@
   </div>
 </div>
 
-<div class="row mb-5">
+<div class="row my-5">
   <div class="col-md-6">
     <%= single_value_pie_chart State.evaluations
                     .up_to_date
@@ -95,7 +95,7 @@
 
 <h2><b class="text-primary">III.</b>Engagement en faveur de l'écosystème et du territoire</h2>
 
-<div class="row mb-5">
+<div class="row my-5">
   <% unless @impact_engagement[indicateur_clean :impact_engagement_part_placements_responsables].nil? %>
     <div class="col-md-6">
       <%= single_value_pie_chart @impact_engagement[indicateur_clean :impact_engagement_part_placements_responsables] %>

@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-lg-8">
     <h1><b class="text-secondary">3.</b> Capital humain et qualité de vie au travail</h1>
-    <p class="lead">
+    <p class="lead mt-5">
       Ce troisième pilier rassemble tant les questions de la <b class="text-secondary">démocratie des l’entreprise</b> (par la reconnaissance du pouvoir de décision des salariés et les conditions de « vie » au sein de l’organisation) que la démocratie de l’entreprise (pour laquelle les salariés et plus globalement les parties prenantes expriment une réelle préoccupation, facteur également de fidélité).
       <br/><br/>
       Les mesures de prévention ont un rôle direct quant à la réduction des risques professionnels, la prévention des accidents et de la maladie, les risques biologiques ou psychosociaux. Au-delà du contexte réglementaire, les actions en matière de santé, de sécurité et de qualité de vie au travail s’inscrivent dans une action volontaire de préservation de l’individu, mais également dans une relation positive à la performance économique.
@@ -13,7 +13,7 @@
 
 <h2><b class="text-primary">I.</b>Qualité de vie</u> au travail</h2>
 
-<div class="row mb-5">
+<div class="row my-5">
   <div class="col-md-6">
     <%= pie_chart @qualite_qvt_enquete_qvt, suffix: '%' %>
     <p class="text-center mt-3">
@@ -38,7 +38,7 @@
   Emancipation des salariés
 </h2>
 
-<div>
+<div class="my-5">
   <%= single_value_pie_chart State.evaluations
                   .up_to_date
                   .average(:qualite_emancipation_moyenne_heures_formation) %>

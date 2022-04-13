@@ -5,22 +5,23 @@
     Édition de l'évaluation de l'année <%= @evaluation.annee %>
   <% end %>
 </h1>
-<h2 class="text-secondary"><span class="fs-2 me-1 m-0">4.</span>Impact environnemental, social et territorial</h2>
-  
+
+<h2><span class="me-1 m-0">4.</span>Impact environnemental, social et territorial</h2>
+
 <%= simple_form_for @evaluation, url: wizard_path, method: :put do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <%= f.association :state do |il| %>
 
-    <h3 class="text-primary">Impact environnemental</h3>
+    <h3>Impact environnemental</h3>
 
-    <div class="row align-items-baseline m-5">
-      <div class="col-md-4 mb-4">
+    <div class="row align-items-baseline my-5">
+      <div class="col-md-4 mb-4 col-input">
       <%= il.input :impact_environnement_audit_impact, as: :radio_buttons %>
       </div>
-      <div class="col-md-4 mb-4">
+      <div class="col-md-4 mb-4 col-input">
       <%= il.input :impact_environnement_demarche_ecologique, as: :radio_buttons %>
       </div>
-      <div class="col-md-4 mb-4">
+      <div class="col-md-4 mb-4 col-input">
       <%= il.input :impact_environnement_discussion_impact, as: :radio_buttons %>
       </div>
       <div class="col-md-4 mb-4">
@@ -37,9 +38,9 @@
       </div>
     </div>
 
-    <h3 class="text-primary mb-5 mt-5">Impact social</h3>
+    <h3>Impact social</h3>
 
-    <div class="row align-items-baseline">
+    <div class="row align-items-baseline my-5">
       <div class="col-md-4 mb-4">
         <%= il.input :impact_social_part_activite_structures_insertion %>
       </div>
@@ -54,9 +55,9 @@
       </div>
     </div>
 
-    <h3 class="text-primary mb-5 mt-5">Engagement en faveur de l'écosystème et du territoire</h3>
+    <h3>Engagement en faveur de l'écosystème et du territoire</h3>
 
-    <div class="row align-items-baseline">
+    <div class="row align-items-baseline my-5 col-input">
       <div class="col-md-4 mb-4">
         <%= il.input :impact_engagement_part_resultat_missions_utiles %>
       </div>
@@ -79,6 +80,15 @@
 
   <div class="d-flex mt-5">
       <%= link_to 'Précédent', wizard_path(@previous_step), class: 'btn btn-primary me-auto ms-auto d-flex mb-5 text-white' %>
-      <%= f.button :submit, "Suivant", class: 'btn btn-primary me-auto ms-auto d-flex mb-5 text-white' %>
+      <%= f.button :submit, "Enregistrer", class: 'btn btn-primary me-auto ms-auto d-flex mb-5 text-white' %>
   </div>
 <% end %>
+
+<script>
+  function toggleRadio(event) {
+    if(event.target.type === 'radio' && event.target.checked === true) {
+      setTimeout(()=>{ event.target.checked = false; },0);
+    }
+  }
+document.addEventListener('mouseup', toggleRadio);
+</script>
