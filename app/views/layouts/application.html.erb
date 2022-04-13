@@ -10,14 +10,14 @@
     <link rel="icon" href="/favicon.ico"/>
   </head>
 
-  <body class="bg-white">
+  <body>
     <%= render 'nav' %>
-    <div id="wrapper" class="bg-light pt-5">
+    <main>
       <div class="container py-5 mt-5">
         <%= render 'flash' %>
         <%= yield %>
       </div>
-    </div>
+    </main>
     <%= render 'footer' %>
 
 
