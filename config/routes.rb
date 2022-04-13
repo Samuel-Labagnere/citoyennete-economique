@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   resources :objectifs_lists
   resources :evaluations
 
-  get '/evaluations_build/new', to: 'evaluations_build#new'
-  get '/evaluations_build/:evaluation_id/:id', to: 'evaluations_build#show', as: 'evaluation_build'
-  put '/evaluations_build/:evaluation_id/:id', to: 'evaluations_build#update'
+  get '/evaluations_builder/new', to: 'evaluations_builder#new'
+  get '/evaluations_builder/:evaluation_id/:id', to: 'evaluations_builder#show', as: 'evaluation_builder'
+  put '/evaluations_builder/:evaluation_id/:id', to: 'evaluations_builder#update'
 
   devise_for :users, path: '', path_names: { sign_in: "connexion", sign_out: "deconnexion", sign_up: "inscription", edit: "compte" }
   resources :organisations

@@ -2,8 +2,8 @@ class ResultatsController < ApplicationController
   def indicateurs_hash(evaluation, sym_list)
     hash = {}
     sym_list.each do |sym|
-      if evaluation.indicateurs_list[sym].present?
-        hash[helpers.indicateur_clean(sym)] = evaluation.indicateurs_list[sym]
+      if evaluation.state[sym].present?
+        hash[helpers.state(sym)] = evaluation.state[sym]
       end
     end
     return hash

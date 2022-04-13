@@ -30,10 +30,23 @@
 </table>
 
 
-<div class="row">
-  <div class="col-md-4">
-    <%= pie_chart @pouvoir_gouvernance_diversite_categories  %>
-    <p>Catégories d'associés</p>
+<div class="row mb-5">
+  <div class="col-md-6">
+    <%= pie_chart State.evaluations
+                       .up_to_date
+                       .group(:pouvoir_gouvernance_diversite_categories)
+                       .count %>
+    <p class="text-center mt-3">
+      Catégories d'associés
+    </p>
+  </div>
+  <div class="col-md-6">
+    <%= single_value_pie_chart State.evaluations
+                                    .up_to_date
+                                    .average(:pouvoir_gouvernance_part_salaries_conseil) %>
+   <p class="text-center mt-3">
+     Part de salariés participant au conseil d'administration ou de surveillance
+   </p>
   </div>
 </div>
 

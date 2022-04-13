@@ -34,7 +34,7 @@
   <div class="card" style="min-height: unset">
     <ul class="list-group list-group-flush">
       <div class="list-group-item d-flex">
-        <div class="col">Evaluations</div>
+        <div class="col fs-3">Evaluations</div>
         <div class="row w-50 text-center">
           <div class="col">Pilier 1</div>
           <div class="col">Pilier 2</div>
@@ -59,7 +59,7 @@
   </div>
 <% end %>
 
-  <%= button_to "Ajouter une évaluation", evaluations_build_new_path, method: :get, class: "btn btn-primary text-white mt-5 mb-4 mx-auto d-flex" %>
+  <%= button_to "Ajouter une évaluation", evaluations_builder_new_path, method: :get, class: "btn btn-primary text-white mt-5 mb-4 mx-auto d-flex" %>
   <div class="d-flex justify-content-center mb-5">
     <% if current_user.organisation.objectifs_list.present? %>
       <%= button_to "Éditer les objectifs", edit_objectifs_list_path(id: current_user.organisation.objectifs_list.id), method: :get, class: "btn btn-primary" %>

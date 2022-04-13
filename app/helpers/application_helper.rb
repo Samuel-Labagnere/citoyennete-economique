@@ -1,6 +1,6 @@
 module ApplicationHelper
   def indicateur_clean(symbol)
-    I18n.t("activerecord.attributes.indicateurs_list." + symbol.to_s)
+    I18n.t("activerecord.attributes.state." + symbol.to_s)
   end
 
   def negative_indicateur(symbol)
@@ -10,32 +10,40 @@ module ApplicationHelper
   def has_any_indicateur(evaluation, *indicateurs)
     result = false
     indicateurs.each do |indicateur|
-      if not evaluation.indicateurs_list[indicateur].nil?
+      if not evaluation.state[indicateur].nil?
         result = true
       end
     end
     return result
   end
-  
+
   def single_value_pie_chart(value, suffix: nil, max: nil)
     suffix ||= "%"
     max ||= 100
 
-    data = {
-      "value" => value,
-      "remainder" => (max - value)
-    }
+    if value.present?
+      value = value.round
+
+      data = {
+        "value" => value,
+        "remainder" => (max - value)
+      }
+    else
+      data = {}
+    end
 
     pie_chart data,
-    donut: true, legend: false, colors: ["#2E3092", "#ECD1D8"], 
-    library: { 
-      events: [],
-      plugins: {
-        donut_text: {
-          text: "#{value}#{suffix}"
-        }
-      }
-    }
+              donut: true,
+              legend: false,
+              colors: ["#2E3092", "#ECD1D8"],
+              library: {
+                events: [],
+                plugins: {
+                  donut_text: {
+                    text: "#{value}#{suffix}"
+                  }
+                }
+              }
   end
 
   def evo_value_pie_chart(value, old_value, suffix: nil, max: nil)
@@ -62,8 +70,8 @@ module ApplicationHelper
     }
 
     pie_chart data,
-    donut: true, legend: false, colors: ["#2E3092", difference_color, "#ECD1D8"], 
-    library: { 
+    donut: true, legend: false, colors: ["#2E3092", difference_color, "#ECD1D8"],
+    library: {
       events: [],
       plugins: {
         donut_text: {
