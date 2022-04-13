@@ -1,18 +1,22 @@
 <div class="row">
   <div class="col-lg-8">
-    <h1>Vers la citoyenneté économique</h1>
-    <p class="lead">Issue du mouvement coopératif, la citoyenneté économique est née de la conviction que les entreprises doivent jouer un rôle majeur face aux défis sociétaux et environnementaux. Partage de l’information, transparence des décisions, délibération collective… autant de paramètres appliqués aux choix stratégiques de l’entreprise, à son bien-être et à celui de ses salariés, en accord avec l’intérêt général.</p>
+    <h1>La citoyenneté économique</h1>
+    <p class="lead">Issue du mouvement coopératif, la citoyenneté économique est née de notre conviction d’avoir un rôle majeur à jouer face aux défis économiques, sociétaux et environnementaux.
+Partage de l’information et des décisions, partage des richesses, bien commun et intérêt général autant d’indicateurs appliqués aux choix stratégiques et issues des valeurs des entreprises coopératives.</p>
+  </div>
+  <div class="col-lg-8">
+    <p class="lead">Parce que nous pensons que les indicateurs économiques et financiers ne résument pas à eux seuls la performance d’une entreprise, nous avons engagé une démarche volontariste pour mesurer et suivre d’autres indicateurs en cohérence avec nos valeurs et nos principes. Il s’agit de rendre visible (en interne comme en externe) et compréhensible une « performance » multi-dimensionnelle, en s’inscrivant dans une vision plus large des missions de l’entreprise.</p>
   </div>
 </div>
 
 <h2>4 catégories pour une cinquantaine d’indicateurs</h2>
 
-<div class="row row-cols-md-4">
-  <div>
+<div class="row row-cols-md-4 my-5">
+  <div class="card-cont">
     <div class="card border-0">
-      <div class="card-body">
+      <div class="card-body d-flex align-items-end">
         <span class="text-secondary fw-bold">1.</span>
-        <h4 class="card-title">
+        <h4 class="card-title fs-5">
           <%= link_to pilier_1_path, class: 'stretched-link text-black' do %>
             Partage du <b class="text-secondary">pouvoir</b> et des <b class="text-secondary">décisions</b>
           <% end %>
@@ -20,11 +24,11 @@
       </div>
     </div>
   </div>
-  <div>
+  <div class="card-cont">
     <div class="card border-0">
-      <div class="card-body">
-        <span class="text-primary d-flex fw-bold">2.</span>
-        <h4 class="card-title">
+      <div class="card-body d-flex align-items-end">
+        <span class="text-primary">2.</span>
+        <h4 class="card-title fs-5">
           <%= link_to pilier_2_path, class: 'stretched-link text-black' do %>
             <b class="text-primary">Pérennité</b> économique et <b class="text-primary">partage</b> de la valeur créée
           <% end %>
@@ -32,11 +36,11 @@
       </div>
     </div>
   </div>
-  <div>
+  <div class="card-cont">
     <div class="card border-0">
-      <div class="card-body">
-        <span class="text-secondary d-flex fw-bold">3.</span>
-        <h4 class="card-title">
+      <div class="card-body d-flex align-items-end">
+        <span class="text-secondary">3.</span>
+        <h4 class="card-title fs-5">
           <%= link_to pilier_3_path, class: 'stretched-link text-black' do %>
             Capital <b class="text-secondary">humain</b> et Qualité de <b class="text-secondary">vie</b> au travail
           <% end %>
@@ -44,11 +48,11 @@
       </div>
     </div>
   </div>
-  <div>
+  <div class="card-cont">
     <div class="card border-0">
-      <div class="card-body">
-        <span class="text-primary d-flex fw-bold">4.</span>
-        <h4 class="card-title">
+      <div class="card-body d-flex align-items-end">
+        <span class="text-primary">4.</span>
+        <h4 class="card-title fs-5">
           <%= link_to pilier_4_path, class: 'stretched-link text-black' do %>
             Impact <b class="text-primary">environnemental</b>, <b class="text-primary">social</b> et <b class="text-primary">territorial</b>
           <% end %>
@@ -58,16 +62,12 @@
   </div>
 </div>
 
-<h2>Notre objectif : démocratiser l’entreprise démocratique.</h2>
+<h2>Notre objectif : <br>
+Vous permettre de mesurer l’impact de votre entreprise en rendant accessible, dynamique et lisible l’évaluation des différents indicateurs</h2>
 
 <div class="row">
   <div class="col-lg-8">
-    <p>Outils de progression, de suivi coopératif, mais aussi de communication, dans une démarche à la fois sociale et environnementale, ces indicateurs assurent une réflexion politique et pragmatique sur la citoyenneté dans et de l’entreprise. Notre plateforme démontre que ces enjeux sont aujourd’hui une réalité  et vise à influencer la réflexion au sein des entreprises et se pose en référentiel pour ces dernières.</p>
-  </div>
-  <div class="col-lg-4">
-    <blockquote class="blockquote">
-      « Pourquoi le salarié abandonnerait-il sa <b class="text-secondary">liberté</b> et sa <b class="text-secondary">citoyenneté</b> une fois franchi le seuil de l’entreprise ? »
-    </blockquote>
+    <p>Outil d’évaluation, de communication, de suivi et d’amélioration continue, cette plateforme web a l’ambition de vous permettre de mesurer votre impact économique, sociétal, environnement et territorial.</p>
   </div>
 </div>
 
@@ -79,14 +79,15 @@
   </div>
   <div class="offset-lg-1 col-lg-7 d-flex align-items-center">
     <ul>
-      <li class="my-4">Un formulaire détaillé à destination des <b class="text-secondary">entreprises</b>.</li>
-      <li class="my-4">Une matérialisation <b class="text-secondary">claire</b> et <b class="text-secondary">schématisée</b> de vos données.</li>
-      <li class="my-4">Une possibilité de <b class="text-secondary">suivre</b> vos progrès en les comparant à ceux des années précédentes.</li>
+      <li class="my-4">Un formulaire en ligne dédié à renseigner par votre entreprise*.</li>
+      <li class="my-4">Une matérialisation schématisée de votre données* avec lesquelles vous pouvez choisir de communiquer (vos partenaires, vos équipes)…</li>
+      <li class="my-4">Un suivi en temps réel de vos objectifs et de votre impact en adéquation avec votre choix de planification.</li>
+      <p class="my-4">*vos données sont strictement réservée à votre entreprise </p>
     </ul>
   </div>
 </div>
 
-<h2>Les sociétés coopératives : l’entreprise autrement</h2>
+<h2>Les sociétés coopératives : l’entreprise autrement.</h2>
 
 <div class="row">
   <div class="col-lg-8">
@@ -94,19 +95,16 @@
   </div>
   <div class="col-lg-4">
     <div class="card border-0 bg-transparent">
-      <h3 class="text-primary">Les SCOP</h3>
-      <p>
-        <b>
-          <a class="stretched-link" href="https://www.les-scop.coop/les-scop" target="_blank">
-            Sociétés coopératives et participatives
-          </a>
-        </b>
-      </p>
-      <p>Les sociétés coopératives correspondent à un modèle de gouvernance fondé sur la transparence, le partage des informations sur la stratégie et les résultats. Les objectifs sont clairement définis et s’inscrivent dans les enjeux actuels : on ne peut pas faire une transition écologique, économique et sociale, sans une implication plus forte des salariés et les entreprises.</p>
-    </div>
 
-      <blockquote class="blockquote">
-        « L’entreprise n’a-t-elle pas un <b class="text-secondary">rôle</b> à jouer pour le <b class="text-secondary">bien de la cité</b> ? »
-      </blockquote>
+      <p>
+      <b class="text-secondary">Outils de progression</b>, de suivi coopératif, mais aussi de communication, dans une démarche à la fois <b class="text-secondary">sociale</b> et <b class="text-secondary">environnementale</b>, ces indicateurs assurent une réflexion politique et pragmatique sur la citoyenneté dans et de l’entreprise.
+<br><br>
+Notre plateforme démontre que ces enjeux sont aujourd’hui une réalité et vise à influencer la réflexion au sein des entreprises et se pose en référentiel pour ces dernières.</p>
+    </div>
   </div>
+  <div class="row">
+  <div class="col-lg-8">
+    <p>Les entreprises coopératives ont un rôle indéniable à jouer dans le monde d’après pour faire face aux nombreux défis humains et sociaux qui nous attendent !  L’entreprise coopérative : une autre façon d’entreprendre !</p>
+  </div>
+</div>
 </div>
