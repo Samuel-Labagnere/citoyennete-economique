@@ -35,8 +35,8 @@
         </ul>
       </div>
 
-      <%if user_signed_in? %>
-        <form class="d-flex">
+      <% if user_signed_in? %>
+        <div class="d-flex">
           <div class="btn-group">
             <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="bi bi-person-fill d-inline d-md-none"></i>
@@ -45,32 +45,31 @@
             <div class="dropdown-menu dropdown-menu-end">
               <%= link_to 'Dashboard', user_root_path, class: 'dropdown-item dropButton' %>
               <%= link_to 'Mon compte', edit_user_registration_path, class: 'dropdown-item dropButton' %>
-              <%= button_to "Déconnexion", destroy_user_session_path, class: " dropdown-item",type:"button", method: :delete, form: {data: {turbo: false}} %>
+              <%= button_to "Déconnexion", destroy_user_session_path, class: 'dropdown-item dropButton', method: :delete, form: { data: { turbo: false } } %>
             </div>
           </div>
-        </form>
-      <%else %>
-        <form class="d-flex">
+        </div>
+      <% else %>
+        <div class="d-flex">
           <%= button_to "Connexion", new_user_session_path, class: "btn btn-white pb-2 me-2 co-btn", method: :get %>
           <%= button_to "Inscription", new_user_registration_path, class: "btn btn-primary pb-2 ms-2 reg-btn", method: :get %>
-        </form>
-      <%end%>
+        </div>
+      <% end %>
     </div>
   </div>
-
 </div>
 
 <script>
-      window.onscroll = function () {
-        sitckyNav()
-      };
-      var navbar = document.getElementById("navigationBar");
-      var sticky = navbar.offsetTop;
-      function sitckyNav() {
-        if (window.pageYOffset >= sticky) {
-          navbar.classList.add("sticky")
-        } else {
-          navbar.classList.remove("sticky");
-        }
-      }
-    </script>
+  window.onscroll = function () {
+    sitckyNav()
+  };
+  var navbar = document.getElementById("navigationBar");
+  var sticky = navbar.offsetTop;
+  function sitckyNav() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+</script>
