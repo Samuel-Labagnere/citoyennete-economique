@@ -44,6 +44,7 @@
 #  qualite_qvt_taux_absenteisme                               :float
 #  qualite_qvt_taux_qvt                                       :float
 #  qualite_qvt_taux_turnover                                  :float
+#  up_to_date                                                 :boolean          default(FALSE)
 #  valeur_estimation_realite                                  :integer
 #  valeur_partage_ecart_revenus_hauts_bas                     :float
 #  valeur_partage_existence_accord                            :boolean
