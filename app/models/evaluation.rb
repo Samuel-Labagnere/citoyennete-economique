@@ -13,4 +13,8 @@ class Evaluation < ApplicationRecord
     def active_or_year?
         status == 'informations' || active?
     end
+
+    scope :active, -> {
+        where(status: 'active')
+    }
 end
