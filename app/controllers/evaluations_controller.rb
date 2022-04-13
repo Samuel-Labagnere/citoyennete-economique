@@ -16,7 +16,7 @@ class EvaluationsController < ApplicationController
   # GET /evaluations/new
   def new
     @evaluation = Evaluation.new
-    @evaluation.indicateurs_list = IndicateursList.new
+    @evaluation.state = State.new
   end
 
   # GET /evaluations/1/edit
@@ -59,7 +59,7 @@ class EvaluationsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_evaluation
-      @evaluation = Evaluation.includes(:indicateurs_list).find(params[:id])
+      @evaluation = Evaluation.includes(:state).find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

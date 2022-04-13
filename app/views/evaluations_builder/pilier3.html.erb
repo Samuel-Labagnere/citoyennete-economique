@@ -1,0 +1,59 @@
+<h1>
+  <% if @evaluation.status != 'active' %>
+    Nouvelle évaluation
+  <% else %>
+    Édition de l'évaluation de l'année <%= @evaluation.annee %>
+  <% end %>
+</h1>
+<h2 class="text-secondary"><span class="fs-2 me-1 m-0">3.</span>Capital humain et qualité de vie au travail</h2>
+
+<%= simple_form_for @evaluation, url: wizard_path, method: :put do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <%= f.association :indicateurs_list do |il| %>
+
+    <h3 class="text-primary">Mise en place des conditions du bon exercice de la démocratie</h3>
+
+    <div class="row align-items-baseline">
+      <div class="col-md-4 mb-4">
+        <%= il.input :qualite_qvt_enquete_qvt, as: :radio_buttons %>
+      </div>
+      <div class="col-md-4 mb-4">
+        <%= il.input :qualite_qvt_taux_qvt %>
+      </div>
+      <div class="col-md-4 mb-4">
+        <%= il.input :qualite_qvt_part_cdi %>
+      </div>
+      <div class="col-md-4 mb-4">
+        <%= il.input :qualite_qvt_moyenne_anciennete %>
+      </div>
+      <div class="col-md-4 mb-4">
+        <%= il.input :qualite_qvt_taux_turnover %>
+      </div>
+      <div class="col-md-4 mb-4">
+        <%= il.input :qualite_qvt_taux_absenteisme %>
+      </div>
+    </div>
+
+    <h3 class="text-primary">Développement des compétences individuelles et collectives, émancipation des salariés</h3>
+
+    <div class="row align-items-baseline">
+      <div class="col-md-4 mb-4">
+        <%= il.input :qualite_emancipation_moyenne_heures_formation %>
+      </div>
+      <div class="col-md-4 mb-4">
+        <%= il.input :qualite_emancipation_taux_budget_formation_masse_salariale %>
+      </div>
+      <div class="col-md-4 mb-4">
+        <%= il.input :qualite_emancipation_taux_direction_promotion_interne %>
+      </div>
+    </div>
+
+    <%= il.input :qualite_estimation_realite %>
+  <% end %>
+
+  <div class="d-flex mt-4">
+    <%= link_to 'Précédent', wizard_path(@previous_step), class: 'btn btn-primary me-auto ms-auto d-flex mb-5' %>
+    <%= f.button :submit, "Suivant", class: 'btn btn-primary me-auto ms-auto d-flex mb-5' %>
+  </div>
+
+<% end %>

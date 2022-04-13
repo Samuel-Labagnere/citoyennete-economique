@@ -1,0 +1,81 @@
+<h1>
+  <% if @evaluation.status != 'active' %>
+    Nouvelle évaluation
+  <% else %>
+    Édition de l'évaluation de l'année <%= @evaluation.annee %>
+  <% end %>
+</h1>
+<h2 class="text-secondary"><span class="fs-2 me-1 m-0">4.</span>Impact environnemental, social et territorial</h2>
+  
+<%= simple_form_for @evaluation, url: wizard_path, method: :put do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <%= f.association :indicateurs_list do |il| %>
+
+    <h3 class="text-primary">Impact environnemental</h3>
+
+    <div class="row align-items-baseline">
+      <div class="col-md-4 mb-4">
+      <%= il.input :impact_environnement_audit_impact, as: :radio_buttons %>
+      </div>
+      <div class="col-md-4 mb-4">
+      <%= il.input :impact_environnement_demarche_ecologique, as: :radio_buttons %>
+      </div>
+      <div class="col-md-4 mb-4">
+      <%= il.input :impact_environnement_discussion_impact, as: :radio_buttons %>
+      </div>
+      <div class="col-md-4 mb-4">
+      <%= il.input :impact_environnement_part_energies_renouvelables %>
+      </div>
+      <div class="col-md-4 mb-4">
+      <%= il.input :impact_environnement_part_salaries_mobilite %>
+      </div>
+      <div class="col-md-4 mb-4">
+        <p>Calculez-vous le bilan carbone ?<p>
+        <%= il.input :impact_environnement_bilan_carbone_scope_1 %>
+        <%= il.input :impact_environnement_bilan_carbone_scope_2 %>
+        <%= il.input :impact_environnement_bilan_carbone_scope_3 %>
+      </div>
+    </div>
+
+    <h3 class="text-primary">Impact social</h3>
+
+    <div class="row align-items-baseline">
+      <div class="col-md-4 mb-4">
+        <%= il.input :impact_social_part_activite_structures_insertion %>
+      </div>
+      <div class="col-md-4 mb-4">
+        <%= il.input :impact_social_alternance_apprentissage %>
+      </div>
+      <div class="col-md-4 mb-4">
+        <%= il.input :impact_social_part_seniors %>
+      </div>
+      <div class="col-md-4 mb-4">
+        <%= il.input :impact_social_part_handicap %>
+      </div>
+    </div>
+
+    <h3 class="text-primary">Engagement en faveur de l'écosystème et du territoire</h3>
+
+    <div class="row align-items-baseline">
+      <div class="col-md-4 mb-4">
+        <%= il.input :impact_engagement_part_resultat_missions_utiles %>
+      </div>
+      <div class="col-md-4 mb-4">
+        <%= il.input :impact_engagement_part_placements_responsables %>
+      </div>
+      <div class="col-md-4 mb-4">
+        <%= il.input :impact_engagement_part_impots_france %>
+      </div>
+      <div class="col-md-4 mb-4">
+        <%= il.input :impact_engagement_demarche_ethique_fournisseurs, as: :radio_buttons %>
+      </div>
+    </div>
+
+    <%= il.input :impact_estimation_realite %>
+  <% end %>
+
+  <div class="d-flex mt-4">
+      <%= link_to 'Précédent', wizard_path(@previous_step), class: 'btn btn-primary me-auto ms-auto d-flex mb-5' %>
+      <%= f.button :submit, "Suivant", class: 'btn btn-primary me-auto ms-auto d-flex mb-5' %>
+  </div>
+<% end %>

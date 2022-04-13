@@ -1,75 +1,83 @@
-<div id="navigationBar" class="navbar navbar-expand-lg navbar-light bg-white position-absolute top-0 start-0 end-0">
-  <div class="container">
-    <div class="navbar-brand">
-      <a href="/" class="logoSite d-none d-md-flex">
-        <span>c</span>
-        <%= image_tag 'titre.svg', alt: 'logo de la citoyenneté économique' %>
-        <b class="text-primary">.</b>
-      </a>
-      <a href="/" class="logoIcon d-flex d-md-none">
-        <%= image_tag 'short_logo.svg', alt: 'logo de la citoyenneté économique', class: 'img-fluid' %>
-      </a>
-    </div>
-    <div class="d-flex">
-      <div class="dropdown me-4">
-        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          <%= image_tag 'icon_piliers.svg', alt: 'icone publique', class: "me-2" %>Citoyenneté des entreprises
-        </button>
-        <ul class="dropdown-menu p-0" aria-labelledby="dropdownMenuButton1">
-          <li>
-            <a class="dropdown-item d-flex <%= current_page?(pilier_1_path) ? 'text-secondary' : 'text-black' %> align-items-center" href="<%= pilier_1_path %>">
-              <b class="text-secondary fs-2 me-1 m-0">1.</b>Partage du pouvoir et des décisions</a>
-          </li>
-          <li>
-            <a class="dropdown-item d-flex <%= current_page?(pilier_2_path) ? 'text-secondary' : 'text-black' %> align-items-center" href="<%= pilier_2_path %>">
-              <b class="text-secondary fs-2 me-1 m-0">2.</b>Pérennité économique et partage de la valeur créée</a>
-          </li>
-          <li>
-            <a class="dropdown-item d-flex <%= current_page?(pilier_3_path) ? 'text-secondary' : 'text-black' %> align-items-center" href="<%= pilier_3_path %>">
-              <b class="text-secondary fs-2 me-1 m-0">3.</b>Capital humain et qualité de vie au travail</a>
-          </li>
-          <li>
-            <a class="dropdown-item d-flex <%= current_page?(pilier_4_path) ? 'text-secondary' : 'text-black' %> align-items-center" href="<%= pilier_4_path %>">
-              <b class="text-secondary fs-2 me-1 m-0">4.</b>Impact environnemental, social et territorial</a>
-          </li>
-        </ul>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <div class="container">
+      <div class="navbar-brand">
+        <a href="/" class="logoSite d-none d-md-flex">
+          <span>c</span>
+          <%= image_tag 'titre.svg', alt: 'logo de la citoyenneté économique' %>
+          <b class="text-primary">.</b>
+        </a>
+        <a href="/" class="d-md-none">
+          <%= image_tag 'short_logo.svg', alt: 'logo de la citoyenneté économique', width: '40', height: '40' %>
+        </a>
       </div>
 
-      <% if user_signed_in? %>
-        <div class="d-flex">
-          <div class="btn-group">
-            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="bi bi-person-fill d-inline d-md-none"></i>
-              <span class="d-none d-md-inline"><%= current_user %></span>
-            </button>
-            <div class="dropdown-menu dropdown-menu-end">
-              <%= link_to 'Dashboard', user_root_path, class: 'dropdown-item dropButton' %>
-              <%= link_to 'Mon compte', edit_user_registration_path, class: 'dropdown-item dropButton' %>
-              <%= button_to "Déconnexion", destroy_user_session_path, class: 'dropdown-item dropButton', method: :delete, form: { data: { turbo: false } } %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <div class="dropdown me-4">
+          <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= image_tag 'icon_piliers.svg', alt: 'icone publique', class: "me-2" %>Citoyenneté des entreprises
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li>
+              <a class="dropdown-item d-flex <%= current_page?(pilier_1_path) ? 'text-secondary' : 'text-black' %> align-items-center" href="<%= pilier_1_path %>">
+                <b class="text-secondary fs-2 me-1">1.</b>Partage du pouvoir et des décisions</a>
+            </li>
+            <li>
+              <a class="dropdown-item d-flex <%= current_page?(pilier_2_path) ? 'text-secondary' : 'text-black' %> align-items-center" href="<%= pilier_2_path %>">
+                <b class="text-secondary fs-2 me-1">2.</b>Pérennité économique et partage de la valeur créée</a>
+            </li>
+            <li>
+              <a class="dropdown-item d-flex <%= current_page?(pilier_3_path) ? 'text-secondary' : 'text-black' %> align-items-center" href="<%= pilier_3_path %>">
+                <b class="text-secondary fs-2 me-1">3.</b>Capital humain et qualité de vie au travail</a>
+            </li>
+            <li>
+              <a class="dropdown-item d-flex <%= current_page?(pilier_4_path) ? 'text-secondary' : 'text-black' %> align-items-center" href="<%= pilier_4_path %>">
+                <b class="text-secondary fs-2 me-1">4.</b>Impact environnemental, social et territorial</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-item me-4">
+          <%= link_to user_root_path, class: 'nav-link text-black' do %>
+            <%= image_tag 'icon_dashboard.svg', alt: 'icone publique', class: 'me-1' %>
+            Dashboard
+          <% end %>
+        </div>
+        <%if user_signed_in? %>
+            <div class="btn-group">
+              <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span><%= current_user %></span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-end">
+                <%= link_to 'Mon compte', edit_user_registration_path, class: 'dropdown-item dropButton' %>
+                <%= button_to "Déconnexion", destroy_user_session_path, class: 'dropdown-item dropButton', method: :delete, form: { data: { turbo: false } } %>
+              </div>
             </div>
-          </div>
-        </div>
-      <% else %>
-        <div class="d-flex">
-          <%= button_to "Connexion", new_user_session_path, class: "btn btn-white pb-2 me-2 co-btn", method: :get %>
-          <%= button_to "Inscription", new_user_registration_path, class: "btn btn-primary pb-2 ms-2 reg-btn", method: :get %>
-        </div>
-      <% end %>
+          <%else %>
+            <%= link_to "Connexion", new_user_session_path, class: "btn btn-white pb-2 me-2 co-btn" %>
+            <%= link_to "Inscription", new_user_registration_path, class: "btn btn-primary pb-2 ms-2 reg-btn" %>
+          <%end%>
+      </div>
+
+
     </div>
-  </div>
-</div>
+
+  </nav>
+</header>
 
 <script>
-  window.onscroll = function () {
-    sitckyNav()
-  };
-  var navbar = document.getElementById("navigationBar");
-  var sticky = navbar.offsetTop;
-  function sitckyNav() {
-    if (window.pageYOffset >= sticky) {
-      navbar.classList.add("sticky")
-    } else {
-      navbar.classList.remove("sticky");
-    }
-  }
-</script>
+      window.onscroll = function () {
+        sitckyNav()
+      };
+      var navbar = document.querySelector('.navbar');
+      var sticky = navbar.offsetTop;
+      function sitckyNav() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("navScroll")
+        } else {
+          navbar.classList.remove("navScroll");
+        }
+      }
+    </script>

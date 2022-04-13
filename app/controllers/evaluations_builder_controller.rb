@@ -1,4 +1,4 @@
-class EvaluationsBuildController < ApplicationController
+class EvaluationsBuilderController < ApplicationController
   include Wicked::Wizard
   before_action :authenticate_user!
   before_action :set_evaluation, only: %i[ update show ]
@@ -20,7 +20,7 @@ class EvaluationsBuildController < ApplicationController
 
   def new
     @evaluation = current_user.organisation.evaluations.new
-    @evaluation.indicateurs_list = IndicateursList.new
+    @evaluation.state = State.new
     @evaluation.save
     redirect_to wizard_path(steps.first, evaluation_id: @evaluation.id)
   end
@@ -28,7 +28,7 @@ class EvaluationsBuildController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_evaluation
-      @evaluation = Evaluation.includes(:indicateurs_list).find(params[:evaluation_id])
+      @evaluation = Evaluation.includes(:state).find(params[:evaluation_id])
     end
 
     def evaluation_params

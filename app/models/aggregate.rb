@@ -1,6 +1,6 @@
 class Aggregate
   def indicateur_clean(symbol)
-    I18n.t("activerecord.attributes.indicateurs_list." + symbol.to_s)
+    I18n.t("activerecord.attributes.state." + symbol.to_s)
   end
 
   def initialize
@@ -9,7 +9,7 @@ class Aggregate
       latest_years.push organisation.evaluations.active.pluck(:annee).max
     end
     latest_evaluations = Evaluation.active.where(annee: latest_years)
-    @latest_indicateurs_lists = IndicateursList.where(evaluation_id: latest_evaluations)
+    @latest_indicateurs_lists = State.where(evaluation_id: latest_evaluations)
   end
 
   def boolean_group(indic_lists, indic_symbols)
