@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: indicateurs_lists
+# Table name: states
 #
 #  id                                                         :bigint           not null, primary key
 #  impact_engagement_demarche_ethique_fournisseurs            :boolean
@@ -67,8 +67,8 @@
 #
 # Indexes
 #
-#  index_indicateurs_lists_on_evaluation_id      (evaluation_id)
-#  index_indicateurs_lists_on_objectifs_list_id  (objectifs_list_id)
+#  index_states_on_evaluation_id      (evaluation_id)
+#  index_states_on_objectifs_list_id  (objectifs_list_id)
 #
 require "test_helper"
 

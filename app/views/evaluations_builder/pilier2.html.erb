@@ -9,7 +9,7 @@
 
 <%= simple_form_for @evaluation, url: wizard_path, method: :put do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <%= f.association :indicateurs_list do |il| %>
+  <%= f.association :state do |il| %>
 
     <h3 class="text-primary mb-5">Pérennité : création de valeur, inaliénabilité et robustesse de l'entreprise</h3>
 
@@ -73,12 +73,7 @@
   <% end %>
 
   <div class="d-flex mt-5">
-<<<<<<< HEAD
     <%= link_to 'Précédent', wizard_path(@previous_step), class: 'btn btn-primary me-auto ms-auto d-flex mb-5 text-white' %>
     <%= f.button :submit, "Suivant", class: 'btn btn-primary me-auto ms-auto d-flex mb-5 text-white' %>
-=======
-    <%= link_to 'Précédent', wizard_path(@previous_step), class: 'btn btn-primary text-white me-auto ms-auto d-flex mb-5' %>
-    <%= f.button :submit, "Suivant", class: 'btn btn-primary text-white me-auto ms-auto d-flex mb-5' %>
->>>>>>> 06755851650e305c9785d9f841046682a10eed72
   </div>
 <% end %>
