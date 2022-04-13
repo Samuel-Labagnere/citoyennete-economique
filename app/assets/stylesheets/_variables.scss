@@ -1,0 +1,24 @@
+$our_white: #EEF0F2;
+$our_blue: #2E3092;
+$form-bg-color: #f8f9fa;
+$colors: (
+    "white": $our_white,
+    "gray": #E2E2E2,
+    "blue": $our_blue,
+    "orange": #F15921,
+    "green": #007A78,
+);
+$theme-colors: (
+    "primary": #EB225A,
+    "secondary": #2E3092,
+    "success": #007A78,
+    "info": #007CAA,
+    "danger": #F15921,
+    "light": #f8f9fa,
+    "dark": #231F20
+);
+
+// https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss
+$headings-margin-bottom: 2rem;
+$font-family-sans-serif: 'Open Sans', sans-serif;
+$headings-font-family: 'Alata', sans-serif;
