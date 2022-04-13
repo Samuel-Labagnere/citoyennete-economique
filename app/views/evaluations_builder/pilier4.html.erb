@@ -11,7 +11,7 @@
 
   <%= simple_form_for @evaluation, url: wizard_path, method: :put do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
-    <%= f.association :indicateurs_list do |il| %>
+    <%= f.association :state do |il| %>
 
     <div class="container-fluid w-100 d-flex flex-wrap justify-content-center">
 

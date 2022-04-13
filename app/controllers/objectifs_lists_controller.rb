@@ -16,7 +16,7 @@ class ObjectifsListsController < ApplicationController
       redirect_to user_root_path
     else
       @objectifs_list = ObjectifsList.new
-      @objectifs_list.indicateurs_list = IndicateursList.new
+      @objectifs_list.state = State.new
     end
   end
 
@@ -57,7 +57,7 @@ class ObjectifsListsController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_objectifs_list
-    @objectifs_list = ObjectifsList.includes(:indicateurs_list).find(params[:id])
+    @objectifs_list = ObjectifsList.includes(:state).find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.

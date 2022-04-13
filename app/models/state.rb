@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: indicateurs_lists
+# Table name: states
 #
 #  id                                                         :bigint           not null, primary key
 #  impact_engagement_demarche_ethique_fournisseurs            :boolean
@@ -67,15 +67,18 @@
 #
 # Indexes
 #
-#  index_indicateurs_lists_on_evaluation_id      (evaluation_id)
-#  index_indicateurs_lists_on_objectifs_list_id  (objectifs_list_id)
+#  index_states_on_evaluation_id      (evaluation_id)
+#  index_states_on_objectifs_list_id  (objectifs_list_id)
 #
-class IndicateursList < ApplicationRecord
+class State < ApplicationRecord
   belongs_to :evaluation, optional: true
   belongs_to :objectifs_list, optional: true
 
+  scope :evaluations, -> { where.not(evaluation: nil) }
+  scope :up_to_date, -> { where(up_to_date: true) }
+
   validates(
-    :pouvoir_gouvernance_part_salaries_associes, 
+    :pouvoir_gouvernance_part_salaries_associes,
     :pouvoir_gouvernance_taux_societariat_femmes,
     :pouvoir_gouvernance_taux_droits_vote_salaries,
     :pouvoir_gouvernance_part_salaries_conseil,
@@ -104,7 +107,7 @@ class IndicateursList < ApplicationRecord
     :impact_engagement_part_resultat_missions_utiles,
     :impact_engagement_part_placements_responsables,
     :impact_engagement_part_impots_france,
-    inclusion: {in: 0..100, message: "Le champ \"%{attribute}\" doit être un pourcentage compris entre 0,0 et 100,0"}, 
+    inclusion: {in: 0..100, message: "Le champ \"%{attribute}\" doit être un pourcentage compris entre 0,0 et 100,0"},
     allow_blank: true
   )
 

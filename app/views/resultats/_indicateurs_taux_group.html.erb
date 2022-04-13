@@ -7,7 +7,7 @@
           <% custom = indicateur[1] %>
           <% indicateur = indicateur[0] %>
         <% end %>
-        <% if evaluation.indicateurs_list[indicateur].present? %>
+        <% if evaluation.state[indicateur].present? %>
           <div class="col col-data mb-5">
             <%= render "single_taux_box", evaluation: evaluation, indicateur: indicateur, suffix: custom[:suffix], max: custom[:max] %>
           </div>

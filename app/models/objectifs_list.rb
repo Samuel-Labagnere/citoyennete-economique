@@ -13,7 +13,7 @@
 #
 class ObjectifsList < ApplicationRecord
   belongs_to :organisation
-  has_one :indicateurs_list, dependent: :destroy
+  has_one :state, dependent: :destroy
 
-  accepts_nested_attributes_for :indicateurs_list
+  accepts_nested_attributes_for :state
 end

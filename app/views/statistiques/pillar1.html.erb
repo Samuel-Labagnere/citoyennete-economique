@@ -30,10 +30,13 @@
 </table>
 
 
-<div class="row">
+<div class="row mb-5">
   <div class="col-md-4">
-    <%= pie_chart @pouvoir_gouvernance_diversite_categories  %>
-    <p>Catégories d'associés</p>
+    <%= pie_chart State.evaluations
+                       .up_to_date
+                       .group(:pouvoir_gouvernance_diversite_categories)
+                       .count,
+                  title: 'Catégories d\'associés' %>
   </div>
 </div>
 
