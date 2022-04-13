@@ -45,7 +45,7 @@
             <div class="dropdown-menu dropdown-menu-end">
               <%= link_to 'Dashboard', user_root_path, class: 'dropdown-item dropButton' %>
               <%= link_to 'Mon compte', edit_user_registration_path, class: 'dropdown-item dropButton' %>
-              <%= button_to "Déconnexion", destroy_user_session_path, class: 'dropdown-item dropButton', method: :delete, form: { data: { turbo: false } } %>
+              <%= button_to "Déconnexion", destroy_user_session_path, class: 'dropdown-item dropButton', method: :delete %>
             </div>
           </div>
         </div>
