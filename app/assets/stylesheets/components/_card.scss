@@ -20,3 +20,10 @@
     }
   }
 }
+@media (max-width: 800px) {
+  .card-cont {
+    .card {
+      min-height: 100px;
+    }
+  }
+}
