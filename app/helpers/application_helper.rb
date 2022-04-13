@@ -20,6 +20,7 @@ module ApplicationHelper
   def single_value_pie_chart(value, suffix: nil, max: nil)
     suffix ||= "%"
     max ||= 100
+    value = value.round
 
     data = {
       "value" => value,
@@ -27,15 +28,17 @@ module ApplicationHelper
     }
 
     pie_chart data,
-    donut: true, legend: false, colors: ["#2E3092", "#ECD1D8"],
-    library: {
-      events: [],
-      plugins: {
-        donut_text: {
-          text: "#{value}#{suffix}"
-        }
-      }
-    }
+              donut: true,
+              legend: false,
+              colors: ["#2E3092", "#ECD1D8"],
+              library: {
+                events: [],
+                plugins: {
+                  donut_text: {
+                    text: "#{value}#{suffix}"
+                  }
+                }
+              }
   end
 
   def evo_value_pie_chart(value, old_value, suffix: nil, max: nil)
