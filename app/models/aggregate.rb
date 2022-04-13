@@ -51,22 +51,6 @@ class Aggregate
       indicateur_clean(:pouvoir_gouvernance_part_femmes_conseil) => @latest_indicateurs_lists.median(:pouvoir_gouvernance_part_femmes_conseil)
     },
 
-    :pouvoir_gouvernance_part_salaries_conseil => @latest_indicateurs_lists.median(:pouvoir_gouvernance_part_salaries_conseil),
-
-    :pouvoir_gouvernance_diversite_categories => {
-      "Salariés" => @latest_indicateurs_lists.where("'Salariés' = ANY (pouvoir_gouvernance_diversite_categories)").count,
-      "Investisseurs" => @latest_indicateurs_lists.where("'Investisseurs' = ANY (pouvoir_gouvernance_diversite_categories)").count,
-      "Fournisseurs" => @latest_indicateurs_lists.where("'Fournisseurs' = ANY (pouvoir_gouvernance_diversite_categories)").count,
-      "Sous-traitants" => @latest_indicateurs_lists.where("'Sous-traitants' = ANY (pouvoir_gouvernance_diversite_categories)").count,
-      "Clients" => @latest_indicateurs_lists.where("'Clients' = ANY (pouvoir_gouvernance_diversite_categories)").count,
-      "Experts" => @latest_indicateurs_lists.where("'Experts' = ANY (pouvoir_gouvernance_diversite_categories)").count,
-      "Syndicats" => @latest_indicateurs_lists.where("'Syndicats' = ANY (pouvoir_gouvernance_diversite_categories)").count,
-      "Pouvoirs publics" => @latest_indicateurs_lists.where("'Pouvoirs publics' = ANY (pouvoir_gouvernance_diversite_categories)").count,
-      "Associations" => @latest_indicateurs_lists.where("'Associations' = ANY (pouvoir_gouvernance_diversite_categories)").count,
-      "Grand public" => @latest_indicateurs_lists.where("'Grand public' = ANY (pouvoir_gouvernance_diversite_categories)").count,
-      "Autres" => @latest_indicateurs_lists.where("'Autres' = ANY (pouvoir_gouvernance_diversite_categories)").count
-    },
-
     :pouvoir_democratie_nombres => {
       indicateur_clean(:pouvoir_democratie_nombre_reunions) => @latest_indicateurs_lists.median(:pouvoir_democratie_nombre_reunions),
       indicateur_clean(:pouvoir_democratie_nombre_accords_signes) => @latest_indicateurs_lists.median(:pouvoir_democratie_nombre_accords_signes)
