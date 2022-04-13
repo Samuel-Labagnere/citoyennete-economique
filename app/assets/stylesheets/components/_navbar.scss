@@ -1,0 +1,54 @@
+
+/***** ANIMATION LOGO *****/
+
+.navbar{
+  z-index: 999;
+  & * {transition: ease .3s;}
+
+  .logoSite {
+    display:flex;
+    position:relative;
+    width: 180px;
+    font-size: 40px;
+    overflow:hidden;
+    span {
+      line-height: 7px;
+      position:absolute;
+      top: 0;
+      opacity:0;
+      width: 100%;
+      height: 100%;
+      color: black;
+    }
+    b {
+      position:absolute;
+      bottom: 0; right: 0;
+      opacity:0;
+      width: 100%;
+      text-align:right;
+    }
+  }
+  &.navScroll {
+    transition: ease .3s;
+
+    .logoSite {
+    width: 40px;
+    transition-delay: .3s;
+      img {
+        opacity: 0;
+        transform: translateX(-50%);
+        transition: ease .3s;
+      }
+      span {
+        opacity: 1;
+        transform: translateY(calc(50% - 14px));
+        transition: ease .3s;
+      }
+      b {
+        opacity: 1;
+        transform: translateX(calc(-100% + 30px)) translateY(calc(-50% + 14px));
+        transition: ease .3s;
+      }
+    }
+  }
+}

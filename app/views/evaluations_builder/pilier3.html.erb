@@ -7,7 +7,7 @@
 </h1>
 <h2 class="text-secondary"><span class="fs-2 me-1 m-0">3.</span>Capital humain et qualité de vie au travail</h2>
 
-<%= simple_form_for @evaluation, url: wizard_path, method: :put, data: {turbo: false} do |f| %>
+<%= simple_form_for @evaluation, url: wizard_path, method: :put do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <%= f.association :indicateurs_list do |il| %>
 

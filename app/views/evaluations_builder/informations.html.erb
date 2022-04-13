@@ -7,7 +7,7 @@
 </h1>
 <h2>Informations</h2>
 
-<%= simple_form_for @evaluation, url: wizard_path, method: :put, data: {turbo: false} do |f| %>
+<%= simple_form_for @evaluation, url: wizard_path, method: :put do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="row">
     <div class="col-md-4 mb-4">

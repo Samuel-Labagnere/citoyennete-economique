@@ -1,4 +1,26 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# == Schema Information
+#
+# Table name: organisations
+#
+#  id                         :bigint           not null, primary key
+#  agrement_specifique        :string
+#  ape                        :string           not null
+#  date_creation              :integer          not null
+#  distinctions               :text
+#  nom                        :string           not null
+#  objectifs_extra_financiers :boolean
+#  secteur_activite           :string           not null
+#  siren                      :string           not null
+#  statut_juridique           :integer          not null
+#  valeurs_entreprise         :string
+#  validation_admin           :boolean          default(FALSE)
+#  created_at                 :datetime         not null
+#  updated_at                 :datetime         not null
+#
+# Indexes
+#
+#  index_organisations_on_siren  (siren) UNIQUE
+#
 
 one:
   nom: MyString
