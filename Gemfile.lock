@@ -77,8 +77,6 @@ GEM
     bindex (0.8.1)
     bootsnap (1.11.1)
       msgpack (~> 1.2)
-    breadcrumbs_on_rails (4.1.0)
-      railties (>= 5.0)
     builder (3.2.4)
     capybara (3.36.0)
       addressable
@@ -253,7 +251,6 @@ DEPENDENCIES
   active_median (~> 0.3.3)
   annotate
   bootsnap
-  breadcrumbs_on_rails
   capybara
   chartkick
   cssbundling-rails
