@@ -1,3 +1,31 @@
-li {
-  list-style-type: none;
+.list-home {
+  li {
+    list-style-type: none;
+
+    &::before {
+      display:inline-flex;
+      content: '';
+      height: 20px;
+      width: 20px;
+      background-image: url('/images/list_marker.svg');
+      background-size:contain;
+      background-repeat: no-repeat;
+      margin-right: 5px;
+    }
+
+    span {
+      flex:1;
+    }
+  }
+}
+.list-home.big-list {
+  li {
+    display:flex;
+    align-items:center;
+    &::before {
+      height: 30px;
+      width: 30px;
+      margin-right: 10px;
+    }
+  }
 }

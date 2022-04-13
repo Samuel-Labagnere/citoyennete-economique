@@ -4,6 +4,9 @@
     min-height: 200px;
     box-shadow: 8px 8px 0px $primary;
     transition: .3s ease;
+    a {
+      text-decoration: none;
+    }
     .card-body {
       span {
         font-size: 4rem;
