@@ -2,7 +2,7 @@
   <div class="col-lg-8">
     <h1><b class="text-secondary">1.</b> Partage du pouvoir et des décisions</h1>
     <p class="lead">
-      Le premier pilier, à partir duquel les trois autres découlent, la <b class="text-secondary">gouvernance démocratique</b> s’exprime par le <b class="text-secondary">partage du pouvoir et des décisions</b>.
+      Le premier pilier, dont les trois autres découlent, la <b class="text-secondary">gouvernance démocratique</b> s’exprime par le <b class="text-secondary">partage du pouvoir et des décisions</b>.
       <br/><br/>
       La robustesse de ce pilier dédié à la gouvernance démocratique est un indicateur à part entière de la capacité de l’entreprise à déployer les actions quant à sa pérennité économique et le partage de la valeur créée, la qualité de vie au travail et le bien-être des salariés, mais également les actions à impact social, environnemental et territorial. La composition de la gouvernance est l’élément le plus visible, nécessaire à interroger s’agissant de l’expression d’un pouvoir partagé. Il convient cependant d’apprécier les conditions de mise en œuvre par la mise à disposition des connaissances ainsi que les expressions de participation des parties prenantes internes.
     </p>
@@ -20,13 +20,27 @@
       <h4 class="my-3 pt-3 pb-4 pt-sm-5 pb-sm-5 my-sm-5"><b class="text-primary">I.</b> <u class="text-secondary text-decoration-none">Composition de la gouvernance</u></h4>
 
       <div class="d-flex flex-sm-row flex-column">
-        <div class="data-container rounded shadow col-7 p-0 overflow-hidden mb-5 w-100"">
+        <div class="data-container rounded col-7 p-0 overflow-hidden mb-5 w-100">
             <div class="data-intit bg-light text-center p-3">Taux médians</div>
             <div class="data-cont bg-white m-0 p-2">
-                <div class="d-flex">
-                    <%= bar_chart @pouvoir_gouvernance_taux, suffix: "%" %>
-                </div>
+                <%= bar_chart @pouvoir_gouvernance_taux, suffix: "%" %>
             </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Indicateur</th>
+                        <th scope="col">Valeur médiane</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <div class="data-container rounded shadow p-0 col-4 flex-fill overflow-hidden mb-5 w-100">

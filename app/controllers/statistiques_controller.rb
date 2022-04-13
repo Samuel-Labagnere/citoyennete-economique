@@ -43,7 +43,7 @@ class StatistiquesController < ApplicationController
   def index
   end
 
-  def pil1
+  def pilier_1
     @pouvoir_gouvernance_taux = {
       helpers.indicateur_clean(:pouvoir_gouvernance_part_salaries_associes) => $latest_indicateurs_lists.median(:pouvoir_gouvernance_part_salaries_associes),
       helpers.indicateur_clean(:pouvoir_gouvernance_taux_societariat_femmes) => $latest_indicateurs_lists.median(:pouvoir_gouvernance_taux_societariat_femmes),
@@ -59,7 +59,7 @@ class StatistiquesController < ApplicationController
       "Salariés" => $latest_indicateurs_lists.where("'Salariés' = ANY (pouvoir_gouvernance_diversite_categories)").count,
       "Investisseurs" => $latest_indicateurs_lists.where("'Investisseurs' = ANY (pouvoir_gouvernance_diversite_categories)").count,
       "Fournisseurs" => $latest_indicateurs_lists.where("'Fournisseurs' = ANY (pouvoir_gouvernance_diversite_categories)").count,
-      "Sous-traitants" => $latest_indicateurs_lists.where("'Sous-traitans' = ANY (pouvoir_gouvernance_diversite_categories)").count,
+      "Sous-traitants" => $latest_indicateurs_lists.where("'Sous-traitants' = ANY (pouvoir_gouvernance_diversite_categories)").count,
       "Clients" => $latest_indicateurs_lists.where("'Clients' = ANY (pouvoir_gouvernance_diversite_categories)").count,
       "Experts" => $latest_indicateurs_lists.where("'Experts' = ANY (pouvoir_gouvernance_diversite_categories)").count,
       "Syndicats" => $latest_indicateurs_lists.where("'Syndicats' = ANY (pouvoir_gouvernance_diversite_categories)").count,
@@ -88,7 +88,7 @@ class StatistiquesController < ApplicationController
     }
   end
 
-  def pil2
+  def pilier_2
     @valeur_perennite_booleens = boolean_group($latest_indicateurs_lists, [
       :valeur_perennite_existence_reserve,
       :valeur_perennite_reserve_impartageable,
@@ -111,7 +111,7 @@ class StatistiquesController < ApplicationController
     ])
   end
 
-  def pil3
+  def pilier_3
     @qualite_qvt_enquete_qvt = single_boolean($latest_indicateurs_lists, :qualite_qvt_enquete_qvt)
 
     @qualite_qvt_taux_all = {
@@ -130,7 +130,7 @@ class StatistiquesController < ApplicationController
     }
   end
 
-  def pil4
+  def pilier_4
     @impact_environnement_booleens = boolean_group($latest_indicateurs_lists, [
       :impact_environnement_audit_impact,
       :impact_environnement_demarche_ecologique,
