@@ -1,56 +1,71 @@
-<div class="page-user mx-0 mx-sm-5 p-sm-5 mt-0 mt-sm-5 pt-5 pt-sm-0">
-
-  <header>
-    <h1 class="h2">Dashboard</h1>
-  </header>
-
-  <% if current_user.organisation.nil? %>
-    <div class="row">
-      <div class="col d-flex align-items-end">
-        <%= button_to "Inscrire une organisation", new_organisation_path, method: :get, class: "btn btn-primary" %>
-      </div>
-
-      <div class="col">
-        <div id="code_messages"></div>
-        <%= form_with url: code_invitation_path, method: :post do |f| %>
-          <div class="form-group">
-            <%= f.label :code, "Code d'invitation:" %>
-            <%= f.text_field :code, class: "form-control" %>
-          </div>
-          <%= f.submit "Rejoindre une organisation", class: "btn btn-primary" %>
-        <% end %>
-      </div>
-    </div>
-  <% else %>
-    <div class="col-10 text-break me-auto ms-auto rounded bg-white shadow border-start border-primary p-3 p-sm-4 mb-5 col-input mt-5 p-sm-5">
-      <a href="/organisations/<%= current_user.organisation.id %>/edit"><h2 class="mb-3 text-primary"><%= current_user.organisation %></h2></a>
-      <% if !current_user.organisation.validation_admin %>
-        <p class="fst-italic">En attente de vérification par un administrateur.<p>
-      <% else %>
-        <div class="d-flex">
-          <strong class="me-2"><%= current_user.organisation.statut_juridique %></strong>
-          <strong class="me-2"><%= current_user.organisation.secteur_activite %></strong>
-        </div>
-      <% current_user.organisation.evaluations.active.each do |evaluation| %>
-        <ul class="mb-3 mt-3 ms-0 ms-sm-3 me-0 ms-sm-3">
-          <li>
-            <%= link_to "Evaluation de l'année #{ evaluation.annee }", evaluation, class: "text-secondary fw-bold" %> | <%= link_to "Voir les résultats", resultats_path(evaluation_id: evaluation.id), class: "text-success fw-bold" %>
-          </li>
-        </ul>
+<div class="row">
+  <div class="col-lg-8">
+    <h1>
+      <% if current_user.organisation.validation_admin %>
+        <a href="/organisations/<%= current_user.organisation.id %>/edit" class="text-primary"><%= current_user.organisation %></a>
+        <% else %>Dashboard
       <% end %>
-    </div>
-    <% end %>
-    <div class="d-flex align-items-center justify-content-center">
-      <%= button_to "Ajouter une évaluation", evaluations_build_new_path, method: :get, class: "btn btn-primary" %>
-    </div>
-    <div class="d-flex align-items-center justify-content-center mt-5">
-      <% if current_user.organisation.objectifs_list.present? %>
-        <%= button_to "Éditer les objectifs", edit_objectifs_list_path(id: current_user.organisation.objectifs_list.id), method: :get, class: "btn btn-primary ms-2 me-2" %>
-      <% else %>
-        <%= button_to "Définir des objectifs", new_objectifs_list_path, method: :get, class: "btn btn-secondary ms-2 me-2" %>
-      <% end %>
-      <%= button_to "Générer un code d'invitation", code_invitation_path, method: :get, class: "btn btn-success ms-2" %>
-    </div>
-  <% end %>
-
+    </h1>
+  </div>
 </div>
+
+<% if current_user.organisation.nil? %>
+  <div class="row">
+    <div class="col d-flex align-items-end">
+      <%= button_to "Inscrire une organisation", new_organisation_path, method: :get, class: "btn btn-primary" %>
+    </div>
+
+    <div class="col">
+      <div id="code_messages"></div>
+      <%= form_with url: code_invitation_path, method: :post do |f| %>
+        <div class="form-group">
+          <%= f.label :code, "Code d'invitation:" %>
+          <%= f.text_field :code, class: "form-control" %>
+        </div>
+        <%= f.submit "Rejoindre une organisation", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+
+<% if !current_user.organisation.validation_admin %>
+    <p class="fst-italic">En attente de vérification par un administrateur.<p>
+  <% else %>
+  <div class="card" style="min-height: unset">
+    <ul class="list-group list-group-flush">
+      <div class="list-group-item d-flex">
+        <div class="col">Evaluations</div>
+        <div class="row w-50 text-center">
+          <div class="col">Pilier 1</div>
+          <div class="col">Pilier 2</div>
+          <div class="col">Pilier 3</div>
+          <div class="col">Pilier 4</div>
+        </div>
+      </div>
+      <% current_user.organisation.evaluations.active.each do |evaluation| %>
+      <div class="list-group-item d-flex">
+        <div class="col">
+          <%= link_to "Evaluation de l'année #{ evaluation.annee }", evaluation, class: "text-secondary fw-bold" %> | <%= link_to "Voir les résultats", resultats_path(evaluation_id: evaluation.id), class: "text-success fw-bold" %>
+        </div>
+        <div class="row w-50 text-center">
+          <div class="col">10/10</div>
+          <div class="col">10/10</div>
+          <div class="col">10/10</div>
+          <div class="col">10/10</div>
+        </div>
+      </div>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+  <%= button_to "Ajouter une évaluation", evaluations_build_new_path, method: :get, class: "btn btn-primary text-white mt-5 mb-4 mx-auto d-flex" %>
+  <div class="d-flex justify-content-center mb-5">
+    <% if current_user.organisation.objectifs_list.present? %>
+      <%= button_to "Éditer les objectifs", edit_objectifs_list_path(id: current_user.organisation.objectifs_list.id), method: :get, class: "btn btn-primary" %>
+    <% else %>
+      <%= button_to "Définir des objectifs", new_objectifs_list_path, method: :get, class: "btn btn-secondary me-2" %>
+    <% end %>
+    <%= button_to "Générer un code d'invitation", code_invitation_path, method: :get, class: "btn btn-success ms-2" %>
+  </div>
+<% end %>
