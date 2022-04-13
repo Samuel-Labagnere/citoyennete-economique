@@ -63,7 +63,11 @@
                     <div class="data-intit bg-light text-center p-3"><%= indicateur_clean :valeur_partage_ecart_revenus_hauts_bas %> (médiane)</div>
                     <div class="data-cont bg-white m-0 p-2">
                         <div class="d-flex justify-content-center">
-                            <p class="h1"><%= @valeur_partage_ecart_revenus_hauts_bas %></p>
+                            <p class="h1">
+                                <%= State.evaluations
+                                        .up_to_date
+                                        .median(:valeur_partage_ecart_revenus_hauts_bas) %>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -73,7 +77,11 @@
                     <div class="data-intit bg-light text-center p-3"><%= indicateur_clean :valeur_partage_index_egalite_homme_femme %> (médiane)</div>
                     <div class="data-cont bg-white m-0 p-2">
                         <div class="d-flex justify-content-center">
-                            <p class="h1"><%= @valeur_partage_index_egalite_homme_femme %></p>
+                            <p class="h1">
+                                <%= State.evaluations
+                                        .up_to_date
+                                        .median(:valeur_partage_index_egalite_homme_femme) %>
+                            </p>
                         </div>
                     </div>
                 </div>

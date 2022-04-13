@@ -1,14 +1,14 @@
 <div class="page-user col-10 m-auto">
 
   <header>
-    <h1 class="h2 mt-5">Mon compte</h1>
+    <h1 class="h2 p-0">Mon compte</h1>
   </header>
 
   <div class="form-body mt-0 mb-5 mt-sm-0">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= render 'shared/small_error_message', object: f.object %>
 
-      <div class="modiform row d-flex flex-sm-row flex-column col-10 text-break me-auto ms-auto rounded bg-white shadow border-start border-primary p-3 p-sm-4 mb-5 col-input mt-5 p-sm-5">
+      <div class="modiform row d-flex flex-sm-row flex-column col-10 text-break me-auto ms-auto rounded p-3 p-sm-4 mb-5 col-input mt-5 p-sm-5">
 
         <div class="col-12 col-sm-6">
           <%= f.input :first_name %>
@@ -39,12 +39,11 @@
   <% end %>
       <div class="col-10 m-auto mt-5 mb-5">
 
-        <h3 class="mb-3">Supprimer mon compte</h3>
+        <h3 class="mb-1">Supprimer mon compte :</h3>
         <br/>
 
-        <p>Déçu ?
-          <%= button_to "Supprimer mon compte", registration_path(resource_name), method: :delete, class: "btn btn-danger ms-3", onclick: "return confirm('Êtes-vous sûr de vouloir supprimer votre compte ?');" %>
-        </p>
+          <%= button_to "Supprimer mon compte", registration_path(resource_name), method: :delete, class: "btn btn-danger", onclick: "return confirm('Êtes-vous sûr de vouloir supprimer votre compte ?');" %>
+
         <%= link_to "Retour", :back, class: "btn btn-secondary mt-5" %>
       </div>
 
