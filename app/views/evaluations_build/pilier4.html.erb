@@ -19,20 +19,20 @@
 
         <h3 class="text-primary">Impact environnemental</h3>
 
-        <fieldset class="mt-3 mb-2 col-sm-10 d-flex flex-column justify-content-between align-items-center rounded bg-white shadow">
+        <fieldset class="mt-3 mb-2 col-sm-10 d-flex flex-column justify-content-between align-items-center rounded bg-white shadow pt-3">
           <div class="col-8 col-sm-10">
-            <%= il.input :impact_environnement_audit_impact, as: :radio_buttons %>
-            <%= il.input :impact_environnement_demarche_ecologique, as: :radio_buttons %>
-            <%= il.input :impact_environnement_discussion_impact, as: :radio_buttons %>
+            <div class="mb-3"><%= il.input :impact_environnement_audit_impact, as: :radio_buttons %></div>
+            <div class="mb-3"><%= il.input :impact_environnement_demarche_ecologique, as: :radio_buttons %></div>
+            <div class="mb-3"><%= il.input :impact_environnement_discussion_impact, as: :radio_buttons %></div>
           </div>
           <div class="col-8 col-sm-10 col-input">
-            <%= il.input :impact_environnement_part_energies_renouvelables %>
-            <%= il.input :impact_environnement_part_salaries_mobilite %>
-            <p>Calculez-vous le bilan carbone ?<p>
+            <div class="mb-3"><%= il.input :impact_environnement_part_energies_renouvelables %></div>
+            <div class="mb-3"><%= il.input :impact_environnement_part_salaries_mobilite %></div>
+            <div class="mb-3"><p>Calculez-vous le bilan carbone ?<p></div>
             <div class="m-3">
-              <%= il.input :impact_environnement_bilan_carbone_scope_1 %>
-              <%= il.input :impact_environnement_bilan_carbone_scope_2 %>
-              <%= il.input :impact_environnement_bilan_carbone_scope_3 %>
+              <div class="mb-3"><%= il.input :impact_environnement_bilan_carbone_scope_1 %></div>
+              <div class="mb-3"><%= il.input :impact_environnement_bilan_carbone_scope_2 %></div>
+              <div class="mb-3"><%= il.input :impact_environnement_bilan_carbone_scope_3 %></div>
             </div>
           </div>
         </fieldset>
@@ -44,11 +44,11 @@
         <h3 class="text-primary">Impact social</h3>
 
         <fieldset class="mt-3 mb-2 col-sm-10 d-flex flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow">
-          <div class="col-8 col-sm-10 col-input">
-            <%= il.input :impact_social_part_activite_structures_insertion %>
-            <%= il.input :impact_social_alternance_apprentissage %>
-            <%= il.input :impact_social_part_seniors %>
-            <%= il.input :impact_social_part_handicap %>
+          <div class="col-8 col-sm-10 col-input pt-3">
+            <div class="mb-3"><%= il.input :impact_social_part_activite_structures_insertion %></div>
+            <div class="mb-3"><%= il.input :impact_social_alternance_apprentissage %></div>
+            <div class="mb-3"><%= il.input :impact_social_part_seniors %></div>
+            <div class="mb-3"><%= il.input :impact_social_part_handicap %></div>
           </div>
         </fieldset>
 
@@ -59,16 +59,16 @@
         <h3 class="text-primary">Engagement en faveur de l'écosystème et du territoire</h3>
 
         <fieldset class="mt-3 mb-2 col-sm-10 d-flex flex-column mb-4 m-0 row-cols-2 justify-content-between align-items-center rounded bg-white shadow">
-          <div class="col-8 col-sm-10 col-input">
-            <%= il.input :impact_engagement_part_resultat_missions_utiles %>
-            <%= il.input :impact_engagement_part_placements_responsables %>
-            <%= il.input :impact_engagement_part_impots_france %>
-            <%= il.input :impact_engagement_demarche_ethique_fournisseurs, as: :radio_buttons %>
+          <div class="col-8 col-sm-10 col-input pt-3">
+            <div class="mb-3"><%= il.input :impact_engagement_part_resultat_missions_utiles %></div>
+            <div class="mb-3"><%= il.input :impact_engagement_part_placements_responsables %></div>
+            <div class="mb-3"><%= il.input :impact_engagement_part_impots_france %></div>
+            <div class="mb-3"><%= il.input :impact_engagement_demarche_ethique_fournisseurs, as: :radio_buttons %></div>
           </div>
         </fieldset>
 
-        <div class="estim col-8 col-sm-10 text-break rounded bg-white shadow border-start border-secondary pt-1 pb-1 pe-5 ps-5 mt-3 mb-5 col-input">
-            <%= il.input :impact_estimation_realite %>
+        <div class="estim col-8 col-sm-10 text-break rounded bg-white shadow border-start border-secondary pt-3 pb-2 pe-5 ps-5 mt-3 mb-5 col-input">
+            <div class="mb-3"><%= il.input :impact_estimation_realite %></div>
         </div>
 
       </div>
