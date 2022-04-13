@@ -52,7 +52,7 @@ class OrganisationsController < ApplicationController
   def update
     respond_to do |format|
       if @organisation.update(organisation_params)
-        format.html { redirect_to organisation_url(@organisation), notice: I18n.t('notice.organisation.update') }
+        format.html { redirect_to edit_organisation_url(@organisation), notice: I18n.t('notice.organisation.update') }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
