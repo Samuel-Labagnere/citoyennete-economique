@@ -1,94 +1,18 @@
 class StatistiquesController < ApplicationController
-  before_action :set_vars
+  def pillar1
+    aggregate = Aggregate.new
+    pillar1 = aggregate.pillar1
 
-  def set_vars
-    $latest_years = []
-    Organisation.all.each do |organisation|
-      $latest_years.push organisation.evaluations.active.pluck(:annee).max
-    end
-    $latest_evaluations = Evaluation.active.where(annee: $latest_years)
-    $latest_indicateurs_lists = IndicateursList.where(evaluation_id: $latest_evaluations)
+    @pouvoir_gouvernance_taux = pillar1[:pouvoir_gouvernance_taux]
+    @pouvoir_gouvernance_part_salaries_conseil = pillar1[:pouvoir_gouvernance_part_salaries_conseil]
+    @pouvoir_gouvernance_diversite_categories = pillar1[:pouvoir_gouvernance_diversite_categories]
+    @pouvoir_democratie_nombres = pillar1[:pouvoir_democratie_nombres]
+    @pouvoir_democratie_taux_participation_formations = pillar1[:pouvoir_democratie_taux_participation_formations]
+    @pouvoir_strategique_taux = pillar1[:pouvoir_strategique_taux]
+    @pouvoir_democratie_nombres = pillar1[:pouvoir_democratie_nombres]
   end
 
-  def boolean_group(indic_lists, indic_symbols)
-    group = {}
-
-    indic_symbols.each do |indic_symbol|
-      indic = single_boolean(indic_lists, indic_symbol)
-      if not indic.nil?
-        group[indic_symbol] = indic
-      end
-    end
-
-    return group
-  end
-
-  def single_boolean(indic_lists, indic_symbol)
-    result = nil
-
-    true_count = indic_lists.where("#{indic_symbol.to_s} = ?", true).count
-    false_count = indic_lists.where("#{indic_symbol.to_s} = ?", false).count
-    sum = true_count + false_count
-
-    if sum > 0
-      result = {
-        helpers.indicateur_clean(indic_symbol) => (true_count / sum * 100),
-        helpers.negative_indicateur(indic_symbol) => (false_count / sum * 100)
-      }
-    end
-
-    return result
-  end
-
-  def index
-  end
-
-  def pil1
-    @pouvoir_gouvernance_taux = {
-      helpers.indicateur_clean(:pouvoir_gouvernance_part_salaries_associes) => $latest_indicateurs_lists.median(:pouvoir_gouvernance_part_salaries_associes),
-      helpers.indicateur_clean(:pouvoir_gouvernance_taux_societariat_femmes) => $latest_indicateurs_lists.median(:pouvoir_gouvernance_taux_societariat_femmes),
-      helpers.indicateur_clean(:pouvoir_gouvernance_taux_droits_vote_salaries) => $latest_indicateurs_lists.median(:pouvoir_gouvernance_taux_droits_vote_salaries),
-      helpers.indicateur_clean(:pouvoir_gouvernance_part_femmes_conseil) => $latest_indicateurs_lists.median(:pouvoir_gouvernance_part_femmes_conseil)
-    }
-
-    @pouvoir_gouvernance_part_salaries_conseil = {
-      :pouvoir_gouvernance_part_salaries_conseil => $latest_indicateurs_lists.median(:pouvoir_gouvernance_part_salaries_conseil)
-    }
-
-    @pouvoir_gouvernance_diversite_categories = {
-      "Salariés" => $latest_indicateurs_lists.where("'Salariés' = ANY (pouvoir_gouvernance_diversite_categories)").count,
-      "Investisseurs" => $latest_indicateurs_lists.where("'Investisseurs' = ANY (pouvoir_gouvernance_diversite_categories)").count,
-      "Fournisseurs" => $latest_indicateurs_lists.where("'Fournisseurs' = ANY (pouvoir_gouvernance_diversite_categories)").count,
-      "Sous-traitants" => $latest_indicateurs_lists.where("'Sous-traitants' = ANY (pouvoir_gouvernance_diversite_categories)").count,
-      "Clients" => $latest_indicateurs_lists.where("'Clients' = ANY (pouvoir_gouvernance_diversite_categories)").count,
-      "Experts" => $latest_indicateurs_lists.where("'Experts' = ANY (pouvoir_gouvernance_diversite_categories)").count,
-      "Syndicats" => $latest_indicateurs_lists.where("'Syndicats' = ANY (pouvoir_gouvernance_diversite_categories)").count,
-      "Pouvoirs publics" => $latest_indicateurs_lists.where("'Pouvoirs publics' = ANY (pouvoir_gouvernance_diversite_categories)").count,
-      "Associations" => $latest_indicateurs_lists.where("'Associations' = ANY (pouvoir_gouvernance_diversite_categories)").count,
-      "Grand public" => $latest_indicateurs_lists.where("'Grand public' = ANY (pouvoir_gouvernance_diversite_categories)").count,
-      "Autres" => $latest_indicateurs_lists.where("'Autres' = ANY (pouvoir_gouvernance_diversite_categories)").count
-    }
-
-    @pouvoir_democratie_nombres = {
-      helpers.indicateur_clean(:pouvoir_democratie_nombre_reunions) => $latest_indicateurs_lists.median(:pouvoir_democratie_nombre_reunions),
-      helpers.indicateur_clean(:pouvoir_democratie_nombre_accords_signes) => $latest_indicateurs_lists.median(:pouvoir_democratie_nombre_accords_signes)
-    }
-
-    @pouvoir_democratie_taux_participation_formations = $latest_indicateurs_lists.median(:pouvoir_democratie_taux_participation_formations)
-
-    @pouvoir_strategique_taux = {
-      :pouvoir_strategique_taux_presence_assemblee => $latest_indicateurs_lists.median(:pouvoir_strategique_taux_presence_assemblee),
-      :pouvoir_strategique_implication_partage => $latest_indicateurs_lists.median(:pouvoir_strategique_implication_partage),
-      :pouvoir_strategique_actifs_total => $latest_indicateurs_lists.median(:pouvoir_strategique_actifs_total)
-    }
-
-    @pouvoir_democratie_nombres = {
-      :pouvoir_democratie_nombre_reunions => $latest_indicateurs_lists.median(:pouvoir_democratie_nombre_reunions),
-      :pouvoir_democratie_nombre_accords_signes => $latest_indicateurs_lists.median(:pouvoir_democratie_nombre_accords_signes)
-    }
-  end
-
-  def pil2
+  def pillar2
     @valeur_perennite_booleens = boolean_group($latest_indicateurs_lists, [
       :valeur_perennite_existence_reserve,
       :valeur_perennite_reserve_impartageable,
@@ -111,7 +35,7 @@ class StatistiquesController < ApplicationController
     ])
   end
 
-  def pil3
+  def pillar3
     @qualite_qvt_enquete_qvt = single_boolean($latest_indicateurs_lists, :qualite_qvt_enquete_qvt)
 
     @qualite_qvt_taux_all = {
@@ -130,7 +54,7 @@ class StatistiquesController < ApplicationController
     }
   end
 
-  def pil4
+  def pillar4
     @impact_environnement_booleens = boolean_group($latest_indicateurs_lists, [
       :impact_environnement_audit_impact,
       :impact_environnement_demarche_ecologique,

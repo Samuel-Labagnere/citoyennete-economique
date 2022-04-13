@@ -15,10 +15,10 @@ Rails.application.routes.draw do
   get "dashboard", to: "dashboard#index", as: "user_root"
   get "admin", to: "admin#index"
   # get "entreprises", to: "organisations#public_list"
-  get 'pilier-1', to: "statistiques#pil1"
-  get 'pilier-2', to: "statistiques#pil2"
-  get 'pilier-3', to: "statistiques#pil3"
-  get 'pilier-4', to: "statistiques#pil4"
+  get 'pilier-1', to: "statistiques#pillar1"
+  get 'pilier-2', to: "statistiques#pillar2"
+  get 'pilier-3', to: "statistiques#pillar3"
+  get 'pilier-4', to: "statistiques#pillar4"
   get 'mentions-legales', to: "home#mentions_legales"
   get 'cgu', to: 'home#cgu'
   get 'politique-de-confidentialite', to: 'home#politique'
