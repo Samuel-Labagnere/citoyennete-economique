@@ -16,26 +16,21 @@
   <!-- IMPACT 3 -->
     <h4 class="my-3 pt-3 pb-4 pt-sm-5 pb-sm-5 my-sm-5"><b class="text-primary">I.</b> <u class="text-secondary text-decoration-none">Qualité de vie</u> au travail / <u class="text-secondary text-decoration-none">épanouissement</u> des salariés</h4>
 
-    <div class="row indic-row-reverse mx-1">
-      <% unless @qualite_qvt_enquete_qvt.nil? %>
-            <div class="data-container rounded shadow col-12 col-sm-6 p-0 overflow-hidden me-2 mb-5 ">
-              <div class="data-cont bg-white m-0 p-2">
-                <div class="d-flex">
-                  <%= pie_chart @qualite_qvt_enquete_qvt, suffix: '%' %>
-                </div>
-              </div>
-            </div>
-      <% end %>
-        <div class="col-data col-12 col-sm ms-0 ms-sm-2 p-0 mb-5">
-            <div class="data-container rounded shadow p-0 overflow-hidden mb-5 d-flex flex-column">
-                <div class="data-intit bg-light text-center p-3"><%= indicateur_clean :qualite_qvt_moyenne_anciennete %></div>
-                <div class="data-cont bg-white m-0 p-2">
-                    <div class="d-flex justify-content-center">
-                        <p class="h1"><%= @qualite_qvt_moyenne_anciennete %> ans</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="row mb-5">
+      <div class="col-md-6">
+        <%= pie_chart @qualite_qvt_enquete_qvt, suffix: '%' %>
+        <p class="text-center mt-3">
+          <%= indicateur_clean :qualite_qvt_enquete_qvt %>
+        </p>
+      </div>
+      <div class="col-md-6">
+        <%= single_value_pie_chart State.evaluations
+                                        .up_to_date
+                                        .average(:qualite_qvt_moyenne_anciennete) %>
+        <p class="text-center mt-3">
+          <%= indicateur_clean :qualite_qvt_moyenne_anciennete %>
+        </p>
+      </div>
     </div>
 
     <div class="data-container rounded shadow p-0 overflow-hidden mb-5">
@@ -52,15 +47,15 @@
         Développement des <u class="text-secondary text-decoration-none">compétences individuelles et collectives</u><br/>
         <u class="text-secondary text-decoration-none">Emancipation</u> des salariés
     </h4>
-    <div class="estim d-invers">
-      <div class="data-container rounded shadow col-12 p-0 overflow-hidden mb-5 d-flex flex-column">
-        <div class="data-intit bg-light text-center p-3 w-50"><%= indicateur_clean :qualite_emancipation_moyenne_heures_formation %></div>
-        <div class="data-cont bg-white m-0 p-3 w-50">
-          <div class="d-flex justify-content-center">
-            <p class="h1"><%= @qualite_emancipation_moyenne_heures_formation %> heures</p>                  </div>
-          </div>
-      </div>
+    <div>
+      <%= single_value_pie_chart State.evaluations
+                                      .up_to_date
+                                      .average(:qualite_emancipation_moyenne_heures_formation) %>
+      <p class="text-center mt-3">
+        <%= indicateur_clean :qualite_emancipation_moyenne_heures_formation %>
+      </p>
     </div>
+
 
       <div class="pb-5">
         <div class="data-container rounded shadow p-0 overflow-hidden mb-5">
