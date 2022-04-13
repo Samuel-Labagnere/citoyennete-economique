@@ -1,3 +1,8 @@
+<div class="d-flex mb-4">
+  <%= link_to 'Éditer cette évaluation', evaluation_builder_path(@evaluation.id, 'informations'), class: 'btn btn-primary text-white me-4' %>
+  <%= link_to 'Retourner au dashboard', user_root_path, class: 'btn btn-secondary' %>
+</div>
+
 <div class="row">
   <div class="col-lg-8">
     <h1>
@@ -11,4 +16,4 @@
 </div>
 
 
-<%= button_to "Supprimer cette évaluation", @evaluation, method: :delete, class: "btn rounded white btn-danger mx-auto d-flex", form: { data: { turbo_confirm: "Êtes-vous sûr de vouloir supprimer l'évaluation de #{@evaluation.annee}?" } } %>
+<%= button_to "Supprimer cette évaluation", @evaluation, method: :delete, class: "btn rounded text-white btn-danger mx-auto d-flex", form: { data: { turbo_confirm: "Êtes-vous sûr de vouloir supprimer l'évaluation de #{@evaluation.annee}?" } } %>
