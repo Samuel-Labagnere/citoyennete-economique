@@ -6,19 +6,19 @@
   <% end %>
 </h1>
 
-<%= link_to 'Modifier', edit_organisation_path(@organisation), class: 'btn btn-primary mb-4' %>
+<%= link_to 'Modifier', edit_organisation_path(@organisation), class: 'btn btn-primary mb-4 text-white' if @organisation.present? %>
 
 <% if @organisation.nil? %>
   <div class="row">
-    <%= button_to "Inscrire une organisation", new_organisation_path, class: "btn btn-primary" %>
-    <div class="col">
+    <%= link_to "Inscrire une organisation", new_organisation_path, class: "btn btn-primary" %>
+    <div class="col mt-5">
       <div id="code_messages"></div>
       <%= form_with url: code_invitation_path, method: :post do |f| %>
         <div class="form-group">
           <%= f.label :code, "Code d'invitation:" %>
           <%= f.text_field :code, class: "form-control" %>
         </div>
-        <%= f.submit "Rejoindre une organisation", class: "btn btn-primary" %>
+        <%= f.submit "Rejoindre une organisation", class: "btn btn-primary mt-3" %>
       <% end %>
     </div>
   </div>
@@ -54,7 +54,7 @@
     <p class="fst-italic">En attente de vérification par un administrateur.<p>
   <% end %>
   <div class="mt-4">
-    <%= link_to "Ajouter une évaluation", evaluations_builder_new_path, class: "btn btn-primary" %>
+    <%= link_to "Ajouter une évaluation", evaluations_builder_new_path, class: "btn btn-primary text-white" %>
     <% if @organisation.objectifs_list.present? %>
       <%= link_to "Éditer les objectifs", edit_objectifs_list_path(id: organisation.objectifs_list.id), class: "btn btn-primary" %>
     <% else %>
