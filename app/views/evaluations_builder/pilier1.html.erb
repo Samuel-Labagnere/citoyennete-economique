@@ -12,7 +12,7 @@
 	<%= f.association :state do |il| %>
 
 		<h3 class="text-primary mb-5">Composition de la gouvernance</h3>
-				
+
 		<div class="row align-items-baseline">
 				<div class="col-md-4 mb-4">
 						<%= il.input :pouvoir_gouvernance_part_salaries_associes %>
@@ -70,6 +70,6 @@
 
 	<div class="d-flex mt-5">
 			<%= link_to 'Précédent', wizard_path(@previous_step), class: 'btn btn-primary me-auto ms-auto d-flex mb-5 text-white' %>
-			<%= f.button :submit, "Suivant", class: 'btn btn-primary me-auto ms-auto d-flex mb-5 text-white' %>
+			<%= f.button :submit, "Suivant", class: 'btn btn-primary me-auto ms-auto d-flex mb-5' %>
 	</div>
 <% end %>
