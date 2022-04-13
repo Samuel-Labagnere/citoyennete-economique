@@ -50,4 +50,8 @@ class Evaluation < ApplicationRecord
                 .state
                 .update_column :up_to_date, true
   end
+
+  def to_s
+    "Evaluation #{annee}"
+  end
 end
