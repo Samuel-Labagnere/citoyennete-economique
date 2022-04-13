@@ -1,9 +1,17 @@
-.card {
-  min-height: 200px;
-
-  .card-body {
-    span {
-      font-size: 4rem;
+.card-cont {
+  &:first-child .card, &:nth-child(3) .card{box-shadow: 8px 8px 0px $secondary;}
+  .card {
+    min-height: 200px;
+    box-shadow: 8px 8px 0px $primary;
+    .card-body {
+      span {
+        font-size: 4rem;
+        position: absolute;
+        top: -2.5rem;
+        right: 0;
+        font-family: 'Alata';
+        font-weight: bold;
+      }
     }
   }
 }

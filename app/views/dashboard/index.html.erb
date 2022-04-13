@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-lg-8">
     <h1>
-      <% if current_user.organisation.validation_admin %>
+      <% if current_user.organisation.present? && current_user.organisation.validation_admin %>
         <a href="/organisations/<%= current_user.organisation.id %>/edit" class="text-primary"><%= current_user.organisation %></a>
         <% else %>Dashboard
       <% end %>
