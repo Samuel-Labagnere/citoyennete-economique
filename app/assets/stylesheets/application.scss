@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&family=Open+Sans:wght@300;400&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
-@import "variables";
+
+
+@import 'abstracts/variables';
+@import 'base/reset';
+@import 'base/typography';
+@import 'components/card';
+@import 'components/navbar';
+
 @import "bootstrap/scss/bootstrap";
-@import "style";
-@import "animations";
-
-a, a:hover {text-decoration:none;}
-
-.card {
-    min-height: 200px;
-  }

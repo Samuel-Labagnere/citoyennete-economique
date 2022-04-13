@@ -1,9 +1,10 @@
 
 /***** ANIMATION LOGO *****/
 
-#navigationBar{
+.navbar{
   z-index: 999;
   & * {transition: ease .3s;}
+
   .logoSite {
     display:flex;
     position:relative;
@@ -27,9 +28,9 @@
       text-align:right;
     }
   }
-  &.sticky {
+  &.navScroll {
     transition: ease .3s;
-    position:fixed !important;
+
     .logoSite {
     width: 40px;
     transition-delay: .3s;
