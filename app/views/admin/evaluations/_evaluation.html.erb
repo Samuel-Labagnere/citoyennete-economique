@@ -6,10 +6,7 @@
 
   <div class="row my-5">
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
-        Année :
-        <b class="text-primary"><%= evaluation.annee %></b>
-      </div>
+      <%= render 'indicator', name: 'Année', value: "#{evaluation.annee}" %>
     </div>
     <div class="col-sm-6 col-md-4">
       <div class="card p-2">
