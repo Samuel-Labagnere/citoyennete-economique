@@ -13,11 +13,9 @@ class Admin::EvaluationsController < Admin::ApplicationController
     add_breadcrumb @evaluation
   end
 
-
   # GET /evaluations/new
   def new
     add_breadcrumb 'Nouvelle évaluation'
-
     @evaluation = Evaluation.new
     @evaluation.state = State.new
   end

@@ -6,22 +6,22 @@
 
   <div class="row my-5">
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= evaluation.annee ? 'opacity-100' : 'opacity-50' %>">
-        Année :
-        <b class="text-primary "><%= evaluation.annee %></b>
-      </div>
+      <%= render  'indicator',
+                  name: 'Année',
+                  value: "#{evaluation.annee}",
+                  unavailable: false %>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= evaluation.chiffre_affaires ? 'opacity-100' : 'opacity-50' %>">
-        Chiffre d'affaires :
-        <b class="text-primary"><%= evaluation.chiffre_affaires %></b>
-      </div>
+      <%= render  'indicator',
+                  name: 'Chiffre d\'affaires',
+                  value: "#{number_to_currency evaluation.chiffre_affaires, precision: 0}",
+                  unavailable: evaluation.chiffre_affaires.blank? %>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= evaluation.resultat_net ? 'opacity-100' : 'opacity-50' %>">
-        Résultat net :
-        <b class="text-primary"><%= evaluation.resultat_net %></b>
-      </div>
+      <%= render  'indicator',
+                  name: 'Résultat net',
+                  value: "#{number_to_currency evaluation.resultat_net, precision: 0}",
+                  unavailable: evaluation.resultat_net.blank? %>
     </div>
     <div class="col-sm-6 col-md-4">
       <div class="card p-2 <%= evaluation.nombre_salaries ? 'opacity-100' : 'opacity-50' %>">
