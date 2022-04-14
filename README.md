@@ -4,9 +4,9 @@ Issue du mouvement coopératif, la citoyenneté économique est née de notre co
 Parce que nous pensons que les indicateurs économiques et financiers ne résument pas à eux seuls la performance d’une entreprise, nous avons engagé une démarche volontariste pour mesurer et suivre d’autres indicateurs en cohérence avec nos valeurs et nos principes. Il s’agit de rendre visible (en interne comme en externe) et compréhensible une « performance » multi-dimensionnelle, en s’inscrivant dans une vision plus large des missions de l’entreprise.
 
 ## Origine de la plateforme
-Le DUT MMI<sup>[1]</sup> de l'IUT de Bordeaux Montaigne organise chaque année un projet regroupant chaque promotion de MMI intitulé Workshop.
+Le DUT MMI<sup>[1]</sup> de l'IUT de Bordeaux Montaigne organise chaque année un projet intitulé Workshop, regroupant chaque promotion de MMI.
 
-Ce projet a pourt but la conception et la production de solutions pertinentes à des problèmes sociétaux actuels, au travers du numérique.
+Ce projet a pour but la conception et la production de solutions pertinentes à des problèmes sociétaux actuels, au travers du numérique.
 
 La société ALMA a proposé la création d'une plateforme d'auto-évaluation pour appuyer la citoyenneté économique, afin de la fournir à la CGSCOP<sup>[2]</sup> pour la promouvoir à l'ensemble de leur réseau. Auprès des sociétés coopératives dans un premier temps, puis chercher à intéresser un plus large public en un deuxième.
 
