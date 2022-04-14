@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get 'pilier-4', to: "statistiques#pillar4"
   get 'mentions-legales', to: "home#mentions_legales"
   get 'cgu', to: 'home#cgu'
-  get 'politique-de-confidentialite', to: 'home#politique'
+  # get 'politique-de-confidentialite', to: 'home#politique'
   get 'contact', to: "contact#index"
 
   get 'code_invitation', to: "invitation_code#index"

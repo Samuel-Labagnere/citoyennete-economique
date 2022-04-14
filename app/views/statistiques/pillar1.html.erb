@@ -34,8 +34,10 @@
   <div class="col-md-6">
     <%= pie_chart State.evaluations
                        .up_to_date
-                       .group(:pouvoir_gouvernance_diversite_categories)
-                       .count %>
+                       .pluck(:pouvoir_gouvernance_diversite_categories)
+                       .flatten
+                       .compact
+                       .tally %>
     <p class="text-center mt-3">
       <%= indicateur_clean :pouvoir_gouvernance_diversite_categories %>
     </p>
