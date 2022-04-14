@@ -24,30 +24,30 @@
   <% if @organisation.validation_admin %>
     <h2>Evaluations</h2>
 
-    <div class="table-responsive">
-      <table class="table">
+    <div class="table table-striped table-hover bg-white rounded border my-5">
+      <table class="table m-0">
         <thead>
           <tr>
-            <th>Année</th>
-            <th>Informations</th>
-            <th>Pilier 1</th>
-            <th>Pilier 2</th>
-            <th>Pilier 3</th>
-            <th>Pilier 4</th>
+            <th class="p-3">Année</th>
+            <th class="p-3">Informations</th>
+            <th class="p-3">Pilier 1</th>
+            <th class="p-3">Pilier 2</th>
+            <th class="p-3">Pilier 3</th>
+            <th class="p-3">Pilier 4</th>
           </tr>
         </thead>
         <tbody>
           <% current_user.organisation.evaluations.active.each do |evaluation| %>
-            <tr>
-              <td>
+            <tr class="align-middle">
+              <td class="p-3">
                 <%= link_to evaluation, [:admin, evaluation], class: "text-secondary fw-bold" %> |
                 <%= link_to "Voir les résultats", admin_resultats_path(evaluation_id: evaluation.id), class: "text-primary fw-bold" %>
               </td>
-              <td><%= link_to "Modifier", admin_evaluation_builder_path(evaluation.id, 'informations'), class: "btn btn-primary btn-xs" %></td>
-              <td><%= link_to "Modifier", admin_evaluation_builder_path(evaluation.id, 'pilier1'), class: "btn btn-primary btn-xs" %></td>
-              <td><%= link_to "Modifier", admin_evaluation_builder_path(evaluation.id, 'pilier2'), class: "btn btn-primary btn-xs" %></td>
-              <td><%= link_to "Modifier", admin_evaluation_builder_path(evaluation.id, 'pilier3'), class: "btn btn-primary btn-xs" %></td>
-              <td><%= link_to "Modifier", admin_evaluation_builder_path(evaluation.id, 'pilier4'), class: "btn btn-primary btn-xs" %></td>
+              <td><%= link_to "Modifier", admin_evaluation_builder_path(evaluation.id, 'informations'), class: "btn btn-outline-success btn-sm" %></td>
+              <td><%= link_to "Modifier", admin_evaluation_builder_path(evaluation.id, 'pilier1'), class: "btn btn-outline-success btn-sm" %></td>
+              <td><%= link_to "Modifier", admin_evaluation_builder_path(evaluation.id, 'pilier2'), class: "btn btn-outline-success btn-sm" %></td>
+              <td><%= link_to "Modifier", admin_evaluation_builder_path(evaluation.id, 'pilier3'), class: "btn btn-outline-success btn-sm" %></td>
+              <td><%= link_to "Modifier", admin_evaluation_builder_path(evaluation.id, 'pilier4'), class: "btn btn-outline-success btn-sm" %></td>
             </tr>
           <% end %>
         </tbody>
@@ -57,14 +57,8 @@
   <% else %>
     <p class="fst-italic">En attente de vérification par un administrateur.<p>
   <% end %>
-  <div class="my-5">
-    <%= link_to "Ajouter une évaluation", admin_evaluations_builder_new_path, class: "btn btn-primary text-white" %>
-    <%# if @organisation.objectifs_list.present? %>
-      <%# link_to "Éditer les objectifs", edit_objectifs_list_path(id: organisation.objectifs_list.id), class: "btn btn-primary" %>
-    <%# else %>
-      <%# link_to "Définir des objectifs", new_objectifs_list_path, class: "btn btn-secondary mx-3" %>
-    <%# end %>
-    <%= link_to "Générer un code d'invitation", admin_code_invitation_path, method: :post, class: "btn btn-success" %>
-  </div>
+
+    <%= link_to "Ajouter une évaluation", admin_evaluations_builder_new_path, class: "btn btn-primary text-white mb-5 me-3" %>
+    <%= link_to "Générer un code d'invitation", admin_code_invitation_path, method: :post, class: "btn btn-success mb-5" %>
 
 <% end %>
