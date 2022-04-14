@@ -8,12 +8,19 @@
 <h2><span class="me-1 m-0">2.</span>Pérennité économique et partage de la valeur créée</h2>
 
 <div class="view">
+<<<<<<< HEAD
 <%= simple_form_for @evaluation, url: wizard_path, method: :put do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <%= f.association :state do |il| %>
+=======
+  <%= simple_form_for @evaluation, url: wizard_path, method: :put do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <%= f.association :state do |il| %>
+>>>>>>> 41bc4509bce06a38e6ed23bcd010e3feb8560cab
 
-    <h3>Pérennité : création de valeur, inaliénabilité et robustesse de l'entreprise</h3>
+      <h3>Pérennité : création de valeur, inaliénabilité et robustesse de l'entreprise</h3>
 
+<<<<<<< HEAD
     <div class="row align-items-baseline col-input my-5">
       <div class="col-md-4">
         <%= il.input :valeur_perennite_part_capital_salaries %>
@@ -37,9 +44,35 @@
         <%= il.input :valeur_perennite_part_endettement %>
       </div>
     </div>
+=======
+      <div class="row align-items-baseline col-input my-5">
+        <div class="col-md-4 mb-4">
+          <%= il.input :valeur_perennite_part_capital_salaries %>
+        </div>
+        <div class="col-md-4 mb-4">
+          <%= il.input :valeur_perennite_part_resultat_reserve %>
+        </div>
+        <div class="col-md-4 mb-4">
+          <%= il.input :valeur_perennite_ebe_caht %>
+        </div>
+        <div class="col-md-4 mb-4">
+          <%= il.input :valeur_perennite_attention_questions_innovation, as: :radio_buttons %>
+        </div>
+        <div class="col-md-4 mb-4">
+          <%= il.input :valeur_perennite_existence_reserve, as: :radio_buttons %>
+        </div>
+        <div class="col-md-4 mb-4">
+          <%= il.input :valeur_perennite_reserve_impartageable, as: :radio_buttons %>
+        </div>
+        <div class="col-md-4 mb-4">
+          <%= il.input :valeur_perennite_part_endettement %>
+        </div>
+      </div>
+>>>>>>> 41bc4509bce06a38e6ed23bcd010e3feb8560cab
 
-    <h3>Partage des richesses</h3>
+      <h3>Partage des richesses</h3>
 
+<<<<<<< HEAD
     <div class="row align-items-end col-input my-5">
       <div class="col-md-4">
         <%= il.input :valeur_partage_part_resultat_net_actionnaires %>
@@ -70,15 +103,56 @@
     <div class="col-md-4 ">
     <%= il.input :valeur_estimation_realite %>
     </div>
+=======
+      <div class="row align-items-end col-input my-5">
+        <div class="col-md-4 mb-4">
+          <%= il.input :valeur_partage_part_resultat_net_actionnaires %>
+        </div>
+        <div class="col-md-4 mb-4">
+          <%= il.input :valeur_partage_part_resultat_salaries %>
+        </div>
+        <div class="col-md-4 mb-4">
+          <%= il.input :valeur_partage_ecart_revenus_hauts_bas %>
+        </div>
+        <div class="col-md-4 my-4">
+          <%= il.input :valeur_partage_index_egalite_homme_femme %>
+        </div>
+        <div class="col-md-4 mb-4">
+          <%= il.input :valeur_partage_existence_accord, as: :radio_buttons %>
+        </div>
+        <div class="col-md-4 my-4">
+          <%= il.input :valeur_partage_existence_epargne_salariale, as: :radio_buttons %>
+        </div>
+        <div class="col-md-4 mb-4">
+          <%= il.input :valeur_partage_existence_grille_salariale, as: :radio_buttons %>
+        </div>
+        <div class="col-md-4 my-4 ">
+          <%= il.input :valeur_partage_publicite_grille, as: :radio_buttons %>
+        </div>
 
+        <div class="col-8 bg-primary rounded my-5" style="height: 6px"></div>
+>>>>>>> 41bc4509bce06a38e6ed23bcd010e3feb8560cab
+
+        <div class="col-md-8 estim">
+          <%= il.input :valeur_estimation_realite %>
+        </div>
+      </div>
   <% end %>
+</div>
 
+<<<<<<< HEAD
 </div>
 
   <div class="d-flex mt-5">
     <%= link_to 'Précédent', wizard_path(@previous_step), class: 'btn btn-primary me-auto ms-auto d-flex mb-5 text-white' %>
     <%= f.button :submit, "Suivant", class: 'btn btn-primary me-auto ms-auto d-flex mb-5 text-white' %>
   </div>
+=======
+<div class="d-flex mt-5">
+  <%= link_to 'Précédent', wizard_path(@previous_step), class: 'btn btn-primary me-auto d-flex mb-5 text-white' %>
+  <%= f.button :submit, "Suivant", class: 'btn btn-primary ms-auto d-flex mb-5 text-white' %>
+</div>
+>>>>>>> 41bc4509bce06a38e6ed23bcd010e3feb8560cab
 <% end %>
 
 <script>

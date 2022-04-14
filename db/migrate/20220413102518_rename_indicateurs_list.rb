@@ -1,5 +1,5 @@
 class RenameIndicateursList < ActiveRecord::Migration[7.0]
   def change
-    rename_table :states, :states
+    rename_table :indicateurs_lists, :states
   end
 end

@@ -41,7 +41,7 @@
           <div class="col">
             <%= link_to "Evaluation de l'année #{ evaluation.annee }", evaluation, class: "text-secondary fw-bold" %> |
             <%= link_to "Voir les résultats", resultats_path(evaluation_id: evaluation.id), class: "text-primary fw-bold" %> |
-            <a href="#" class="text-success fw-bold">Editer</a>
+            <%= link_to "Éditer", evaluation_builder_path(evaluation.id, 'informations'), class: "text-success fw-bold" %>
           </div>
           <div class="row w-50 text-center">
             <div class="col">10/10</div>
