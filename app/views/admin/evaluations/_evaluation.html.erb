@@ -5,37 +5,26 @@
   <%= link_to "Modifier", admin_evaluation_builder_path(evaluation_id: evaluation.id, step: 'informations'),class: 'btn btn-secondary mt-2' %>
 
   <div class="row my-5">
-    <div class="col-sm-6 col-md-4">
-      <%= render  'indicator',
-                  name: 'Année',
-                  value: "#{evaluation.annee}",
-                  unavailable: false %>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <%= render  'indicator',
-                  name: 'Chiffre d\'affaires',
-                  value: "#{number_to_currency evaluation.chiffre_affaires, precision: 0}",
-                  unavailable: evaluation.chiffre_affaires.blank? %>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <%= render  'indicator',
-                  name: 'Résultat net',
-                  value: "#{number_to_currency evaluation.resultat_net, precision: 0}",
-                  unavailable: evaluation.resultat_net.blank? %>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <%= render  'indicator',
-                  name: 'Nombre total de salariés',
-                  value: "#{evaluation.nombre_salaries}",
-                  unavailable: evaluation.nombre_salaries.blank? %>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <%= render  'indicator',
-                  name: 'Nombre de salariés ETP',
-                  value: "#{evaluation.nombre_salaries_etp}",
-                  unavailable: evaluation.nombre_salaries_etp.blank? %>
-      </div>
-    </div>
+    <%= render  'indicator',
+                name: 'Année',
+                value: "#{evaluation.annee}",
+                unavailable: false %>
+    <%= render  'indicator',
+                name: 'Chiffre d\'affaires',
+                value: "#{number_to_currency evaluation.chiffre_affaires, precision: 0}",
+                unavailable: evaluation.chiffre_affaires.blank? %>
+    <%= render  'indicator',
+                name: 'Résultat net',
+                value: "#{number_to_currency evaluation.resultat_net, precision: 0}",
+                unavailable: evaluation.resultat_net.blank? %>
+    <%= render  'indicator',
+                name: 'Nombre total de salariés',
+                value: "#{evaluation.nombre_salaries}",
+                unavailable: evaluation.nombre_salaries.blank? %>
+    <%= render  'indicator',
+                name: 'Nombre de salariés ETP',
+                value: "#{evaluation.nombre_salaries_etp}",
+                unavailable: evaluation.nombre_salaries_etp.blank? %>
   </div>
 
 
