@@ -71,6 +71,7 @@
 
 
 <h2><b class="text-primary">II.</b> Mise en place des conditions du bon exercice de la démocratie</h2>
+
 <p class="lead">
   <%= State.evaluations
            .up_to_date
@@ -85,12 +86,14 @@
   <%= indicateur_clean :pouvoir_democratie_taux_participation_formations %>
 </p>
 
+
 <p class="lead">
   <%= State.evaluations
            .up_to_date
            .median(:pouvoir_democratie_nombre_accords_signes) %>
   <%= indicateur_clean :pouvoir_democratie_nombre_accords_signes %>
 </p>
+
 
 
 <%# il en manque une %>
