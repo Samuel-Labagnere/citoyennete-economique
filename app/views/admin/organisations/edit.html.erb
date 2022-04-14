@@ -1,21 +1,3 @@
-<div class="page-orga mx-3 mx-sm-5 mx-bg-5 mt-5 pt-2">
+<h1>Modifier l'organisation</h1>
 
-  <header class="mt-5 mt-sm-0 mb-5 m-3 m-sm-0">
-    <h1 class="h2">Modifier l'organisation</h1>
-  </header>
-
-  <div class="d-flex align-items-center justify-content-start my-5 pb-5">
-    <% if current_user.is_super_admin %>
-      <%= link_to "Back to evaluations", evaluations_path, class: "btn rounded light pt-1 pb-1 pe-3 ps-3 btn-primary me-3" %>
-    <% else %>
-      <%= link_to "Retourner au dashboard", admin_path, class: "btn rounded light pt-1 pb-1 pe-3 ps-3 btn-secondary" %>
-    <% end %>
-  </div>
-
-  <%= render "form", organisation: @organisation %>
-
-  <div class="d-flex align-items-center justify-content-center me-3 me-sm-5 ms-3 ms-sm-5 pe-5 ps-5 pb-5">
-    <%= link_to "Retourner au dashboard", admin_path, class: "btn rounded light pt-1 pb-1 pe-3 ps-3 btn-secondary mt-4" %>
-  </div>
-
-</div>
+<%= render "form", organisation: @organisation %>
