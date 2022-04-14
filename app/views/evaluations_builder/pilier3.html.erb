@@ -5,15 +5,16 @@
     Édition de l'évaluation de l'année <%= @evaluation.annee %>
   <% end %>
 </h1>
-<h2 class="text-secondary"><span class="fs-2 me-1 m-0">3.</span>Capital humain et qualité de vie au travail</h2>
+
+<h2><span class="me-1 m-0">3.</span>Capital humain et qualité de vie au travail</h2>
 
 <%= simple_form_for @evaluation, url: wizard_path, method: :put do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-  <%= f.association :indicateurs_list do |il| %>
+  <%= f.association :state do |il| %>
 
-    <h3 class="text-primary">Mise en place des conditions du bon exercice de la démocratie</h3>
+    <h3>Mise en place des conditions du bon exercice de la démocratie</h3>
 
-    <div class="row align-items-baseline">
+    <div class="row align-items-baseline col-input my-5">
       <div class="col-md-4 mb-4">
         <%= il.input :qualite_qvt_enquete_qvt, as: :radio_buttons %>
       </div>
@@ -34,9 +35,9 @@
       </div>
     </div>
 
-    <h3 class="text-primary">Développement des compétences individuelles et collectives, émancipation des salariés</h3>
+    <h3>Développement des compétences individuelles et collectives, émancipation des salariés</h3>
 
-    <div class="row align-items-baseline">
+    <div class="row align-items-baseline my-5">
       <div class="col-md-4 mb-4">
         <%= il.input :qualite_emancipation_moyenne_heures_formation %>
       </div>
@@ -53,9 +54,18 @@
     </div>
   <% end %>
 
-  <div class="d-flex mt-4">
-    <%= link_to 'Précédent', wizard_path(@previous_step), class: 'btn btn-primary me-auto ms-auto d-flex mb-5' %>
-    <%= f.button :submit, "Suivant", class: 'btn btn-primary me-auto ms-auto d-flex mb-5' %>
+  <div class="d-flex mt-5">
+    <%= link_to 'Précédent', wizard_path(@previous_step), class: 'btn btn-primary me-auto ms-auto d-flex mb-5 text-white' %>
+    <%= f.button :submit, "Suivant", class: 'btn btn-primary me-auto ms-auto d-flex mb-5 text-white' %>
   </div>
 
 <% end %>
+
+<script>
+  function toggleRadio(event) {
+    if(event.target.type === 'radio' && event.target.checked === true) {
+      setTimeout(()=>{ event.target.checked = false; },0);
+    }
+  }
+document.addEventListener('mouseup', toggleRadio);
+</script>

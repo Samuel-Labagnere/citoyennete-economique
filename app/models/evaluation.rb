@@ -43,11 +43,17 @@ class Evaluation < ApplicationRecord
       evaluation.state
                 .update_column :up_to_date, false
     end
-    organisation.evaluations
-                .active
-                .ordered
-                .first
-                .state
-                .update_column :up_to_date, true
+    if organisation.evaluations.active.present?
+      organisation.evaluations
+                  .active
+                  .ordered
+                  .first
+                  .state
+                  .update_column :up_to_date, true
+    end
+  end
+
+  def to_s
+    "Evaluation #{annee}"
   end
 end

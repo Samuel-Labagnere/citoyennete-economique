@@ -130,7 +130,7 @@ fr:
         resultat_net: "Résultat net"
         nombre_salaries: "Nombre total de salariés"
         nombre_salaries_etp: "Nombre de salariés en ETP"
-      indicateurs_list:
+      state:
         pouvoir_gouvernance_part_salaries_associes: "Part de salariés associés"
         pouvoir_gouvernance_taux_societariat_femmes: "Taux de sociétariat parmi les femmes salariées"
         pouvoir_gouvernance_taux_droits_vote_salaries: "Taux des droits de vote détenus par les salariés"
@@ -194,7 +194,7 @@ fr:
         agrement_specifique: "Exemple : entreprise adaptée, ESUS"
         objectifs_extra_financiers: "Plan de 3 à 5 ans"
         valeurs_entreprise: "4 mots-clefs"
-      indicateurs_list:
+      state:
         pouvoir_gouvernance_part_femmes_conseil: "Hors dirigeants."
         pouvoir_democratie_nombre_reunions: "Direction, conseil d'administration, comité de direction."
         pouvoir_democratie_nombre_accords_signes: "Autres que participation/intéressement."

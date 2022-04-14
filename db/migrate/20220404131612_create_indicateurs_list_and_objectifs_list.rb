@@ -6,7 +6,7 @@ class CreateIndicateursListAndObjectifsList < ActiveRecord::Migration[7.0]
       t.timestamps
     end
 
-    create_table :indicateurs_lists do |t|
+    create_table :states do |t|
       t.belongs_to :evaluation
       t.belongs_to :objectifs_list
 

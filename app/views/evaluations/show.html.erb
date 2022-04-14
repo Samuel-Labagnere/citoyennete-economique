@@ -1,22 +1,20 @@
-<div class="page-orga show mt-0 mt-sm-5 pt-0 pt-sm-5 pt-sm-0">
-
-  <header class="me-3 me-sm-5 ms-3 ms-sm-5 p-5">
-    <h1 class="h2">Evaluation de l'année <%= @evaluation.annee%></h1>
-  </header>
-
-  <div class="d-flex flex-sm-row flex-column align-items-sm-center justify-content-between me-3 me-sm-5 ms-3 ms-sm-5 pe-5 ps-5 pb-5">
-    <div class="mb-3 mb-sm-0">
-      <%= link_to "Éditer cette évaluation", evaluation_builder_path(@evaluation.id, 'informations'), class: "btn btn-primary me-3 mb-3 mb-sm-0" %>
-      <% if current_user.is_super_admin %>
-        <%= link_to "Back to evaluations", evaluations_path, class: "btn btn-secondary me-3" %>
-      <% else %>
-        <%= link_to "Retourner au dashboard", user_root_path, class: "btn btn-secondary me-3" %>
-      <% end %>
-    </div>
+<div class="row">
+  <div class="col-lg-8">
+    <h1>
+      Evaluation de l'année <%= @evaluation.annee%>
+    </h1>
   </div>
-      <%= render "evaluation", evaluation: @evaluation %>
-
-      <div class="m-5 p-5 d-flex justify-content-center">
-        <%= button_to "Supprimer cette évaluation", @evaluation, method: :delete, class: "btn rounded white pt-1 pb-1 pe-3 ps-3 btn-danger", form: { data: { turbo_confirm: "Êtes-vous sûr de vouloir supprimer l'évaluation de #{@evaluation.annee}?" } } %>
-      </div>
 </div>
+
+<div class="d-flex my-5">
+  <%= link_to "Éditer cette évaluation", evaluation_builder_path(@evaluation.id, 'informations'), class: "btn btn-primary me-4" %>
+  <%= button_to "Supprimer cette évaluation", @evaluation, method: :delete, class: "btn btn-danger mx-auto d-flex", form: { data: { turbo_confirm: "Êtes-vous sûr de vouloir supprimer l'évaluation de #{@evaluation.annee}?" } } %>
+</div>
+
+<%= render "evaluation", evaluation: @evaluation %>
+
+<%= button_to "Supprimer cette évaluation",
+              @evaluation,
+              method: :delete,
+              class: "btn btn-danger",
+              form: { data: { turbo_confirm: "Êtes-vous sûr de vouloir supprimer l'évaluation de #{@evaluation.annee}?" } } %>

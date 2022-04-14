@@ -11,7 +11,6 @@ class EvaluationsBuilderController < ApplicationController
 
   def update
     @evaluation.update(evaluation_params)
-    @evaluation.set_up_to_date
     render_wizard @evaluation
   end
 

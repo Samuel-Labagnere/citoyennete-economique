@@ -1,128 +1,74 @@
-<div class="public-stats mx-3 mx-sm-5 mx-bg-5 mt-5 pt-2 px-0 px-md-5">
-  <header class="container-fluid">
-      <h1 class="mb-5"><b class="text-secondary">2.</b> Pérennité économique et partage de la valeur créée</h1>
-  </header>
+<div class="row">
+  <div class="col-lg-8">
+    <h1><b class="text-secondary">2.</b> Pérennité économique et partage de la valeur créée</h1>
+    <p class="lead mt-5">
+      L’enjeu de la <b class="text-secondary">démocratie dans l’entreprise</b> s’exprime également dans un modèle de développement pérenne visant <b class="text-secondary">stablilité, robustesse, efficacité et rentabilité</b> sans maximisation du profit à court terme. Il s’agit également de garantir l’autonomie de l’entreprise, voir l’inaliénabilité de la structure. Par ailleurs, seconjuguent positivement une large association aux orientations stratégiques, une distribution équitable des richesses produites entre les parties prenantes internes de l’entreprise et performance.
+    </p>
+  </div>
+</div>
 
-  <p class="w-75">
-    L’enjeu de la <b class="text-secondary">démocratie dans l’entreprise</b> s’exprime également dans un modèle de développement pérenne visant <b class="text-secondary">stablilité, robustesse, efficacité et rentabilité</b> sans maximisation du profit à court terme. Il s’agit également de garantir l’autonomie de l’entreprise, voir l’inaliénabilité de la structure. Par ailleurs, seconjuguent positivement une large association aux orientations stratégiques, une distribution équitable des richesses produites entre les parties prenantes internes de l’entreprise et performance.
-  </p>
+<h2><b class="text-primary">I.</b>Pérennité : création de valeur, inaliénabilité et robustesse de l'entreprise</h2>
 
-  <div class="public-stats-body">
+<div class="row my-5">
+  <% unless @valeur_perennite_booleens[:valeur_perennite_existence_reserve].nil? %>
+  <div class="col-md-6">
+    <%= pie_chart @valeur_perennite_booleens[:valeur_perennite_existence_reserve], suffix: '%' %>
+  </div>
+  <% end %>
+  <% unless @valeur_perennite_booleens[:valeur_perennite_reserve_impartageable].nil? %>
+  <div class="col-md-6">
+    <%= pie_chart @valeur_perennite_booleens[:valeur_perennite_reserve_impartageable], suffix: '%' %>
+  </div>
+  <% end %>
+</div>
 
-  <!-- IMPACT 2 -->
+<% unless @valeur_perennite_booleens[:valeur_perennite_attention_questions_innovation].nil? %>
+  <%= pie_chart @valeur_perennite_booleens[:valeur_perennite_attention_questions_innovation], suffix: '%' %>
+<% end %>
 
-        <h4 class="my-3 pt-3 pb-4 pt-sm-5 pb-sm-5 my-sm-5"><b class="text-primary">I.</b> Pérennité : <u class="text-secondary text-decoration-none">création de valeur, inaliénabilité et robustesse</u> de l'entreprise</h4>
-        <div class="row">
-            <% unless @valeur_perennite_booleens[:valeur_perennite_existence_reserve].nil? %>
-                <div class="col">
-                    <div class="data-container rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-                        <div class="data-cont bg-white m-0 p-2">
-                            <div class="d-flex">
-                                <%= pie_chart @valeur_perennite_booleens[:valeur_perennite_existence_reserve], suffix: '%' %>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <% end %>
-            <% unless @valeur_perennite_booleens[:valeur_perennite_reserve_impartageable].nil? %>
-                <div class="col">
-                    <div class="data-container rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-                        <div class="data-cont bg-white m-0 p-2">
-                            <div class="d-flex">
-                                <%= pie_chart @valeur_perennite_booleens[:valeur_perennite_reserve_impartageable], suffix: '%' %>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <% end %>
-        </div>
-        <% unless @valeur_perennite_booleens[:valeur_perennite_attention_questions_innovation].nil? %>
-            <div class="data-container rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-                <div class="data-cont bg-white m-0 p-2">
-                    <div class="d-flex">
-                        <%= pie_chart @valeur_perennite_booleens[:valeur_perennite_attention_questions_innovation], suffix: '%' %>
-                    </div>
-                </div>
-            </div>
-        <% end %>
+<h2><b class="text-primary">II.</b>Partage des richesses</h2>
 
-        <h4 class="my-3 pt-3 pb-5 pt-sm-5 pb-sm-5 my-sm-5"><b class="text-primary">II.</b> <u class="text-secondary text-decoration-none">Partage</u> des richesses</h4>
+<div class="my-5">
+  <%= bar_chart @valeur_part_resultat, suffix: "%" %>
+</div>
 
-        <div class="data-container rounded shadow p-0 overflow-hidden mb-5">
-            <div class="data-intit bg-light text-center p-3">Taux médians</div>
-            <div class="data-cont bg-white m-0 p-2">
-                <div class="d-flex">
-                    <%= bar_chart @valeur_part_resultat, suffix: "%" %>
-                </div>
-            </div>
-        </div>
+<div class="row my-5">
+  <div class="col-md-6">
+    <%= State.evaluations
+              .up_to_date
+              .median(:valeur_partage_ecart_revenus_hauts_bas) %>
+    </p>
+    <p class="text-center mt-3">
+      <%= indicateur_clean :pouvoir_gouvernance_diversite_categories %>
+    </p>
+  </div>
+  <div class="col-md-6">
+    <%= State.evaluations
+              .up_to_date
+              .median(:valeur_partage_ecart_revenus_hauts_bas) %>
+    </p>
+    <p class="text-center mt-3">
+      <%= indicateur_clean :pouvoir_gouvernance_diversite_categories %>
+    </p>
+  </div>
+</div>
 
-        <div class="row indic-row mb-5 pb-5">
-            <div class="col col-data">
-            <div class="data-container rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
-                    <div class="data-intit bg-light text-center p-3"><%= indicateur_clean :valeur_partage_ecart_revenus_hauts_bas %> (médiane)</div>
-                    <div class="data-cont bg-white m-0 p-2">
-                        <div class="d-flex justify-content-center">
-                            <p class="h1"><%= @valeur_partage_ecart_revenus_hauts_bas %></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col col-data">
-            <div class="data-container rounded shadow col-12 p-0 overflow-hidden d-flex flex-column flex-grow-1">
-                    <div class="data-intit bg-light text-center p-3"><%= indicateur_clean :valeur_partage_index_egalite_homme_femme %> (médiane)</div>
-                    <div class="data-cont bg-white m-0 p-2">
-                        <div class="d-flex justify-content-center">
-                            <p class="h1"><%= @valeur_partage_index_egalite_homme_femme %></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<% unless @valeur_perennite_booleens[:valeur_partage_existence_accord].nil? %>
+  <%= pie_chart @valeur_perennite_booleens[:valeur_partage_existence_accord], suffix: '%' %>
+<% end %>
+<% unless @valeur_perennite_booleens[:valeur_partage_existence_epargne_salariale].nil? %>
+  <%= pie_chart @valeur_perennite_booleens[:valeur_partage_existence_epargne_salariale], suffix: '%' %>
+<% end %>
 
-        <% unless @valeur_perennite_booleens[:valeur_partage_existence_accord].nil? %>
-            <div class="data-container rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-                <div class="data-cont bg-white m-0 p-2">
-                    <div class="d-flex">
-                        <%= pie_chart @valeur_perennite_booleens[:valeur_partage_existence_accord], suffix: '%' %>
-                    </div>
-                </div>
-            </div>
-        <% end %>
-        <% unless @valeur_perennite_booleens[:valeur_partage_existence_epargne_salariale].nil? %>
-            <div class="data-container rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-                <div class="data-cont bg-white m-0 p-2">
-                    <div class="d-flex">
-                        <%= pie_chart @valeur_perennite_booleens[:valeur_partage_existence_epargne_salariale], suffix: '%' %>
-                    </div>
-                </div>
-            </div>
-        <% end %>
-        <div class="row">
-            <% unless @valeur_perennite_booleens[:valeur_partage_existence_grille_salariale].nil? %>
-                <div class="col">
-                    <div class="data-container rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-                        <div class="data-cont bg-white m-0 p-2">
-                            <div class="d-flex">
-                                <%= pie_chart @valeur_perennite_booleens[:valeur_partage_existence_grille_salariale], suffix: '%' %>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <% end %>
-            <% unless @valeur_perennite_booleens[:valeur_partage_publicite_grille].nil? %>
-                <div class="col">
-                    <div class="data-container rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
-                        <div class="data-cont bg-white m-0 p-2">
-                            <div class="d-flex">
-                                <%= pie_chart @valeur_perennite_booleens[:valeur_partage_publicite_grille], suffix: '%' %>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <% end %>
-        </div>
-
-    </div>
-
+<div class="row my-5">
+  <% unless @valeur_perennite_booleens[:valeur_partage_existence_grille_salariale].nil? %>
+  <div class="col-md-6">
+    <%= pie_chart @valeur_perennite_booleens[:valeur_partage_existence_grille_salariale], suffix: '%' %>
+  </div>
+  <% end %>
+  <% unless @valeur_perennite_booleens[:valeur_partage_publicite_grille].nil? %>
+  <div class="col-md-6">
+    <%= pie_chart @valeur_perennite_booleens[:valeur_partage_publicite_grille], suffix: '%' %>
+  </div>
+  <% end %>
 </div>

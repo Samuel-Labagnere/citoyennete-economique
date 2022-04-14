@@ -1,283 +1,446 @@
 <% state = evaluation.state %>
-<div id="<%= dom_id evaluation %>">
-  <p>
-    <strong>Année :</strong>
-    <%= evaluation.annee %>
-  </p>
+<div id="<%= dom_id evaluation %>" class="view">
 
-  <p>
-    <strong><%= indicateur_clean :pouvoir_gouvernance_part_salaries_associes %> : </strong>
-    <%= state.pouvoir_gouvernance_part_salaries_associes %>
-  </p>
+  <h2>Informations</h2>
 
-  <p>
-    <strong><%= indicateur_clean :pouvoir_gouvernance_taux_societariat_femmes %> : </strong>
-    <%= state.pouvoir_gouvernance_taux_societariat_femmes %>
-  </p>
+  <div class="row my-5">
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        Année :
+        <b class="text-primary"><%= evaluation.annee %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        Chiffre d'affaires :
+        <b class="text-primary"><%= evaluation.chiffre_affaires %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        Résultat net :
+        <b class="text-primary"><%= evaluation.resultat_net %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        Nombre total de salariés :
+        <b class="text-primary"><%= evaluation.nombre_salaries %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        Nombre de salariés en ETP :
+        <b class="text-primary"><%= evaluation.nombre_salaries_etp %></b>
+      </div>
+    </div>
+  </div>
 
-  <p>
-    <strong><%= indicateur_clean :pouvoir_gouvernance_part_salaries_conseil %> : </strong>
-    <%= state.pouvoir_gouvernance_part_salaries_conseil %>
-  </p>
 
-  <p>
-    <strong><%= indicateur_clean :pouvoir_gouvernance_part_femmes_conseil %> : </strong>
-    <%= state.pouvoir_gouvernance_part_femmes_conseil %>
-  </p>
+  <h2>Pilier 1 : Partage du pouvoir et des décisions</h2>
 
-  <p>
-    <strong><%= indicateur_clean :pouvoir_gouvernance_diversite_categories %> : </strong>
-    <%= state.pouvoir_gouvernance_diversite_categories %>
-  </p>
+  <h3>Composition de la gouvernance</h3>
 
-  <p>
-    <strong><%= indicateur_clean :pouvoir_democratie_nombre_reunions %> : </strong>
-    <%= state.pouvoir_democratie_nombre_reunions %>
-  </p>
+  <div class="row my-5">
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :pouvoir_gouvernance_part_salaries_associes %> :
+        <b class="text-primary"><%= state.pouvoir_gouvernance_part_salaries_associes %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :pouvoir_gouvernance_taux_societariat_femmes %> :
+        <b class="text-primary"><%= state.pouvoir_gouvernance_taux_societariat_femmes %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :pouvoir_gouvernance_taux_droits_vote_salaries %> :
+        <b class="text-primary"><%= state.pouvoir_gouvernance_taux_droits_vote_salaries %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :pouvoir_gouvernance_part_salaries_conseil %> :
+        <b class="text-primary"><%= state.pouvoir_gouvernance_part_salaries_conseil %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :pouvoir_gouvernance_part_femmes_conseil %> :
+        <b class="text-primary"><%= state.pouvoir_gouvernance_part_femmes_conseil %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :pouvoir_gouvernance_diversite_categories %> :
+        <b class="text-primary"><%= state.pouvoir_gouvernance_diversite_categories %></b>
+      </div>
+    </div>
+  </div>
 
-  <p>
-    <strong><%= indicateur_clean :pouvoir_democratie_taux_participation_formations %> : </strong>
-    <%= state.pouvoir_democratie_taux_participation_formations %>
-  </p>
+  <h3>Conditions du bon exercice de la démocratie</h3>
 
-  <p>
-    <strong><%= indicateur_clean :pouvoir_democratie_nombre_accords_signes %> : </strong>
-    <%= state.pouvoir_democratie_nombre_accords_signes %>
-  </p>
+  <div class="row my-5">
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :pouvoir_democratie_nombre_reunions %> :
+        <b class="text-primary"><%= state.pouvoir_democratie_nombre_reunions %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :pouvoir_democratie_taux_participation_formations %> :
+        <b class="text-primary"><%= state.pouvoir_democratie_taux_participation_formations %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :pouvoir_democratie_nombre_accords_signes %> :
+        <b class="text-primary"><%= state.pouvoir_democratie_nombre_accords_signes %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :pouvoir_democratie_accords_signes %> :
+        <b class="text-primary"><%= state.pouvoir_democratie_accords_signes %></b>
+      </div>
+    </div>
+  </div>
 
-  <p>
-    <strong><%= indicateur_clean :pouvoir_democratie_accords_signes %> : </strong>
-    <%= state.pouvoir_democratie_accords_signes %>
-  </p>
+  <h3>Participation à la prise de décision stratégique</h3>
 
-  <p>
-    <strong><%= indicateur_clean :pouvoir_strategique_taux_presence_assemblee %> : </strong>
-    <%= state.pouvoir_strategique_taux_presence_assemblee %>
-  </p>
+  <div class="row my-5">
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :pouvoir_strategique_taux_presence_assemblee %> :
+    <b class="text-primary"><%= state.pouvoir_strategique_taux_presence_assemblee %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :pouvoir_strategique_implication_partage %> :
+        <b class="text-primary"><%= state.pouvoir_strategique_implication_partage %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :pouvoir_strategique_actifs_total %> :
+        <b class="text-primary"><%= state.pouvoir_strategique_actifs_total %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :pouvoir_estimation_realite %> :
+        <b class="text-primary"><%= state.pouvoir_estimation_realite %></b>
+      </div>
+    </div>
+  </div>
 
-  <p>
-    <strong><%= indicateur_clean :pouvoir_strategique_actifs_total %> : </strong>
-    <%= state.pouvoir_strategique_actifs_total %>
-  </p>
+  <h2>Pilier 2 : Pérennité économique et partage de la valeur créée</h2>
 
-  <p>
-    <strong><%= indicateur_clean :pouvoir_estimation_realite %> : </strong>
-    <%= state.pouvoir_estimation_realite %>
-  </p>
+  <h3>Pérennité : création de valeur, inaliénabilité et robustesse de l'entreprise</h3>
 
-  <p>
-    <strong><%= indicateur_clean :valeur_perennite_part_capital_salaries %> : </strong>
-    <%= state.valeur_perennite_part_capital_salaries %>
-  </p>
+  <div class="row my-5">
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :valeur_perennite_part_capital_salaries %> :
+        <b class="text-primary"><%= state.valeur_perennite_part_capital_salaries %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :valeur_perennite_part_resultat_reserve %> :
+        <b class="text-primary"><%= state.valeur_perennite_part_resultat_reserve %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :valeur_perennite_ebe_caht %> :
+        <b class="text-primary"><%= state.valeur_perennite_ebe_caht %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :valeur_perennite_part_endettement %> :
+        <b class="text-primary"><%= state.valeur_perennite_part_endettement %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :valeur_perennite_existence_reserve %> :
+        <b class="text-primary"><%= state.valeur_perennite_existence_reserve %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :valeur_perennite_reserve_impartageable %> :
+        <b class="text-primary"><%= state.valeur_perennite_reserve_impartageable %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :valeur_perennite_attention_questions_innovation %> :
+        <b class="text-primary"><%= state.valeur_perennite_attention_questions_innovation %></b>
+      </div>
+    </div>
+  </div>
 
-  <p>
-    <strong><%= indicateur_clean :valeur_perennite_existence_reserve %> : </strong>
-    <%= state.valeur_perennite_existence_reserve %>
-  </p>
+  <h3>Partage des richesses</h3>
 
-  <p>
-    <strong><%= indicateur_clean :valeur_perennite_reserve_impartageable %> : </strong>
-    <%= state.valeur_perennite_reserve_impartageable %>
-  </p>
+  <div class="row my-5">
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :valeur_partage_part_resultat_net_actionnaires %> :
+        <b class="text-primary"><%= state.valeur_partage_part_resultat_net_actionnaires %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :valeur_partage_part_resultat_salaries %> :
+        <b class="text-primary"><%= state.valeur_partage_part_resultat_salaries %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :valeur_partage_ecart_revenus_hauts_bas %> :
+        <b class="text-primary"><%= state.valeur_partage_ecart_revenus_hauts_bas %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :valeur_partage_index_egalite_homme_femme %> :
+        <b class="text-primary"><%= state.valeur_partage_index_egalite_homme_femme %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :valeur_partage_existence_accord %> :
+        <b class="text-primary"><%= state.valeur_partage_existence_accord %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :valeur_partage_existence_epargne_salariale %> :
+        <b class="text-primary"><%= state.valeur_partage_existence_epargne_salariale %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :valeur_partage_existence_grille_salariale %> :
+        <b class="text-primary"><%= state.valeur_partage_existence_grille_salariale %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :valeur_partage_publicite_grille %> :
+        <b class="text-primary"><%= state.valeur_partage_publicite_grille %></b>
+      </div>
+    </div>
+  </div>
+  <div class="row my-5">
+    <div class="col-sm-8">
+      <div class="card p-2">
+        <%= indicateur_clean :valeur_estimation_realite %> :
+        <b class="text-primary"><%= state.valeur_estimation_realite %></b>
+      </div>
+    </div>
+  </div>
 
-  <p>
-    <strong><%= indicateur_clean :valeur_perennite_part_resultat_reserve %> : </strong>
-    <%= state.valeur_perennite_part_resultat_reserve %>
-  </p>
+<h2>Capital humain et qualité de vie au travail</h2>
 
-  <p>
-    <strong><%= indicateur_clean :valeur_perennite_ebe_caht %> : </strong>
-    <%= state.valeur_perennite_ebe_caht %>
-  </p>
+<h3>Mise en place des conditions du bon exercice de la démocratie</h3>
 
-  <p>
-    <strong><%= indicateur_clean :valeur_perennite_part_endettement %> : </strong>
-    <%= state.valeur_perennite_part_endettement %>
-  </p>
+  <div class="row my-5">
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :qualite_qvt_enquete_qvt %> :
+        <b class="text-primary"><%= state.qualite_qvt_enquete_qvt %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :qualite_qvt_taux_qvt %> :
+        <b class="text-primary"><%= state.qualite_qvt_taux_qvt %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :qualite_qvt_part_cdi %> :
+        <b class="text-primary"><%= state.qualite_qvt_part_cdi %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :qualite_qvt_moyenne_anciennete %> :
+        <b class="text-primary"><%= state.qualite_qvt_moyenne_anciennete %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :qualite_qvt_taux_turnover %> :
+        <b class="text-primary"><%= state.qualite_qvt_taux_turnover %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :qualite_qvt_taux_absenteisme %> :
+        <b class="text-primary"><%= state.qualite_qvt_taux_absenteisme %></b>
+      </div>
+    </div>
+  </div>
 
-  <p>
-    <strong><%= indicateur_clean :valeur_perennite_attention_questions_innovation  %> : </strong>
-    <%= state.valeur_perennite_attention_questions_innovation %>
-  </p>
+  <h3>Développement des compétences individuelles et collectives, émancipation des salariés</h3>
 
-  <p>
-    <strong><%= indicateur_clean :valeur_partage_part_resultat_net_actionnaires %> : </strong>
-    <%= state.valeur_partage_part_resultat_net_actionnaires %>
-  </p>
+  <div class="row my-5">
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :qualite_emancipation_moyenne_heures_formation %> :
+        <b class="text-primary"><%= state.qualite_emancipation_moyenne_heures_formation %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :qualite_emancipation_taux_budget_formation_masse_salariale %> :
+        <b class="text-primary"><%= state.qualite_emancipation_taux_budget_formation_masse_salariale %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :qualite_emancipation_taux_direction_promotion_interne %> :
+        <b class="text-primary"><%= state.qualite_emancipation_taux_direction_promotion_interne %></b>
+      </div>
+    </div>
+  </div>
 
-  <p>
-    <strong><%= indicateur_clean :valeur_partage_existence_accord %> : </strong>
-    <%= state.valeur_partage_existence_accord %>
-  </p>
+  <div class="row my-5">
+    <div class="col-sm-8">
+      <div class="card p-2">
+        <%= indicateur_clean :qualite_estimation_realite %> :
+        <b class="text-primary"><%= state.qualite_estimation_realite %></b>
+      </div>
+    </div>
+  </div>
 
-  <p>
-    <strong><%= indicateur_clean :valeur_partage_existence_epargne_salariale %> : </strong>
-    <%= state.valeur_partage_existence_epargne_salariale %>
-  </p>
+<h2>Impact environnemental, social et territorial</h2>
 
-  <p>
-    <strong><%= indicateur_clean :valeur_partage_part_resultat_salaries %> : </strong>
-    <%= state.valeur_partage_part_resultat_salaries %>
-  </p>
+<h3>Impact environnemental</h3>
 
-  <p>
-    <strong><%= indicateur_clean :valeur_partage_existence_grille_salariale %> : </strong>
-    <%= state.valeur_partage_existence_grille_salariale %>
-  </p>
+  <div class="row my-5">
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :impact_environnement_audit_impact %> :
+        <b class="text-primary"><%= state.impact_environnement_audit_impact %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :impact_environnement_demarche_ecologique %> :
+        <b class="text-primary"><%= state.impact_environnement_demarche_ecologique %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :impact_environnement_discussion_impact %> :
+        <b class="text-primary"><%= state.impact_environnement_discussion_impact %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :impact_environnement_part_energies_renouvelables %> :
+        <b class="text-primary"><%= state.impact_environnement_part_energies_renouvelables %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :impact_environnement_part_salaries_mobilite %> :
+        <b class="text-primary"><%= state.impact_environnement_part_salaries_mobilite %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :impact_environnement_bilan_carbone_scope_1 %> :
+        <b class="text-primary"><%= state.impact_environnement_bilan_carbone_scope_1 %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :impact_environnement_bilan_carbone_scope_2 %> :
+        <b class="text-primary"><%= state.impact_environnement_bilan_carbone_scope_2 %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :impact_environnement_bilan_carbone_scope_3 %> :
+        <b class="text-primary"><%= state.impact_environnement_bilan_carbone_scope_3 %></b>
+      </div>
+    </div>
+  </div>
 
-  <p>
-    <strong><%= indicateur_clean :valeur_partage_publicite_grille %> : </strong>
-    <%= state.valeur_partage_publicite_grille %>
-  </p>
+<h3>Impact social</h3>
 
-  <p>
-    <strong><%= indicateur_clean :valeur_partage_ecart_revenus_hauts_bas  %> : </strong>
-    <%= state.valeur_partage_ecart_revenus_hauts_bas %>
-  </p>
+  <div class="row my-5">
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :impact_social_part_activite_structures_insertion %> :
+        <b class="text-primary"><%= state.impact_social_part_activite_structures_insertion %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :impact_social_alternance_apprentissage %> :
+        <b class="text-primary"><%= state.impact_social_alternance_apprentissage %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :impact_social_part_seniors %> :
+        <b class="text-primary"><%= state.impact_social_part_seniors %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :impact_social_part_handicap %> :
+        <b class="text-primary"><%= state.impact_social_part_handicap %></b>
+      </div>
+    </div>
+  </div>
 
-  <p>
-    <strong><%= indicateur_clean :valeur_partage_index_egalite_homme_femme %> : </strong>
-    <%= state.valeur_partage_index_egalite_homme_femme %>
-  </p>
+  <h3>Engagement en faveur de l'écosystème et du territoire</h3>
 
-  <p>
-    <strong><%= indicateur_clean :valeur_estimation_realite %> : </strong>
-    <%= state.valeur_estimation_realite %>
-  </p>
+  <div class="row my-5">
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :impact_engagement_part_resultat_missions_utiles %> :
+        <b class="text-primary"><%= state.impact_engagement_part_resultat_missions_utiles %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :impact_engagement_part_placements_responsables %> :
+        <b class="text-primary"><%= state.impact_engagement_part_placements_responsables %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :impact_engagement_part_impots_france %> :
+        <b class="text-primary"><%= state.impact_engagement_part_impots_france %></b>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="card p-2">
+        <%= indicateur_clean :impact_engagement_demarche_ethique_fournisseurs %> :
+        <b class="text-primary"><%= state.impact_engagement_demarche_ethique_fournisseurs %></b>
+      </div>
+    </div>
+  </div>
 
-  <p>
-    <strong><%= indicateur_clean :qualite_qvt_enquete_qvt %> : </strong>
-    <%= state.qualite_qvt_enquete_qvt %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :qualite_qvt_taux_qvt %> : </strong>
-    <%= state.qualite_qvt_taux_qvt %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :qualite_qvt_part_cdi %> : </strong>
-    <%= state.qualite_qvt_part_cdi %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :qualite_qvt_moyenne_anciennete %> : </strong>
-    <%= state.qualite_qvt_moyenne_anciennete %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :qualite_qvt_taux_turnover %> : </strong>
-    <%= state.qualite_qvt_taux_turnover %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :qualite_qvt_taux_absenteisme %> : </strong>
-    <%= state.qualite_qvt_taux_absenteisme %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :qualite_emancipation_moyenne_heures_formation %> : </strong>
-    <%= state.qualite_emancipation_moyenne_heures_formation %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :qualite_emancipation_taux_budget_formation_masse_salariale %> : </strong>
-    <%= state.qualite_emancipation_taux_budget_formation_masse_salariale %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :qualite_emancipation_taux_direction_promotion_interne %> : </strong>
-    <%= state.qualite_emancipation_taux_direction_promotion_interne %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :qualite_estimation_realite %> : </strong>
-    <%= state.qualite_estimation_realite %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :impact_environnement_audit_impact %> : </strong>
-    <%= state.impact_environnement_audit_impact %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :impact_environnement_demarche_ecologique %> : </strong>
-    <%= state.impact_environnement_demarche_ecologique %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :impact_environnement_part_energies_renouvelables %> : </strong>
-    <%= state.impact_environnement_part_energies_renouvelables %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :impact_environnement_part_salaries_mobilite %> : </strong>
-    <%= state.impact_environnement_part_salaries_mobilite %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :impact_environnement_discussion_impact %> : </strong>
-    <%= state.impact_environnement_discussion_impact %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :impact_environnement_bilan_carbone_scope_1 %> : </strong>
-    <%= state.impact_environnement_bilan_carbone_scope_1 %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :impact_environnement_bilan_carbone_scope_2 %> : </strong>
-    <%= state.impact_environnement_bilan_carbone_scope_2 %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :impact_environnement_bilan_carbone_scope_3 %> : </strong>
-    <%= state.impact_environnement_bilan_carbone_scope_3 %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :impact_social_part_activite_structures_insertion %> : </strong>
-    <%= state.impact_social_part_activite_structures_insertion %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :impact_social_alternance_apprentissage %> : </strong>
-    <%= state.impact_social_alternance_apprentissage %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :impact_social_part_seniors %> : </strong>
-    <%= state.impact_social_part_seniors %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :impact_social_part_handicap %> : </strong>
-    <%= state.impact_social_part_handicap %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :impact_engagement_part_resultat_missions_utiles %> : </strong>
-    <%= state.impact_engagement_part_resultat_missions_utiles %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :impact_engagement_part_placements_responsables %> : </strong>
-    <%= state.impact_engagement_part_placements_responsables %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :impact_engagement_part_impots_france %> : </strong>
-    <%= state.impact_engagement_part_impots_france %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :impact_engagement_demarche_ethique_fournisseurs %> : </strong>
-    <%= state.impact_engagement_demarche_ethique_fournisseurs %>
-  </p>
-
-  <p>
-    <strong><%= indicateur_clean :impact_estimation_realite %> : </strong>
-    <%= state.impact_estimation_realite %>
-  </p>
-
-</div>
+  <div class="row my-5">
+    <div class="col-sm-8">
+      <div class="card p-2">
+        <%= indicateur_clean :impact_estimation_realite %> :
+        <b class="text-primary"><%= state.impact_estimation_realite %></b>
+      </div>
+    </div>
+  </div>

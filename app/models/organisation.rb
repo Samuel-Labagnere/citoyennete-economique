@@ -30,6 +30,6 @@ class Organisation < ApplicationRecord
     validates_presence_of :nom, :statut_juridique, :date_creation, :secteur_activite, :ape, :siren
 
     def to_s
-        "#{ nom }"
+      "#{ nom }"
     end
 end
