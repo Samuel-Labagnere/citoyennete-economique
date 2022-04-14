@@ -9,9 +9,10 @@
   </div>
 </div>
 
-<h2><b class="text-primary">I.</b>Composition de la gouvernance</h2>
+<div class="public">
+<h2 class="pb-5"><b class="text-primary">I.</b>Composition de la gouvernance</h2>
 
-<div class="mb-5 rounded bg-white p-5 my-5">
+<div class="rounded bg-white p-5 my-5">
   <%= bar_chart @pouvoir_gouvernance_taux, suffix: "%", title: 'Indicateurs clés (taux médians)', max: 100 %>
 
 <table class="table mt-5">
@@ -33,7 +34,7 @@
 </div>
 
 
-<div class="row">
+<div class="row pb-5">
   <div class="col-md-6 mb-5">
     <div class="rounded bg-white p-3">
       <%= single_value_pie_chart State.evaluations
@@ -70,68 +71,87 @@
 
 
 
-<h2><b class="text-primary">II.</b> Mise en place des conditions du bon exercice de la démocratie</h2>
+<h2 class="pt-5"><b class="text-primary">II.</b> Mise en place des conditions du bon exercice de la démocratie</h2>
 
-<div class="row">
+<div class="row mt-5 py-5">
 
-  <div class="col lead">
-    <div class="d-flex">
+  <div class="col-sm-4 lead mb-5">
+    <div>
+      <div class="bg-secondary text-center text-white rounded-top p-3 fs-1 fw-bold">
       <%= State.evaluations
               .up_to_date
-              .median(:pouvoir_democratie_nombre_reunions) %>
+              .median(:pouvoir_democratie_nombre_reunions) %> %
+      </div>
+      <div class="bg-white rounded-bottom p-3">
       <%= indicateur_clean :pouvoir_democratie_nombre_reunions %>
+      </div>
     </div>
   </div>
-  <div class="col lead">
-    <div class="d-flex">
+
+    <div class="col-sm-4 lead mb-5">
+    <div>
+      <div class="bg-secondary text-center text-white rounded-top p-3 fs-1 fw-bold">
       <%= State.evaluations
               .up_to_date
-              .median(:pouvoir_democratie_taux_participation_formations) %>
+              .median(:pouvoir_democratie_taux_participation_formations) %> %
+      </div>
+      <div class="bg-white rounded-bottom p-3">
       <%= indicateur_clean :pouvoir_democratie_taux_participation_formations %>
+      </div>
     </div>
   </div>
-  <div class="col lead">
-    <div class="d-flex">
+
+    <div class="col-sm-4 lead mb-5">
+    <div>
+      <div class="bg-secondary text-center text-white rounded-top p-3 fs-1 fw-bold">
       <%= State.evaluations
               .up_to_date
-              .median(:pouvoir_democratie_nombre_accords_signes) %>
+              .median(:pouvoir_democratie_nombre_accords_signes) %> %
+      </div>
+      <div class="bg-white rounded-bottom p-3">
       <%= indicateur_clean :pouvoir_democratie_nombre_accords_signes %>
+      </div>
     </div>
   </div>
-
 </div>
-
-<%# il en manque une %>
-
 
 
 
 
 <h2>III. Participation à la prise de décision stratégique</h2>
 
-<div class="row">
-  <div class="col-md-4">
-    <%= single_value_pie_chart State.evaluations
-                                    .up_to_date
-                                    .median(:pouvoir_strategique_taux_presence_assemblee) %>
-    <p class="mt-3">
-      <%= indicateur_clean :pouvoir_strategique_taux_presence_assemblee %>
-    </p>
+<div class="row mt-5 pt-5">
+  <div class="col-md-4 mb-5">
+    <div class="rounded bg-white mx-auto p-3">
+      <%= single_value_pie_chart State.evaluations
+                                      .up_to_date
+                                      .median(:pouvoir_strategique_taux_presence_assemblee) %>
+      <p class="mt-3">
+        <%= indicateur_clean :pouvoir_strategique_taux_presence_assemblee %>
+      </p>
+    </div>
   </div>
-  <div class="col-md-4">
-    <%= single_value_pie_chart State.evaluations
-                                .up_to_date
-                                .median(:pouvoir_strategique_implication_partage) %>
-    <p class="mt-3">
-      <%= indicateur_clean :pouvoir_strategique_implication_partage %>
-    </p>
+
+  <div class="col-md-4 mb-5">
+    <div class="rounded bg-white mx-auto p-3">
+      <%= single_value_pie_chart State.evaluations
+                                  .up_to_date
+                                  .median(:pouvoir_strategique_implication_partage) %>
+      <p class="mt-3">
+        <%= indicateur_clean :pouvoir_strategique_implication_partage %>
+      </p>
+    </div>
   </div>
-  <div class="col-md-4">
+
+  <div class="col-md-4 mb-5">
+    <div class="rounded bg-white mx-auto p-3">
         <%= single_value_pie_chart State.evaluations
-                                .up_to_date
-                                .median(:pouvoir_strategique_actifs_total) %>
-    <p class="mt-3">
-      <%= indicateur_clean :pouvoir_strategique_actifs_total %>
-    </p>
+                                  .up_to_date
+                                  .median(:pouvoir_strategique_actifs_total) %>
+      <p class="mt-3">
+        <%= indicateur_clean :pouvoir_strategique_actifs_total %>
+      </p>
+    </div>
   </div>
+</div>
 </div>
