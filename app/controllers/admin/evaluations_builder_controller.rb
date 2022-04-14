@@ -11,8 +11,22 @@ class Admin::EvaluationsBuilderController < Admin::ApplicationController
   end
 
   def show
+    add_breadcrumb @evaluation, admin_evaluation_path(@evaluation)
+    case params[:step]
+    when "pilier1"
+      add_breadcrumb "Édition pilier 1"
+    when "pilier2"
+      add_breadcrumb "Édition pilier 2"
+    when "pilier3"
+      add_breadcrumb "Édition pilier 3"
+    when "pilier4"
+      add_breadcrumb "Édition pilier 4"
+    when "informations"
+      add_breadcrumb "Informations"
+    end
     render params[:step]
-    add_breadcrumb @evaluation
+
+  
   end
 
   def new

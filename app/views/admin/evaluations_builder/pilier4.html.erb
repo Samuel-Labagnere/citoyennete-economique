@@ -8,82 +8,81 @@
 
 <h2><span class="me-1 m-0">4.</span>Impact environnemental, social et territorial</h2>
 
+<div class="view">
+  <%= simple_form_for @evaluation, url: admin_evaluation_builder_path, method: :post do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <%= f.association :state do |il| %>
 
-<%= simple_form_for @evaluation, url: admin_evaluation_builder_path, method: :post do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <%= f.association :state do |il| %>
+      <h3>Impact environnemental</h3>
 
-    <h3>Impact environnemental</h3>
+      <div class="row align-items-start my-5">
+        <div class="col-md-4 col-input">
+        <%= il.input :impact_environnement_audit_impact, as: :radio_buttons %>
+        </div>
+        <div class="col-md-4 col-input">
+        <%= il.input :impact_environnement_demarche_ecologique, as: :radio_buttons %>
+        </div>
+        <div class="col-md-4 col-input">
+        <%= il.input :impact_environnement_discussion_impact, as: :radio_buttons %>
+        </div>
+      </div>
 
-    <div class="row align-items-start my-5">
-      <div class="col-md-4 col-input">
-      <%= il.input :impact_environnement_audit_impact, as: :radio_buttons %>
+      <div class="row align-items-end my-5">
+        <div class="col-md-4">
+        <%= il.input :impact_environnement_part_energies_renouvelables %>
+        </div>
+        <div class="col-md-4">
+        <%= il.input :impact_environnement_part_salaries_mobilite %>
+        </div>
+        <div class="col-md-4">
+          <p>Calculez-vous le bilan carbone ?<p>
+          <%= il.input :impact_environnement_bilan_carbone_scope_1 %>
+          <%= il.input :impact_environnement_bilan_carbone_scope_2 %>
+          <%= il.input :impact_environnement_bilan_carbone_scope_3 %>
+        </div>
       </div>
-      <div class="col-md-4 col-input">
-      <%= il.input :impact_environnement_demarche_ecologique, as: :radio_buttons %>
-      </div>
-      <div class="col-md-4 col-input">
-      <%= il.input :impact_environnement_discussion_impact, as: :radio_buttons %>
-      </div>
-    </div>
-
-    <div class="row align-items-end my-5">
-      <div class="col-md-4">
-      <%= il.input :impact_environnement_part_energies_renouvelables %>
-      </div>
-      <div class="col-md-4">
-      <%= il.input :impact_environnement_part_salaries_mobilite %>
-      </div>
-      <div class="col-md-4">
-        <p>Calculez-vous le bilan carbone ?<p>
-        <%= il.input :impact_environnement_bilan_carbone_scope_1 %>
-        <%= il.input :impact_environnement_bilan_carbone_scope_2 %>
-        <%= il.input :impact_environnement_bilan_carbone_scope_3 %>
-      </div>
-    </div>
 
 
-    <h3>Impact social</h3>
+      <h3>Impact social</h3>
 
-    <div class="row align-items-baseline my-5">
-      <div class="col-md-4">
-        <%= il.input :impact_social_part_activite_structures_insertion %>
+      <div class="row align-items-baseline my-5">
+        <div class="col-md-4">
+          <%= il.input :impact_social_part_activite_structures_insertion %>
+        </div>
+        <div class="col-md-4">
+          <%= il.input :impact_social_alternance_apprentissage %>
+        </div>
+        <div class="col-md-4">
+          <%= il.input :impact_social_part_seniors %>
+        </div>
+        <div class="col-md-4">
+          <%= il.input :impact_social_part_handicap %>
+        </div>
       </div>
-      <div class="col-md-4">
-        <%= il.input :impact_social_alternance_apprentissage %>
-      </div>
-      <div class="col-md-4">
-        <%= il.input :impact_social_part_seniors %>
-      </div>
-      <div class="col-md-4">
-        <%= il.input :impact_social_part_handicap %>
-      </div>
-    </div>
 
-    <h3>Engagement en faveur de l'écosystème et du territoire</h3>
+      <h3>Engagement en faveur de l'écosystème et du territoire</h3>
 
-    <div class="row align-items-baseline my-5 col-input">
-      <div class="col-md-4">
-        <%= il.input :impact_engagement_part_resultat_missions_utiles %>
+      <div class="row align-items-baseline my-5 col-input">
+        <div class="col-md-4">
+          <%= il.input :impact_engagement_part_resultat_missions_utiles %>
+        </div>
+        <div class="col-md-4">
+          <%= il.input :impact_engagement_part_placements_responsables %>
+        </div>
+        <div class="col-md-4">
+          <%= il.input :impact_engagement_part_impots_france %>
+        </div>
+        <div class="col-md-4">
+          <%= il.input :impact_engagement_demarche_ethique_fournisseurs, as: :radio_buttons %>
+        </div>
       </div>
-      <div class="col-md-4">
-        <%= il.input :impact_engagement_part_placements_responsables %>
-      </div>
-      <div class="col-md-4">
-        <%= il.input :impact_engagement_part_impots_france %>
-      </div>
-      <div class="col-md-4">
-        <%= il.input :impact_engagement_demarche_ethique_fournisseurs, as: :radio_buttons %>
-      </div>
-    </div>
 
-    <div class="col-md-4">
-    <%= il.input :impact_estimation_realite %>
-    </div>
-  <% end %>
+      <div class="col-md-4">
+      <%= il.input :impact_estimation_realite %>
+      </div>
+    <% end %>
 </div>
 
-</div>
 
   <div class="d-flex mt-5">
       <%= f.button :submit, "Enregistrer", class: 'btn btn-primary me-auto ms-auto d-flex mb-5 text-white' %>

@@ -42,7 +42,7 @@ class Admin::OrganisationsController < Admin::ApplicationController
           current_user.save
         end
 
-        format.html { redirect_to user_root_path, notice: I18n.t('notice.organisation.create') }
+        format.html { redirect_to admin_user_root_path, notice: I18n.t('notice.organisation.create') }
       else
         format.html { render :new, status: :unprocessable_entity }
       end

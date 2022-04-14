@@ -2,7 +2,7 @@
 <div id="<%= dom_id evaluation %>" class="view">
 
   <h2>Informations</h2>
-  <%= link_to "Modifier", admin_evaluation_builder_path(evaluation_id: evaluation.id, step: 'informations') %>
+  <%= link_to "Modifier", admin_evaluation_builder_path(evaluation_id: evaluation.id, step: 'informations'),class: 'btn btn-secondary mt-2' %>
 
   <div class="row my-5">
     <div class="col-sm-6 col-md-4">
@@ -39,7 +39,7 @@
 
 
   <h2>Pilier 1 : Partage du pouvoir et des décisions</h2>
-  <%= link_to "Modifier", admin_evaluation_builder_path(evaluation_id: evaluation.id, step: 'pilier1') %>
+  <%= link_to "Modifier", admin_evaluation_builder_path(evaluation_id: evaluation.id, step: 'pilier1'),class: 'btn btn-secondary mt-2' %>
 
   <h3>Composition de la gouvernance</h3>
 
@@ -141,7 +141,7 @@
   </div>
 
   <h2>Pilier 2 : Pérennité économique et partage de la valeur créée</h2>
-  <%= link_to "Modifier", admin_evaluation_builder_path(evaluation_id: evaluation.id, step: 'pilier2') %>
+  <%= link_to "Modifier", admin_evaluation_builder_path(evaluation_id: evaluation.id, step: 'pilier2'),class: 'btn btn-secondary mt-2' %>
 
   <h3>Pérennité : création de valeur, inaliénabilité et robustesse de l'entreprise</h3>
 
@@ -252,7 +252,7 @@
   </div>
 
 <h2>Capital humain et qualité de vie au travail</h2>
-<%= link_to "Modifier", admin_evaluation_builder_path(evaluation_id: evaluation.id, step: 'pilier3') %>
+<%= link_to "Modifier", admin_evaluation_builder_path(evaluation_id: evaluation.id, step: 'pilier3'),class: 'btn btn-secondary mt-2' %>
 
 <h3>Mise en place des conditions du bon exercice de la démocratie</h3>
 
@@ -328,7 +328,7 @@
   </div>
 
 <h2>Impact environnemental, social et territorial</h2>
-<%= link_to "Modifier", admin_evaluation_builder_path(evaluation_id: evaluation.id, step: 'pilier4') %>
+<%= link_to "Modifier", admin_evaluation_builder_path(evaluation_id: evaluation.id, step: 'pilier4'),class: 'btn btn-secondary mt-2' %>
 
 <h3>Impact environnemental</h3>
 

@@ -50,6 +50,6 @@ class Evaluation < ApplicationRecord
   end
 
   def to_s
-    "Evaluation #{annee}"
+    "Évaluation #{annee}"
   end
 end

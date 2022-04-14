@@ -6,13 +6,6 @@
   </div>
 </div>
 
-<div class="my-5">
-  <% if current_user.is_super_admin %>
-    <%= link_to "Back to evaluations", evaluations_path, class: "btn btn-secondary me-3" %>
-  <% else %>
-    <%= link_to "Retourner au dashboard", admin_path, class: "btn btn-secondary me-3" %>
-  <% end %>
-</div>
 
 <div class="d-flex">
 
