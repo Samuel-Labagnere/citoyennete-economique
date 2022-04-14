@@ -36,7 +36,7 @@
   <div>
 
     <!-- EXAMPLE -->
-    <%= single_value_pie_chart @state.pouvoir_gouvernance_part_salaries_associes %>
+    
 
     <!-- IMPACT 1 -->
 
@@ -44,13 +44,11 @@
 
     <h3 id="impact-1-1"><b class="text-primary">I.</b> <u class="text-secondary text-decoration-none">Composition de la gouvernance</u></h3>
 
-    <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
-      :pouvoir_gouvernance_part_salaries_associes,
-      :pouvoir_gouvernance_taux_societariat_femmes,
-      :pouvoir_gouvernance_taux_droits_vote_salaries,
-      :pouvoir_gouvernance_part_salaries_conseil,
-      :pouvoir_gouvernance_part_femmes_conseil
-    ] %>
+    <%= single_value_pie_chart @state.pouvoir_gouvernance_part_salaries_associes %>
+    <%= single_value_pie_chart @state.pouvoir_gouvernance_taux_societariat_femmes %>
+    <%= single_value_pie_chart @state.pouvoir_gouvernance_taux_droits_vote_salaries %>
+    <%= single_value_pie_chart @state.pouvoir_gouvernance_part_salaries_conseil %>
+    <%= single_value_pie_chart @state.pouvoir_gouvernance_part_femmes_conseil %>
 
     <% if @evaluation.state.pouvoir_gouvernance_diversite_categories.present? %>
     <div class="data-container rounded shadow col-12 col-mb-5 p-0 overflow-hidden mb-5">
@@ -105,11 +103,9 @@
 
     <h3 id="impact-1-3"><b class="text-primary">III.</b> Participation à la <u class="text-secondary text-decoration-none">prise de décision stratégique</u></h3>
 
-    <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
-      :pouvoir_strategique_taux_presence_assemblee,
-      :pouvoir_strategique_implication_partage,
-      :pouvoir_strategique_actifs_total
-    ] %>
+    <%= single_value_pie_chart @state.pouvoir_strategique_taux_presence_assemblee %>
+    <%= single_value_pie_chart @state.pouvoir_strategique_implication_partage %>
+    <%= single_value_pie_chart @state.pouvoir_strategique_actifs_total %>
 
     <div class="w-100 mb-5 bg-primary rounded separator"></div>
 
@@ -125,12 +121,10 @@
 
     <h3 id="impact-2-1"><b class="text-primary">I.</b> Pérennité : <u class="text-secondary text-decoration-none">création de valeur, inaliénabilité et robustesse</u> de l'entreprise</h3>
 
-    <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
-      :valeur_perennite_part_capital_salaries,
-      :valeur_perennite_part_resultat_reserve,
-      :valeur_perennite_ebe_caht,
-      :valeur_perennite_part_endettement
-    ] %>
+    <%= single_value_pie_chart @state.valeur_perennite_part_capital_salaries %>
+    <%= single_value_pie_chart @state.valeur_perennite_part_resultat_reserve %>
+    <%= single_value_pie_chart @state.valeur_perennite_ebe_caht %>
+    <%= single_value_pie_chart @state.valeur_perennite_part_endettement %>
 
     <% if has_any_indicateur @evaluation, :valeur_perennite_existence_reserve, :valeur_perennite_reserve_impartageable, :valeur_perennite_attention_questions_innovation %>
       <div class="bool row mb-5">
@@ -235,12 +229,10 @@
       </div>
     <% end %>
 
-    <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
-      :qualite_qvt_taux_qvt,
-      :qualite_qvt_part_cdi,
-      :qualite_qvt_taux_turnover,
-      :qualite_qvt_taux_absenteisme
-    ] %>
+    <%= single_value_pie_chart @state.qualite_qvt_taux_qvt %>
+    <%= single_value_pie_chart @state.qualite_qvt_part_cdi %>
+    <%= single_value_pie_chart @state.qualite_qvt_taux_turnover %>
+    <%= single_value_pie_chart @state.qualite_qvt_taux_absenteisme %>
 
     <% if has_any_indicateur @evaluation, :qualite_qvt_moyenne_anciennete %>
       <div class="col d-invers">
@@ -313,10 +305,8 @@
     </div>
     <% end %>
 
-    <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
-      :impact_environnement_part_energies_renouvelables,
-      :impact_environnement_part_salaries_mobilite,
-    ] %>
+    <%= single_value_pie_chart @state.impact_environnement_part_energies_renouvelables %>
+    <%= single_value_pie_chart @state.impact_environnement_part_salaries_mobilite %>
 
     <% if has_any_indicateur @evaluation, :impact_environnement_bilan_carbone_scope_1, :impact_environnement_bilan_carbone_scope_2, :impact_environnement_bilan_carbone_scope_3 %>
       <div class="row row-bilanCarb">
@@ -345,20 +335,16 @@
 
     <h3 id="impact-4-2"><b class="text-primary">II.</b> Impact <u class="text-secondary text-decoration-none">social</u></h3>
 
-    <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
-      :impact_social_part_activite_structures_insertion,
-      :impact_social_alternance_apprentissage,
-      :impact_social_part_seniors,
-      :impact_social_part_handicap
-    ] %>
+    <%= single_value_pie_chart @state.impact_social_part_activite_structures_insertion %>
+    <%= single_value_pie_chart @state.impact_social_alternance_apprentissage %>
+    <%= single_value_pie_chart @state.impact_social_part_seniors %>
+    <%= single_value_pie_chart @state.impact_social_part_handicap %>
 
     <h3 id="impact-4-3"><b class="text-primary">III.</b><u class="text-secondary text-decoration-none">Engagement</u> en faveur de <u class="text-secondary text-decoration-none">l'écosystème</u> et du <u class="text-secondary text-decoration-none">territoire</u></h3>
 
-    <%= render "indicateurs_taux_group", evaluation: @evaluation, group: [
-      :impact_engagement_part_resultat_missions_utiles,
-      :impact_engagement_part_placements_responsables,
-      :impact_engagement_part_impots_france
-    ] %>
+    <%= single_value_pie_chart @state.impact_engagement_part_resultat_missions_utiles %>
+    <%= single_value_pie_chart @state.impact_engagement_part_placements_responsables %>
+    <%= single_value_pie_chart @state.impact_engagement_part_impots_france %>
 
     <% if has_any_indicateur @evaluation, :impact_engagement_demarche_ethique_fournisseurs %>
       <%= render "indicateur_boolean", evaluation: @evaluation, indicateur: :impact_engagement_demarche_ethique_fournisseurs %>
