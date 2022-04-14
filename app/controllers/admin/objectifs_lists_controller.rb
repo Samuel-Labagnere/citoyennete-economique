@@ -1,6 +1,5 @@
 class Admin::ObjectifsListsController < Admin::ApplicationController
   before_action :check_super_admin, only: %i[ index ]
-  before_action :authenticate_user!
   before_action :set_objectifs_list, only: %i[ show edit update destroy ]
   before_action :check_owner, only: %i[ show edit update destroy ]
 
@@ -13,7 +12,7 @@ class Admin::ObjectifsListsController < Admin::ApplicationController
 
   def new
     if current_user.organisation.objectifs_list.present?
-      redirect_to admin_user_root_path
+      redirect_to admin_path
     else
       @objectifs_list = ObjectifsList.new
       @objectifs_list.state = State.new
@@ -50,7 +49,7 @@ class Admin::ObjectifsListsController < Admin::ApplicationController
     @objectifs_list.destroy
 
     respond_to do |format|
-      format.html { redirect_to admin_user_root_path, notice: I18n.t('notice.objectifs_list.destroy') }
+      format.html { redirect_to admin_path, notice: I18n.t('notice.objectifs_list.destroy') }
     end
   end
 

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :admin do
     resources :evaluations
+    resources :organisations
     get 'resultats/:evaluation_id', to: "resultats#index", as: "resultats"
     get 'code_invitation', to: "invitation_code#index"
     post 'code_invitation', to: "invitation_code#join"
@@ -11,7 +12,6 @@ Rails.application.routes.draw do
   end
   
   devise_for :users, path: '', path_names: { sign_in: "connexion", sign_out: "deconnexion", sign_up: "inscription", edit: "compte" }
-  resources :organisations
 
   # get "entreprises", to: "organisations#public_list"
   get 'pilier-1', to: "statistiques#pillar1"
