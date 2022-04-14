@@ -6,14 +6,13 @@
   <% end %>
 </h1>
 
-<%= link_to 'Modifier', edit_organisation_path(@organisation), class: 'btn btn-primary mt-3' if @organisation.present? %>
+<%= link_to 'Modifier', edit_admin_organisation_path(@organisation), class: 'btn btn-primary mt-3' if @organisation.present? %>
 
 <% if @organisation.nil? %>
-  <div class="row">
-    <%= link_to "Inscrire une organisation", new_organisation_path, class: "btn btn-primary" %>
+    <%= link_to "Inscrire une organisation", new_admin_organisation_path, class: "btn btn-primary" %>
     <div class="col mt-5">
       <div id="code_messages"></div>
-      <%= form_with url: code_invitation_path, method: :post do |f| %>
+      <%= form_with url: admin_code_invitation_path, method: :post do |f| %>
         <div class="form-group">
           <%= f.label :code, "Code d'invitation:" %>
           <%= f.text_field :code, class: "form-control" %>
@@ -21,7 +20,6 @@
         <%= f.submit "Rejoindre une organisation", class: "btn btn-primary mt-3" %>
       <% end %>
     </div>
-  </div>
 <% else %>
   <% if @organisation.validation_admin %>
     <h2>Evaluations</h2>

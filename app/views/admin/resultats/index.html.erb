@@ -12,11 +12,28 @@
 
 <h3><b class="text-primary">I.</b> Composition de la gouvernance</h3>
 
-<%= single_value_pie_chart @state.pouvoir_gouvernance_part_salaries_associes %>
-<%= single_value_pie_chart @state.pouvoir_gouvernance_taux_societariat_femmes %>
-<%= single_value_pie_chart @state.pouvoir_gouvernance_taux_droits_vote_salaries %>
-<%= single_value_pie_chart @state.pouvoir_gouvernance_part_salaries_conseil %>
-<%= single_value_pie_chart @state.pouvoir_gouvernance_part_femmes_conseil %>
+<div class="row justify-content-center">
+  <div class="col-md-4 mb-4 ">
+    <%= single_value_pie_chart @state.pouvoir_gouvernance_part_salaries_associes %>
+    <p class="text-center"><%= indicateur_clean :pouvoir_gouvernance_part_salaries_associes %></p>
+  </div>
+  <div class="col-md-4 mb-4">
+    <%= single_value_pie_chart @state.pouvoir_gouvernance_taux_societariat_femmes %>
+    <p class="text-center"><%= indicateur_clean :pouvoir_gouvernance_taux_societariat_femmes %></p>
+  </div>
+  <div class="col-md-4 mb-4">
+    <%= single_value_pie_chart @state.pouvoir_gouvernance_taux_droits_vote_salaries %>
+    <p class="text-center"><%= indicateur_clean :pouvoir_gouvernance_taux_droits_vote_salaries %></p>
+  </div>
+  <div class="col-md-4 mb-4">
+    <%= single_value_pie_chart @state.pouvoir_gouvernance_part_salaries_conseil %>
+    <p class="text-center"><%= indicateur_clean :pouvoir_gouvernance_part_salaries_conseil %></p>
+  </div>
+  <div class="col-md-4 mb-4">
+    <%= single_value_pie_chart @state.pouvoir_gouvernance_part_femmes_conseil %>
+    <p class="text-center"><%= indicateur_clean :pouvoir_gouvernance_part_femmes_conseil %></p>
+  </div>
+</div>
 
 <% @state.pouvoir_gouvernance_diversite_categories.each do |category| %>
   <p><%= category %></p>

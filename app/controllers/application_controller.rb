@@ -11,7 +11,11 @@ class ApplicationController < ActionController::Base
 
   def check_super_admin
     if !current_user || !current_user.is_super_admin
-      redirect_to admin_user_root_path
+      redirect_to admin_path
     end
+  end
+
+  def after_sign_in_path_for(resource)
+    admin_path
   end
 end

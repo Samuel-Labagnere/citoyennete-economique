@@ -24,7 +24,7 @@ class Admin::InvitationCodeController < Admin::ApplicationController
 
       ic.destroy
 
-      redirect_to admin_user_root_path
+      redirect_to admin_path
     end
   end
 end
