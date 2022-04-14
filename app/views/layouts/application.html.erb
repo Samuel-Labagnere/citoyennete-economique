@@ -15,6 +15,7 @@
     <%= render 'nav' %>
     <main>
       <div class="container py-5 mt-sm-5">
+        <%= render_breadcrumbs if breadcrumbs.many? %>
         <%= render 'flash' %>
         <%= yield %>
       </div>

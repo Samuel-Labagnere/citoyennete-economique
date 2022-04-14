@@ -6,15 +6,21 @@ class EvaluationsController < ApplicationController
 
   # GET /evaluations or /evaluations.json
   def index
+    add_breadcrumb 'Dashboard', :user_root_path
     @evaluations = Evaluation.all
   end
 
   # GET /evaluations/1 or /evaluations/1.json
   def show
+    add_breadcrumb 'Dashboard', :user_root_path
+    add_breadcrumb @evaluation
   end
 
   # GET /evaluations/new
   def new
+    add_breadcrumb 'Dashboard', :user_root_path
+    add_breadcrumb 'Nouvelle évaluation'
+
     @evaluation = Evaluation.new
     @evaluation.state = State.new
   end
