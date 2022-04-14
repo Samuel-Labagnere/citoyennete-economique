@@ -3,3 +3,13 @@
     margin-bottom: 2rem;
   }
 }
+.estim {
+  .form-group {
+    display:flex;
+    input {
+      max-height: 38px;
+      max-width: 100px;
+      margin-left: 100px;
+    }
+  }
+}
