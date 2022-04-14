@@ -32,7 +32,7 @@ class Admin::EvaluationsController < Admin::ApplicationController
 
     respond_to do |format|
       if @evaluation.save
-        format.html { redirect_to evaluation_url(@evaluation), notice: I18n.t('notice.evaluation.create') }
+        format.html { redirect_to admin_evaluation_url(@evaluation), notice: I18n.t('notice.evaluation.create') }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -43,7 +43,7 @@ class Admin::EvaluationsController < Admin::ApplicationController
   def update
     respond_to do |format|
       if @evaluation.update(evaluation_params)
-        format.html { redirect_to evaluation_url(@evaluation), notice: I18n.t('notice.evaluation.update') }
+        format.html { redirect_to admin_evaluation_url(@evaluation), notice: I18n.t('notice.evaluation.update') }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end

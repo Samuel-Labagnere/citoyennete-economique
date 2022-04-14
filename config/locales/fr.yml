@@ -16,6 +16,11 @@ fr:
       destroy: "Organisation supprimée avec succès."
   errors:
     format: "%{message}"
+  pillars:
+    1: Partage du pouvoir et des décisions
+    2: Pérennité économique et partage de la valeur créée
+    3: Capital humain et qualité de vie au travail
+    4: Impact environnemental, social et territorial
   negative_indicateurs:
     valeur_perennite_existence_reserve: "Absence de réserve statutaire"
     valeur_perennite_reserve_impartageable: "Réserve statutaire partageable"

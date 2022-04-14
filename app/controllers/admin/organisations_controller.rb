@@ -1,6 +1,5 @@
 class Admin::OrganisationsController < Admin::ApplicationController
   before_action :check_super_admin, only: %i[ index show destroy ]
-  before_action :authenticate_user!, except: %i[ public_list ]
   before_action :set_organisation, only: %i[ show edit update destroy ]
   before_action :check_owner, only: %i[ edit update ]
 
@@ -28,6 +27,7 @@ class Admin::OrganisationsController < Admin::ApplicationController
 
   # GET /organisations/1/edit
   def edit
+    add_breadcrumb 'Modifier l\'organisation'
   end
 
   # POST /organisations or /organisations.json
@@ -42,7 +42,7 @@ class Admin::OrganisationsController < Admin::ApplicationController
           current_user.save
         end
 
-        format.html { redirect_to admin_user_root_path, notice: I18n.t('notice.organisation.create') }
+        format.html { redirect_to admin_path, notice: I18n.t('notice.organisation.create') }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -53,7 +53,7 @@ class Admin::OrganisationsController < Admin::ApplicationController
   def update
     respond_to do |format|
       if @organisation.update(organisation_params)
-        format.html { redirect_to edit_organisation_url(@organisation), notice: I18n.t('notice.organisation.update') }
+        format.html { redirect_to edit_admin_organisation_path(@organisation), notice: I18n.t('notice.organisation.update') }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -65,7 +65,7 @@ class Admin::OrganisationsController < Admin::ApplicationController
     @organisation.destroy
 
     respond_to do |format|
-      format.html { redirect_to organisations_url, notice: I18n.t('notice.organisation.destroy') }
+      format.html { redirect_to admin_organisations_url, notice: I18n.t('notice.organisation.destroy') }
     end
   end
 

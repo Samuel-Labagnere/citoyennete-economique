@@ -1,6 +1,4 @@
 class Admin::InvitationCodeController < Admin::ApplicationController
-  before_action :authenticate_user!, only: %i[ index ]
-
   def index
     add_breadcrumb "Code d'invitation"
     new_code = nil
@@ -24,7 +22,7 @@ class Admin::InvitationCodeController < Admin::ApplicationController
 
       ic.destroy
 
-      redirect_to admin_user_root_path
+      redirect_to admin_path
     end
   end
 end

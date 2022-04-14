@@ -1,32 +1,51 @@
-
-
-<%= simple_form_for @organisation do |f| %>
-  <div class="row col-12 col-sm-8 text-break me-auto ms-auto rounded bg-white shadow p-3 p-sm-4 mb-5 mt-0 mt-sm-5">
-    <div class="col-form col">
-      <%= f.input :nom %>
-      <%= f.input :statut_juridique, collection: Organisation.statut_juridiques.keys %>
-      <%= f.input :date_creation %>
-      <%= f.input :secteur_activite %>
+<div class="view">
+  <%= simple_form_for [:admin, @organisation] do |f| %>
+    <div class="row my-5">
+      <div class="col-sm-4">
+        <%= f.input :nom %>
+      </div>
+      <div class="col-sm-4">
+        <%= f.input :statut_juridique, collection: Organisation.statut_juridiques.keys %>
+      </div>
+      <div class="col-sm-4">
+        <%= f.input :date_creation %>
+      </div>
+      <div class="col-sm-4">
+        <%= f.input :secteur_activite %>
+      </div>
+      <div class="col-sm-4">
+        <%= f.input :ape %>
+      </div>
+      <div class="col-sm-4">
+        <%= f.input :siren %>
+      </div>
+      <div class="col-sm-4">
+        <%= f.input :agrement_specifique %>
+      </div>
     </div>
-    <div class="col-form col">
-      <%= f.input :ape %>
-      <%= f.input :siren %>
-      <%= f.input :agrement_specifique %>
+
+    <div class="row my-5">
+      <div class="col-sm-4 col-input">
+        <%= f.input :objectifs_extra_financiers, as: :radio_buttons %>
+      </div>
+      <div class="col-sm-4">
+        <%= f.input :distinctions %>
+      </div>
+      <div class="col-sm-4">
+        <%= f.input :valeurs_entreprise %>
+      </div>
     </div>
-  </div>
 
-  <div class="col-form col-sm-8 text-break me-auto ms-auto rounded bg-white shadow p-3 p-sm-4 mb-5 col-input">
-    <%= f.input :objectifs_extra_financiers, as: :radio_buttons %>
-  </div>
-
-  <div class="col-form col-sm-8 text-break me-auto ms-auto rounded bg-white shadow p-3 p-sm-4 mb-5">
-    <%= f.input :distinctions %>
-  </div>
-
-  <div class="col-form col-sm-8 text-break me-auto ms-auto rounded bg-white shadow p-3 p-sm-4 mb-5">
-    <%= f.input :valeurs_entreprise %>
-  </div>
-  <div class="d-flex justify-content-center">
-    <%= f.button :submit, "Enregistrer", class: 'btn btn-primary shadow' %>
-  </div>
-<% end %>
+    <div class="text-center my-5">
+      <%= f.button :submit, "Enregistrer", class: 'btn btn-primary shadow' %>
+    </div>
+  <% end %>
+</div>
+<script>
+  function toggleRadio(event) {
+    if(event.target.type === 'radio' && event.target.checked === true) {
+      setTimeout(()=>{ event.target.checked = false; },0);
+    }
+  }
+document.addEventListener('mouseup', toggleRadio);
+</script>
