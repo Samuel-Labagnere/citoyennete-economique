@@ -2,11 +2,14 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :evaluations
     root 'dashboard#index'
+    get 'resultats/:evaluation_id', to: "resultats#index", as: "resultats"
+    get 'code_invitation', to: "invitation_code#index"
+    post 'code_invitation', to: "invitation_code#join"
+    get '/evaluations_builder/new', to: 'evaluations_builder#new'
+    get '/evaluations_builder/:evaluation_id/:id', to: 'evaluations_builder#show', as: 'evaluation_builder'
+    put '/evaluations_builder/:evaluation_id/:id', to: 'evaluations_builder#update'
   end
 
-  get '/evaluations_builder/new', to: 'evaluations_builder#new'
-  get '/evaluations_builder/:evaluation_id/:id', to: 'evaluations_builder#show', as: 'evaluation_builder'
-  put '/evaluations_builder/:evaluation_id/:id', to: 'evaluations_builder#update'
 
   devise_for :users, path: '', path_names: { sign_in: "connexion", sign_out: "deconnexion", sign_up: "inscription", edit: "compte" }
   resources :organisations
@@ -22,9 +25,6 @@ Rails.application.routes.draw do
   # get 'politique-de-confidentialite', to: 'home#politique'
   get 'contact', to: "contact#index"
 
-  get 'code_invitation', to: "invitation_code#index"
-  post 'code_invitation', to: "invitation_code#join"
 
-  get 'resultats/:evaluation_id', to: "resultats#index", as: "resultats"
   root "home#index"
 end

@@ -15,7 +15,6 @@ class Admin::EvaluationsController < Admin::ApplicationController
 
   # GET /evaluations/new
   def new
-    add_breadcrumb 'Dashboard', :user_root_path
     add_breadcrumb 'Nouvelle évaluation'
 
     @evaluation = Evaluation.new

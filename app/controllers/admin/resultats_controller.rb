@@ -1,4 +1,4 @@
-class ResultatsController < ApplicationController
+class Admin::ResultatsController < Admin::ApplicationController
   def indicateurs_hash(evaluation, sym_list)
     hash = {}
     sym_list.each do |sym|
@@ -10,6 +10,8 @@ class ResultatsController < ApplicationController
   end
 
   def index
+    add_breadcrumb @resultat
+
     @evaluation = Evaluation.find(params[:evaluation_id])
     @previous_evaluation = Evaluation.where(annee: ..(@evaluation.annee-1)).order("annee DESC").first
   end
