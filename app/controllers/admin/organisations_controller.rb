@@ -1,6 +1,5 @@
 class Admin::OrganisationsController < Admin::ApplicationController
   before_action :check_super_admin, only: %i[ index show destroy ]
-  before_action :authenticate_user!, except: %i[ public_list ]
   before_action :set_organisation, only: %i[ show edit update destroy ]
   before_action :check_owner, only: %i[ edit update ]
 

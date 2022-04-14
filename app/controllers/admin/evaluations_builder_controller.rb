@@ -1,5 +1,4 @@
 class Admin::EvaluationsBuilderController < Admin::ApplicationController
-  before_action :authenticate_user!
   before_action :set_evaluation, only: %i[ update show ]
 
   def update
