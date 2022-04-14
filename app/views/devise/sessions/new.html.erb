@@ -1,61 +1,48 @@
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-<section class=" mt-5 mb-5" >
-        <div class="container" >
-          <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-lg-12 col-xl-11">
-              <div class="p-md-5">
-                <div class="row justify-content-center">
-                  <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-
-                    <h1 class="h2 text-center mb-5 mx-1 mx-md-4 mt-4">Connexion</h1>
+<div class="row">
+  <div class="col-lg-8 mx-auto">
+    <h1 class="text-center">
+      Connexion
+    </h1>
+  </div>
+</div>
 
 
-                      <div class="d-flex flex-row align-items-center mb-4">
-                        <div class="form-outline flex-fill mb-0">
-                          <%= f.input :email, autocomplete: "email", class:"formLabel" %>
-                      </div>
-                      </div>
+<div class="row my-5">
 
-                      <div class="d-flex flex-row align-items-center mb-0">
-                        <div class="form-outline flex-fill mb-0">
-                            <%= f.input :password, autocomplete: "current-password" %>
-                        </div>
-                      </div>
-                        <% if devise_mapping.recoverable? %>
-                        <div class="mb-5">
-                          <%= link_to 'Mot de passe oublié ?', new_password_path(resource_name), class: "link-primary" %>
-                        </div>
-                      <% end %>
+  <div class="col-6 mx-auto">
+    <div class="form-outline flex-fill mb-4">
+      <%= f.input :email, autocomplete: "email", class:"formLabel" %>
+    </div>
 
-                      <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                          <%= f.submit "Se connecter", class: "btn btn-primary" %>
-                      </div>
-                      <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                          <% if devise_mapping.rememberable? %>
-                          <div class="field">
-                            <%= f.check_box :remember_me %>
-                            <%= f.label :remember_me %>
-                          </div>
-                          <% end %>
-                      </div>
+    <div class="form-outline flex-fill mb-4">
+        <%= f.input :password, autocomplete: "current-password" %>
+    </div>
+    <% if devise_mapping.recoverable? %>
+    <div class="mb-5">
+      <%= link_to 'Mot de passe oublié ?', new_password_path(resource_name), class: "link-primary" %>
+    </div>
+    <% end %>
 
-                      <% if devise_mapping.registerable? %>
-                        <div class="mt-3 ">
-                        <span>Vous n'avez pas de encore de compte ?</span>
-                          <%= link_to "S'inscrire", new_registration_path(resource_name), class: "link-primary" %>
-                        </div>
-                      <% end %>
-
-
-                    </form>
-
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
+    <div class="text-center mb-3">
+        <%= f.submit "Se connecter", class: "btn btn-primary" %>
+    </div>
+    <div class="text-center">
+        <% if devise_mapping.rememberable? %>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
         </div>
-      </section>
+        <% end %>
+    </div>
+
+    <% if devise_mapping.registerable? %>
+      <div class="mt-3 text-center">
+      <span>Vous n'avez pas de encore de compte ?</span>
+        <%= link_to "S'inscrire", new_registration_path(resource_name), class: "link-primary" %>
+      </div>
+    <% end %>
+  </div>
+
 <% end %>
