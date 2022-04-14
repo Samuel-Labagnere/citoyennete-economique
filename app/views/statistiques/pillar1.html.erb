@@ -11,10 +11,10 @@
 
 <h2><b class="text-primary">I.</b>Composition de la gouvernance</h2>
 
-<div class="mb-5">
+<div class="mb-5 rounded bg-white p-5 my-5">
   <%= bar_chart @pouvoir_gouvernance_taux, suffix: "%", title: 'Indicateurs clés (taux médians)', max: 100 %>
-</div>
-<table class="table mb-5">
+
+<table class="table mt-5">
   <thead>
     <tr>
       <th scope="col">Indicateur</th>
@@ -25,43 +25,52 @@
     <% @pouvoir_gouvernance_taux.each do |field, value| %>
     <tr>
       <td><%= field %></td>
-      <td><%= value %></td>
+      <td class="text-primary"><%= value %></td>
     </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 
-<div class="row mb-5">
-  <div class="col-md-6">
-    <%= pie_chart State.evaluations
-                       .up_to_date
-                       .pluck(:pouvoir_gouvernance_diversite_categories)
-                       .flatten
-                       .compact
-                       .tally %>
-    <p class="text-center mt-3">
-      <%= indicateur_clean :pouvoir_gouvernance_diversite_categories %>
-    </p>
+<div class="row">
+  <div class="col-md-6 mb-5">
+    <div class="rounded bg-white p-3">
+      <%= single_value_pie_chart State.evaluations
+                                      .up_to_date
+                                      .median(:pouvoir_gouvernance_part_salaries_conseil) %>
+      <p class="text-center mt-3">
+        <%= indicateur_clean :pouvoir_gouvernance_part_salaries_conseil %>
+      </p>
+    </div>
   </div>
-  <div class="col-md-6">
-    <%= single_value_pie_chart State.evaluations
-                                    .up_to_date
-                                    .median(:pouvoir_gouvernance_part_salaries_conseil) %>
-    <p class="text-center mt-3">
-      <%= indicateur_clean :pouvoir_gouvernance_part_salaries_conseil %>
-    </p>
+  <div class="col-md-6 mb-5">
+    <div class="rounded bg-white p-3">
+      <%= single_value_pie_chart State.evaluations
+                                  .up_to_date
+                                  .median(:pouvoir_gouvernance_part_salaries_conseil) %>
+      <p class="text-center mt-3">
+        <%= indicateur_clean :pouvoir_gouvernance_part_salaries_conseil %>
+      </p>
+    </div>
   </div>
 </div>
 
-<%= single_value_pie_chart State.evaluations
-                                .up_to_date
-                                .median(:pouvoir_gouvernance_part_salaries_conseil) %>
-<p class="text-center mt-3">
-  <%= indicateur_clean :pouvoir_gouvernance_part_salaries_conseil %>
-</p>
+<div class="col-md-6 mx-auto rounded bg-white p-3">
+  <%= pie_chart State.evaluations
+                      .up_to_date
+                      .pluck(:pouvoir_gouvernance_diversite_categories)
+                      .flatten
+                      .compact
+                      .tally %>
+  <p class="text-center mt-3">
+    <%= indicateur_clean :pouvoir_gouvernance_diversite_categories %>
+  </p>
+</div>
 
-<h2><b class="text-primary">II.</b> Mise en place des <span class="text-secondary">conditions du bon exercice de la démocratie</span></h2>
+
+
+<h2><b class="text-primary">II.</b> Mise en place des conditions du bon exercice de la démocratie</h2>
 <p class="lead">
   <%= State.evaluations
            .up_to_date
@@ -69,7 +78,28 @@
   <%= indicateur_clean :pouvoir_democratie_nombre_reunions %>
 </p>
 
-<h2>III. Participation à la <u class="text-secondary text-decoration-none">prise de décision stratégique</h2>
+<p class="lead">
+  <%= State.evaluations
+           .up_to_date
+           .median(:pouvoir_democratie_taux_participation_formations) %>
+  <%= indicateur_clean :pouvoir_democratie_taux_participation_formations %>
+</p>
+
+<p class="lead">
+  <%= State.evaluations
+           .up_to_date
+           .median(:pouvoir_democratie_nombre_accords_signes) %>
+  <%= indicateur_clean :pouvoir_democratie_nombre_accords_signes %>
+</p>
+
+
+<%# il en manque une %>
+
+
+
+
+
+<h2>III. Participation à la prise de décision stratégique</h2>
 
 <div class="row">
   <div class="col-md-4">
