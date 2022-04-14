@@ -13,6 +13,7 @@ class Admin::EvaluationsController < Admin::ApplicationController
     add_breadcrumb @evaluation
   end
 
+
   # GET /evaluations/new
   def new
     add_breadcrumb 'Nouvelle évaluation'
@@ -54,7 +55,7 @@ class Admin::EvaluationsController < Admin::ApplicationController
     @evaluation.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_root_path, notice: I18n.t('notice.evaluation.destroy') }
+      format.html { redirect_to admin_path, notice: I18n.t('notice.evaluation.destroy') }
     end
   end
 

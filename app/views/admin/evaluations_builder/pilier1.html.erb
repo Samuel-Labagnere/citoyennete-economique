@@ -7,88 +7,75 @@
 </h1>
 <h2><span class="me-1 m-0">1.</span> Partage du pouvoir et des décisions</h2>
 
-<%= simple_form_for @evaluation, url: admin_evaluation_builder_path, method: :post do |f| %>
-<%= render 'shared/error_messages', object: f.object %>
-	<%= f.association :state do |il| %>
+<div class ="view">
+	<%= simple_form_for @evaluation, url: admin_evaluation_builder_path, method: :post do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+		<%= f.association :state do |il| %>
 
-      <h3>Composition de la gouvernance</h3>
+		<h3>Composition de la gouvernance</h3>
 
-		<div class="row align-items-baseline my-5">
-				<div class="col-md-4">
-						<%= il.input :pouvoir_gouvernance_part_salaries_associes %>
-				</div>
-				<div class="col-md-4">
-						<%= il.input :pouvoir_gouvernance_taux_societariat_femmes %>
-				</div>
-				<div class="col-md-4 ">
-						<%= il.input :pouvoir_gouvernance_taux_droits_vote_salaries %>
-				</div>
-				<div class="col-md-4 ">
-						<%= il.input :pouvoir_gouvernance_part_salaries_conseil %>
-				</div>
-				<div class="col-md-4 ">
-						<%= il.input :pouvoir_gouvernance_part_femmes_conseil %>
-				</div>
-        <div class="col-12 col-sm-8">
-          <%= il.input :pouvoir_gouvernance_diversite_categories, as: :check_boxes, collection: ['Salariés', 'Investisseurs', 'Fournisseurs', 'Sous-traitants', 'Clients', 'Experts', 'Syndicats', 'Pouvoirs publics', 'Associations', 'Grand public', 'Autres'], include_hidden: false %>
-        </div>
-		</div>
+			<div class="row align-items-baseline my-5">
+					<div class="col-md-4">
+							<%= il.input :pouvoir_gouvernance_part_salaries_associes %>
+					</div>
+					<div class="col-md-4">
+							<%= il.input :pouvoir_gouvernance_taux_societariat_femmes %>
+					</div>
+					<div class="col-md-4 ">
+							<%= il.input :pouvoir_gouvernance_taux_droits_vote_salaries %>
+					</div>
+					<div class="col-md-4 ">
+							<%= il.input :pouvoir_gouvernance_part_salaries_conseil %>
+					</div>
+					<div class="col-md-4 ">
+							<%= il.input :pouvoir_gouvernance_part_femmes_conseil %>
+					</div>
+			<div class="col-12 col-sm-8">
+			<%= il.input :pouvoir_gouvernance_diversite_categories, as: :check_boxes, collection: ['Salariés', 'Investisseurs', 'Fournisseurs', 'Sous-traitants', 'Clients', 'Experts', 'Syndicats', 'Pouvoirs publics', 'Associations', 'Grand public', 'Autres'], include_hidden: false %>
+			</div>
+			</div>
 
-      <h3>Conditions du bon exercice de la démocratie</h3>
-
-      <div class="row align-items-baseline my-5">
-          <div class="col-md-4">
-              <%= il.input :pouvoir_democratie_nombre_reunions %>
-          </div>
-          <div class="col-md-4">
-              <%= il.input :pouvoir_democratie_taux_participation_formations %>
-          </div>
+		<h3>Conditions du bon exercice de la démocratie</h3>
 
 		<div class="row align-items-baseline my-5">
-				<div class="col-md-4 ">
-						<%= il.input :pouvoir_democratie_nombre_reunions %>
-				</div>
-				<div class="col-md-4 ">
-						<%= il.input :pouvoir_democratie_taux_participation_formations %>
-				</div>
+			<div class="col-md-4">
+				<%= il.input :pouvoir_democratie_nombre_reunions %>
+			</div>
+			<div class="col-md-4">
+				<%= il.input :pouvoir_democratie_taux_participation_formations %>
+			</div>
 
-				<div class="col-md-4 ">
-						<%= il.input :pouvoir_democratie_nombre_accords_signes %>
-				</div>
-				<div class="col-md-4 ">
-						<%= il.input :pouvoir_democratie_accords_signes %>
-				</div>
-		</div>
+			<div class="row align-items-baseline my-5">
+					<div class="col-md-4 ">
+							<%= il.input :pouvoir_democratie_nombre_reunions %>
+					</div>
+					<div class="col-md-4 ">
+							<%= il.input :pouvoir_democratie_taux_participation_formations %>
+					</div>
 
-      <div class="row align-items-baseline my-5">
-          <div class="col-md-4">
-              <%= il.input :pouvoir_strategique_taux_presence_assemblee %>
-          </div>
-          <div class="col-md-4">
-              <%= il.input :pouvoir_strategique_implication_partage %>
-          </div>
-          <div class="col-md-4">
-              <%= il.input :pouvoir_strategique_actifs_total %>
-          </div>
-        <div class="col-8 bg-primary rounded my-5" style="height: 6px"></div>
-        <div class="col-md-8 estim"><%= il.input :pouvoir_estimation_realite %></div>
-      </div>
+					<div class="col-md-4 ">
+							<%= il.input :pouvoir_democratie_nombre_accords_signes %>
+					</div>
+					<div class="col-md-4 ">
+							<%= il.input :pouvoir_democratie_accords_signes %>
+					</div>
+			</div>
 
 		<div class="row align-items-baseline my-5">
-				<div class="col-md-4 ">
-						<%= il.input :pouvoir_strategique_taux_presence_assemblee %>
-				</div>
-				<div class="col-md-4 ">
-						<%= il.input :pouvoir_strategique_implication_partage %>
-				</div>
-				<div class="col-md-4 ">
-						<%= il.input :pouvoir_strategique_actifs_total %>
-				</div>
+			<div class="col-md-4">
+				<%= il.input :pouvoir_strategique_taux_presence_assemblee %>
+			</div>
+			<div class="col-md-4">
+				<%= il.input :pouvoir_strategique_implication_partage %>
+			</div>
+			<div class="col-md-4">
+				<%= il.input :pouvoir_strategique_actifs_total %>
+			</div>
+			<div class="col-8 bg-primary rounded my-5" style="height: 6px"></div>
+			<div class="col-md-8 estim"><%= il.input :pouvoir_estimation_realite %></div>
 		</div>
 
-		<div class="col-md-4 "><%= il.input :pouvoir_estimation_realite %></div>
-
-	<% end %>
+		<% end %>
 </div>
 
 	<div class="d-flex mt-5">
