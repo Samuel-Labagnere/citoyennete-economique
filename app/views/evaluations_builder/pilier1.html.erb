@@ -29,8 +29,11 @@
 				<div class="col-md-4 mb-4">
 						<%= il.input :pouvoir_gouvernance_part_femmes_conseil %>
 				</div>
+        <div class="col-12 col-sm-8">
+          <%= il.input :pouvoir_gouvernance_diversite_categories, as: :check_boxes, collection: ['Salariés', 'Investisseurs', 'Fournisseurs', 'Sous-traitants', 'Clients', 'Experts', 'Syndicats', 'Pouvoirs publics', 'Associations', 'Grand public', 'Autres'], include_hidden: false %>
+        </div>
 		</div>
-		<%= il.input :pouvoir_gouvernance_diversite_categories, as: :check_boxes, collection: ['Salariés', 'Investisseurs', 'Fournisseurs', 'Sous-traitants', 'Clients', 'Experts', 'Syndicats', 'Pouvoirs publics', 'Associations', 'Grand public', 'Autres'], include_hidden: false %>
+
 
 		<h3>Conditions du bon exercice de la démocratie</h3>
 

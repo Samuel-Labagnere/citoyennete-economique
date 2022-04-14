@@ -52,3 +52,19 @@
       .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {color: unset ;}
   }
 }
+
+fieldset.form-group.check_boxes {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 40px;
+  legend {
+    top: 0;
+    position: absolute;
+    width: 100%;
+  }
+  .form-check {
+    margin: 0 10px 10px;
+  }
+}
