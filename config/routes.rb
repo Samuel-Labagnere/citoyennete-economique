@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  # resources :objectifs_lists
-  resources :evaluations
-
   namespace :admin do
+    resources :evaluations
     root 'dashboard#index'
   end
 

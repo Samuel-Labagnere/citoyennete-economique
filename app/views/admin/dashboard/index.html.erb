@@ -39,7 +39,7 @@
       <% current_user.organisation.evaluations.active.each do |evaluation| %>
         <div class="list-group-item d-flex p-3">
           <div class="col">
-            <%= link_to "Evaluation de l'année #{ evaluation.annee }", evaluation, class: "text-secondary fw-bold" %> |
+            <%= link_to "Evaluation de l'année #{ evaluation.annee }", [:admin, evaluation], class: "text-secondary fw-bold" %> |
             <%= link_to "Voir les résultats", resultats_path(evaluation_id: evaluation.id), class: "text-primary fw-bold" %> |
             <%= link_to "Éditer", evaluation_builder_path(evaluation.id, 'informations'), class: "text-success fw-bold" %>
           </div>

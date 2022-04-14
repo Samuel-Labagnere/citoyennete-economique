@@ -1,18 +1,15 @@
-class EvaluationsController < ApplicationController
+class Admin::EvaluationsController < Admin::ApplicationController
   before_action :check_super_admin, only: %i[ index ]
-  before_action :authenticate_user!
   before_action :set_evaluation, only: %i[ show edit update destroy ]
   before_action :check_owner, only: %i[ show edit update destroy ]
 
   # GET /evaluations or /evaluations.json
   def index
-    add_breadcrumb 'Dashboard', :user_root_path
     @evaluations = Evaluation.all
   end
 
   # GET /evaluations/1 or /evaluations/1.json
   def show
-    add_breadcrumb 'Dashboard', :user_root_path
     add_breadcrumb @evaluation
   end
 

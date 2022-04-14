@@ -1,5 +1,6 @@
 class StatistiquesController < ApplicationController
   def pillar1
+    add_breadcrumb 'Partage du pouvoir et des décisions'
     @pouvoir_gouvernance_taux = Aggregate.pouvoir_gouvernance_taux
   end
 
