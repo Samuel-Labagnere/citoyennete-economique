@@ -14,7 +14,7 @@
 
     <h3>Impact environnemental</h3>
 
-    <div class="row align-items-baseline my-5">
+    <div class="row align-items-start my-5">
       <div class="col-md-4 mb-4 col-input">
       <%= il.input :impact_environnement_audit_impact, as: :radio_buttons %>
       </div>
@@ -24,6 +24,9 @@
       <div class="col-md-4 mb-4 col-input">
       <%= il.input :impact_environnement_discussion_impact, as: :radio_buttons %>
       </div>
+    </div>
+
+    <div class="row align-items-end my-5">
       <div class="col-md-4 mb-4">
       <%= il.input :impact_environnement_part_energies_renouvelables %>
       </div>
@@ -37,6 +40,7 @@
         <%= il.input :impact_environnement_bilan_carbone_scope_3 %>
       </div>
     </div>
+
 
     <h3>Impact social</h3>
 
