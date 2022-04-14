@@ -1,11 +1,4 @@
-<h1>
-  <% if @evaluation.status != 'active' %>
-    Nouvelle évaluation
-  <% else %>
-    Édition de l'évaluation de l'année <%= @evaluation.annee %>
-  <% end %>
-</h1>
-<h2><span class="me-1 m-0">2.</span>Pérennité économique et partage de la valeur créée</h2>
+<h1>2. <%= t 'pillars.2' %></h1>
 
 <div class="view">
   <%= simple_form_for @evaluation, url: admin_evaluation_builder_path, method: :post do |f| %>

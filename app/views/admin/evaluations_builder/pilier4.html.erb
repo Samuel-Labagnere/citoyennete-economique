@@ -1,12 +1,4 @@
-<h1>
-  <% if @evaluation.status != 'active' %>
-    Nouvelle évaluation
-  <% else %>
-    Édition de l'évaluation de l'année <%= @evaluation.annee %>
-  <% end %>
-</h1>
-
-<h2><span class="me-1 m-0">4.</span>Impact environnemental, social et territorial</h2>
+<h1>4. <%= t 'pillars.4' %></h1>
 
 <div class="view">
   <%= simple_form_for @evaluation, url: admin_evaluation_builder_path, method: :post do |f| %>
