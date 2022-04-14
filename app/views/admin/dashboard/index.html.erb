@@ -24,33 +24,36 @@
   <% if @organisation.validation_admin %>
     <h2>Evaluations</h2>
 
-    <ul class="list-group rounded my-5">
-      <div class="list-group-item d-flex p-3">
-        <div class="col">Année</div>
-        <div class="row w-50 text-center">
-          <div class="col">Informations</div>
-          <div class="col">Pilier 1</div>
-          <div class="col">Pilier 2</div>
-          <div class="col">Pilier 3</div>
-          <div class="col">Pilier 4</div>
-        </div>
-      </div>
-      <% current_user.organisation.evaluations.active.each do |evaluation| %>
-        <div class="list-group-item d-flex p-3">
-          <div class="col">
-            <%= link_to "Evaluation de l'année #{ evaluation.annee }", [:admin, evaluation], class: "text-secondary fw-bold" %> |
-            <%= link_to "Voir les résultats", admin_resultats_path(evaluation_id: evaluation.id), class: "text-primary fw-bold" %>
-          </div>
-          <div class="row w-50 text-center">
-            <div class="col"><%= link_to "Éditer", admin_evaluation_builder_path(evaluation.id, 'informations'), class: "text-success fw-bold" %></div>
-            <div class="col"><%= link_to "Éditer", admin_evaluation_builder_path(evaluation.id, 'pilier1'), class: "text-success fw-bold" %></div>
-            <div class="col"><%= link_to "Éditer", admin_evaluation_builder_path(evaluation.id, 'pilier2'), class: "text-success fw-bold" %></div>
-            <div class="col"><%= link_to "Éditer", admin_evaluation_builder_path(evaluation.id, 'pilier3'), class: "text-success fw-bold" %></div>
-            <div class="col"><%= link_to "Éditer", admin_evaluation_builder_path(evaluation.id, 'pilier4'), class: "text-success fw-bold" %></div>
-          </div>
-        </div>
-      <% end %>
-    </ul>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Année</th>
+            <th>Informations</th>
+            <th>Pilier 1</th>
+            <th>Pilier 2</th>
+            <th>Pilier 3</th>
+            <th>Pilier 4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% current_user.organisation.evaluations.active.each do |evaluation| %>
+            <tr>
+              <td>
+                <%= link_to evaluation, [:admin, evaluation], class: "text-secondary fw-bold" %> |
+                <%= link_to "Voir les résultats", admin_resultats_path(evaluation_id: evaluation.id), class: "text-primary fw-bold" %>
+              </td>
+              <td><%= link_to "Modifier", admin_evaluation_builder_path(evaluation.id, 'informations'), class: "btn btn-primary btn-xs" %></td>
+              <td><%= link_to "Modifier", admin_evaluation_builder_path(evaluation.id, 'pilier1'), class: "btn btn-primary btn-xs" %></td>
+              <td><%= link_to "Modifier", admin_evaluation_builder_path(evaluation.id, 'pilier2'), class: "btn btn-primary btn-xs" %></td>
+              <td><%= link_to "Modifier", admin_evaluation_builder_path(evaluation.id, 'pilier3'), class: "btn btn-primary btn-xs" %></td>
+              <td><%= link_to "Modifier", admin_evaluation_builder_path(evaluation.id, 'pilier4'), class: "btn btn-primary btn-xs" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
   <% else %>
     <p class="fst-italic">En attente de vérification par un administrateur.<p>
   <% end %>
