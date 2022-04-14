@@ -6,28 +6,31 @@
 
   <div class="row my-5">
     <div class="col-sm-6 col-md-4">
-      <%= render 'indicator', name: 'Année', value: "#{evaluation.annee}" %>
+      <%= render  'indicator',
+                  name: 'Année',
+                  value: "#{evaluation.annee}",
+                  unavailable: false %>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
-        Chiffre d'affaires :
-        <b class="text-primary"><%= evaluation.chiffre_affaires %></b>
-      </div>
+      <%= render  'indicator',
+                  name: 'Chiffre d\'affaires',
+                  value: "#{number_to_currency evaluation.chiffre_affaires, precision: 0}",
+                  unavailable: evaluation.chiffre_affaires.blank? %>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
-        Résultat net :
-        <b class="text-primary"><%= evaluation.resultat_net %></b>
-      </div>
+      <%= render  'indicator',
+                  name: 'Résultat net',
+                  value: "#{number_to_currency evaluation.resultat_net, precision: 0}",
+                  unavailable: evaluation.resultat_net.blank? %>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= evaluation.nombre_salaries ? 'opacity-100' : 'opacity-50' %>">
         Nombre total de salariés :
         <b class="text-primary"><%= evaluation.nombre_salaries %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= evaluation.nombre_salaries_etp ? 'opacity-100' : 'opacity-50' %>">
         Nombre de salariés en ETP :
         <b class="text-primary"><%= evaluation.nombre_salaries_etp %></b>
       </div>
@@ -42,37 +45,37 @@
 
   <div class="row my-5">
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.pouvoir_gouvernance_part_salaries_associes ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :pouvoir_gouvernance_part_salaries_associes %> :
         <b class="text-primary"><%= state.pouvoir_gouvernance_part_salaries_associes %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.pouvoir_gouvernance_taux_societariat_femmes ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :pouvoir_gouvernance_taux_societariat_femmes %> :
         <b class="text-primary"><%= state.pouvoir_gouvernance_taux_societariat_femmes %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.pouvoir_gouvernance_taux_droits_vote_salaries ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :pouvoir_gouvernance_taux_droits_vote_salaries %> :
         <b class="text-primary"><%= state.pouvoir_gouvernance_taux_droits_vote_salaries %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.pouvoir_gouvernance_part_salaries_conseil ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :pouvoir_gouvernance_part_salaries_conseil %> :
         <b class="text-primary"><%= state.pouvoir_gouvernance_part_salaries_conseil %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.pouvoir_gouvernance_part_femmes_conseil ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :pouvoir_gouvernance_part_femmes_conseil %> :
         <b class="text-primary"><%= state.pouvoir_gouvernance_part_femmes_conseil %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.pouvoir_gouvernance_diversite_categories ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :pouvoir_gouvernance_diversite_categories %> :
         <b class="text-primary"><%= state.pouvoir_gouvernance_diversite_categories %></b>
       </div>
@@ -83,25 +86,25 @@
 
   <div class="row my-5">
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.pouvoir_democratie_nombre_reunions ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :pouvoir_democratie_nombre_reunions %> :
         <b class="text-primary"><%= state.pouvoir_democratie_nombre_reunions %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.pouvoir_democratie_taux_participation_formations ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :pouvoir_democratie_taux_participation_formations %> :
         <b class="text-primary"><%= state.pouvoir_democratie_taux_participation_formations %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.pouvoir_democratie_nombre_accords_signes ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :pouvoir_democratie_nombre_accords_signes %> :
         <b class="text-primary"><%= state.pouvoir_democratie_nombre_accords_signes %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.pouvoir_democratie_accords_signes ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :pouvoir_democratie_accords_signes %> :
         <b class="text-primary"><%= state.pouvoir_democratie_accords_signes %></b>
       </div>
@@ -112,25 +115,25 @@
 
   <div class="row my-5">
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.pouvoir_strategique_taux_presence_assemblee ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :pouvoir_strategique_taux_presence_assemblee %> :
     <b class="text-primary"><%= state.pouvoir_strategique_taux_presence_assemblee %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.pouvoir_strategique_implication_partage ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :pouvoir_strategique_implication_partage %> :
         <b class="text-primary"><%= state.pouvoir_strategique_implication_partage %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.pouvoir_strategique_actifs_total ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :pouvoir_strategique_actifs_total %> :
         <b class="text-primary"><%= state.pouvoir_strategique_actifs_total %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.pouvoir_estimation_realite ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :pouvoir_estimation_realite %> :
         <b class="text-primary"><%= state.pouvoir_estimation_realite %></b>
       </div>
@@ -144,25 +147,25 @@
 
   <div class="row my-5">
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.valeur_perennite_part_capital_salaries ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :valeur_perennite_part_capital_salaries %> :
         <b class="text-primary"><%= state.valeur_perennite_part_capital_salaries %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.valeur_perennite_part_resultat_reserve ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :valeur_perennite_part_resultat_reserve %> :
         <b class="text-primary"><%= state.valeur_perennite_part_resultat_reserve %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.valeur_perennite_ebe_caht ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :valeur_perennite_ebe_caht %> :
         <b class="text-primary"><%= state.valeur_perennite_ebe_caht %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.valeur_perennite_part_endettement ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :valeur_perennite_part_endettement %> :
         <b class="text-primary"><%= state.valeur_perennite_part_endettement %></b>
       </div>
@@ -191,31 +194,31 @@
 
   <div class="row my-5">
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.valeur_partage_part_resultat_net_actionnaires ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :valeur_partage_part_resultat_net_actionnaires %> :
         <b class="text-primary"><%= state.valeur_partage_part_resultat_net_actionnaires %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.valeur_partage_part_resultat_salaries ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :valeur_partage_part_resultat_salaries %> :
         <b class="text-primary"><%= state.valeur_partage_part_resultat_salaries %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.valeur_partage_ecart_revenus_hauts_bas ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :valeur_partage_ecart_revenus_hauts_bas %> :
         <b class="text-primary"><%= state.valeur_partage_ecart_revenus_hauts_bas %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.valeur_partage_index_egalite_homme_femme ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :valeur_partage_index_egalite_homme_femme %> :
         <b class="text-primary"><%= state.valeur_partage_index_egalite_homme_femme %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.valeur_partage_existence_accord ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :valeur_partage_existence_accord %> :
         <b class="text-primary"><%= state.valeur_partage_existence_accord %></b>
       </div>
@@ -255,37 +258,37 @@
 
   <div class="row my-5">
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.qualite_qvt_enquete_qvt ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :qualite_qvt_enquete_qvt %> :
         <b class="text-primary"><%= state.qualite_qvt_enquete_qvt %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.qualite_qvt_taux_qvt ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :qualite_qvt_taux_qvt %> :
         <b class="text-primary"><%= state.qualite_qvt_taux_qvt %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.qualite_qvt_part_cdi ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :qualite_qvt_part_cdi %> :
         <b class="text-primary"><%= state.qualite_qvt_part_cdi %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.qualite_qvt_moyenne_anciennete ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :qualite_qvt_moyenne_anciennete %> :
         <b class="text-primary"><%= state.qualite_qvt_moyenne_anciennete %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.qualite_qvt_taux_turnover ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :qualite_qvt_taux_turnover %> :
         <b class="text-primary"><%= state.qualite_qvt_taux_turnover %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.qualite_qvt_taux_absenteisme ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :qualite_qvt_taux_absenteisme %> :
         <b class="text-primary"><%= state.qualite_qvt_taux_absenteisme %></b>
       </div>
@@ -296,19 +299,19 @@
 
   <div class="row my-5">
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.qualite_emancipation_moyenne_heures_formation ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :qualite_emancipation_moyenne_heures_formation %> :
         <b class="text-primary"><%= state.qualite_emancipation_moyenne_heures_formation %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.qualite_emancipation_taux_budget_formation_masse_salariale ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :qualite_emancipation_taux_budget_formation_masse_salariale %> :
         <b class="text-primary"><%= state.qualite_emancipation_taux_budget_formation_masse_salariale %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.qualite_emancipation_taux_direction_promotion_interne ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :qualite_emancipation_taux_direction_promotion_interne %> :
         <b class="text-primary"><%= state.qualite_emancipation_taux_direction_promotion_interne %></b>
       </div>
@@ -317,7 +320,7 @@
 
   <div class="row my-5">
     <div class="col-sm-8">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.qualite_estimation_realite ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :qualite_estimation_realite %> :
         <b class="text-primary"><%= state.qualite_estimation_realite %></b>
       </div>
@@ -331,49 +334,49 @@
 
   <div class="row my-5">
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.impact_environnement_audit_impact ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :impact_environnement_audit_impact %> :
         <b class="text-primary"><%= state.impact_environnement_audit_impact %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.impact_environnement_demarche_ecologique ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :impact_environnement_demarche_ecologique %> :
         <b class="text-primary"><%= state.impact_environnement_demarche_ecologique %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.impact_environnement_discussion_impact ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :impact_environnement_discussion_impact %> :
         <b class="text-primary"><%= state.impact_environnement_discussion_impact %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.impact_environnement_part_energies_renouvelables ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :impact_environnement_part_energies_renouvelables %> :
         <b class="text-primary"><%= state.impact_environnement_part_energies_renouvelables %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.impact_environnement_part_salaries_mobilite ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :impact_environnement_part_salaries_mobilite %> :
         <b class="text-primary"><%= state.impact_environnement_part_salaries_mobilite %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.impact_environnement_bilan_carbone_scope_1 ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :impact_environnement_bilan_carbone_scope_1 %> :
         <b class="text-primary"><%= state.impact_environnement_bilan_carbone_scope_1 %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.impact_environnement_bilan_carbone_scope_2 ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :impact_environnement_bilan_carbone_scope_2 %> :
         <b class="text-primary"><%= state.impact_environnement_bilan_carbone_scope_2 %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.impact_environnement_bilan_carbone_scope_3 ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :impact_environnement_bilan_carbone_scope_3 %> :
         <b class="text-primary"><%= state.impact_environnement_bilan_carbone_scope_3 %></b>
       </div>
@@ -384,25 +387,25 @@
 
   <div class="row my-5">
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.impact_social_part_activite_structures_insertion ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :impact_social_part_activite_structures_insertion %> :
         <b class="text-primary"><%= state.impact_social_part_activite_structures_insertion %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.impact_social_alternance_apprentissage ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :impact_social_alternance_apprentissage %> :
         <b class="text-primary"><%= state.impact_social_alternance_apprentissage %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.impact_social_part_seniors ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :impact_social_part_seniors %> :
         <b class="text-primary"><%= state.impact_social_part_seniors %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.impact_social_part_handicap ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :impact_social_part_handicap %> :
         <b class="text-primary"><%= state.impact_social_part_handicap %></b>
       </div>
@@ -413,25 +416,25 @@
 
   <div class="row my-5">
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.impact_engagement_part_resultat_missions_utiles ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :impact_engagement_part_resultat_missions_utiles %> :
         <b class="text-primary"><%= state.impact_engagement_part_resultat_missions_utiles %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.impact_engagement_part_placements_responsables ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :impact_engagement_part_placements_responsables %> :
         <b class="text-primary"><%= state.impact_engagement_part_placements_responsables %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.impact_engagement_part_impots_france ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :impact_engagement_part_impots_france %> :
         <b class="text-primary"><%= state.impact_engagement_part_impots_france %></b>
       </div>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.impact_engagement_demarche_ethique_fournisseurs ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :impact_engagement_demarche_ethique_fournisseurs %> :
         <b class="text-primary"><%= state.impact_engagement_demarche_ethique_fournisseurs %></b>
       </div>
@@ -440,7 +443,7 @@
 
   <div class="row my-5">
     <div class="col-sm-8">
-      <div class="card p-2">
+      <div class="card p-2 <%= state.impact_estimation_realite ? 'opacity-100' : 'opacity-50' %>">
         <%= indicateur_clean :impact_estimation_realite %> :
         <b class="text-primary"><%= state.impact_estimation_realite %></b>
       </div>

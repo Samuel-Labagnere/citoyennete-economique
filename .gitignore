@@ -36,6 +36,5 @@
 /node_modules
 .DS_Store
 
-# Gemfile.lock
-# package-lock.json
-# yarn.lock
+package-lock.json
+yarn.lock
