@@ -3,21 +3,22 @@ class Aggregate
   # PILLAR 1
 
   def self.pouvoir_gouvernance_taux
-  {
-    indicateur_clean(:pouvoir_gouvernance_part_salaries_associes) => State.evaluations.up_to_date.median(:pouvoir_gouvernance_part_salaries_associes),
-    indicateur_clean(:pouvoir_gouvernance_taux_societariat_femmes) => State.evaluations.up_to_date.median(:pouvoir_gouvernance_taux_societariat_femmes),
-    indicateur_clean(:pouvoir_gouvernance_taux_droits_vote_salaries) => State.evaluations.up_to_date.median(:pouvoir_gouvernance_taux_droits_vote_salaries),
-    indicateur_clean(:pouvoir_gouvernance_part_femmes_conseil) => State.evaluations.up_to_date.median(:pouvoir_gouvernance_part_femmes_conseil)
-  }
+    median_group([
+      :pouvoir_gouvernance_part_salaries_associes,
+      :pouvoir_gouvernance_taux_societariat_femmes,
+      :pouvoir_gouvernance_taux_societariat_femmes,
+      :pouvoir_gouvernance_taux_droits_vote_salaries,
+      :pouvoir_gouvernance_part_femmes_conseil
+    ])
   end
 
   # PILLAR 2
 
   def self.valeur_part_resultat
-  {
-    indicateur_clean(:valeur_partage_part_resultat_net_actionnaires) => State.evaluations.up_to_date.median(:valeur_partage_part_resultat_net_actionnaires),
-    indicateur_clean(:valeur_partage_part_resultat_salaries) => State.evaluations.up_to_date.median(:valeur_partage_part_resultat_salaries)
-  }
+    median_group([
+      :valeur_partage_part_resultat_net_actionnaires,
+      :valeur_partage_part_resultat_salaries
+    ])
   end
 
   def self.valeur_perennite_booleens
@@ -44,19 +45,19 @@ class Aggregate
   end
 
   def self.qualite_qvt_taux_all
-  {
-    indicateur_clean(:qualite_qvt_taux_qvt) => State.evaluations.up_to_date.median(:qualite_qvt_taux_qvt),
-    indicateur_clean(:qualite_qvt_part_cdi) => State.evaluations.up_to_date.median(:qualite_qvt_part_cdi),
-    indicateur_clean(:qualite_qvt_taux_turnover) => State.evaluations.up_to_date.median(:qualite_qvt_taux_turnover),
-    indicateur_clean(:qualite_qvt_taux_absenteisme) => State.evaluations.up_to_date.median(:qualite_qvt_taux_absenteisme)
-  }
+    median_group([
+      :qualite_qvt_taux_qvt,
+      :qualite_qvt_part_cdi,
+      :qualite_qvt_taux_turnover,
+      :qualite_qvt_taux_absenteisme
+    ])
   end
 
   def self.qualite_emancipation_taux
-  {
-    indicateur_clean(:qualite_emancipation_taux_budget_formation_masse_salariale) => State.evaluations.up_to_date.median(:qualite_emancipation_taux_budget_formation_masse_salariale),
-    indicateur_clean(:qualite_emancipation_taux_direction_promotion_interne) => State.evaluations.up_to_date.median(:qualite_emancipation_taux_direction_promotion_interne)
-  }
+    median_group([
+      :qualite_emancipation_taux_budget_formation_masse_salariale,
+      :qualite_emancipation_taux_direction_promotion_interne
+    ])
   end
 
   # PILLAR 4
@@ -83,11 +84,11 @@ class Aggregate
   end
 
   def self.impact_engagement
-  {
-    indicateur_clean(:impact_engagement_part_resultat_missions_utiles) => State.evaluations.up_to_date.median(:impact_engagement_part_resultat_missions_utiles),
-    indicateur_clean(:impact_engagement_part_placements_responsables) => State.evaluations.up_to_date.median(:impact_engagement_part_placements_responsables),
-    indicateur_clean(:impact_engagement_part_impots_france) => State.evaluations.up_to_date.median(:impact_engagement_part_impots_france)
-  }
+    median_group([
+      :impact_engagement_part_resultat_missions_utiles,
+      :impact_engagement_part_placements_responsables,
+      :impact_engagement_part_impots_france
+    ])
   end
 
   def self.impact_engagement_demarche_ethique_fournisseurs
@@ -128,5 +129,14 @@ class Aggregate
     end
 
     return result
+  end
+
+  def self.median_group(fields)
+    hash = {}
+    fields.each do |field|
+      value = State.evaluations.up_to_date.median(field)
+      hash[indicateur_clean(field)] = value unless value.nil?
+    end
+    return hash
   end
 end
