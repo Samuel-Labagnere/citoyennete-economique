@@ -28,6 +28,7 @@ class Admin::OrganisationsController < Admin::ApplicationController
 
   # GET /organisations/1/edit
   def edit
+    add_breadcrumb 'Modifier l\'organisation'
   end
 
   # POST /organisations or /organisations.json
