@@ -1,4 +1,4 @@
-class ObjectifsListsController < ApplicationController
+class Admin::ObjectifsListsController < Admin::ApplicationController
   before_action :check_super_admin, only: %i[ index ]
   before_action :authenticate_user!
   before_action :set_objectifs_list, only: %i[ show edit update destroy ]

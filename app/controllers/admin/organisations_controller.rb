@@ -1,4 +1,4 @@
-class OrganisationsController < ApplicationController
+class Admin::OrganisationsController < Admin::ApplicationController
   before_action :check_super_admin, only: %i[ index show destroy ]
   before_action :authenticate_user!, except: %i[ public_list ]
   before_action :set_organisation, only: %i[ show edit update destroy ]
@@ -19,6 +19,7 @@ class OrganisationsController < ApplicationController
 
   # GET /organisations/new
   def new
+    add_breadcrumb 'Nouvelle organisation'
     @organisation = Organisation.new
     if !current_user.organisation.nil? && !current_user.is_super_admin
       redirect_to root_path

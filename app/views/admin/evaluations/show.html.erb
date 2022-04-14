@@ -7,14 +7,14 @@
 </div>
 
 <div class="d-flex my-5">
-  <%= link_to "Éditer cette évaluation", evaluation_builder_path(@evaluation.id, 'informations'), class: "btn btn-primary me-4" %>
+  <%= link_to "Éditer cette évaluation", admin_evaluation_builder_path(@evaluation.id, 'informations'), class: "btn btn-primary me-4" %>
   <%= button_to "Supprimer cette évaluation", [:admin, @evaluation], method: :delete, class: "btn btn-danger mx-auto d-flex", form: { data: { turbo_confirm: "Êtes-vous sûr de vouloir supprimer l'évaluation de #{@evaluation.annee}?" } } %>
 </div>
 
 <%= render "evaluation", evaluation: @evaluation %>
 
 <div class="d-flex my-5">
-  <%= link_to "Éditer cette évaluation", evaluation_builder_path(@evaluation.id, 'informations'), class: "btn btn-primary me-4" %>
+  <%= link_to "Éditer cette évaluation", admin_evaluation_builder_path(@evaluation.id, 'informations'), class: "btn btn-primary me-4" %>
   <%= button_to "Supprimer cette évaluation",
                 [:admin, @evaluation],
                 method: :delete,

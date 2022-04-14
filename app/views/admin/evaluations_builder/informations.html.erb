@@ -7,7 +7,7 @@
 </h1>
 <h2>Informations</h2>
 
-<%= simple_form_for @evaluation, url: wizard_path, method: :put do |f| %>
+<%= simple_form_for @evaluation, url: admin_evaluation_builder_path, method: :post do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="row">
     <div class="col-md-4 mb-4">
@@ -26,5 +26,5 @@
       <%= f.input :nombre_salaries_etp %>
     </div>
   </div>
-  <%= f.button :submit, 'Enregistrer et passer à la suite', class: 'btn btn-primary' %>
+  <%= f.button :submit, 'Enregistrer', class: 'btn btn-primary' %>
 <% end %>

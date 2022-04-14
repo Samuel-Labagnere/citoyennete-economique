@@ -8,12 +8,8 @@
 
 <h2><span class="me-1 m-0">4.</span>Impact environnemental, social et territorial</h2>
 
-<div class="view">
-<<<<<<< HEAD
 
-=======
->>>>>>> 41bc4509bce06a38e6ed23bcd010e3feb8560cab
-<%= simple_form_for @evaluation, url: wizard_path, method: :put do |f| %>
+<%= simple_form_for @evaluation, url: admin_evaluation_builder_path, method: :post do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <%= f.association :state do |il| %>
 
@@ -29,14 +25,10 @@
       <div class="col-md-4 col-input">
       <%= il.input :impact_environnement_discussion_impact, as: :radio_buttons %>
       </div>
-<<<<<<< HEAD
     </div>
 
     <div class="row align-items-end my-5">
       <div class="col-md-4">
-=======
-      <div class="col-md-4 mb-4">
->>>>>>> 41bc4509bce06a38e6ed23bcd010e3feb8560cab
       <%= il.input :impact_environnement_part_energies_renouvelables %>
       </div>
       <div class="col-md-4">
@@ -84,34 +76,18 @@
         <%= il.input :impact_engagement_demarche_ethique_fournisseurs, as: :radio_buttons %>
       </div>
     </div>
-<<<<<<< HEAD
 
     <div class="col-md-4">
     <%= il.input :impact_estimation_realite %>
-=======
-    <div class="row">
-      <div class="col-8 bg-primary rounded mb-5" style="height: 6px"></div>
-      <div class="col-md-8 estim">
-        <%= il.input :impact_estimation_realite %>
-      </div>
->>>>>>> 41bc4509bce06a38e6ed23bcd010e3feb8560cab
     </div>
   <% end %>
 </div>
 
-<<<<<<< HEAD
 </div>
 
   <div class="d-flex mt-5">
-      <%= link_to 'Précédent', wizard_path(@previous_step), class: 'btn btn-primary me-auto ms-auto d-flex mb-5 text-white' %>
       <%= f.button :submit, "Enregistrer", class: 'btn btn-primary me-auto ms-auto d-flex mb-5 text-white' %>
   </div>
-=======
-<div class="d-flex mt-5">
-  <%= link_to 'Précédent', wizard_path(@previous_step), class: 'btn btn-primary me-auto d-flex mb-5 text-white' %>
-  <%= f.button :submit, "Enregistrer", class: 'btn btn-primary ms-auto d-flex mb-5 text-white' %>
-</div>
->>>>>>> 41bc4509bce06a38e6ed23bcd010e3feb8560cab
 <% end %>
 
 <script>

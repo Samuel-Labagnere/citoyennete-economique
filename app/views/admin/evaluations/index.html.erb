@@ -6,9 +6,9 @@
   <% @evaluations.each do |evaluation| %>
     <%= render evaluation %>
     <p>
-      <%= link_to "Show this evaluation", evaluation %>
+      <%= link_to "Show this evaluation", admin_evaluation %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New evaluation", new_evaluation_path %>
+<%= link_to "New evaluation", admin_new_evaluation_path %>

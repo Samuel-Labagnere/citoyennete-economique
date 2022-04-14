@@ -1,7 +1,8 @@
-class InvitationCodeController < ApplicationController
+class Admin::InvitationCodeController < Admin::ApplicationController
   before_action :authenticate_user!, only: %i[ index ]
 
   def index
+    add_breadcrumb "Code d'invitation"
     new_code = nil
     loop do
       new_code = SecureRandom.hex(3).upcase

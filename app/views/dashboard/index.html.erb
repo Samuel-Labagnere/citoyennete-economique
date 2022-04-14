@@ -39,8 +39,8 @@
       <% current_user.organisation.evaluations.active.each do |evaluation| %>
         <div class="list-group-item d-flex p-3">
           <div class="col">
-            <%= link_to "Evaluation de l'année #{ evaluation.annee }", [:admin, evaluation], class: "text-secondary fw-bold" %> |
-            <%= link_to "Voir les résultats", admin_resultats_path(evaluation_id: evaluation.id), class: "text-primary fw-bold" %> |
+            <%= link_to "Evaluation de l'année #{ evaluation.annee }", evaluation, class: "text-secondary fw-bold" %> |
+            <%= link_to "Voir les résultats", resultats_path(evaluation_id: evaluation.id), class: "text-primary fw-bold" %> |
             <%= link_to "Éditer", admin_evaluation_builder_path(evaluation.id, 'informations'), class: "text-success fw-bold" %>
           </div>
           <div class="row w-50 text-center">
@@ -56,13 +56,13 @@
     <p class="fst-italic">En attente de vérification par un administrateur.<p>
   <% end %>
   <div class="my-5">
-    <%= link_to "Ajouter une évaluation", admin_evaluations_builder_new_path, class: "btn btn-primary text-white" %>
+    <%= link_to "Ajouter une évaluation", evaluations_builder_new_path, class: "btn btn-primary text-white" %>
     <%# if @organisation.objectifs_list.present? %>
       <%# link_to "Éditer les objectifs", edit_objectifs_list_path(id: organisation.objectifs_list.id), class: "btn btn-primary" %>
     <%# else %>
       <%# link_to "Définir des objectifs", new_objectifs_list_path, class: "btn btn-secondary mx-3" %>
     <%# end %>
-    <%= link_to "Générer un code d'invitation", admin_code_invitation_path, method: :post, class: "btn btn-success" %>
+    <%= link_to "Générer un code d'invitation", code_invitation_path, method: :post, class: "btn btn-success" %>
   </div>
 
 <% end %>

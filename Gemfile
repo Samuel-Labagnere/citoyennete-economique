@@ -18,7 +18,6 @@ gem "devise"
 gem "simple_form"
 gem "chartkick"
 gem "active_median", "~> 0.3.3"
-gem "wicked", "~> 1.4"
 gem "breadcrumbs_on_rails"
 
 group :development, :test do
