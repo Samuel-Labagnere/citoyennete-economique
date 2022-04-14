@@ -17,3 +17,6 @@ Github: [Samuel-Labagnere/citoyennete-economique](https://github.com/Samuel-Laba
 #### Notes
 <sup>[1]</sup>: [Métiers du Multimédia et de l'Internet](https://www.mmibordeaux.com/) \
 <sup>[2]</sup>: [Confédération Générale des Sociétés Coopératives](https://www.les-scop.coop/)
+
+##### Indicateur Code Climate
+[![Maintainability](https://api.codeclimate.com/v1/badges/7abab10e2c6e36ed52b9/maintainability)](https://codeclimate.com/github/Samuel-Labagnere/citoyennete-economique/maintainability)
