@@ -23,7 +23,7 @@ class Evaluation < ApplicationRecord
 
   accepts_nested_attributes_for :state
 
-  validates_presence_of :annee, message: 'Le champ %{attribute} doit être rempli', if: :active_or_year?
+  validates_presence_of :annee, message: 'Le champ %{attribute} doit être rempli', if: :active?
 
   scope :active, -> { where(status: 'active') }
   scope :ordered, -> { order(annee: :desc) }
@@ -32,10 +32,6 @@ class Evaluation < ApplicationRecord
 
   def active?
     status == 'active'
-  end
-
-  def active_or_year?
-    status == 'informations' || active?
   end
 
   def set_up_to_date

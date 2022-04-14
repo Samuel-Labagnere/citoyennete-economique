@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   resources :evaluations
 
   get '/evaluations_builder/new', to: 'evaluations_builder#new'
-  get '/evaluations_builder/:evaluation_id/:id', to: 'evaluations_builder#show', as: 'evaluation_builder'
-  put '/evaluations_builder/:evaluation_id/:id', to: 'evaluations_builder#update'
+  get '/evaluations_builder/:evaluation_id/:step', to: 'evaluations_builder#show', as: 'evaluation_builder'
+  post '/evaluations_builder/:evaluation_id/:step', to: 'evaluations_builder#update'
 
   devise_for :users, path: '', path_names: { sign_in: "connexion", sign_out: "deconnexion", sign_up: "inscription", edit: "compte" }
   resources :organisations
