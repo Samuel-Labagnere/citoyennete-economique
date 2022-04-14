@@ -7,16 +7,6 @@ module ApplicationHelper
     I18n.t("negative_indicateurs." + symbol.to_s)
   end
 
-  def has_any_indicateur(evaluation, *indicateurs)
-    result = false
-    indicateurs.each do |indicateur|
-      if not evaluation.state[indicateur].nil?
-        result = true
-      end
-    end
-    return result
-  end
-
   def single_value_pie_chart(value, suffix: nil, max: nil)
     suffix ||= "%"
     max ||= 100
@@ -45,6 +35,11 @@ module ApplicationHelper
                 }
               }
   end
+
+  def boolean_state_field(state, field)
+    state[field] ? indicateur_clean(field) : negative_indicateur(field) unless field.nil?
+  end
+
 
   def evo_value_pie_chart(value, old_value, suffix: nil, max: nil)
     suffix ||= "%"
