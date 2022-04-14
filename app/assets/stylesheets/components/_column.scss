@@ -13,10 +13,12 @@
 .estim {
   .form-group {
     display:flex;
+    align-items:center;
     input {
       max-height: 38px;
       max-width: 100px;
       margin-left: 100px;
+      border: none;
     }
   }
 }

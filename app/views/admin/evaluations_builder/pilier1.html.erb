@@ -5,30 +5,36 @@
 	 <%= render 'shared/error_messages', object: f.object %>
 		<%= f.association :state do |il| %>
 
-		<h3>Composition de la gouvernance</h3>
+    <div class="row m-0">
+      <div class="col-md-8 estim mt-5 bg-primary bg-opacity-50 rounded p-3 m-0">
+        <%= il.input :pouvoir_estimation_realite %>
+      </div>
+    </div>
 
-			<div class="row align-items-baseline my-5">
-					<div class="col-md-4">
-							<%= il.input :pouvoir_gouvernance_part_salaries_associes %>
-					</div>
-					<div class="col-md-4">
-							<%= il.input :pouvoir_gouvernance_taux_societariat_femmes %>
-					</div>
-					<div class="col-md-4 ">
-							<%= il.input :pouvoir_gouvernance_taux_droits_vote_salaries %>
-					</div>
-					<div class="col-md-4 ">
-							<%= il.input :pouvoir_gouvernance_part_salaries_conseil %>
-					</div>
-					<div class="col-md-4 ">
-							<%= il.input :pouvoir_gouvernance_part_femmes_conseil %>
-					</div>
-			<div class="col-12 col-sm-8">
-			<%= il.input :pouvoir_gouvernance_diversite_categories, as: :check_boxes, collection: ['Salariés', 'Investisseurs', 'Fournisseurs', 'Sous-traitants', 'Clients', 'Experts', 'Syndicats', 'Pouvoirs publics', 'Associations', 'Grand public', 'Autres'], include_hidden: false %>
-			</div>
-			</div>
+    <h2>Composition de la gouvernance</h2>
 
-		<h3>Conditions du bon exercice de la démocratie</h3>
+    <div class="row align-items-baseline my-5">
+      <div class="col-md-4">
+        <%= il.input :pouvoir_gouvernance_part_salaries_associes %>
+      </div>
+      <div class="col-md-4">
+        <%= il.input :pouvoir_gouvernance_taux_societariat_femmes %>
+      </div>
+      <div class="col-md-4 ">
+        <%= il.input :pouvoir_gouvernance_taux_droits_vote_salaries %>
+      </div>
+      <div class="col-md-4 ">
+        <%= il.input :pouvoir_gouvernance_part_salaries_conseil %>
+      </div>
+      <div class="col-md-4 ">
+        <%= il.input :pouvoir_gouvernance_part_femmes_conseil %>
+      </div>
+      <div class="col-12 col-sm-8">
+        <%= il.input :pouvoir_gouvernance_diversite_categories, as: :check_boxes, collection: ['Salariés', 'Investisseurs', 'Fournisseurs', 'Sous-traitants', 'Clients', 'Experts', 'Syndicats', 'Pouvoirs publics', 'Associations', 'Grand public', 'Autres'], include_hidden: false %>
+      </div>
+    </div>
+
+		<h2>Conditions du bon exercice de la démocratie</h2>
 
 		<div class="row align-items-baseline my-5">
 			<div class="col-md-4">
@@ -37,22 +43,15 @@
 			<div class="col-md-4">
 				<%= il.input :pouvoir_democratie_taux_participation_formations %>
 			</div>
+      <div class="col-md-4 ">
+          <%= il.input :pouvoir_democratie_nombre_accords_signes %>
+      </div>
+      <div class="col-md-4 ">
+          <%= il.input :pouvoir_democratie_accords_signes %>
+      </div>
+		</div>
 
-			<div class="row align-items-baseline my-5">
-					<div class="col-md-4 ">
-							<%= il.input :pouvoir_democratie_nombre_reunions %>
-					</div>
-					<div class="col-md-4 ">
-							<%= il.input :pouvoir_democratie_taux_participation_formations %>
-					</div>
-
-					<div class="col-md-4 ">
-							<%= il.input :pouvoir_democratie_nombre_accords_signes %>
-					</div>
-					<div class="col-md-4 ">
-							<%= il.input :pouvoir_democratie_accords_signes %>
-					</div>
-			</div>
+    <h2>Participation à la prise de décision stratégique</h2>
 
 		<div class="row align-items-baseline my-5">
 			<div class="col-md-4">
@@ -64,14 +63,11 @@
 			<div class="col-md-4">
 				<%= il.input :pouvoir_strategique_actifs_total %>
 			</div>
-			<div class="col-8 bg-primary rounded my-5" style="height: 6px"></div>
-			<div class="col-md-8 estim"><%= il.input :pouvoir_estimation_realite %></div>
 		</div>
-
-		<% end %>
+  <% end %>
 </div>
 
-  <div class="text-center mt-5">
+  <div class="text-center my-5">
     <%= f.button :submit, "Enregister", class: 'btn btn-primary' %>
   </div>
 

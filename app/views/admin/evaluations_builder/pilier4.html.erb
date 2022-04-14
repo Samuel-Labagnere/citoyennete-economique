@@ -5,6 +5,12 @@
     <%= render 'shared/error_messages', object: f.object %>
     <%= f.association :state do |il| %>
 
+      <div class="row m-0">
+        <div class="col-md-8 estim mt-5 bg-primary bg-opacity-50 rounded p-3 m-0">
+          <%= il.input :impact_estimation_realite %>
+        </div>
+      </div>
+
       <h3>Impact environnemental</h3>
 
       <div class="row align-items-start my-5">
@@ -67,11 +73,6 @@
         <div class="col-md-4">
           <%= il.input :impact_engagement_demarche_ethique_fournisseurs, as: :radio_buttons %>
         </div>
-      </div>
-
-      <div class="col-8 bg-primary rounded my-5" style="height: 6px"></div>
-      <div class="col-md-8 estim">
-        <%= il.input :impact_estimation_realite %>
       </div>
     <% end %>
 </div>

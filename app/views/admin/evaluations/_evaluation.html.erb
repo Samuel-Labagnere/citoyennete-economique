@@ -1,4 +1,5 @@
 <% state = evaluation.state %>
+
 <div id="<%= dom_id evaluation %>" class="view">
 
   <h2>Informations</h2>
@@ -31,411 +32,302 @@
   <h2>1. <%= t 'pillars.1' %></h2>
   <%= link_to "Modifier", admin_evaluation_builder_path(evaluation_id: evaluation.id, step: 'pilier1'),class: 'btn btn-secondary mt-2' %>
 
+  <div class="row mt-5">
+    <%= render  'indicator',
+                name: "Réalité du pilier « #{t 'pillars.1'} » perçue par les salariés",
+                value: "#{state.pouvoir_estimation_realite}",
+                unavailable: state.pouvoir_estimation_realite.blank? %>
+  </div>
+
   <h3>Composition de la gouvernance</h3>
 
   <div class="row my-5">
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.pouvoir_gouvernance_part_salaries_associes ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :pouvoir_gouvernance_part_salaries_associes %> :
-        <b class="text-primary"><%= state.pouvoir_gouvernance_part_salaries_associes %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.pouvoir_gouvernance_taux_societariat_femmes ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :pouvoir_gouvernance_taux_societariat_femmes %> :
-        <b class="text-primary"><%= state.pouvoir_gouvernance_taux_societariat_femmes %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.pouvoir_gouvernance_taux_droits_vote_salaries ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :pouvoir_gouvernance_taux_droits_vote_salaries %> :
-        <b class="text-primary"><%= state.pouvoir_gouvernance_taux_droits_vote_salaries %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.pouvoir_gouvernance_part_salaries_conseil ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :pouvoir_gouvernance_part_salaries_conseil %> :
-        <b class="text-primary"><%= state.pouvoir_gouvernance_part_salaries_conseil %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.pouvoir_gouvernance_part_femmes_conseil ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :pouvoir_gouvernance_part_femmes_conseil %> :
-        <b class="text-primary"><%= state.pouvoir_gouvernance_part_femmes_conseil %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.pouvoir_gouvernance_diversite_categories ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :pouvoir_gouvernance_diversite_categories %> :
-        <b class="text-primary"><%= state.pouvoir_gouvernance_diversite_categories %></b>
-      </div>
-    </div>
+    <%= render  'indicator',
+                name: 'Part de salariés associés',
+                value: "#{state.pouvoir_gouvernance_part_salaries_associes}",
+                unavailable: state.pouvoir_gouvernance_part_salaries_associes.blank? %>
+    <%= render  'indicator',
+                name: 'Taux de sociétariat parmi les femmes salariées',
+                value: "#{state.pouvoir_gouvernance_taux_societariat_femmes}",
+                unavailable: state.pouvoir_gouvernance_taux_societariat_femmes.blank? %>
+    <%= render  'indicator',
+                name: 'Taux des droits de vote détenus par les salariés',
+                value: "#{state.pouvoir_gouvernance_taux_droits_vote_salaries}",
+                unavailable: state.pouvoir_gouvernance_taux_droits_vote_salaries.blank? %>
+    <%= render  'indicator',
+                name: 'Part de salariés participant au conseil d\'administration ou de surveillance',
+                value: "#{state.pouvoir_gouvernance_part_salaries_conseil}",
+                unavailable: state.pouvoir_gouvernance_part_salaries_conseil.blank? %>
+    <%= render  'indicator',
+                name: 'Part de femmes au conseil d\'administration',
+                value: "#{state.pouvoir_gouvernance_part_femmes_conseil}",
+                unavailable: state.pouvoir_gouvernance_part_femmes_conseil.blank? %>
+    <%= render  'indicator',
+                name: 'Diversité des catégories d\'associés',
+                value: "#{state.pouvoir_gouvernance_diversite_categories}",
+                unavailable: state.pouvoir_gouvernance_diversite_categories.blank? %>
   </div>
 
   <h3>Conditions du bon exercice de la démocratie</h3>
 
   <div class="row my-5">
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.pouvoir_democratie_nombre_reunions ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :pouvoir_democratie_nombre_reunions %> :
-        <b class="text-primary"><%= state.pouvoir_democratie_nombre_reunions %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.pouvoir_democratie_taux_participation_formations ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :pouvoir_democratie_taux_participation_formations %> :
-        <b class="text-primary"><%= state.pouvoir_democratie_taux_participation_formations %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.pouvoir_democratie_nombre_accords_signes ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :pouvoir_democratie_nombre_accords_signes %> :
-        <b class="text-primary"><%= state.pouvoir_democratie_nombre_accords_signes %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.pouvoir_democratie_accords_signes ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :pouvoir_democratie_accords_signes %> :
-        <b class="text-primary"><%= state.pouvoir_democratie_accords_signes %></b>
-      </div>
-    </div>
+    <%= render  'indicator',
+                name: 'Nombre par an de réunions des salariés et des associés par la gouvernance',
+                value: "#{state.pouvoir_democratie_nombre_reunions}",
+                unavailable: state.pouvoir_democratie_nombre_reunions.blank? %>
+    <%= render  'indicator',
+                name: 'Taux de participation des salariés, à des formations sur le fonctionnement d\'une entreprise et/ou à des dispositifs d\'intégration dans l\'entreprise',
+                value: "#{state.pouvoir_democratie_taux_participation_formations}",
+                unavailable: state.pouvoir_democratie_taux_participation_formations.blank? %>
+    <%= render  'indicator',
+                name: 'Nombre d\'accords signés entre les représentants du personnel et la direction',
+                value: "#{state.pouvoir_democratie_nombre_accords_signes}",
+                unavailable: state.pouvoir_democratie_nombre_accords_signes.blank? %>
+    <%= render  'indicator',
+                name: 'Accords signés entre les représentants du personnel et la direction',
+                value: "#{state.pouvoir_democratie_accords_signes}",
+                unavailable: state.pouvoir_democratie_accords_signes.blank? %>
   </div>
 
   <h3>Participation à la prise de décision stratégique</h3>
 
   <div class="row my-5">
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.pouvoir_strategique_taux_presence_assemblee ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :pouvoir_strategique_taux_presence_assemblee %> :
-    <b class="text-primary"><%= state.pouvoir_strategique_taux_presence_assemblee %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.pouvoir_strategique_implication_partage ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :pouvoir_strategique_implication_partage %> :
-        <b class="text-primary"><%= state.pouvoir_strategique_implication_partage %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.pouvoir_strategique_actifs_total ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :pouvoir_strategique_actifs_total %> :
-        <b class="text-primary"><%= state.pouvoir_strategique_actifs_total %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.pouvoir_estimation_realite ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :pouvoir_estimation_realite %> :
-        <b class="text-primary"><%= state.pouvoir_estimation_realite %></b>
-      </div>
-    </div>
+  <%= render  'indicator',
+                name: 'Taux de présence des salariés associés en assemblée générale',
+                value: "#{state.pouvoir_strategique_taux_presence_assemblee}",
+                unavailable: state.pouvoir_strategique_taux_presence_assemblee.blank? %>
+    <%= render  'indicator',
+                name: 'Part des salariés impliqués dans une instance contribuant au partage du pouvoir et des décisions (CSE, CA, commission...)',
+                value: "#{state.pouvoir_strategique_implication_partage}",
+                unavailable: state.pouvoir_strategique_implication_partage.blank? %>
+    <%= render  'indicator',
+                name: 'Nombre de salariés actifs / nombre total de salariés',
+                value: "#{state.pouvoir_strategique_actifs_total}",
+                unavailable: state.pouvoir_strategique_actifs_total.blank? %>
   </div>
 
   <h2>2. <%= t 'pillars.2' %></h2>
+
   <%= link_to "Modifier", admin_evaluation_builder_path(evaluation_id: evaluation.id, step: 'pilier2'),class: 'btn btn-secondary mt-2' %>
+
+  <div class="row mt-5">
+    <%= render  'indicator',
+                name: "Réalité du pilier « #{t 'pillars.2'} » perçue par les salariés",
+                value: "#{state.valeur_estimation_realite}",
+                unavailable: state.valeur_estimation_realite.blank? %>
+  </div>
 
   <h3>Pérennité : création de valeur, inaliénabilité et robustesse de l'entreprise</h3>
 
   <div class="row my-5">
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.valeur_perennite_part_capital_salaries ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :valeur_perennite_part_capital_salaries %> :
-        <b class="text-primary"><%= state.valeur_perennite_part_capital_salaries %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.valeur_perennite_part_resultat_reserve ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :valeur_perennite_part_resultat_reserve %> :
-        <b class="text-primary"><%= state.valeur_perennite_part_resultat_reserve %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.valeur_perennite_ebe_caht ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :valeur_perennite_ebe_caht %> :
-        <b class="text-primary"><%= state.valeur_perennite_ebe_caht %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.valeur_perennite_part_endettement ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :valeur_perennite_part_endettement %> :
-        <b class="text-primary"><%= state.valeur_perennite_part_endettement %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
-        <%= indicateur_clean :valeur_perennite_existence_reserve %> :
-        <b class="text-primary"><%= state.valeur_perennite_existence_reserve %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
-        <%= indicateur_clean :valeur_perennite_reserve_impartageable %> :
-        <b class="text-primary"><%= state.valeur_perennite_reserve_impartageable %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
-        <%= indicateur_clean :valeur_perennite_attention_questions_innovation %> :
-        <b class="text-primary"><%= state.valeur_perennite_attention_questions_innovation %></b>
-      </div>
-    </div>
+    <%= render  'indicator',
+                name: 'Part du capital détenu par les salariés',
+                value: "#{state.valeur_perennite_part_capital_salaries}",
+                unavailable: state.valeur_perennite_part_capital_salaries.blank? %>
+    <%= render  'indicator',
+                name: 'Part du résultat mis en réserve (tous les types de réserves)',
+                value: "#{state.valeur_perennite_part_resultat_reserve}",
+                unavailable: state.valeur_perennite_part_resultat_reserve.blank? %>
+    <%= render  'indicator',
+                name: 'Excédent brut d\'exploitation (EBE) / CA HT',
+                value: "#{state.valeur_perennite_ebe_caht}",
+                unavailable: state.valeur_perennite_ebe_caht.blank? %>
+    <%= render  'indicator',
+                name: 'Part de l\'endettement à long terme',
+                value: "#{state.valeur_perennite_part_endettement}",
+                unavailable: state.valeur_perennite_part_endettement.blank? %>
+    <%= render  'indicator',
+                name: 'Existence d\'une réserve statutaire',
+                value: "#{state.valeur_perennite_existence_reserve}",
+                unavailable: state.valeur_perennite_existence_reserve.nil? %>
+    <%= render  'indicator',
+                name: 'Réserve statutaire au moins en partie impartageable',
+                value: "#{state.valeur_perennite_reserve_impartageable}",
+                unavailable: state.valeur_perennite_reserve_impartageable.nil? %>
+    <%= render  'indicator',
+                name: 'Attention particulière portée aux questions relatives à l\'innovation',
+                value: "#{state.valeur_perennite_attention_questions_innovation}",
+                unavailable: state.valeur_perennite_attention_questions_innovation.nil? %>
   </div>
 
   <h3>Partage des richesses</h3>
 
   <div class="row my-5">
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.valeur_partage_part_resultat_net_actionnaires ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :valeur_partage_part_resultat_net_actionnaires %> :
-        <b class="text-primary"><%= state.valeur_partage_part_resultat_net_actionnaires %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.valeur_partage_part_resultat_salaries ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :valeur_partage_part_resultat_salaries %> :
-        <b class="text-primary"><%= state.valeur_partage_part_resultat_salaries %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.valeur_partage_ecart_revenus_hauts_bas ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :valeur_partage_ecart_revenus_hauts_bas %> :
-        <b class="text-primary"><%= state.valeur_partage_ecart_revenus_hauts_bas %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.valeur_partage_index_egalite_homme_femme ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :valeur_partage_index_egalite_homme_femme %> :
-        <b class="text-primary"><%= state.valeur_partage_index_egalite_homme_femme %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.valeur_partage_existence_accord ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :valeur_partage_existence_accord %> :
-        <b class="text-primary"><%= state.valeur_partage_existence_accord %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
-        <%= indicateur_clean :valeur_partage_existence_epargne_salariale %> :
-        <b class="text-primary"><%= state.valeur_partage_existence_epargne_salariale %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
-        <%= indicateur_clean :valeur_partage_existence_grille_salariale %> :
-        <b class="text-primary"><%= state.valeur_partage_existence_grille_salariale %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2">
-        <%= indicateur_clean :valeur_partage_publicite_grille %> :
-        <b class="text-primary"><%= state.valeur_partage_publicite_grille %></b>
-      </div>
-    </div>
-  </div>
-  <div class="row my-5">
-    <div class="col-sm-8">
-      <div class="card p-2">
-        <%= indicateur_clean :valeur_estimation_realite %> :
-        <b class="text-primary"><%= state.valeur_estimation_realite %></b>
-      </div>
-    </div>
+    <%= render  'indicator',
+                name: 'Part du résultat net distribué aux actionnaires',
+                value: "#{state.valeur_partage_part_resultat_net_actionnaires}",
+                unavailable: state.valeur_partage_part_resultat_net_actionnaires.blank? %>
+    <%= render  'indicator',
+                name: 'Part du résultat distribué aux salariés (PEE, PERCO, PER)',
+                value: "#{state.valeur_partage_part_resultat_salaries}",
+                unavailable: state.valeur_partage_part_resultat_salaries.blank? %>
+    <%= render  'indicator',
+                name: 'Écart entre les 5 revenus les plus hauts de l\'entreprise (incluant les primes et autres compléments de salaires) et les 5 plus bas',
+                value: "#{number_to_currency state.valeur_partage_ecart_revenus_hauts_bas}",
+                unavailable: state.valeur_partage_ecart_revenus_hauts_bas.blank? %>
+    <%= render  'indicator',
+                name: 'Index égalité des rémunérations entre hommes et femmes',
+                value: "#{state.valeur_partage_index_egalite_homme_femme}",
+                unavailable: state.valeur_partage_index_egalite_homme_femme.blank? %>
+    <%= render  'indicator',
+                name: 'Existence d\'un accord d\'intéressement et/ou de participation',
+                value: "#{state.valeur_partage_existence_accord}",
+                unavailable: state.valeur_partage_existence_accord.nil? %>
+    <%= render  'indicator',
+                name: 'Existence d\'autres mécanismes d\'épargne salariale (PEE, PERCO, PER)',
+                value: "#{state.valeur_partage_existence_epargne_salariale}",
+                unavailable: state.valeur_partage_existence_epargne_salariale.nil? %>
+    <%= render  'indicator',
+                name: 'Existence d\'une grille salariale',
+                value: "#{state.valeur_partage_existence_grille_salariale}",
+                unavailable: state.valeur_partage_existence_grille_salariale.nil? %>
+    <%= render  'indicator',
+                name: 'Publicité de la grille salariale',
+                value: "#{state.valeur_partage_publicite_grille}",
+                unavailable: state.valeur_partage_publicite_grille.nil? %>
   </div>
 
-<h2>3. <%= t 'pillars.3' %></h2>
-<%= link_to "Modifier", admin_evaluation_builder_path(evaluation_id: evaluation.id, step: 'pilier3'),class: 'btn btn-secondary mt-2' %>
+  <h2>3. <%= t 'pillars.3' %></h2>
+  <%= link_to "Modifier", admin_evaluation_builder_path(evaluation_id: evaluation.id, step: 'pilier3'),class: 'btn btn-secondary mt-2' %>
 
-<h3>Mise en place des conditions du bon exercice de la démocratie</h3>
+  <div class="row mt-5">
+    <%= render  'indicator',
+                name: "Réalité du pilier « #{t 'pillars.3'} » perçue par les salariés",
+                value: "#{state.qualite_estimation_realite}",
+                unavailable: state.qualite_estimation_realite.blank? %>
+  </div>
+
+  <h3>Mise en place des conditions du bon exercice de la démocratie</h3>
 
   <div class="row my-5">
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.qualite_qvt_enquete_qvt ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :qualite_qvt_enquete_qvt %> :
-        <b class="text-primary"><%= state.qualite_qvt_enquete_qvt %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.qualite_qvt_taux_qvt ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :qualite_qvt_taux_qvt %> :
-        <b class="text-primary"><%= state.qualite_qvt_taux_qvt %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.qualite_qvt_part_cdi ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :qualite_qvt_part_cdi %> :
-        <b class="text-primary"><%= state.qualite_qvt_part_cdi %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.qualite_qvt_moyenne_anciennete ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :qualite_qvt_moyenne_anciennete %> :
-        <b class="text-primary"><%= state.qualite_qvt_moyenne_anciennete %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.qualite_qvt_taux_turnover ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :qualite_qvt_taux_turnover %> :
-        <b class="text-primary"><%= state.qualite_qvt_taux_turnover %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.qualite_qvt_taux_absenteisme ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :qualite_qvt_taux_absenteisme %> :
-        <b class="text-primary"><%= state.qualite_qvt_taux_absenteisme %></b>
-      </div>
-    </div>
+    <%= render  'indicator',
+                name: 'Enquête annuelle sur la QVT perçue par les salariés',
+                value: "#{state.qualite_qvt_enquete_qvt}",
+                unavailable: state.qualite_qvt_enquete_qvt.nil? %>
+    <%= render  'indicator',
+                name: 'Taux de satisfaction sur la santé et qualité de vie au travail au sein de l\'organisation',
+                value: "#{state.qualite_qvt_taux_qvt}",
+                unavailable: state.qualite_qvt_taux_qvt.blank? %>
+    <%= render  'indicator',
+                name: 'Salariés en CDI sur l\'ensemble des salariés',
+                value: "#{state.qualite_qvt_part_cdi}",
+                unavailable: state.qualite_qvt_part_cdi.blank? %>
+    <%= render  'indicator',
+                name: 'Ancienneté moyenne',
+                value: "#{state.qualite_qvt_moyenne_anciennete}",
+                unavailable: state.qualite_qvt_moyenne_anciennete.blank? %>
+    <%= render  'indicator',
+                name: 'Taux de turn-over',
+                value: "#{state.qualite_qvt_taux_turnover}",
+                unavailable: state.qualite_qvt_taux_turnover.blank? %>
+    <%= render  'indicator',
+                name: 'Taux d\'absentéisme au travail',
+                value: "#{state.qualite_qvt_taux_absenteisme}",
+                unavailable: state.qualite_qvt_taux_absenteisme.blank? %>
   </div>
 
   <h3>Développement des compétences individuelles et collectives, émancipation des salariés</h3>
 
   <div class="row my-5">
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.qualite_emancipation_moyenne_heures_formation ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :qualite_emancipation_moyenne_heures_formation %> :
-        <b class="text-primary"><%= state.qualite_emancipation_moyenne_heures_formation %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.qualite_emancipation_taux_budget_formation_masse_salariale ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :qualite_emancipation_taux_budget_formation_masse_salariale %> :
-        <b class="text-primary"><%= state.qualite_emancipation_taux_budget_formation_masse_salariale %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.qualite_emancipation_taux_direction_promotion_interne ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :qualite_emancipation_taux_direction_promotion_interne %> :
-        <b class="text-primary"><%= state.qualite_emancipation_taux_direction_promotion_interne %></b>
-      </div>
-    </div>
+    <%= render  'indicator',
+                name: 'Nombre moyen d\'heures de formation par salariés',
+                value: "#{state.qualite_emancipation_moyenne_heures_formation}",
+                unavailable: state.qualite_emancipation_moyenne_heures_formation.blank? %>
+    <%= render  'indicator',
+                name: 'Taux : budget de formation / masse salariale',
+                value: "#{state.qualite_emancipation_taux_budget_formation_masse_salariale}",
+                unavailable: state.qualite_emancipation_taux_budget_formation_masse_salariale.blank? %>
+    <%= render  'indicator',
+                name: 'Taux des membres du comité de direction actuel issue de la promotion interne',
+                value: "#{state.qualite_emancipation_taux_direction_promotion_interne}",
+                unavailable: state.qualite_emancipation_taux_direction_promotion_interne.blank? %>
   </div>
 
-  <div class="row my-5">
-    <div class="col-sm-8">
-      <div class="card p-2 <%= state.qualite_estimation_realite ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :qualite_estimation_realite %> :
-        <b class="text-primary"><%= state.qualite_estimation_realite %></b>
-      </div>
-    </div>
+  <h2>4. <%= t 'pillars.4' %></h2>
+  <%= link_to "Modifier", admin_evaluation_builder_path(evaluation_id: evaluation.id, step: 'pilier4'),class: 'btn btn-secondary mt-2' %>
+
+  <div class="row mt-5">
+    <%= render  'indicator',
+                name: "Réalité du pilier « #{t 'pillars.4'} » perçue par les salariés",
+                value: "#{state.impact_estimation_realite}",
+                unavailable: state.impact_estimation_realite.blank? %>
   </div>
 
-<h2>4. <%= t 'pillars.4' %></h2>
-<%= link_to "Modifier", admin_evaluation_builder_path(evaluation_id: evaluation.id, step: 'pilier4'),class: 'btn btn-secondary mt-2' %>
-
-<h3>Impact environnemental</h3>
+  <h3>Impact environnemental</h3>
 
   <div class="row my-5">
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.impact_environnement_audit_impact ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :impact_environnement_audit_impact %> :
-        <b class="text-primary"><%= state.impact_environnement_audit_impact %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.impact_environnement_demarche_ecologique ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :impact_environnement_demarche_ecologique %> :
-        <b class="text-primary"><%= state.impact_environnement_demarche_ecologique %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.impact_environnement_discussion_impact ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :impact_environnement_discussion_impact %> :
-        <b class="text-primary"><%= state.impact_environnement_discussion_impact %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.impact_environnement_part_energies_renouvelables ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :impact_environnement_part_energies_renouvelables %> :
-        <b class="text-primary"><%= state.impact_environnement_part_energies_renouvelables %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.impact_environnement_part_salaries_mobilite ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :impact_environnement_part_salaries_mobilite %> :
-        <b class="text-primary"><%= state.impact_environnement_part_salaries_mobilite %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.impact_environnement_bilan_carbone_scope_1 ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :impact_environnement_bilan_carbone_scope_1 %> :
-        <b class="text-primary"><%= state.impact_environnement_bilan_carbone_scope_1 %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.impact_environnement_bilan_carbone_scope_2 ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :impact_environnement_bilan_carbone_scope_2 %> :
-        <b class="text-primary"><%= state.impact_environnement_bilan_carbone_scope_2 %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.impact_environnement_bilan_carbone_scope_3 ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :impact_environnement_bilan_carbone_scope_3 %> :
-        <b class="text-primary"><%= state.impact_environnement_bilan_carbone_scope_3 %></b>
-      </div>
-    </div>
+    <%= render  'indicator',
+                name: 'Audit spécifique relatif aux impacts environnementaux de l\'entreprise effectué',
+                value: "#{state.impact_environnement_audit_impact}",
+                unavailable: state.impact_environnement_audit_impact.nil? %>
+    <%= render  'indicator',
+                name: 'Engagement d\'une démarche d\'identification des consommations et d\'un plan d\'amélioration sur l\'impact environnemental des activités de l\'entreprise',
+                value: "#{state.impact_environnement_demarche_ecologique}",
+                unavailable: state.impact_environnement_demarche_ecologique.nil? %>
+    <%= render  'indicator',
+                name: 'Discussion avec les parties prenantes de l\'impact environnemental de l\'activité',
+                value: "#{state.impact_environnement_discussion_impact}",
+                unavailable: state.impact_environnement_discussion_impact.nil? %>
+    <%= render  'indicator',
+                name: 'Part d\'énergies renouvelables dans le mix énergétique',
+                value: "#{state.impact_environnement_part_energies_renouvelables}",
+                unavailable: state.impact_environnement_part_energies_renouvelables.blank? %>
+    <%= render  'indicator',
+                name: 'Part des salariés utilisant la mobilité douce ou co-mobilité pour se rendre au travail',
+                value: "#{state.impact_environnement_part_salaries_mobilite}",
+                unavailable: state.impact_environnement_part_salaries_mobilite.blank? %>
+    <%= render  'indicator',
+                name: 'Calcul du bilan Carbone Scope 1',
+                value: "#{state.impact_environnement_bilan_carbone_scope_1}",
+                unavailable: state.impact_environnement_bilan_carbone_scope_1.blank? %>
+    <%= render  'indicator',
+                name: 'Calcul du bilan Carbone Scope 2',
+                value: "#{state.impact_environnement_bilan_carbone_scope_2}",
+                unavailable: state.impact_environnement_bilan_carbone_scope_2.blank? %>
+    <%= render  'indicator',
+                name: 'Calcul du bilan Carbone Scope 3',
+                value: "#{state.impact_environnement_bilan_carbone_scope_3}",
+                unavailable: state.impact_environnement_bilan_carbone_scope_3.blank? %>
   </div>
 
 <h3>Impact social</h3>
 
   <div class="row my-5">
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.impact_social_part_activite_structures_insertion ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :impact_social_part_activite_structures_insertion %> :
-        <b class="text-primary"><%= state.impact_social_part_activite_structures_insertion %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.impact_social_alternance_apprentissage ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :impact_social_alternance_apprentissage %> :
-        <b class="text-primary"><%= state.impact_social_alternance_apprentissage %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.impact_social_part_seniors ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :impact_social_part_seniors %> :
-        <b class="text-primary"><%= state.impact_social_part_seniors %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.impact_social_part_handicap ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :impact_social_part_handicap %> :
-        <b class="text-primary"><%= state.impact_social_part_handicap %></b>
-      </div>
-    </div>
+    <%= render  'indicator',
+                name: 'Part de l\'activité (sous-traitance, fournisseurs...) avec des structures d\'insertion',
+                value: "#{state.impact_social_part_activite_structures_insertion}",
+                unavailable: state.impact_social_part_activite_structures_insertion.blank? %>
+    <%= render  'indicator',
+                name: 'Part de salariés en alternance ou en apprentissage',
+                value: "#{state.impact_social_alternance_apprentissage}",
+                unavailable: state.impact_social_alternance_apprentissage.blank? %>
+    <%= render  'indicator',
+                name: 'Part des plus de 55 ans dans les effectifs salariés (calcul sur base DNS), nb séniors / total salariés',
+                value: "#{state.impact_social_part_seniors}",
+                unavailable: state.impact_social_part_seniors.blank? %>
+    <%= render  'indicator',
+                name: 'Part des travailleurs en situation de handicap (ratio déclaré Agefiph)',
+                value: "#{state.impact_social_part_handicap}",
+                unavailable: state.impact_social_part_handicap.blank? %>
   </div>
 
   <h3>Engagement en faveur de l'écosystème et du territoire</h3>
 
   <div class="row my-5">
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.impact_engagement_part_resultat_missions_utiles ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :impact_engagement_part_resultat_missions_utiles %> :
-        <b class="text-primary"><%= state.impact_engagement_part_resultat_missions_utiles %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.impact_engagement_part_placements_responsables ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :impact_engagement_part_placements_responsables %> :
-        <b class="text-primary"><%= state.impact_engagement_part_placements_responsables %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.impact_engagement_part_impots_france ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :impact_engagement_part_impots_france %> :
-        <b class="text-primary"><%= state.impact_engagement_part_impots_france %></b>
-      </div>
-    </div>
-    <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= state.impact_engagement_demarche_ethique_fournisseurs ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :impact_engagement_demarche_ethique_fournisseurs %> :
-        <b class="text-primary"><%= state.impact_engagement_demarche_ethique_fournisseurs %></b>
-      </div>
-    </div>
-  </div>
-
-  <div class="row my-5">
-    <div class="col-sm-8">
-      <div class="card p-2 <%= state.impact_estimation_realite ? 'opacity-100' : 'opacity-50' %>">
-        <%= indicateur_clean :impact_estimation_realite %> :
-        <b class="text-primary"><%= state.impact_estimation_realite %></b>
-      </div>
-    </div>
+    <%= render  'indicator',
+                name: 'Part du résultat consacré à des missions d\'utilité sociale, locale ou environnementale',
+                value: "#{state.impact_engagement_part_resultat_missions_utiles}",
+                unavailable: state.impact_engagement_part_resultat_missions_utiles.blank? %>
+    <%= render  'indicator',
+                name: 'Part des placements responsables dans les placements financiers',
+                value: "#{state.impact_engagement_part_placements_responsables}",
+                unavailable: state.impact_engagement_part_placements_responsables.blank? %>
+    <%= render  'indicator',
+                name: 'Part des impôts payés sur le territoire français',
+                value: "#{state.impact_engagement_part_impots_france}",
+                unavailable: state.impact_engagement_part_impots_france.blank? %>
+    <%= render  'indicator',
+                name: 'Engagement dans une démarche sociale, locale et/ou écologique dans le choix des fournisseurs',
+                value: "#{state.impact_engagement_demarche_ethique_fournisseurs}",
+                unavailable: state.impact_engagement_demarche_ethique_fournisseurs.nil? %>
   </div>

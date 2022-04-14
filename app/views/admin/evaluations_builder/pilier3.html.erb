@@ -5,7 +5,14 @@
     <%= render 'shared/error_messages', object: f.object %>
     <%= f.association :state do |il| %>
 
-        <h3>Mise en place des conditions du bon exercice de la démocratie</h3>
+      <div class="row m-0">
+        <div class="col-md-8 estim mt-5 bg-primary bg-opacity-50 rounded p-3 m-0">
+          <%= il.input :qualite_estimation_realite %>
+        </div>
+      </div>
+
+
+      <h3>Mise en place des conditions du bon exercice de la démocratie</h3>
 
       <div class="row align-items-end col-input my-5">
         <div class="col-md-4">
@@ -44,16 +51,10 @@
           <%= il.input :qualite_emancipation_taux_direction_promotion_interne %>
         </div>
       </div>
-
-      <div class="col-8 bg-primary rounded my-5" style="height: 6px"></div>
-      <div class="col-md-8 estim">
-      <%= il.input :qualite_estimation_realite %>
-      </div>
-    <% end %>
-
+  <% end %>
 </div>
 
-  <div class="text-center mt-5">
+  <div class="text-center my-5">
     <%= f.button :submit, "Enregister", class: 'btn btn-primary' %>
   </div>
 
