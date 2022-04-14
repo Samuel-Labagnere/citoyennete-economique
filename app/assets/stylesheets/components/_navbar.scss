@@ -52,8 +52,17 @@
     }
   }
 }
-.nav-scroll {
-  height:100vh;
-  overflow-y:auto;
-  overflow-x:hidden;
+#navbar {
+  display:flex;
+  height: 100vh;
+  ul {
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+    a {
+      font-size: 1.1rem;
+      font-family: $headings-font-family;
+    }
+  }
 }

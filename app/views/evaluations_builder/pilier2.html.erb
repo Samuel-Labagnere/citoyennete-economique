@@ -24,7 +24,7 @@
         <%= il.input :valeur_perennite_ebe_caht %>
       </div>
       <div class="col-md-4 mb-4">
-        <%= il.input :valeur_perennite_part_endettement %>
+        <%= il.input :valeur_perennite_attention_questions_innovation, as: :radio_buttons %>
       </div>
       <div class="col-md-4 mb-4">
         <%= il.input :valeur_perennite_existence_reserve, as: :radio_buttons %>
@@ -33,13 +33,13 @@
         <%= il.input :valeur_perennite_reserve_impartageable, as: :radio_buttons %>
       </div>
       <div class="col-md-4 mb-4">
-        <%= il.input :valeur_perennite_attention_questions_innovation, as: :radio_buttons %>
+        <%= il.input :valeur_perennite_part_endettement %>
       </div>
     </div>
 
     <h3>Partage des richesses</h3>
 
-    <div class="row align-items-baseline col-input my-5">
+    <div class="row align-items-end col-input my-5">
       <div class="col-md-4 mb-4">
         <%= il.input :valeur_partage_part_resultat_net_actionnaires %>
       </div>
@@ -49,19 +49,19 @@
       <div class="col-md-4 mb-4">
         <%= il.input :valeur_partage_ecart_revenus_hauts_bas %>
       </div>
-      <div class="col-md-4 mb-4">
+      <div class="col-md-4 my-4">
         <%= il.input :valeur_partage_index_egalite_homme_femme %>
       </div>
       <div class="col-md-4 mb-4">
         <%= il.input :valeur_partage_existence_accord, as: :radio_buttons %>
       </div>
-      <div class="col-md-4 mb-4">
+      <div class="col-md-4 my-4">
         <%= il.input :valeur_partage_existence_epargne_salariale, as: :radio_buttons %>
       </div>
       <div class="col-md-4 mb-4">
         <%= il.input :valeur_partage_existence_grille_salariale, as: :radio_buttons %>
       </div>
-      <div class="col-md-4 mb-4">
+      <div class="col-md-4 my-4 ">
         <%= il.input :valeur_partage_publicite_grille, as: :radio_buttons %>
       </div>
     </div>
