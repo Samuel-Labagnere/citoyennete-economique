@@ -1,39 +1,46 @@
 
 /***** ANIMATION LOGO *****/
 
-.navbar{
+header {
   z-index: 999;
-  & * {transition: ease .3s;}
+  width: 100%;
+  position:fixed;
+  top:10px;
 
-  .logoSite {
-    display:flex;
-    position:relative;
-    width: 180px;
-    font-size: 40px;
-    overflow:hidden;
-    span {
-      line-height: 7px;
-      position:absolute;
-      top: 0;
-      opacity:0;
-      width: 100%;
-      height: 100%;
-      color: black;
-    }
-    b {
-      position:absolute;
-      bottom: 0; right: 0;
-      opacity:0;
-      width: 100%;
-      text-align:right;
+  * {transition: ease .3s;}
+  .navbar{
+    margin-top: -10px;
+    .logoSite {
+      display:flex;
+      position:relative;
+      width: 180px;
+      font-size: 40px;
+      overflow:hidden;
+      span {
+        line-height: 7px;
+        position:absolute;
+        top: 0;
+        opacity:0;
+        width: 100%;
+        height: 100%;
+        color: black;
+      }
+      b {
+        position:absolute;
+        bottom: 0; right: 0;
+        opacity:0;
+        width: 100%;
+        text-align:right;
+      }
     }
   }
-  &.navScroll {
-    transition: ease .3s;
+}
+.navScroll {
 
+  .navbar {
     .logoSite {
-    width: 40px;
-    transition-delay: .3s;
+      width: 40px;
+      transition-delay: .3s;
       img {
         opacity: 0;
         transform: translateX(-50%);
@@ -49,20 +56,6 @@
         transform: translateX(calc(-100% + 30px)) translateY(calc(-50% + 14px));
         transition: ease .3s;
       }
-    }
-  }
-}
-#navbar {
-  display:flex;
-  height: 100vh;
-  ul {
-    height:100%;
-    display:flex;
-    flex-direction:column;
-    justify-content: space-around;
-    a {
-      font-size: 1.1rem;
-      font-family: $headings-font-family;
     }
   }
 }
