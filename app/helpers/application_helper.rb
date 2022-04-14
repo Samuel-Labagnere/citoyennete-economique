@@ -95,4 +95,8 @@ module ApplicationHelper
       }
     }
   end
+
+  def boolean_state_field(state, field)
+    state[field] ? indicateur_clean(field) : negative_indicateur(field) unless field.nil?
+  end
 end
