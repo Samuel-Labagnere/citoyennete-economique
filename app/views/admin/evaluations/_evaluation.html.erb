@@ -24,15 +24,16 @@
                   unavailable: evaluation.resultat_net.blank? %>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= evaluation.nombre_salaries ? 'opacity-100' : 'opacity-50' %>">
-        Nombre total de salariés :
-        <b class="text-primary"><%= evaluation.nombre_salaries %></b>
-      </div>
+      <%= render  'indicator',
+                  name: 'Nombre total de salariés',
+                  value: "#{evaluation.nombre_salaries}",
+                  unavailable: evaluation.nombre_salaries.blank? %>
     </div>
     <div class="col-sm-6 col-md-4">
-      <div class="card p-2 <%= evaluation.nombre_salaries_etp ? 'opacity-100' : 'opacity-50' %>">
-        Nombre de salariés en ETP :
-        <b class="text-primary"><%= evaluation.nombre_salaries_etp %></b>
+      <%= render  'indicator',
+                  name: 'Nombre de salariés ETP',
+                  value: "#{evaluation.nombre_salaries_etp}",
+                  unavailable: evaluation.nombre_salaries_etp.blank? %>
       </div>
     </div>
   </div>
