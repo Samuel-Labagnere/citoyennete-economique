@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :objectifs_lists
+  # resources :objectifs_lists
   resources :evaluations
 
   get '/evaluations_builder/new', to: 'evaluations_builder#new'

@@ -57,11 +57,11 @@
   <% end %>
   <div class="my-5">
     <%= link_to "Ajouter une évaluation", evaluations_builder_new_path, class: "btn btn-primary text-white" %>
-    <% if @organisation.objectifs_list.present? %>
-      <%= link_to "Éditer les objectifs", edit_objectifs_list_path(id: organisation.objectifs_list.id), class: "btn btn-primary" %>
-    <% else %>
-      <%= link_to "Définir des objectifs", new_objectifs_list_path, class: "btn btn-secondary mx-3" %>
-    <% end %>
+    <%# if @organisation.objectifs_list.present? %>
+      <%# link_to "Éditer les objectifs", edit_objectifs_list_path(id: organisation.objectifs_list.id), class: "btn btn-primary" %>
+    <%# else %>
+      <%# link_to "Définir des objectifs", new_objectifs_list_path, class: "btn btn-secondary mx-3" %>
+    <%# end %>
     <%= link_to "Générer un code d'invitation", code_invitation_path, method: :post, class: "btn btn-success" %>
   </div>
 
