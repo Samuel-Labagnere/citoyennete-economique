@@ -10,7 +10,7 @@
   <% if current_user.is_super_admin %>
     <%= link_to "Back to evaluations", evaluations_path, class: "btn btn-secondary me-3" %>
   <% else %>
-    <%= link_to "Retourner au dashboard", user_root_path, class: "btn btn-secondary me-3" %>
+    <%= link_to "Retourner au dashboard", admin_path, class: "btn btn-secondary me-3" %>
   <% end %>
 </div>
 
@@ -382,6 +382,6 @@
   <% if current_user.is_super_admin %>
     <%= link_to "Back to evaluations", evaluations_path, class: "btn btn-secondary me-3" %>
   <% else %>
-    <%= link_to "Retourner au dashboard", user_root_path, class: "btn btn-secondary me-3" %>
+    <%= link_to "Retourner au dashboard", admin_path, class: "btn btn-secondary me-3" %>
   <% end %>
 </div>

@@ -1,6 +1,5 @@
-class EvaluationsController < ApplicationController
+class Admin::EvaluationsController < Admin::ApplicationController
   before_action :check_super_admin, only: %i[ index ]
-  before_action :authenticate_user!
   before_action :set_evaluation, only: %i[ show edit update destroy ]
   before_action :check_owner, only: %i[ show edit update destroy ]
 
@@ -11,10 +10,14 @@ class EvaluationsController < ApplicationController
 
   # GET /evaluations/1 or /evaluations/1.json
   def show
+    add_breadcrumb @evaluation
   end
 
   # GET /evaluations/new
   def new
+    add_breadcrumb 'Dashboard', :user_root_path
+    add_breadcrumb 'Nouvelle évaluation'
+
     @evaluation = Evaluation.new
     @evaluation.state = State.new
   end

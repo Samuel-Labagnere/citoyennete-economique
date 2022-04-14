@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  # resources :objectifs_lists
-  resources :evaluations
+  namespace :admin do
+    resources :evaluations
+    root 'dashboard#index'
+  end
 
   get '/evaluations_builder/new', to: 'evaluations_builder#new'
   get '/evaluations_builder/:evaluation_id/:step', to: 'evaluations_builder#show', as: 'evaluation_builder'
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
 
   devise_for :users, path: '', path_names: { sign_in: "connexion", sign_out: "deconnexion", sign_up: "inscription", edit: "compte" }
   resources :organisations
-  get "dashboard", to: "dashboard#index", as: "user_root"
+
   get "admin", to: "admin#index"
   # get "entreprises", to: "organisations#public_list"
   get 'pilier-1', to: "statistiques#pillar1"
