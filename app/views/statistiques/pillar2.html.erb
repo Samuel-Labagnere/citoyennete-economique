@@ -9,7 +9,7 @@
 
 <h2><b class="text-primary">I.</b>Pérennité : création de valeur, inaliénabilité et robustesse de l'entreprise</h2>
 
-<div class="row my-5 pt-5">
+<div class="row my-sm-5 pt-5">
   <% unless @valeur_perennite_booleens[:valeur_perennite_existence_reserve].nil? %>
   <div class="col-md-6">
     <%= pie_chart @valeur_perennite_booleens[:valeur_perennite_existence_reserve], suffix: '%' %>
@@ -30,7 +30,7 @@
 
 <h2><b class="text-primary">II.</b>Partage des richesses</h2>
 
-<div class="my-5 bg-white p-3 rounded">
+<div class="my-5 bg-white p-3 rounded d-none d-sm-block">
   <%= bar_chart @valeur_part_resultat, suffix: "%", max: 100 %>
   <table class="table mt-5">
     <thead>

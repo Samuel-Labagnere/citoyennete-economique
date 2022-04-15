@@ -10,9 +10,9 @@
 
   <!-- IMPACT 1 -->
 
-  <h2 class="py-5">1. Partage du pouvoir et décisions</h2>
+  <h2 class="py-sm-5">1. Partage du pouvoir et décisions</h2>
 
-  <div class="col-8 bg-secondary rounded bg-opacity-25 py-3 px-5 my-5">
+  <div class="col-12 col-md-8 bg-secondary rounded bg-opacity-25 py-3 px-2 px-sm-5 my-5">
     <div class="d-flex align-items-center justify-content-between justify-content-between">
       <p class="m-0"><%= indicateur_clean :pouvoir_estimation_realite %> :</p>
       <b class="text-white fs-1"><%= @state.pouvoir_estimation_realite %></b>
@@ -22,30 +22,30 @@
   <h3><b class="text-primary">I.</b> Composition de la gouvernance</h3>
 
   <div class="row mt-5">
-    <div class="col-md-4 mb-5 ">
+    <div class="col-md-4 mb-sm-5 ">
       <%= single_value_pie_chart @state.pouvoir_gouvernance_part_salaries_associes %>
-      <p class="text-center mt-3"><%= indicateur_clean :pouvoir_gouvernance_part_salaries_associes %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :pouvoir_gouvernance_part_salaries_associes %></p>
     </div>
-    <div class="col-md-4 mb-5">
+    <div class="col-md-4 mb-sm-5">
       <%= single_value_pie_chart @state.pouvoir_gouvernance_taux_societariat_femmes %>
-      <p class="text-center mt-3"><%= indicateur_clean :pouvoir_gouvernance_taux_societariat_femmes %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :pouvoir_gouvernance_taux_societariat_femmes %></p>
     </div>
-    <div class="col-md-4 mb-5">
+    <div class="col-md-4 mb-sm-5">
       <%= single_value_pie_chart @state.pouvoir_gouvernance_taux_droits_vote_salaries %>
-      <p class="text-center mt-3"><%= indicateur_clean :pouvoir_gouvernance_taux_droits_vote_salaries %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :pouvoir_gouvernance_taux_droits_vote_salaries %></p>
     </div>
-    <div class="col-md-4 mb-5">
+    <div class="col-md-4 mb-sm-5">
       <%= single_value_pie_chart @state.pouvoir_gouvernance_part_salaries_conseil %>
-      <p class="text-center mt-3"><%= indicateur_clean :pouvoir_gouvernance_part_salaries_conseil %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :pouvoir_gouvernance_part_salaries_conseil %></p>
     </div>
-    <div class="col-md-4 mb-5">
+    <div class="col-md-4 mb-sm-5">
       <%= single_value_pie_chart @state.pouvoir_gouvernance_part_femmes_conseil %>
-      <p class="text-center mt-3"><%= indicateur_clean :pouvoir_gouvernance_part_femmes_conseil %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :pouvoir_gouvernance_part_femmes_conseil %></p>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-12 col-md-4 mb-3 mb-md-0">
+    <div class="col-12 col-md-4 mb-sm-0 mb-3">
       <p class="m-0 rounded bg-secondary bg-opacity-25 text-center p-4"><%= indicateur_clean :pouvoir_gouvernance_diversite_categories %></p>
     </div>
     <div class="col-12 col-md-8">
@@ -58,7 +58,7 @@
   <h3><b class="text-primary">II.</b> Mise en place des conditions du bon exercice de la démocratie</h3>
 
   <div class="row my-5">
-    <div class="col-sm-4 lead mb-5">
+    <div class="col-sm-4 lead mb-3 mb-sm-5">
       <div class="rounded">
         <div class="bg-secondary text-center text-white p-3 fs-3 fw-bold">
           <%= @state.pouvoir_democratie_nombre_accords_signes %>
@@ -68,7 +68,7 @@
         </div>
       </div>
     </div>
-    <div class="col lead mb-5">
+    <div class="col lead mb-sm-5">
       <div class="rounded">
         <div class="bg-secondary text-center text-white p-3 fs-3 fw-bold">
           Accords signés
@@ -86,25 +86,25 @@
   <h3><b class="text-primary">III.</b> Participation à la prise de décision stratégique</h3>
 
   <div class="row my-5">
-    <div class="col-md-4 mb-4 ">
+    <div class="col-md-4 mb-sm-5">
       <%= single_value_pie_chart @state.pouvoir_strategique_taux_presence_assemblee %>
-      <p class="text-center mt-3"><%= indicateur_clean :pouvoir_strategique_taux_presence_assemblee %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :pouvoir_strategique_taux_presence_assemblee %></p>
     </div>
-    <div class="col-md-4 mb-4 ">
+    <div class="col-md-4 mb-sm-5">
       <%= single_value_pie_chart @state.pouvoir_strategique_implication_partage %>
-      <p class="text-center mt-3"><%= indicateur_clean :pouvoir_strategique_implication_partage %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :pouvoir_strategique_implication_partage %></p>
     </div>
-    <div class="col-md-4 mb-4 ">
+    <div class="col-md-4 mb-sm-5">
       <%= single_value_pie_chart @state.pouvoir_strategique_actifs_total %>
-      <p class="text-center mt-3"><%= indicateur_clean :pouvoir_strategique_actifs_total %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :pouvoir_strategique_actifs_total %></p>
     </div>
   </div>
 
   <!-- IMPACT 2 -->
 
-  <h2 class="pb-5">2. Pérennité économique et partage de la valeur créée</h2>
+  <h2 class="pb-sm-5">2. Pérennité économique et partage de la valeur créée</h2>
 
-  <div class="col-8 bg-secondary rounded bg-opacity-25 py-3 px-5 my-5">
+  <div class="col-12 col-md-8 bg-secondary rounded bg-opacity-25 py-3 px-2 px-sm-5 my-5">
     <div class="d-flex align-items-center justify-content-between justify-content-between">
       <p class="m-0"><%= indicateur_clean :valeur_estimation_realite %> :</p>
       <b class="text-white fs-1"><%= @state.valeur_estimation_realite %></b>
@@ -114,27 +114,27 @@
   <h3><b class="text-primary">I.</b> Pérennité : création de valeur, inaliénabilité et robustesse de l'entreprise</h3>
 
   <div class="row my-5">
-    <div class="col-md-4 mb-4 ">
+    <div class="col-md-4 mb-sm-5">
       <%= single_value_pie_chart @state.valeur_perennite_part_capital_salaries %>
-      <p class="text-center mt-3"><%= indicateur_clean :valeur_perennite_part_capital_salaries %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :valeur_perennite_part_capital_salaries %></p>
     </div>
-    <div class="col-md-4 mb-4 ">
+    <div class="col-md-4 mb-sm-5">
       <%= single_value_pie_chart @state.valeur_perennite_part_resultat_reserve %>
-      <p class="text-center mt-3"><%= indicateur_clean :valeur_perennite_part_resultat_reserve %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :valeur_perennite_part_resultat_reserve %></p>
     </div>
-    <div class="col-md-4 mb-4 ">
+    <div class="col-md-4 mb-sm-5">
       <%= single_value_pie_chart @state.valeur_perennite_ebe_caht %>
-      <p class="text-center mt-3"><%= indicateur_clean :valeur_perennite_ebe_caht %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :valeur_perennite_ebe_caht %></p>
     </div>
-    <div class="col-md-4 mb-4 ">
+    <div class="col-md-4 mb-sm-5">
       <%= single_value_pie_chart @state.valeur_perennite_part_endettement %>
-      <p class="text-center mt-3"><%= indicateur_clean :valeur_perennite_part_endettement %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :valeur_perennite_part_endettement %></p>
     </div>
   </div>
 
   <div class="row my-5 bool text-white">
     <%if !@state.valeur_partage_existence_accord.nil? %>
-    <div class="col-md-4 mb-5">
+    <div class="col-md-4 mb-3 mb-sm-5">
       <div class="rounded overflow-hidden position-relative p-3 <%= @state.valeur_partage_existence_accord == true ? 'bg-success' : 'bg-danger' %>">
         <% if @state.valeur_partage_existence_accord == true %>
           <i class="bi bi-check-circle position-absolute opacity-25"></i>
@@ -147,7 +147,7 @@
     </div>
     <% end %>
     <%if !@state.valeur_partage_existence_epargne_salariale.nil? %>
-    <div class="col-md-4 mb-5">
+    <div class="col-md-4 mb-3 mb-sm-5">
       <div class="rounded overflow-hidden position-relative p-3 <%= @state.valeur_partage_existence_epargne_salariale == true ? 'bg-success' : 'bg-danger' %>">
         <% if @state.valeur_partage_existence_epargne_salariale == true %>
           <i class="bi bi-check-circle position-absolute opacity-25"></i>
@@ -160,7 +160,7 @@
     </div>
     <% end %>
     <%if !@state.valeur_partage_existence_grille_salariale.nil? %>
-    <div class="col-md-4 mb-5">
+    <div class="col-md-4 mb-3 mb-sm-5">
       <div class="rounded overflow-hidden position-relative p-3 <%= @state.valeur_partage_existence_grille_salariale == true ? 'bg-success' : 'bg-danger' %>">
         <% if @state.valeur_partage_existence_grille_salariale == true %>
           <i class="bi bi-check-circle position-absolute opacity-25"></i>
@@ -191,23 +191,23 @@
   <h3><b class="text-primary">II.</b> Partage des richesses</h3>
 
   <div class="row row-cols-2 mt-5 justify-content-between">
-    <div class="col-md-4 mb-5">
+    <div class="col-12 col-md-4 mb-sm-5">
       <%= single_value_pie_chart @state.valeur_partage_part_resultat_net_actionnaires %>
-      <p class="text-center mt-3"><%= indicateur_clean :valeur_partage_part_resultat_net_actionnaires %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :valeur_partage_part_resultat_net_actionnaires %></p>
     </div>
-    <div class="col-md-4 mb-5">
+    <div class="col-12 col-md-4 mb-sm-5">
       <%= single_value_pie_chart @state.valeur_partage_part_resultat_salaries %>
-      <p class="text-center mt-3"><%= indicateur_clean :valeur_partage_part_resultat_salaries %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :valeur_partage_part_resultat_salaries %></p>
     </div>
-    <div class="col-md-4 mb-5">
+    <div class="col-12 col-md-4 mb-sm-5">
       <%= single_value_pie_chart @state.valeur_partage_index_egalite_homme_femme, suffix: "/100" %>
-      <p class="text-center mt-3"><%= indicateur_clean :valeur_partage_index_egalite_homme_femme %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :valeur_partage_index_egalite_homme_femme %></p>
     </div>
   </div>
 
-  <div class="row pb-5">
-    <div class="col-8 lead">
-      <div class="rounded d-flex">
+  <div class="row pb-sm-5">
+    <div class="col-12 col-sm-8 lead">
+      <div class="rounded d-flex flex-column flex-sm-row">
         <div class="bg-secondary text-center text-white p-3 fs-3 fw-bold">
           <%= @state.valeur_partage_ecart_revenus_hauts_bas %>€
         </div>
@@ -221,10 +221,10 @@
 
   <!-- IMPACT 3 -->
 
-  <h2 class="pb-5">3. Capital humain et qualité de vie au travail</h2>
+  <h2 class="pb-sm-5">3. Capital humain et qualité de vie au travail</h2>
 
-  <div class="col-8 bg-secondary rounded bg-opacity-25 py-3 px-4 my-5">
-    <div class="d-flex align-items-center justify-content-between">
+  <div class="col-12 col-md-8 bg-secondary rounded bg-opacity-25 py-3 px-2 px-sm-5 my-5">
+    <div class="d-flex align-items-center justify-content-between justify-content-between">
       <p class="m-0"><%= indicateur_clean :qualite_estimation_realite %> :</p>
       <b class="text-white fs-1"><%= @state.qualite_estimation_realite %></b>
     </div>
@@ -234,7 +234,7 @@
 
   <div class="row bool my-5 bool">
     <%if !@state.qualite_qvt_enquete_qvt.nil? %>
-    <div class="col-4 text-white">
+    <div class="col-12 col-md-4 mb-3 mb-sm-0 col-4 text-white">
       <div class="rounded overflow-hidden position-relative p-3 <%= @state.qualite_qvt_enquete_qvt == true ? 'bg-success' : 'bg-danger' %>">
         <% if @state.qualite_qvt_enquete_qvt == true %>
           <i class="bi bi-check-circle position-absolute opacity-25"></i>
@@ -247,7 +247,7 @@
     </div>
     <% end %>
     <div class="col-md-8 lead">
-      <div class="rounded d-flex w-100">
+      <div class="rounded d-flex w-100 flex-column flex-sm-row">
         <div class="bg-secondary text-center text-white p-4 fs-3 fw-bold flex-grow-1">
           <%= @state.qualite_qvt_moyenne_anciennete %> ans
         </div>
@@ -259,21 +259,21 @@
   </div>
 
   <div class="row row-cols-2 mt-5">
-    <div class="col-md-4 mb-5">
+    <div class="col-12 col-md-4 mb-sm-5">
       <%= single_value_pie_chart @state.qualite_qvt_taux_qvt %>
-      <p class="text-center mt-3"><%= indicateur_clean :qualite_qvt_taux_qvt %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :qualite_qvt_taux_qvt %></p>
     </div>
-    <div class="col-md-4 mb-5">
+    <div class="col-12 col-md-4 mb-sm-5">
       <%= single_value_pie_chart @state.qualite_qvt_part_cdi %>
-      <p class="text-center mt-3"><%= indicateur_clean :qualite_qvt_part_cdi %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :qualite_qvt_part_cdi %></p>
     </div>
-    <div class="col-md-4 mb-5">
+    <div class="col-12 col-md-4 mb-sm-5">
       <%= single_value_pie_chart @state.qualite_qvt_taux_turnover %>
-      <p class="text-center mt-3"><%= indicateur_clean :qualite_qvt_taux_turnover %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :qualite_qvt_taux_turnover %></p>
     </div>
-    <div class="col-md-4">
+    <div class="col-12 col-md-4">
       <%= single_value_pie_chart @state.qualite_qvt_taux_absenteisme %>
-      <p class="text-center mt-3"><%= indicateur_clean :qualite_qvt_taux_absenteisme %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :qualite_qvt_taux_absenteisme %></p>
     </div>
   </div>
 
@@ -285,7 +285,7 @@
 
   <div class="row my-5">
     <div class="col lead mb-md-5">
-      <div class="rounded d-flex w-100">
+      <div class="rounded d-flex w-100 flex-column flex-sm-row">
         <div class="bg-secondary text-center text-white p-3 fs-3 fw-bold">
           <%= @state.qualite_emancipation_moyenne_heures_formation %> heures
         </div>
@@ -297,22 +297,22 @@
   </div>
 
   <div class="row my-5">
-    <div class="col-md-4 mb-4 ">
+    <div class="col-md-4 mb-3 mb-sm-5">
       <%= single_value_pie_chart @state.qualite_emancipation_taux_budget_formation_masse_salariale %>
-      <p class="text-center mt-3"><%= indicateur_clean :qualite_emancipation_taux_budget_formation_masse_salariale %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :qualite_emancipation_taux_budget_formation_masse_salariale %></p>
     </div>
-    <div class="col-md-4 mb-4 ">
+    <div class="col-md-4 mb-sm-5">
       <%= single_value_pie_chart @state.qualite_emancipation_taux_direction_promotion_interne %>
-      <p class="text-center mt-3"><%= indicateur_clean :qualite_emancipation_taux_direction_promotion_interne %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :qualite_emancipation_taux_direction_promotion_interne %></p>
     </div>
   </div>
 
   <!-- IMPACT 4 -->
 
-  <h2 class="pb-5">4. Impact environnemental, social et territorial</h2>
+  <h2 class="pb-sm-5">4. Impact environnemental, social et territorial</h2>
 
-  <div class="col-8 bg-secondary rounded bg-opacity-25 py-3 px-5 my-5">
-    <div class="d-flex align-items-center justify-content-between">
+  <div class="col-12 col-md-8 bg-secondary rounded bg-opacity-25 py-3 px-2 px-sm-5 my-5">
+    <div class="d-flex align-items-center justify-content-between justify-content-between">
       <p class="m-0"><%= indicateur_clean :impact_estimation_realite %> :</p>
       <b class="text-white fs-1"><%= @state.impact_estimation_realite %></b>
     </div>
@@ -322,7 +322,7 @@
 
   <div class="row my-5 bool text-white">
     <%if !@state.impact_environnement_audit_impact.nil? %>
-    <div class="col-md-4 mb-5">
+    <div class="col-md-4 mb-3 mb-sm-5">
       <div class="rounded overflow-hidden position-relative p-3 <%= @state.impact_environnement_audit_impact == true ? 'bg-success' : 'bg-danger' %>">
         <% if @state.impact_environnement_audit_impact == true %>
           <i class="bi bi-check-circle position-absolute opacity-25"></i>
@@ -335,7 +335,7 @@
     </div>
     <% end %>
     <%if !@state.impact_environnement_demarche_ecologique.nil? %>
-    <div class="col-md-4 mb-5">
+    <div class="col-md-4 mb-3 mb-sm-5">
       <div class="rounded overflow-hidden position-relative p-3 <%= @state.impact_environnement_demarche_ecologique == true ? 'bg-success' : 'bg-danger' %>">
         <% if @state.impact_environnement_demarche_ecologique == true %>
           <i class="bi bi-check-circle position-absolute opacity-25"></i>
@@ -348,7 +348,7 @@
     </div>
     <% end %>
     <%if !@state.impact_environnement_discussion_impact.nil? %>
-    <div class="col-md-4 mb-5">
+    <div class="col-md-4 mb-sm-5">
       <div class="rounded overflow-hidden position-relative p-3 <%= @state.impact_environnement_discussion_impact == true ? 'bg-success' : 'bg-danger' %>">
         <% if @state.impact_environnement_discussion_impact == true %>
           <i class="bi bi-check-circle position-absolute opacity-25"></i>
@@ -365,11 +365,11 @@
   <div class="row my-5">
     <div class="col-md-4 mb-4 ">
       <%= single_value_pie_chart @state.impact_environnement_part_energies_renouvelables %>
-      <p class="text-center mt-3"><%= indicateur_clean :impact_environnement_part_energies_renouvelables %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :impact_environnement_part_energies_renouvelables %></p>
     </div>
-    <div class="col-md-4 mb-4 ">
+    <div class="col-md-4 mb-sm-4 ">
       <%= single_value_pie_chart @state.impact_environnement_part_salaries_mobilite %>
-      <p class="text-center mt-3"><%= indicateur_clean :impact_environnement_part_salaries_mobilite %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :impact_environnement_part_salaries_mobilite %></p>
     </div>
   </div>
 
@@ -395,45 +395,45 @@
 
   <h3><b class="text-primary">II.</b> Impact social</h3>
 
-  <div class="row my-5">
-    <div class="col-md-4 mb-5">
+  <div class="row my-sm-5">
+    <div class="col-md-4 mb-3 mb-sm-5">
       <%= single_value_pie_chart @state.impact_social_part_activite_structures_insertion %>
-      <p class="text-center mt-3"><%= indicateur_clean :impact_social_part_activite_structures_insertion %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :impact_social_part_activite_structures_insertion %></p>
     </div>
-    <div class="col-md-4 mb-5">
+    <div class="col-md-4 mb-3 mb-sm-5">
       <%= single_value_pie_chart @state.impact_social_alternance_apprentissage %>
-      <p class="text-center mt-3"><%= indicateur_clean :impact_social_alternance_apprentissage %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :impact_social_alternance_apprentissage %></p>
     </div>
-    <div class="col-md-4 mb-5">
+    <div class="col-md-4 mb-3 mb-sm-5">
       <%= single_value_pie_chart @state.impact_social_part_seniors %>
-      <p class="text-center mt-3"><%= indicateur_clean :impact_social_part_seniors %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :impact_social_part_seniors %></p>
     </div>
     <div class="col-md-4">
       <%= single_value_pie_chart @state.impact_social_part_handicap %>
-      <p class="text-center mt-3"><%= indicateur_clean :impact_social_part_handicap %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :impact_social_part_handicap %></p>
     </div>
   </div>
 
   <h3><b class="text-primary">III.</b> Engagement en faveur de l'écosystème et du territoire</h3>
 
   <div class="row mt-5">
-    <div class="col-md-4 mb-5">
+    <div class="col-md-4 mb-3 mb-sm-5">
       <%= single_value_pie_chart @state.impact_engagement_part_resultat_missions_utiles %>
-      <p class="text-center mt-3"><%= indicateur_clean :impact_engagement_part_resultat_missions_utiles %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :impact_engagement_part_resultat_missions_utiles %></p>
     </div>
-    <div class="col-md-4 mb-5">
+    <div class="col-md-4 mb-3 mb-sm-5">
       <%= single_value_pie_chart @state.impact_engagement_part_placements_responsables %>
-      <p class="text-center mt-3"><%= indicateur_clean :impact_engagement_part_placements_responsables %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :impact_engagement_part_placements_responsables %></p>
     </div>
-    <div class="col-md-4 mb-5">
+    <div class="col-md-4 mb-3 mb-sm-5">
       <%= single_value_pie_chart @state.impact_engagement_part_impots_france %>
-      <p class="text-center mt-3"><%= indicateur_clean :impact_engagement_part_impots_france %></p>
+      <p class="text-center mt-sm-3"><%= indicateur_clean :impact_engagement_part_impots_france %></p>
     </div>
   </div>
 
   <div class="row bool text-white">
     <%if !@state.impact_engagement_demarche_ethique_fournisseurs.nil? %>
-    <div class="col-md-8 mb-5">
+    <div class="col-md-8 mb-3 mb-sm-5">
       <div class="rounded overflow-hidden position-relative p-3 <%= @state.impact_engagement_demarche_ethique_fournisseurs == true ? 'bg-success' : 'bg-danger' %>">
         <% if @state.impact_engagement_demarche_ethique_fournisseurs == true %>
           <i class="bi bi-check-circle position-absolute opacity-25"></i>

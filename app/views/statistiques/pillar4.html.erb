@@ -47,9 +47,11 @@
 </div>
 
 <div class="rounded bg-white p-3">
-  <% unless @impact_environnement_scope_implications.nil?  %>
-    <%= bar_chart @impact_environnement_scope_implications, suffix: '%', max: 100 %>
-  <% end %>
+  <div class="d-none d-sm-block">
+    <% unless @impact_environnement_scope_implications.nil?  %>
+      <%= bar_chart @impact_environnement_scope_implications, suffix: '%', max: 100 %>
+    <% end %>
+  </div>
   <table class="table mt-5">
     <thead>
       <tr>
