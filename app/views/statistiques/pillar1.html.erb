@@ -11,10 +11,11 @@
 
   <h2 class="pb-sm-5"><b class="text-primary">I.</b>Composition de la gouvernance</h2>
 
-  <div class="rounded bg-white p-5 my-5">
-    <%= bar_chart @pouvoir_gouvernance_taux, suffix: "%", title: 'Indicateurs clés (taux médians)', max: 100 %>
-
-  <table class="table mt-5">
+  <div class="rounded bg-white p-sm-5 p-3 my-5">
+    <div class="d-none d-sm-block">
+      <%= bar_chart @pouvoir_gouvernance_taux, suffix: "%", title: 'Indicateurs clés (taux médians)', max: 100 %>
+    </div>
+  <table class="table mt-sm-5">
     <thead>
       <tr>
         <th scope="col">Indicateur</th>
