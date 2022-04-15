@@ -123,8 +123,8 @@ class Aggregate
 
     if sum > 0
       result = {
-        indicateur_clean(indic_symbol) => (true_count / sum * 100),
-        ApplicationController.helpers.negative_indicateur(indic_symbol) => (false_count / sum * 100)
+        indicateur_clean(indic_symbol) => (true_count.to_f / sum * 100),
+        ApplicationController.helpers.negative_indicateur(indic_symbol) => (false_count.to_f / sum * 100)
       }
     end
 

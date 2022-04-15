@@ -47,9 +47,25 @@
 </div>
 
 <div class="rounded bg-white p-3">
-  <% unless @impact_environnement_scope_booleens.nil?  %>
-    <%= bar_chart @impact_environnement_scope_booleens, suffix: '%' %>
+  <% unless @impact_environnement_scope_implications.nil?  %>
+    <%= bar_chart @impact_environnement_scope_implications, suffix: '%', max: 100 %>
   <% end %>
+  <table class="table mt-5">
+    <thead>
+      <tr>
+        <th scope="col">Indicateur</th>
+        <th scope="col">Part des entreprises impliquées</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @impact_environnement_scope_implications.each do |field, value| %>
+      <tr>
+        <td><%= field %></td>
+        <td class="text-primary"><%= value %>%</td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
 <h2><b class="text-primary">II.</b>Impact social</h2>

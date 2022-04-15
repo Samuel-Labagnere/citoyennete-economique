@@ -21,7 +21,7 @@ class StatistiquesController < ApplicationController
   def pillar4
     add_breadcrumb 'Impact environnemental, social et territorial'
     @impact_environnement_booleens = Aggregate.impact_environnement_booleens
-    @impact_environnement_scope_booleens = Aggregate.impact_environnement_scope_booleens
+    @impact_environnement_scope_implications = Aggregate.impact_environnement_scope_booleens
     @impact_engagement = Aggregate.impact_engagement
     @impact_engagement_demarche_ethique_fournisseurs = Aggregate.impact_engagement_demarche_ethique_fournisseurs
   end

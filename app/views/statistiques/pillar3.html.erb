@@ -18,17 +18,37 @@
       </p>
     </div>
     <div class="col-md-6">
-      <%= single_value_pie_chart State.evaluations
-                                      .up_to_date
-                                      .average(:qualite_qvt_moyenne_anciennete) %>
-      <p class="text-center mt-3">
-        <%= indicateur_clean :qualite_qvt_moyenne_anciennete %>
-      </p>
+      <div class="rounded">
+        <div class="bg-secondary text-center text-white p-3 fs-1 fw-bold">
+          <%= State.evaluations
+                   .up_to_date
+                   .average(:qualite_qvt_moyenne_anciennete) %> ans
+        </div>
+        <div class="bg-white p-3">
+          d'ancienneté moyenne
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="rounded bg-white p-3">
-    <%= bar_chart @qualite_qvt_taux_all, suffix: "%" %>
+    <%= bar_chart @qualite_qvt_taux_all, suffix: "%", max: 100 %>
+    <table class="table mt-5">
+    <thead>
+      <tr>
+        <th scope="col">Indicateur</th>
+        <th scope="col">Valeur médiane</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @qualite_qvt_taux_all.each do |field, value| %>
+      <tr>
+        <td><%= field %></td>
+        <td class="text-primary"><%= value %>%</td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
   </div>
 </div>
 
@@ -49,4 +69,20 @@
 
 <div class="rounded bg-white p-3">
 <%= bar_chart @qualite_emancipation_taux, suffix: "%" %>
+<table class="table mt-5">
+  <thead>
+      <tr>
+        <th scope="col">Indicateur</th>
+        <th scope="col">Valeur médiane</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @qualite_emancipation_taux.each do |field, value| %>
+      <tr>
+        <td><%= field %></td>
+        <td class="text-primary"><%= value %>%</td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>

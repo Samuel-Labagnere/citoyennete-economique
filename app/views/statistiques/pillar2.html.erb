@@ -32,26 +32,59 @@
 
 <div class="my-5 bg-white p-3 rounded">
   <%= bar_chart @valeur_part_resultat, suffix: "%", max: 100 %>
+  <table class="table mt-5">
+    <thead>
+      <tr>
+        <th scope="col">Indicateur</th>
+        <th scope="col">Valeur médiane</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @valeur_part_resultat.each do |field, value| %>
+      <tr>
+        <td><%= field %></td>
+        <td class="text-primary"><%= value %>%</td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
+<div class="row">
+  <div class="col"></div>
+  <div class="col-md-4 rounded">
+    <div class="bg-secondary text-center text-white p-3 fs-1 fw-bold">
+    <%= State.evaluations
+            .up_to_date
+            .average(:valeur_partage_ecart_revenus_hauts_bas) %>€
+    </div>
+    <div class="bg-white p-3">
+    d'écart moyen entre les 5 revenus les plus hauts et les 5 plus bas
+    </div>
+  </div>
+  <div class="col"></div>
+</div>
 
-
-<% unless @valeur_perennite_booleens[:valeur_partage_existence_accord].nil? %>
-  <%= pie_chart @valeur_perennite_booleens[:valeur_partage_existence_accord], suffix: '%' %>
+<% unless @valeur_partage_booleens[:valeur_partage_existence_accord].nil? %>
+  <div class="my-5">
+    <%= pie_chart @valeur_partage_booleens[:valeur_partage_existence_accord], suffix: '%' %>
+  </div>
 <% end %>
-<% unless @valeur_perennite_booleens[:valeur_partage_existence_epargne_salariale].nil? %>
-  <%= pie_chart @valeur_perennite_booleens[:valeur_partage_existence_epargne_salariale], suffix: '%' %>
+<% unless @valeur_partage_booleens[:valeur_partage_existence_epargne_salariale].nil? %>
+  <div class="my-5">
+    <%= pie_chart @valeur_partage_booleens[:valeur_partage_existence_epargne_salariale], suffix: '%' %>
+  </div>
 <% end %>
 
 <div class="row my-5">
-  <% unless @valeur_perennite_booleens[:valeur_partage_existence_grille_salariale].nil? %>
+  <% unless @valeur_partage_booleens[:valeur_partage_existence_grille_salariale].nil? %>
   <div class="col-md-6">
-    <%= pie_chart @valeur_perennite_booleens[:valeur_partage_existence_grille_salariale], suffix: '%' %>
+    <%= pie_chart @valeur_partage_booleens[:valeur_partage_existence_grille_salariale], suffix: '%' %>
   </div>
   <% end %>
-  <% unless @valeur_perennite_booleens[:valeur_partage_publicite_grille].nil? %>
+  <% unless @valeur_partage_booleens[:valeur_partage_publicite_grille].nil? %>
   <div class="col-md-6">
-    <%= pie_chart @valeur_perennite_booleens[:valeur_partage_publicite_grille], suffix: '%' %>
+    <%= pie_chart @valeur_partage_booleens[:valeur_partage_publicite_grille], suffix: '%' %>
   </div>
   <% end %>
 </div>
