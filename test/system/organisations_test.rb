@@ -15,7 +15,7 @@ class OrganisationsTest < ApplicationSystemTestCase
     click_on "New organisation"
 
     fill_in "Agrement specifique", with: @organisation.agrement_specifique
-    fill_in "Ape", with: @organisation.ape
+    fill_in "naf", with: @organisation.naf
     fill_in "Chiffre affaires", with: @organisation.chiffre_affaires
     fill_in "Date creation", with: @organisation.date_creation
     fill_in "Distinctions", with: @organisation.distinctions
@@ -39,7 +39,7 @@ class OrganisationsTest < ApplicationSystemTestCase
     click_on "Edit this organisation", match: :first
 
     fill_in "Agrement specifique", with: @organisation.agrement_specifique
-    fill_in "Ape", with: @organisation.ape
+    fill_in "naf", with: @organisation.naf
     fill_in "Chiffre affaires", with: @organisation.chiffre_affaires
     fill_in "Date crea", with: @organisation.date_creation
     fill_in "Distinctions", with: @organisation.distinctions

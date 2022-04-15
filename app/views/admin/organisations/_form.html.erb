@@ -2,7 +2,7 @@
   <%= simple_form_for [:admin, @organisation] do |f| %>
     <div class="row my-5">
       <div class="col-sm-4">
-        <%= f.input :nom %>
+        <%= f.input :nom, autocomplete: 'nom' %>
       </div>
       <div class="col-sm-4">
         <%= f.input :statut_juridique, collection: Organisation.statut_juridiques.keys %>
@@ -11,16 +11,16 @@
         <%= f.input :date_creation %>
       </div>
       <div class="col-sm-4">
-        <%= f.input :secteur_activite %>
+        <%= f.input :secteur_activite, autocomplete: 'secteur-activite' %>
       </div>
       <div class="col-sm-4">
-        <%= f.input :ape %>
+        <%= f.input :naf, autocomplete: 'naf' %>
       </div>
       <div class="col-sm-4">
-        <%= f.input :siren %>
+        <%= f.input :siren, autocomplete: 'siren' %>
       </div>
       <div class="col-sm-4">
-        <%= f.input :agrement_specifique %>
+        <%= f.input :agrement_specifique, autocomplete: 'agrement-specifique' %>
       </div>
     </div>
 
@@ -29,10 +29,10 @@
         <%= f.input :objectifs_extra_financiers, as: :radio_buttons %>
       </div>
       <div class="col-sm-4">
-        <%= f.input :distinctions %>
+        <%= f.input :distinctions, autocomplete: 'distinctions' %>
       </div>
       <div class="col-sm-4">
-        <%= f.input :valeurs_entreprise %>
+        <%= f.input :valeurs_entreprise, autocomplete: 'valeurs-entreprise' %>
       </div>
     </div>
 
