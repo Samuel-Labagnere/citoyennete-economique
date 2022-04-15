@@ -1,3 +1,5 @@
+/* PERSONNALISATION DES RESULTATS BOOLEANS */
+
 .bool {
   & > div > div {
     display:flex;
@@ -10,5 +12,10 @@
       left: -0.5rem;
       font-size: 4rem;
     }
+  }
+}
+.stats {
+  p, b {
+    font-family: $headings-font-family;
   }
 }
