@@ -11,26 +11,30 @@
   </div>
 </div>
 
-<h2><b class="text-primary">I.</b>Qualité de vie</u> au travail</h2>
+<h2><b class="text-primary">I.</b>Qualité de vie au travail</h2>
 
-<div class="row my-5">
-  <div class="col-md-6">
-    <%= pie_chart @qualite_qvt_enquete_qvt, suffix: '%' %>
-    <p class="text-center mt-3">
-      <%= indicateur_clean :qualite_qvt_enquete_qvt %>
-    </p>
+<div class="my-5">
+  <div class="row my-5">
+    <div class="col-md-6">
+      <%= pie_chart @qualite_qvt_enquete_qvt, suffix: '%' %>
+      <p class="text-center mt-3">
+        <%= indicateur_clean :qualite_qvt_enquete_qvt %>
+      </p>
+    </div>
+    <div class="col-md-6">
+      <%= single_value_pie_chart State.evaluations
+                                      .up_to_date
+                                      .average(:qualite_qvt_moyenne_anciennete) %>
+      <p class="text-center mt-3">
+        <%= indicateur_clean :qualite_qvt_moyenne_anciennete %>
+      </p>
+    </div>
   </div>
-  <div class="col-md-6">
-    <%= single_value_pie_chart State.evaluations
-                                    .up_to_date
-                                    .average(:qualite_qvt_moyenne_anciennete) %>
-    <p class="text-center mt-3">
-      <%= indicateur_clean :qualite_qvt_moyenne_anciennete %>
-    </p>
+
+  <div class="rounded bg-white p-3">
+    <%= bar_chart @qualite_qvt_taux_all, suffix: "%" %>
   </div>
 </div>
-
-<%= bar_chart @qualite_qvt_taux_all, suffix: "%" %>
 
 <h2>
   <b class="text-primary">II.</b>
@@ -47,4 +51,6 @@
   </p>
 </div>
 
+<div class="rounded bg-white p-3">
 <%= bar_chart @qualite_emancipation_taux, suffix: "%" %>
+</div>

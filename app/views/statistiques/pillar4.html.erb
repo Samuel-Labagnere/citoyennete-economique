@@ -49,9 +49,11 @@
   </div>
 </div>
 
-<% unless @impact_environnement_scope_booleens.nil?  %>
-  <%= bar_chart @impact_environnement_scope_booleens, suffix: '%' %>
-<% end %>
+<div class="rounded bg-white p-3">
+  <% unless @impact_environnement_scope_booleens.nil?  %>
+    <%= bar_chart @impact_environnement_scope_booleens, suffix: '%' %>
+  <% end %>
+</div>
 
 <h2><b class="text-primary">II.</b>Impact social</h2>
 
@@ -122,6 +124,9 @@
     </p>
   </div>
 <% end %>
+
+<div class="my-5">
 <% unless @impact_engagement_demarche_ethique_fournisseurs.nil? %>
   <%= pie_chart @impact_engagement_demarche_ethique_fournisseurs, suffix: '%' %>
 <% end %>
+</div>

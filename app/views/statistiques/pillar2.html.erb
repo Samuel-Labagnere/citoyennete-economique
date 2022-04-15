@@ -9,7 +9,7 @@
 
 <h2><b class="text-primary">I.</b>Pérennité : création de valeur, inaliénabilité et robustesse de l'entreprise</h2>
 
-<div class="row my-5">
+<div class="row my-5 pt-5">
   <% unless @valeur_perennite_booleens[:valeur_perennite_existence_reserve].nil? %>
   <div class="col-md-6">
     <%= pie_chart @valeur_perennite_booleens[:valeur_perennite_existence_reserve], suffix: '%' %>
@@ -22,36 +22,19 @@
   <% end %>
 </div>
 
+<div class="pt-3">
 <% unless @valeur_perennite_booleens[:valeur_perennite_attention_questions_innovation].nil? %>
   <%= pie_chart @valeur_perennite_booleens[:valeur_perennite_attention_questions_innovation], suffix: '%' %>
 <% end %>
+</div>
 
 <h2><b class="text-primary">II.</b>Partage des richesses</h2>
 
-<div class="my-5">
+<div class="my-5 bg-white p-3 rounded">
   <%= bar_chart @valeur_part_resultat, suffix: "%", max: 100 %>
 </div>
 
-<div class="row my-5">
-  <div class="col-md-6">
-    <%= State.evaluations
-              .up_to_date
-              .median(:valeur_partage_ecart_revenus_hauts_bas) %>
-    </p>
-    <p class="text-center mt-3">
-      <%= indicateur_clean :pouvoir_gouvernance_diversite_categories %>
-    </p>
-  </div>
-  <div class="col-md-6">
-    <%= State.evaluations
-              .up_to_date
-              .median(:valeur_partage_ecart_revenus_hauts_bas) %>
-    </p>
-    <p class="text-center mt-3">
-      <%= indicateur_clean :pouvoir_gouvernance_diversite_categories %>
-    </p>
-  </div>
-</div>
+
 
 <% unless @valeur_perennite_booleens[:valeur_partage_existence_accord].nil? %>
   <%= pie_chart @valeur_perennite_booleens[:valeur_partage_existence_accord], suffix: '%' %>

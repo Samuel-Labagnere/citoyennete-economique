@@ -10,10 +10,10 @@
 
   <!-- IMPACT 1 -->
 
-  <h2>1. Partage du pouvoir et décisions</h2>
+  <h2 class="py-5">1. Partage du pouvoir et décisions</h2>
 
-  <div class="col-8 bg-primary rounded bg-opacity-25 py-3 px-5 my-5">
-    <div class="d-flex align-items-center justify-content-between">
+  <div class="col-8 bg-secondary rounded bg-opacity-25 py-3 px-5 my-5">
+    <div class="d-flex align-items-center justify-content-between justify-content-between">
       <p class="m-0"><%= indicateur_clean :pouvoir_estimation_realite %> :</p>
       <b class="text-white fs-1"><%= @state.pouvoir_estimation_realite %></b>
     </div>
@@ -21,7 +21,7 @@
 
   <h3><b class="text-primary">I.</b> Composition de la gouvernance</h3>
 
-  <div class="row justify-content-center mt-5">
+  <div class="row mt-5">
     <div class="col-md-4 mb-5 ">
       <%= single_value_pie_chart @state.pouvoir_gouvernance_part_salaries_associes %>
       <p class="text-center mt-3"><%= indicateur_clean :pouvoir_gouvernance_part_salaries_associes %></p>
@@ -45,12 +45,12 @@
   </div>
 
   <div class="row">
-    <div class="col-4">
-      <p class="m-0 rounded bg-success bg-opacity-25 text-center p-4"><%= indicateur_clean :pouvoir_gouvernance_diversite_categories %></p>
+    <div class="col-12 col-md-4 mb-3 mb-md-0">
+      <p class="m-0 rounded bg-secondary bg-opacity-25 text-center p-4"><%= indicateur_clean :pouvoir_gouvernance_diversite_categories %></p>
     </div>
-    <div class="col pt-2">
+    <div class="col-12 col-md-8">
         <% @state.pouvoir_gouvernance_diversite_categories.each do |category| %>
-          <span class="bg-success py-2 px-3 rounded text-white mb-2"><%= category %></span>
+          <span class="bg-secondary py-1 px-3 rounded text-white mb-2 d-inline-flex"><%= category %></span>
         <% end unless @state.pouvoir_gouvernance_diversite_categories.nil? %>
     </div>
   </div>
@@ -85,7 +85,7 @@
 
   <h3><b class="text-primary">III.</b> Participation à la prise de décision stratégique</h3>
 
-  <div class="row justify-content-center">
+  <div class="row my-5">
     <div class="col-md-4 mb-4 ">
       <%= single_value_pie_chart @state.pouvoir_strategique_taux_presence_assemblee %>
       <p class="text-center mt-3"><%= indicateur_clean :pouvoir_strategique_taux_presence_assemblee %></p>
@@ -102,10 +102,10 @@
 
   <!-- IMPACT 2 -->
 
-  <h2>2. Pérennité économique et partage de la valeur créée</h2>
+  <h2 class="pb-5">2. Pérennité économique et partage de la valeur créée</h2>
 
-  <div class="col-8 bg-primary rounded bg-opacity-25 py-3 px-5 my-5">
-    <div class="d-flex align-items-center justify-content-between">
+  <div class="col-8 bg-secondary rounded bg-opacity-25 py-3 px-5 my-5">
+    <div class="d-flex align-items-center justify-content-between justify-content-between">
       <p class="m-0"><%= indicateur_clean :valeur_estimation_realite %> :</p>
       <b class="text-white fs-1"><%= @state.valeur_estimation_realite %></b>
     </div>
@@ -113,7 +113,7 @@
 
   <h3><b class="text-primary">I.</b> Pérennité : création de valeur, inaliénabilité et robustesse de l'entreprise</h3>
 
-  <div class="row my-5 justify-content-center">
+  <div class="row my-5">
     <div class="col-md-4 mb-4 ">
       <%= single_value_pie_chart @state.valeur_perennite_part_capital_salaries %>
       <p class="text-center mt-3"><%= indicateur_clean :valeur_perennite_part_capital_salaries %></p>
@@ -190,28 +190,40 @@
 
   <h3><b class="text-primary">II.</b> Partage des richesses</h3>
 
-  <div class="row my-5 justify-content-center">
-    <div class="col-md-4 mb-4 ">
+  <div class="row row-cols-2 mt-5 justify-content-between">
+    <div class="col-md-4 mb-5">
       <%= single_value_pie_chart @state.valeur_partage_part_resultat_net_actionnaires %>
       <p class="text-center mt-3"><%= indicateur_clean :valeur_partage_part_resultat_net_actionnaires %></p>
     </div>
-    <div class="col-md-4 mb-4 ">
+    <div class="col-md-4 mb-5">
       <%= single_value_pie_chart @state.valeur_partage_part_resultat_salaries %>
       <p class="text-center mt-3"><%= indicateur_clean :valeur_partage_part_resultat_salaries %></p>
     </div>
+    <div class="col-md-4 mb-5">
+      <%= single_value_pie_chart @state.valeur_partage_index_egalite_homme_femme, suffix: "/100" %>
+      <p class="text-center mt-3"><%= indicateur_clean :valeur_partage_index_egalite_homme_femme %></p>
+    </div>
   </div>
 
-  <p><%= @state.valeur_partage_ecart_revenus_hauts_bas %>€</p>
-  <p class="text-center mt-3"><%= indicateur_clean :valeur_partage_ecart_revenus_hauts_bas %></p>
+  <div class="row pb-5">
+    <div class="col-8 lead">
+      <div class="rounded d-flex">
+        <div class="bg-secondary text-center text-white p-3 fs-3 fw-bold">
+          <%= @state.valeur_partage_ecart_revenus_hauts_bas %>€
+        </div>
+        <div class="bg-white p-3">
+          est l'écart entre les 5 revenus les plus hauts de l'entreprise (incluant les primes et autres compléments de salaires) et les 5 plus bas.
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <%= single_value_pie_chart @state.valeur_partage_index_egalite_homme_femme, suffix: "/100" %>
-  <p class="text-center mt-3"><%= indicateur_clean :valeur_partage_index_egalite_homme_femme %></p>
 
   <!-- IMPACT 3 -->
 
-  <h2>3. Capital humain et qualité de vie au travail</h2>
+  <h2 class="pb-5">3. Capital humain et qualité de vie au travail</h2>
 
-  <div class="col-8 bg-primary rounded bg-opacity-25 py-3 px-5 my-5">
+  <div class="col-8 bg-secondary rounded bg-opacity-25 py-3 px-4 my-5">
     <div class="d-flex align-items-center justify-content-between">
       <p class="m-0"><%= indicateur_clean :qualite_estimation_realite %> :</p>
       <b class="text-white fs-1"><%= @state.qualite_estimation_realite %></b>
@@ -220,29 +232,50 @@
 
   <h3><b class="text-primary">I.</b> Qualité de vie au travail / épanouissement des salariés</h3>
 
-  <%= boolean_state_field @state, :qualite_qvt_enquete_qvt %>
+  <div class="row bool my-5 bool">
+    <%if !@state.qualite_qvt_enquete_qvt.nil? %>
+    <div class="col-4 text-white">
+      <div class="rounded overflow-hidden position-relative p-3 <%= @state.qualite_qvt_enquete_qvt == true ? 'bg-success' : 'bg-danger' %>">
+        <% if @state.qualite_qvt_enquete_qvt == true %>
+          <i class="bi bi-check-circle position-absolute opacity-25"></i>
+          <%= boolean_state_field @state, :qualite_qvt_enquete_qvt %>.
+          <% else %>
+          <i class="bi bi-x-circle position-absolute opacity-25"></i>
+          Absence d'accord d'intéressement et/ou de participation.
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+    <div class="col-md-8 lead">
+      <div class="rounded d-flex w-100">
+        <div class="bg-secondary text-center text-white p-4 fs-3 fw-bold flex-grow-1">
+          <%= @state.qualite_qvt_moyenne_anciennete %> ans
+        </div>
+        <div class="bg-white p-3 flex-grow-1 align-items-center d-flex">
+          d'ancienneté moyenne au sein de l'entreprise.
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <div class="row my-5 justify-content-center">
-    <div class="col-md-4 mb-4 ">
+  <div class="row row-cols-2 mt-5">
+    <div class="col-md-4 mb-5">
       <%= single_value_pie_chart @state.qualite_qvt_taux_qvt %>
       <p class="text-center mt-3"><%= indicateur_clean :qualite_qvt_taux_qvt %></p>
     </div>
-    <div class="col-md-4 mb-4 ">
+    <div class="col-md-4 mb-5">
       <%= single_value_pie_chart @state.qualite_qvt_part_cdi %>
       <p class="text-center mt-3"><%= indicateur_clean :qualite_qvt_part_cdi %></p>
     </div>
-    <div class="col-md-4 mb-4 ">
+    <div class="col-md-4 mb-5">
       <%= single_value_pie_chart @state.qualite_qvt_taux_turnover %>
       <p class="text-center mt-3"><%= indicateur_clean :qualite_qvt_taux_turnover %></p>
     </div>
-    <div class="col-md-4 mb-4 ">
+    <div class="col-md-4">
       <%= single_value_pie_chart @state.qualite_qvt_taux_absenteisme %>
       <p class="text-center mt-3"><%= indicateur_clean :qualite_qvt_taux_absenteisme %></p>
     </div>
   </div>
-
-  <p><%= @state.qualite_qvt_moyenne_anciennete %> ans</p>
-  <p class="text-center mt-3"><%= indicateur_clean :qualite_qvt_moyenne_anciennete %></p>
 
   <h3>
     <b class="text-primary">II.</b>
@@ -250,10 +283,20 @@
     Emancipation des salariés
   </h3>
 
-  <p><%= @state.qualite_emancipation_moyenne_heures_formation %> heures</p>
-  <p class="text-center mt-3"><%= indicateur_clean :qualite_emancipation_moyenne_heures_formation %></p>
+  <div class="row my-5">
+    <div class="col lead mb-md-5">
+      <div class="rounded d-flex w-100">
+        <div class="bg-secondary text-center text-white p-3 fs-3 fw-bold">
+          <%= @state.qualite_emancipation_moyenne_heures_formation %> heures
+        </div>
+        <div class="bg-white p-3">
+          de formation effectuée par les salariés au sein de l'entreprise.
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <div class="row my-5 justify-content-center">
+  <div class="row my-5">
     <div class="col-md-4 mb-4 ">
       <%= single_value_pie_chart @state.qualite_emancipation_taux_budget_formation_masse_salariale %>
       <p class="text-center mt-3"><%= indicateur_clean :qualite_emancipation_taux_budget_formation_masse_salariale %></p>
@@ -266,9 +309,9 @@
 
   <!-- IMPACT 4 -->
 
-  <h2>4. Impact environnemental, social et territorial</h2>
+  <h2 class="pb-5">4. Impact environnemental, social et territorial</h2>
 
-  <div class="col-8 bg-primary rounded bg-opacity-25 py-3 px-5 my-5">
+  <div class="col-8 bg-secondary rounded bg-opacity-25 py-3 px-5 my-5">
     <div class="d-flex align-items-center justify-content-between">
       <p class="m-0"><%= indicateur_clean :impact_estimation_realite %> :</p>
       <b class="text-white fs-1"><%= @state.impact_estimation_realite %></b>
@@ -319,7 +362,7 @@
     <% end %>
   </div>
 
-  <div class="row my-5 justify-content-center">
+  <div class="row my-5">
     <div class="col-md-4 mb-4 ">
       <%= single_value_pie_chart @state.impact_environnement_part_energies_renouvelables %>
       <p class="text-center mt-3"><%= indicateur_clean :impact_environnement_part_energies_renouvelables %></p>
@@ -330,42 +373,42 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-4">
+  <div class="row align-items-center">
+    <div class="col-12 col-md-6">
       <p class="m-0 rounded bg-success bg-opacity-25 p-4">Le calcul du bilan carbonne de l'entreprise est effectué.</p>
     </div>
-    <div class="col">
+    <div class="col-12 col-md-6">
       <% if @state.impact_environnement_bilan_carbone_scope_1 == true %>
-        <i class="bi bi-check-circle bg-success text-white"></i></span>
-        <span class="bg-success ms-3 text-white">Scope 1</span>
+        <i class="bi bi-check-circle bg-success py-2 px-3 text-white"></i>
+        <span class="bg-success ms-3 py-2 px-4 text-white">Scope 1</span>
       <% end %>
       <% if @state.impact_environnement_bilan_carbone_scope_2 == true %>
-        <i class="bi bi-check-circle bg-success text-white p-2 rounded"></i>
-        <span class="bg-success ms-1 text-white p-2 rounded">Scope 2</span>
+        <i class="bi bi-check-circle bg-success text-white p-2 px-3 rounded"></i>
+        <span class="bg-success ms-1 text-white py-2 px-4 rounded">Scope 2</span>
       <% end %>
       <% if @state.impact_environnement_bilan_carbone_scope_3 == true %>
-        <i class="bi bi-check-circle ms-3 bg-success text-white p-2 rounded"></i>
-        <span class="bg-success ms-1 text-white p-2 rounded">Scope 3</span>
+        <i class="bi bi-check-circle ms-3 bg-success text-white p-2 px-3 rounded"></i>
+        <span class="bg-success ms-1 text-white py-2 px-4 rounded">Scope 3</span>
       <% end %>
     </div>
   </div>
 
   <h3><b class="text-primary">II.</b> Impact social</h3>
 
-  <div class="row my-5 justify-content-center">
-    <div class="col-md-4 mb-4 ">
+  <div class="row my-5">
+    <div class="col-md-4 mb-5">
       <%= single_value_pie_chart @state.impact_social_part_activite_structures_insertion %>
       <p class="text-center mt-3"><%= indicateur_clean :impact_social_part_activite_structures_insertion %></p>
     </div>
-    <div class="col-md-4 mb-4 ">
+    <div class="col-md-4 mb-5">
       <%= single_value_pie_chart @state.impact_social_alternance_apprentissage %>
       <p class="text-center mt-3"><%= indicateur_clean :impact_social_alternance_apprentissage %></p>
     </div>
-    <div class="col-md-4 mb-4 ">
+    <div class="col-md-4 mb-5">
       <%= single_value_pie_chart @state.impact_social_part_seniors %>
       <p class="text-center mt-3"><%= indicateur_clean :impact_social_part_seniors %></p>
     </div>
-    <div class="col-md-4 mb-4 ">
+    <div class="col-md-4">
       <%= single_value_pie_chart @state.impact_social_part_handicap %>
       <p class="text-center mt-3"><%= indicateur_clean :impact_social_part_handicap %></p>
     </div>
@@ -373,21 +416,35 @@
 
   <h3><b class="text-primary">III.</b> Engagement en faveur de l'écosystème et du territoire</h3>
 
-  <div class="row my-5 justify-content-center">
-    <div class="col-md-4 mb-4 ">
+  <div class="row mt-5">
+    <div class="col-md-4 mb-5">
       <%= single_value_pie_chart @state.impact_engagement_part_resultat_missions_utiles %>
       <p class="text-center mt-3"><%= indicateur_clean :impact_engagement_part_resultat_missions_utiles %></p>
     </div>
-    <div class="col-md-4 mb-4 ">
+    <div class="col-md-4 mb-5">
       <%= single_value_pie_chart @state.impact_engagement_part_placements_responsables %>
       <p class="text-center mt-3"><%= indicateur_clean :impact_engagement_part_placements_responsables %></p>
     </div>
-    <div class="col-md-4 mb-4 ">
+    <div class="col-md-4 mb-5">
       <%= single_value_pie_chart @state.impact_engagement_part_impots_france %>
       <p class="text-center mt-3"><%= indicateur_clean :impact_engagement_part_impots_france %></p>
     </div>
   </div>
 
-  <%= boolean_state_field @state, :impact_engagement_demarche_ethique_fournisseurs %>
+  <div class="row bool text-white">
+    <%if !@state.impact_engagement_demarche_ethique_fournisseurs.nil? %>
+    <div class="col-md-8 mb-5">
+      <div class="rounded overflow-hidden position-relative p-3 <%= @state.impact_engagement_demarche_ethique_fournisseurs == true ? 'bg-success' : 'bg-danger' %>">
+        <% if @state.impact_engagement_demarche_ethique_fournisseurs == true %>
+          <i class="bi bi-check-circle position-absolute opacity-25"></i>
+          <%= boolean_state_field @state, :impact_engagement_demarche_ethique_fournisseurs %>.
+          <% else %>
+          <i class="bi bi-x-circle position-absolute opacity-25"></i>
+          Absence d'accord d'intéressement et/ou de participation.
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  </div>
 
 </div>
