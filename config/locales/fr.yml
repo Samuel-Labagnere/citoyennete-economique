@@ -123,6 +123,7 @@ fr:
         current_password: "Mot de passe actuel"
         remember_me: "Se souvenir de moi"
       organisation:
+        nom: "Nom de l'entreprise"
         statut_juridique: "Statut juridique"
         secteur_activite: "Secteur d'activité"
         date_creation: "Année de création"
