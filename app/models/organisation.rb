@@ -4,9 +4,9 @@
 #
 #  id                         :bigint           not null, primary key
 #  agrement_specifique        :string
-#  ape                        :string           not null
 #  date_creation              :integer          not null
 #  distinctions               :text
+#  naf                        :string           not null
 #  nom                        :string           not null
 #  objectifs_extra_financiers :boolean
 #  secteur_activite           :string           not null
@@ -26,8 +26,8 @@ class Organisation < ApplicationRecord
     has_many :evaluations
     has_one :objectifs_list
 
-    enum statut_juridique: [ :EI, :EIRL, :EURL, :SARL, :SA, :SAS, :SASU, :SNC, :ScopSARL, :ScopSA, :ScopSAS, :SCA, :SCS ]
-    validates_presence_of :nom, :statut_juridique, :date_creation, :secteur_activite, :ape, :siren
+    enum statut_juridique: [ :EI, :EIRL, :EURL, :SARL, :SA, :SAS, :SASU, :SNC, :ScopSARL, :ScopSA, :ScopSAS, :SCA, :SCS, :Association ]
+    validates_presence_of :nom, :statut_juridique, :date_creation, :secteur_activite, :naf, :siren
 
     def to_s
       "#{ nom }"

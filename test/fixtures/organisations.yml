@@ -4,9 +4,9 @@
 #
 #  id                         :bigint           not null, primary key
 #  agrement_specifique        :string
-#  ape                        :string           not null
 #  date_creation              :integer          not null
 #  distinctions               :text
+#  naf                        :string           not null
 #  nom                        :string           not null
 #  objectifs_extra_financiers :boolean
 #  secteur_activite           :string           not null
@@ -27,7 +27,7 @@ one:
   statut_juridique: 1
   date_creation: 1
   secteur_activite: MyString
-  ape: MyString
+  naf: MyString
   siren: MyString
   nombre_salaries: 1
   nombre_salaries_etp: 1.5
@@ -43,7 +43,7 @@ two:
   statut_juridique: 1
   date_creation: 1
   secteur_activite: MyString
-  ape: MyString
+  naf: MyString
   siren: MyString
   nombre_salaries: 1
   nombre_salaries_etp: 1.5

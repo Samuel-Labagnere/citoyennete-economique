@@ -4,9 +4,9 @@
 #
 #  id                         :bigint           not null, primary key
 #  agrement_specifique        :string
-#  ape                        :string           not null
 #  date_creation              :integer          not null
 #  distinctions               :text
+#  naf                        :string           not null
 #  nom                        :string           not null
 #  objectifs_extra_financiers :boolean
 #  secteur_activite           :string           not null
