@@ -25,7 +25,7 @@ module ApplicationHelper
     pie_chart data,
               donut: true,
               legend: false,
-              colors: ["#2E3092", "#ECD1D8"],
+              colors: ["#2E3092", "#B4A9A6"],
               library: {
                 events: [],
                 plugins: {
