@@ -126,7 +126,7 @@ fr:
         statut_juridique: "Statut juridique"
         secteur_activite: "Secteur d'activité"
         date_creation: "Année de création"
-        ape: "Code APE"
+        naf: "Code NAF"
         siren: "SIREN"
         agrement_specifique: "Agrément spécifique"
         objectifs_extra_financiers: "Avez-vous fixé des objectifs ou indicateurs extra-financiers quantitatifs à atteindre ?"
