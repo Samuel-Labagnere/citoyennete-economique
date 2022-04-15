@@ -22,7 +22,8 @@
         <div class="bg-secondary text-center text-white p-3 fs-1 fw-bold">
           <%= State.evaluations
                    .up_to_date
-                   .average(:qualite_qvt_moyenne_anciennete) %> ans
+                   .average(:qualite_qvt_moyenne_anciennete)
+                   .round(1) %> ans
         </div>
         <div class="bg-white p-3">
           d'ancienneté moyenne
@@ -61,14 +62,15 @@
 <div class="my-5">
   <%= single_value_pie_chart State.evaluations
                   .up_to_date
-                  .average(:qualite_emancipation_moyenne_heures_formation) %>
+                  .average(:qualite_emancipation_moyenne_heures_formation)
+                  .round(1) %>
   <p class="text-center mt-3">
     <%= indicateur_clean :qualite_emancipation_moyenne_heures_formation %>
   </p>
 </div>
 
 <div class="rounded bg-white p-3 d-none d-sm-block">
-<%= bar_chart @qualite_emancipation_taux, suffix: "%" %>
+<%= bar_chart @qualite_emancipation_taux, suffix: "%", max: 100 %>
 <table class="table mt-5">
   <thead>
       <tr>

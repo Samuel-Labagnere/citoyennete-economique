@@ -38,7 +38,8 @@
     <div class="col-md-6 mb-5">
       <%= single_value_pie_chart State.evaluations
                                       .up_to_date
-                                      .median(:pouvoir_gouvernance_part_salaries_conseil) %>
+                                      .median(:pouvoir_gouvernance_part_salaries_conseil)
+                                      .round(1) %>
       <p class="text-center mt-3">
         <%= indicateur_clean :pouvoir_gouvernance_part_salaries_conseil %>
       </p>
@@ -46,7 +47,8 @@
     <div class="col-md-6 mb-5">
       <%= single_value_pie_chart State.evaluations
                                   .up_to_date
-                                  .median(:pouvoir_gouvernance_part_salaries_conseil) %>
+                                  .median(:pouvoir_gouvernance_part_salaries_conseil)
+                                  .round(1) %>
       <p class="text-center mt-3">
         <%= indicateur_clean :pouvoir_gouvernance_part_salaries_conseil %>
       </p>
@@ -74,7 +76,8 @@
         <div class="bg-secondary text-center text-white p-3 fs-1 fw-bold">
         <%= State.evaluations
                 .up_to_date
-                .median(:pouvoir_democratie_nombre_reunions) %>
+                .median(:pouvoir_democratie_nombre_reunions)
+                .round(1) %>
         </div>
         <div class="bg-white p-3">
         réunions par an entre les salariés et les associés organisées par la gouvernance.
@@ -87,7 +90,8 @@
         <div class="bg-secondary text-center text-white p-3 fs-1 fw-bold">
         <%= State.evaluations
                 .up_to_date
-                .median(:pouvoir_democratie_taux_participation_formations) %> %
+                .median(:pouvoir_democratie_taux_participation_formations)
+                .round(1) %> %
         </div>
         <div class="bg-white p-3">
           des salariés participent à des formations sur le fonctionnement d'une entreprise et/ou à des dispositifs d'intégration dans l'entreprise.
@@ -100,7 +104,8 @@
         <div class="bg-secondary text-center text-white p-3 fs-1 fw-bold">
         <%= State.evaluations
                 .up_to_date
-                .median(:pouvoir_democratie_nombre_accords_signes) %>
+                .median(:pouvoir_democratie_nombre_accords_signes)
+                .round(1) %>
         </div>
         <div class="bg-white p-3">
           accords signés en moyenne entre les représentants du personnel et la direction.
@@ -115,7 +120,8 @@
     <div class="col-md-4 mb-5">
       <%= single_value_pie_chart State.evaluations
                                       .up_to_date
-                                      .median(:pouvoir_strategique_taux_presence_assemblee) %>
+                                      .median(:pouvoir_strategique_taux_presence_assemblee)
+                                      .round(1) %>
       <p class="mt-3">
         <%= indicateur_clean :pouvoir_strategique_taux_presence_assemblee %>
       </p>
@@ -124,7 +130,8 @@
     <div class="col-md-4 mb-5">
       <%= single_value_pie_chart State.evaluations
                                   .up_to_date
-                                  .median(:pouvoir_strategique_implication_partage) %>
+                                  .median(:pouvoir_strategique_implication_partage)
+                                  .round(1) %>
       <p class="mt-3">
         <%= indicateur_clean :pouvoir_strategique_implication_partage %>
       </p>
@@ -133,7 +140,8 @@
     <div class="col-md-4 mb-2 mb-sm-5">
       <%= single_value_pie_chart State.evaluations
                                 .up_to_date
-                                .median(:pouvoir_strategique_actifs_total) %>
+                                .median(:pouvoir_strategique_actifs_total)
+                                .round(1) %>
       <p class="mt-3">
         <%= indicateur_clean :pouvoir_strategique_actifs_total %>
       </p>
