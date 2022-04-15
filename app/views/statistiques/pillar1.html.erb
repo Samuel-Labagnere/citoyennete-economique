@@ -9,7 +9,7 @@
 
 <div class="stats">
 
-  <h2 class="pb-5"><b class="text-primary">I.</b>Composition de la gouvernance</h2>
+  <h2 class="pb-sm-5"><b class="text-primary">I.</b>Composition de la gouvernance</h2>
 
   <div class="rounded bg-white p-5 my-5">
     <%= bar_chart @pouvoir_gouvernance_taux, suffix: "%", title: 'Indicateurs clés (taux médians)', max: 100 %>
@@ -33,7 +33,7 @@
   </div>
 
 
-  <div class="row py-5">
+  <div class="row py-sm-5">
     <div class="col-md-6 mb-5">
       <%= single_value_pie_chart State.evaluations
                                       .up_to_date
@@ -64,9 +64,9 @@
     </p>
   </div>
 
-  <h2 class="pt-5"><b class="text-primary">II.</b> Mise en place des conditions du bon exercice de la démocratie</h2>
+  <h2 class="pt-sm-5"><b class="text-primary">II.</b> Mise en place des conditions du bon exercice de la démocratie</h2>
 
-  <div class="row mt-5 pt-5">
+  <div class="row mt-5 pt-sm-5">
 
     <div class="col-sm-4 lead mb-5">
       <div class="rounded">
@@ -110,7 +110,7 @@
 
   <h2>III. Participation à la prise de décision stratégique</h2>
 
-  <div class="row mt-5 pt-5">
+  <div class="row mt-sm-5 pt-5">
     <div class="col-md-4 mb-5">
       <%= single_value_pie_chart State.evaluations
                                       .up_to_date
@@ -129,7 +129,7 @@
       </p>
     </div>
 
-    <div class="col-md-4 mb-5">
+    <div class="col-md-4 mb-2 mb-sm-5">
       <%= single_value_pie_chart State.evaluations
                                 .up_to_date
                                 .median(:pouvoir_strategique_actifs_total) %>
