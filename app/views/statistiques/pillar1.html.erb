@@ -45,26 +45,16 @@
       </p>
     </div>
     <div class="col-md-6 mb-5">
-      <%= single_value_pie_chart State.evaluations
-                                  .up_to_date
-                                  .median(:pouvoir_gouvernance_part_salaries_conseil)
-                                  .round(1) %>
+      <%= pie_chart State.evaluations
+                          .up_to_date
+                          .pluck(:pouvoir_gouvernance_diversite_categories)
+                          .flatten
+                          .compact
+                          .tally %>
       <p class="text-center mt-3">
-        <%= indicateur_clean :pouvoir_gouvernance_part_salaries_conseil %>
+        <%= indicateur_clean :pouvoir_gouvernance_diversite_categories %>
       </p>
     </div>
-  </div>
-
-  <div class="col-md-6 mx-auto p-3">
-    <%= pie_chart State.evaluations
-                        .up_to_date
-                        .pluck(:pouvoir_gouvernance_diversite_categories)
-                        .flatten
-                        .compact
-                        .tally %>
-    <p class="text-center mt-3">
-      <%= indicateur_clean :pouvoir_gouvernance_diversite_categories %>
-    </p>
   </div>
 
   <h2><b class="text-primary">II.</b> Mise en place des conditions du bon exercice de la démocratie</h2>
