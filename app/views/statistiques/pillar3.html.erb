@@ -23,7 +23,7 @@
           <%= State.evaluations
                    .up_to_date
                    .average(:qualite_qvt_moyenne_anciennete)
-                   .round(1) %> ans
+                    %> ans
         </div>
         <div class="bg-white p-3">
           d'ancienneté moyenne
@@ -63,7 +63,7 @@
   <%= single_value_pie_chart State.evaluations
                   .up_to_date
                   .average(:qualite_emancipation_moyenne_heures_formation)
-                  .round(1) %>
+                   %>
   <p class="text-center mt-3">
     <%= indicateur_clean :qualite_emancipation_moyenne_heures_formation %>
   </p>

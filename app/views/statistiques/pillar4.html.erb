@@ -32,7 +32,7 @@
     <%= single_value_pie_chart State.evaluations
                     .up_to_date
                     .median(:impact_environnement_part_energies_renouvelables)
-                    .round(1) %>
+                     %>
     <p class="text-center mt-3">
       <%= indicateur_clean :impact_environnement_part_energies_renouvelables %>
     </p>
@@ -41,7 +41,7 @@
     <%= single_value_pie_chart State.evaluations
                     .up_to_date
                     .median(:impact_environnement_part_salaries_mobilite)
-                    .round(1) %>
+                     %>
     <p class="text-center mt-3">
       <%= indicateur_clean :impact_environnement_part_salaries_mobilite %>
     </p>
@@ -79,7 +79,7 @@
   <%= single_value_pie_chart State.evaluations
                   .up_to_date
                   .median(:impact_social_part_activite_structures_insertion)
-                  .round(1) %>
+                   %>
   <p class="text-center mt-3">
     <%= indicateur_clean :impact_social_part_activite_structures_insertion %>
   </p>
@@ -88,7 +88,7 @@
   <%= single_value_pie_chart State.evaluations
                   .up_to_date
                   .median(:impact_social_alternance_apprentissage)
-                  .round(1) %>
+                   %>
   <p class="text-center mt-3">
     <%= indicateur_clean :impact_social_alternance_apprentissage %>
   </p>
@@ -100,7 +100,7 @@
     <%= single_value_pie_chart State.evaluations
                     .up_to_date
                     .median(:impact_social_part_seniors)
-                    .round(1) %>
+                     %>
     <p class="text-center mt-3">
       <%= indicateur_clean :impact_social_part_seniors %>
     </p>
@@ -109,7 +109,7 @@
     <%= single_value_pie_chart State.evaluations
                     .up_to_date
                     .median(:impact_social_part_handicap)
-                    .round(1) %>
+                     %>
     <p class="text-center mt-3">
       <%= indicateur_clean :impact_social_part_handicap %>
     </p>
